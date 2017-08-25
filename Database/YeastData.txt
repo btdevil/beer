@@ -1,0 +1,55 @@
+ID,Yeast,Wyeast,White Labs,Other Dry
+1,Brewferm Blanche,,WLP-410,
+2,Brewfrem Lager,2565,WLP-003,
+3,Coopers Ale,,WLP-009,
+4,Danstar Belle Saison,3724,WLP-1565,M29
+5,Danstar BRY-97,1056,WLP-001,Safale US-05
+6,Danstar Munich,3638,WLP-351,
+7,Danstar Nottingham,,WLP-039,
+8,Danstar Windsor,1028,WLP-013,
+9,Danstar Windsor,1275,WLP-023,
+10,M15,1968,WLP-002,Munton's Gold
+11,M20,3638,WLP-830,
+12,M21,3944,WLP-400,
+13,M29,3724,WLP-1565,Belle Saison
+14,M31,3787,WLP-530,
+15,M31,1388,WLP-570,
+16,M36,1272,WLP-051,
+17,M36,1275,WLP-023,
+18,M41,3724,WLP-1565,
+19,M41,3522,WLP-550,
+20,M41,1214,WLP-510,
+21,M41,1214,WLP-500,
+22,M42,,WLP-090,
+23,M44,1764,,Safale US-05
+24,M47,1762,WLP-540,Belle Saison
+25,M54,2112,WLP-810,
+26,M76,2206,WLP-820,Saflager S189
+27,M76,2247,WLP-920,SafLager S-23
+28,M84,2124,WLP-830,Saflarger 34/70
+29,Muton's Ale Yeast,1968,WLP-002,
+30,Safale BE-134,,,
+31,Safale BE-256,,,
+32,Safale F-2,,,
+33,Safale K-97,1007,WLP-036,
+34,Safale S04,1098,WLP-007,
+35,Safale US-05,1056,WLP-001,M44
+36,Safbrew S-33,1007,WLP-006,
+37,Safbrew S-33,1187,WLP-005,
+38,Safbrew T-58,3724,WLP-565,
+39,Safbrew T-58,1214,WLP-500,
+40,Safbrew WB-06,3333,WLP-380,
+41,Safbrew WB-06,3068,WLP-300,
+42,Saflager S189,,WLP-885,M76
+43,Saflager S-23,2565,WLP-003,M76
+44,Saflarger 34/70,2124,WLP-830,M84
+45,Safbrew T-58,1762,WLP-540,
+46,Danstar London ESB,1968,WLP-002,
+47,Saflager S-23,2206,WLP-820,
+48,Safale K-97,2565,WLP-029,
+49,2007 Wyeast,,,
+50,WLP-099,,,
+51,1010 Wyeast,,,
+52,3711 Wyeast,,,
+53,wlp-4000,,,
+54,3522 Wyeast,,,
