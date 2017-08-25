@@ -1,0 +1,58 @@
+﻿@section scripts {
+    @Scripts.Render("~/bundles/app")
+}
+
+<div class="page-header">
+    <h1>RecipesService</h1>
+</div>
+
+<div class="row">
+    <!--comment-->
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Recipes</h2>
+            </div>
+            <div class="panel-body">
+                <ul class="list-unstyled" data-bind="foreach: recipes">
+                    <li>
+                        <strong><span data-bind="text: name"></span></strong>: <span data-bind="text: abv"></span>%
+                        <small><a href="#" data-bind="click: $parent.getRecipeDetail">Details</a></small>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="alert alert-danger" data-bind="visible: error"><p data-bind="text: error"></p></div>
+    </div>
+
+    <!-- ko if:detail() -->
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Detail</h2>
+            </div>
+            <table class="table">
+                <tr><td>source2</td><td data-bind="text: detail().source2"></td></tr>
+                <tr><td>number</td><td data-bind="text: detail().number"></td></tr>
+                <tr><td>name</td><td data-bind="text: detail().name"></td></tr>
+                <tr><td>yeastName</td><td data-bind="text: detail().yeastName"></td></tr>
+                <tr><td>abv</td><td data-bind="text: detail().abv"></td></tr>
+                <tr><td>ibu</td><td data-bind="text: detail().ibu"></td></tr>
+                <tr><td>og</td><td data-bind="text: detail().og"></td></tr>
+                <tr><td>fg</td><td data-bind="text: detail().fg"></td></tr>
+                <tr><td>ebc</td><td data-bind="text: detail().ebc"></td></tr>
+                <tr><td>hasAdjucts</td><td data-bind="text: detail().hasAdjucts"></td></tr>
+                <tr><td>mashTemp</td><td data-bind="text: detail().mashTemp"></td></tr>
+                <tr><td>mashTime</td><td data-bind="text: detail().mashTime"></td></tr>
+                <tr><td>fermentation</td><td data-bind="text: detail().fermentation"></td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- /ko -->
+
+    <div class="col-md-4">
+        <!-- TODO: Add new book -->
+    </div>
+</div>

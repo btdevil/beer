@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        $.ajax({
+            //url: "http://localhost:50664/api/recipes/",
+            url: "http://beerservice/api/recipes",
+            dataType: "json",
+            contentType: "application/json",
+            accepts: "application/json",
+            success: function (data, status, jqXHR) {
+                console.log(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus);
+            }
+        });
+
+         $.ajax({
+            //url: "http://localhost:50664/api/recipes/",
+            url: "http://beerservice/api/recipes",
+            dataType: "xml",
+            contentType: "application/xml",
+            success: function (data, status, jqXHR) {
+                var test = $.parseXML(jqXHR.responseText);
+                console.log(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus);
+            }
+        })
+    </script>
+</body>
+</html>
