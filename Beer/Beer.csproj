@@ -234,6 +234,11 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\nouislider.css" />
+    <Content Include="Content\nouislider.min.css" />
+    <Content Include="Content\select2-bootstrap.css" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\select2.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -271,8 +276,11 @@
     <Content Include="Scripts\knockout.mapping-latest.debug.js" />
     <Content Include="Scripts\knockout.mapping-latest.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\nouislider.js" />
+    <Content Include="Scripts\nouislider.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\select2.min.debug.js" />
     <Content Include="tester.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -290,6 +298,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\select2.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

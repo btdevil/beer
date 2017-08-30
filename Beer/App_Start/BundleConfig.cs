@@ -22,11 +22,16 @@ namespace Beer
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/select2.css",
+                      "~/Content/select2-bootstrap.css",
+                      "~/Content/nouislider.min.css",
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
               "~/Scripts/knockout-{version}.js",
               "~/Scripts/knockout.mapping-latest.js",
+              "~/Scripts/select2.min.js",
+              "~/Scripts/nouislider.min.js",
               "~/Scripts/app.js"));
         }
     }

@@ -85,12 +85,57 @@ BEER.RecipeModel = function (Recipe) {
     }
 }
 
+BEER.sliderModel = function (min, max) {
+    var self = this;
+
+    self.min = ko.observable(min);
+    self.max = ko.observable(max);
+}
+
+ko.bindingHandlers.rangeSlider = {
+    init: function (element, valueAccessor, allBindingsAccesor, viewModel, bindingContext) {
+        var params = valueAccessor();
+        
+        $(element).noUiSlider({
+            start: [params.minSlider, params.maxSlider],
+            range: {
+                'min': params.minValue(),
+                'max': params.maxValue()
+            },
+            pips: {
+                mode: 'range',
+                density: 3
+            },
+            step: params.step,
+            format: wNumb({
+                decimals: params.decimal,
+                postfix: params.suffix
+            })
+        });
+
+        $(element).on({
+            set: function (event, ui) {
+                params.minValue(ui[0]);
+                params.maxValue(ui[1]);
+            }
+        });
+
+    },
+    update: function (element, valueAccessor, allBindingsAccesor, viewModel, bindingContext) {
+        var params = valueAccessor();
+        var range = [params.minValue(), params.maxValue()];
+        $(element).val(range);
+    }
+}
+
 BEER.MasterViewModel = function () {
     var self = this;
     self.Yeasts = new BEER.YeastModel();
     self.Malts = new BEER.MaltModel();
     self.Hops = new BEER.HopModel();
     self.Recipes = new BEER.RecipeModel();
+    self.abvSlider = new BEER.sliderModel(0, 50);
+    self.ibuSlider = new BEER.sliderModel(0, 441);
     self.error = ko.observableArray();
 
     self.searchRecipes = function (formElement) {
@@ -117,11 +162,21 @@ BEER.MasterViewModel = function () {
             ko.mapping.fromJS(data, {}, self.Recipes.Recipe);
         });
 
+        if ($('#searchPanelCollapse').hasClass('in')) {
+            $('#searchPanelCollapse').collapse('toggle');
+        }
+
+        if ($('#resultsPanelCollapse').hasClass('in') === false) {
+            $('#resultsPanelCollapse').collapse('toggle');
+        }
+
         console.log(self.Recipes);
     }
 }
 
-ko.applyBindings(new BEER.MasterViewModel())
+
+ko.applyBindings(new BEER.MasterViewModel());
+
 
 //BEER.ViewModel = function () {
 //    var self = this;
