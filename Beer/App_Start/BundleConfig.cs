@@ -26,6 +26,7 @@ namespace Beer
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
               "~/Scripts/knockout-{version}.js",
+              "~/Scripts/knockout.mapping-latest.js",
               "~/Scripts/app.js"));
         }
     }
