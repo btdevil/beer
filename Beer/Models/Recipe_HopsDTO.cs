@@ -20,5 +20,7 @@ namespace Beer.Models
         public string HopName { get; set; }
 
         public string StepName { get; set; }
+
+        public int StepOrder { get; set; }
     }
 }

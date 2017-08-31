@@ -82,7 +82,8 @@ namespace Beer.Controllers
                                   HopID = rh.HopID,
                                   StepID = rh.StepID,
                                   HopName = rh.Hop.Hops,
-                                  StepName = rh.HopStep.Step
+                                  StepName = rh.HopStep.Step,
+                                  StepOrder = rh.HopStep.StepOrder
                               }).ToList(),
                               Recipe_Malts = r.Recipe_Malts.Select(rm => new Recipe_MaltsDTO
                               {
@@ -166,10 +167,48 @@ namespace Beer.Controllers
         /// </summary>
         /// <param name="id">The recipeID</param>
         /// <returns></returns>
-        [ResponseType(typeof(Recipe))]
+        [ResponseType(typeof(RecipeDTO))]
         public async Task<IHttpActionResult> GetRecipe(int id)
         {
-            Recipe recipe = await db.Recipes.FindAsync(id);
+            var recipe = await (from r in db.Recipes where r.ID == id
+                                      select new RecipeDTO()
+                                      {
+                                          Source2 = r.Source2,
+                                          Number = r.Number,
+                                          Name = r.Name,
+                                          YeastID = r.YeastID,
+                                          YeastName = r.Yeast.YeastName,
+                                          ID = r.ID,
+                                          ABV = r.ABV,
+                                          IBU = r.IBU,
+                                          OG = r.OG,
+                                          FG = r.FG,
+                                          EBC = r.EBC,
+                                          HasAdjucts = r.HasAdjucts,
+                                          MashTemp = r.MashTemp,
+                                          MashTime = r.MashTime,
+                                          Fermentation = r.Fermentation,
+                                          Recipe_Hops = r.Recipe_Hops.Select(rh => new Recipe_HopsDTO
+                                          {
+                                              ID = rh.ID,
+                                              RecipeID = rh.RecipeID,
+                                              Weight = rh.Weight,
+                                              HopID = rh.HopID,
+                                              StepID = rh.StepID,
+                                              HopName = rh.Hop.Hops,
+                                              StepName = rh.HopStep.Step,
+                                              StepOrder = rh.HopStep.StepOrder
+                                          }).OrderBy(rh => rh.StepOrder).ThenBy(hn => hn.HopName).ToList(),
+                                          Recipe_Malts = r.Recipe_Malts.Select(rm => new Recipe_MaltsDTO
+                                          {
+                                              ID = rm.ID,
+                                              RecipeID = rm.RecipeID,
+                                              Weight = rm.Weight,
+                                              MaltGenericID = rm.MaltGenericID,
+                                              MaltID = rm.MaltID,
+                                              MaltGenericName = rm.MaltGeneric.Malt
+                                          }).OrderByDescending(rm => rm.Weight).ThenBy(mn => mn.MaltGenericName).ToList()
+                                      }).ToListAsync();
             if (recipe == null)
             {
                 return NotFound();

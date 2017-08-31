@@ -15,3 +15,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.slider-cont{
+    padding-top:10px;
+    padding-bottom:50px;
+}

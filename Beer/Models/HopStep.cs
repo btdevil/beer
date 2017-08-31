@@ -12,5 +12,6 @@ namespace Beer.Models
 
         [StringLength(255)]
         public string Step { get; set; }
+        public int StepOrder { get; set; }
     }
 }

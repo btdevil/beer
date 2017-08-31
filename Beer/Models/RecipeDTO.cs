@@ -12,7 +12,7 @@ namespace Beer.Models
     {
         public string Source2 { get; set; }
 
-        public double? Number { get; set; }
+        public int? Number { get; set; }
 
         public string Name { get; set; }
 
@@ -24,11 +24,11 @@ namespace Beer.Models
 
         public double? ABV { get; set; }
 
-        public double? IBU { get; set; }
+        public int? IBU { get; set; }
 
-        public double? OG { get; set; }
+        public int? OG { get; set; }
 
-        public double? FG { get; set; }
+        public int? FG { get; set; }
 
         public int? EBC { get; set; }
 
