@@ -616,5 +616,10 @@
             Has Adjuncts (Y or N) (Optional)
             </summary>
         </member>
+        <member name="P:Beer.Models.RecipeQuery.getFullRecipe">
+            <summary>
+            Return a full recipe with malts and hops (Optional)
+            </summary>
+        </member>
     </members>
 </doc>

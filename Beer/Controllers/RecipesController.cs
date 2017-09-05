@@ -32,7 +32,7 @@ namespace Beer.Controllers
             IQueryable<RecipeDTO> recipes;
 
 
-            if(recipeQuery.HopId.IsNullOrEmpty() && recipeQuery.MaltId.IsNullOrEmpty())
+            if(recipeQuery.HopId.IsNullOrEmpty() && recipeQuery.MaltId.IsNullOrEmpty() && (recipeQuery.getFullRecipe.HasValue == false || recipeQuery.getFullRecipe == false))
             {
                 recipes = from r in db.Recipes
                           select new RecipeDTO()

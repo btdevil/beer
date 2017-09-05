@@ -59,5 +59,10 @@ namespace Beer.Models
         /// </summary>
         public string hasAdjuncts { get; set; }
 
+        /// <summary>
+        /// Return a full recipe with malts and hops (Optional)
+        /// </summary>
+        public bool? getFullRecipe { get; set; }
+
     }
 }
