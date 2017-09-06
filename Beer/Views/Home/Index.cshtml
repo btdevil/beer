@@ -21,18 +21,18 @@
                         <form data-bind="submit: searchRecipes">
                             <label for="malts">Malts</label>
                             <div class="form-group">
-                                <select id="malts" data-bind="options: Malts.Malt, optionsText: 'malt', optionsValue : 'id', selectedOptions: SearchQuery.maltQuery" size="10" multiple class="form-control"></select>
+                                <select id="malts" data-bind="options: Malts.Malt, optionsText: 'malt', optionsValue : 'id', selectedOptions: SearchQuery.maltQuery, select2: {}" size="10" multiple class="form-control" style="width: 100%"></select>
                                 
                             </div>
 
                             <label for="hops">Hops</label>
                             <div class="form-group">
-                                <select id="hops" data-bind="options: Hops.Hop, optionsText: 'hops', optionsValue : 'id', selectedOptions: SearchQuery.hopQuery" size="10" multiple class="form-control"></select>
+                                <select id="hops" data-bind="options: Hops.Hop, optionsText: 'hops', optionsValue : 'id', selectedOptions: SearchQuery.hopQuery, select2: {}" size="10" multiple class="form-control" style="width: 100%"></select>
                             </div>
 
                             <label for="yeast">Yeast</label>
                             <div class="form-group">
-                                <select id="yeast" data-bind="options: Yeasts.Yeast, optionsText: 'yeastName', optionsValue : 'id', selectedOptions: SearchQuery.yeastQuery" size="10" multiple class="form-control"></select>
+                                <select id="yeast" data-bind="options: Yeasts.Yeast, optionsText: 'yeastName', optionsValue : 'id', selectedOptions: SearchQuery.yeastQuery, select2: {}" size="10" multiple class="form-control" style="width: 100%"></select>
                             </div>
 
                             <label for="abvmin">ABV <span class="sr-only">Minimum</span></label>
@@ -146,7 +146,7 @@
                 </div>
                 <div id="resultsPanelCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="resultsPanelHeading">
                     <div class="panel-body">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <p data-bind="click: sortRecipes">Sort by ABV</p>
 
                             <!-- ko if: SearchQuery.groupResults() === 'true' -->
@@ -164,6 +164,7 @@
                                     <p>No exact matches</p>
                                     <!-- /ko -->
 
+                                    <!-- ko if: SearchQuery.groupResults() === 'true' -->
                                     <h3>One additional ingredient</h3>
                                     <!--ko foreach: recipeMatch1 -->
                                     <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
@@ -218,6 +219,7 @@
                                     <!--ko if: recipeMatch5().length === 0 -->
                                     <p>No results</p>
                                     <!-- /ko -->
+                                    <!-- /ko -->
 
                                 </div>
                                     @*<ul class="list-unstyled" data-bind="foreach: Recipes.Recipe">
@@ -228,41 +230,59 @@
                                     </ul>*@
                         </div> 
 
-                        <!-- ko if: SelectedRecipe() -->
-                        <div class="col-md-4">
+                        <div class="col-md-6" data-bind="visible: SelectedRecipe() !== null">
                             <div class="panel panel-default">
+                                <!-- ko foreach: SelectedRecipe -->
+
+
                                 <div class="panel-heading">
-                                    <h2 class="panel-title">Detail</h2>
+                                    <h2 class="panel-title" data-bind="text: name"></h2>
                                 </div>
                                 <table class="table">
-                                    <tr><td>source2</td><td data-bind="text: SelectedRecipe().source2"></td></tr>
-                                    <tr><td>number</td><td data-bind="text: SelectedRecipe().number"></td></tr>
-                                    <tr><td>name</td><td data-bind="text: SelectedRecipe().name"></td></tr>
-                                    <tr><td>yeastName</td><td data-bind="text: SelectedRecipe().yeastName"></td></tr>
-                                    <tr><td>abv</td><td data-bind="text: SelectedRecipe().abv"></td></tr>
-                                    <tr><td>ibu</td><td data-bind="text: SelectedRecipe().ibu"></td></tr>
-                                    <tr><td>og</td><td data-bind="text: SelectedRecipe().og"></td></tr>
-                                    <tr><td>fg</td><td data-bind="text: SelectedRecipe().fg"></td></tr>
-                                    <tr><td>ebc</td><td data-bind="text: SelectedRecipe().ebc"></td></tr>
-                                    <tr><td>hasAdjucts</td><td data-bind="text: SelectedRecipe().hasAdjucts"></td></tr>
-                                    <tr><td>mashTemp</td><td data-bind="text: SelectedRecipe().mashTemp"></td></tr>
-                                    <tr><td>mashTime</td><td data-bind="text: SelectedRecipe().mashTime"></td></tr>
-                                    <tr><td>fermentation</td><td data-bind="text: SelectedRecipe().fermentation"></td></tr>
-                                    <tr><td>Malts</td><td>
-                                                          <!-- ko foreach: SelectedRecipe().recipe_Malts -->
-                                                          <p><span data-bind="text: maltGenericName"></span>: <span data-bind="text: weight"></span>kg</p>
-                                                          <!-- /ko -->
-                                        </td></tr>
-                                    <tr><td>Hops</td><td>
-                                                         <!-- ko foreach: SelectedRecipe().recipe_Hops -->
-                                                         <p><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g - <span data-bind="text: stepName"></span></p>
-                                                         <!-- /ko -->
-                                        </td></tr>
+                                    <tr><td>Source</td><td data-bind="text: source2"></td></tr>
+                                    <tr><td>Recipe No</td><td data-bind="text: number"></td></tr>
+                                    <tr><td>Yeast</td><td data-bind="text: yeastName"></td></tr>
+                                    <tr><td>ABV</td><td data-bind="text: formattedABV"></td></tr>
+                                    <tr><td>IBU</td><td data-bind="text: ibu"></td></tr>
+                                    <tr><td>OG</td><td data-bind="text: og"></td></tr>
+                                    <tr><td>FG</td><td data-bind="text: fg"></td></tr>
+                                    <tr><td>EBC</td><td data-bind="text: ebc"></td></tr>
+                                    <tr><td>Has Ajuncts</td><td data-bind="text: hasAdjucts"></td></tr>
+                                    <tr><td>Mash Temperature</td><td><span data-bind="text: mashTemp"></span>C</td></tr>
+                                    <tr><td>Mash Time</td><td><span  data-bind="text: mashTime"></span> minutes</td></tr>
+                                    <tr><td>Fermentation Temperature</td><td data-bind="text: fermentation"></td></tr>
+                                    <tr>
+                                        <td>Malts</td>
+                                        <td>
+                                            <!-- ko foreach: recipe_Malts -->
+                                            <p data-bind="css: {noMatch: isMatched() === false}"><span data-bind="text: maltGenericName"></span>: <span data-bind="text: weight"></span>kg</p>
+                                            <!-- /ko -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hops</td>
+                                        <td>
+                                            <!-- ko foreach: recipe_Hops -->
+                                            <p data-bind="css: {noMatch: isMatched() === false}"><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g - <span data-bind="text: stepName"></span></p>
+                                            <!-- /ko -->
+                                        </td>
+                                    </tr>
+                                    <tr><td>Total Hop Bill</td><td><span data-bind="text: totalHopsBill"></span>g</td></tr>
+                                    <tr>
+                                        <td>Total for each hop</td>
+                                        <td>
+                                            <!-- ko foreach: totalEachHop -->
+                                            <p><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g</p>
+                                            <!-- /ko -->
+                                        </td>
+                                    </tr>
 
                                 </table>
+
+
+                                <!-- /ko -->
                             </div>
                         </div>
-                        <!-- /ko -->
                      </div>
                 </div>
             </div>

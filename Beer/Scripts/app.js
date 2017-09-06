@@ -35,6 +35,12 @@ BEER.utils = (function () {
 
             return queryStr;
 
+        },
+        groupBy: function (xs, key) {
+            return xs.reduce(function (rv, x) {
+                (rv[x[key()]] = rv[x[key()]] || []).push(x);
+                return rv;
+            }, {});
         }
     };
     return process;
@@ -100,7 +106,6 @@ BEER.Models = (function () {
     var process = {
         Recipe: function Recipe(data, parent) {
             var self = this;
-            ko.mapping.fromJS(data, BEER.Mappings.hopMaltMapping, self);
             self.mq = parent.SearchQuery.maltQuery;
             self.hq = parent.SearchQuery.hopQuery;
             self.yq = parent.SearchQuery.yeastQuery;
@@ -117,6 +122,34 @@ BEER.Models = (function () {
                 }
                 return isMatched;
             }, self);
+            ko.mapping.fromJS(data, BEER.Mappings.hopMaltMapping, self);
+            self.totalHopsBill = ko.computed(function () {
+                var totalWeight = 0;
+                self.recipe_Hops().forEach(function (element) {
+                    if (element.hopName().indexOf('*') === -1) {
+                        totalWeight += element.weight();
+                    }
+                });
+                return totalWeight;
+            });
+            self.totalEachHop = ko.computed(function () {
+                var hopArray = [];
+                var result = [];
+                result = self.recipe_Hops.slice(0);
+
+                result.reduce(function (res, value) {
+                    if (!res[value.hopName()]) {
+                        res[value.hopName()] = {
+                            weight: 0,
+                            hopName: value.hopName()
+                        };
+                        hopArray.push(res[value.hopName()])
+                    }
+                    res[value.hopName()].weight += value.weight()
+                    return res;
+                }, {});
+                return hopArray;
+            });
         },
         Slider: function Slider(min, max) {
             var self = this;
@@ -181,23 +214,41 @@ BEER.Models = (function () {
         Malt: function Malt(data, parent) {
             var self = this;
             ko.mapping.fromJS(data, {}, self);
+            self.mq = typeof parent !== 'undefined' ? parent.mq : ko.observableArray([]);
             self.isMatched = ko.computed(function () {
-                return 'Yes';
+                var isMatched = false;
+                for (var i = 0, iLen = self.mq().length; i < iLen; i++) {
+                    if (self.mq()[i] === self.maltGenericID()) {
+                        isMatched = true;
+                        break;
+                    }
+                }
+                return isMatched;
             }, self);
         },
         Hop: function Hop(data, parent) {
             var self = this;
             ko.mapping.fromJS(data, {}, self);
+            self.hq = typeof parent !== 'undefined' ? parent.hq : ko.observableArray([]);
             self.isMatched = ko.computed(function () {
-                return 'Yes';
+                var isMatched = false;
+                for (var i = 0, iLen = self.hq().length; i < iLen; i++) {
+                    if (self.hq()[i] === self.hopID()) {
+                        isMatched = true;
+                        break;
+                    }
+                }
+                return isMatched;
             }, self);
         },
         Yeast: function Yeast(data) {
             var self = this;
             ko.mapping.fromJS(data, {}, self);
-            self.isMatched = ko.computed(function () {
-                return 'Yes';
-            }, self);
+        },
+        TotalHopWeight: function (data) {
+            var self = this;
+            self.name = data.hopName;
+            self.totalWeight = data.weight;
         }
     };
     return process;
@@ -214,6 +265,13 @@ BEER.Mappings = (function () {
         },
         allRecipesMapping: {
             'allRecipes': {
+                create: function (options) {
+                    return new BEER.Models.Recipe(options.data, options.parent);
+                }
+            }
+        },
+        selectedRecipeMapping: {
+            'SelectedRecipe': {
                 create: function (options) {
                     return new BEER.Models.Recipe(options.data, options.parent);
                 }
@@ -293,6 +351,14 @@ ko.bindingHandlers.rangeSlider = {
     }
 }
 
+ko.bindingHandlers.select2 = {
+    init: function (element, valueAccessor, allBindingsAccesor, viewModel, bindingContext) {
+        $(element).select2({
+            closeOnSelect: false
+    });
+    }
+}
+
 BEER.MasterViewModel = function (data) {
     var self = this;
     ko.mapping.fromJS(data, BEER.Mappings.recipe1Mapping, self);
@@ -320,10 +386,6 @@ BEER.MasterViewModel = function (data) {
             self.basicSearchRecipes();
         }
 
-        if ($('#searchPanelCollapse').hasClass('in')) {
-            $('#searchPanelCollapse').collapse('toggle');
-        }
-
         if ($('#resultsPanelCollapse').hasClass('in') === false) {
             $('#resultsPanelCollapse').collapse('toggle');
         }
@@ -331,6 +393,7 @@ BEER.MasterViewModel = function (data) {
 
     self.basicSearchRecipes = function (formElement) {
         //self.SearchQuery.buildSearchQuery();
+        self.resetRecipeModels();
 
         var serviceUri = '/api/recipes' + self.SearchQuery.recipeQuery() + '&getFullRecipe=false';
 
@@ -345,7 +408,8 @@ BEER.MasterViewModel = function (data) {
 
         BEER.utils.ajaxHelper(recipesUri + item.id(), 'GET', null, self).done(function (data) {
             console.log('did run');
-            self.SelectedRecipe(data[0]);
+            var formattedData = { 'SelectedRecipe': data };
+            ko.mapping.fromJS(formattedData, BEER.Mappings.selectedRecipeMapping, self);
         });
     }
 
@@ -367,14 +431,6 @@ BEER.MasterViewModel = function (data) {
         var hopNonMatchCounter = [];
         var hopIds = [];
         var totalCount = [];
-
-        //self.recipeMatch.removeAll();
-        self.Recipes.removeAll();
-        self.recipeMatch1.removeAll();
-        self.recipeMatch2.removeAll();
-        self.recipeMatch3.removeAll();
-        self.recipeMatch4.removeAll();
-        self.recipeMatch5.removeAll();
 
         for (var i = 0, iLen = recipe.length; i < iLen; i++) {
             malts = recipe[i].recipe_Malts();
@@ -427,6 +483,7 @@ BEER.MasterViewModel = function (data) {
     };
 
     self.recipeMatcher = function () {
+        self.resetRecipeModels();
         var fullRecipeUri = 'api/recipes' + self.SearchQuery.recipeMandatoryQuery();
         BEER.utils.ajaxHelper(fullRecipeUri, 'GET', null, self).done(function (data) {
             //ko.mapping.fromJS(data, {}, self.Recipes.Recipe);
@@ -435,7 +492,19 @@ BEER.MasterViewModel = function (data) {
             self.findMatches();
         });
 
-    }
+    };
+
+    self.resetRecipeModels = function () {
+
+        self.Recipes.removeAll();
+        self.recipeMatch1.removeAll();
+        self.recipeMatch2.removeAll();
+        self.recipeMatch3.removeAll();
+        self.recipeMatch4.removeAll();
+        self.recipeMatch5.removeAll();
+        self.SelectedRecipe(null);
+        self.allRecipes.removeAll();
+    };
 }
 
 ko.applyBindings(new BEER.MasterViewModel());
