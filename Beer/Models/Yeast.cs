@@ -17,12 +17,15 @@ namespace Beer.Models
 
         public double? Wyeast { get; set; }
 
-        [Column("White Labs")]
+        [Column("WhiteLabs")]
         [StringLength(255)]
         public string White_Labs { get; set; }
 
-        [Column("Other Dry")]
+        [Column("OtherDry")]
         [StringLength(255)]
         public string Other_Dry { get; set; }
+
+        [StringLength(255)]
+        public string IsDry { get; set; }
     }
 }

@@ -21,6 +21,7 @@ namespace Beer.Models
         public virtual DbSet<Recipe_Malts> Recipe_Malts { get; set; }
         public virtual DbSet<Recipe> Recipes { get; set; }
         public virtual DbSet<Yeast> Yeasts { get; set; }
+        public virtual DbSet<YeastSubstitute> YeastSubstitute { get; set; }
         public virtual DbSet<MyStock> MyStocks { get; set; }
         public virtual DbSet<viewMyStock> viewMyStocks { get; set; }
         public virtual DbSet<viewPossibleRecipe> viewPossibleRecipes { get; set; }

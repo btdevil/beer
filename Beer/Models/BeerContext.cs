@@ -31,5 +31,7 @@ namespace Beer.Models
         public System.Data.Entity.DbSet<Beer.Models.Recipe_Malts> Recipe_Malts { get; set; }
 
         public System.Data.Entity.DbSet<Beer.Models.Recipe_Hops> Recipe_Hops { get; set; }
+
+        public System.Data.Entity.DbSet<Beer.Models.YeastSubstitute> YeastSubstitute { get; set; }
     }
 }

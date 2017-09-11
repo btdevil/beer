@@ -21,18 +21,48 @@
                         <form data-bind="submit: searchRecipes">
                             <label for="malts">Malts</label>
                             <div class="form-group">
-                                <select id="malts" data-bind="options: Malts.Malt, optionsText: 'malt', optionsValue : 'id', selectedOptions: SearchQuery.maltQuery, select2: {}" size="10" multiple class="form-control" style="width: 100%"></select>
-                                
+                                <select id="malts" data-bind="options: Malts.Malt, optionsText: 'malt', optionsValue : 'id', selectedOptions: SearchQuery.maltQuery, select2: {selection: SearchQuery.maltQuery}" size="10" multiple class="form-control" style="width: 100%"></select>
+                                <br />
+                            </div>
+
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary" id="allPales" data-bind="click: SearchQuery.addPales">Add All Pales</button>
+                                <button type="button" class="btn btn-primary" id="allExtraPales" data-bind="click: SearchQuery.addExtraPales">Add All Extra Pales</button>
                             </div>
 
                             <label for="hops">Hops</label>
                             <div class="form-group">
-                                <select id="hops" data-bind="options: Hops.Hop, optionsText: 'hops', optionsValue : 'id', selectedOptions: SearchQuery.hopQuery, select2: {}" size="10" multiple class="form-control" style="width: 100%"></select>
+                                <select id="hops" data-bind="options: Hops.Hop, optionsText: 'hops', optionsValue : 'id', selectedOptions: SearchQuery.hopQuery, select2: {selection: SearchQuery.hopQuery}" size="10" multiple class="form-control" style="width: 100%"></select>
                             </div>
 
                             <label for="yeast">Yeast</label>
                             <div class="form-group">
-                                <select id="yeast" data-bind="options: Yeasts.Yeast, optionsText: 'yeastName', optionsValue : 'id', selectedOptions: SearchQuery.yeastQuery, select2: {}" size="10" multiple class="form-control" style="width: 100%"></select>
+                                <select id="yeast" data-bind="options: Yeasts.Yeast, optionsText: 'yeastName', optionsValue : 'id', selectedOptions: SearchQuery.yeastQuery, select2: {selection: SearchQuery.yeastQuery}" size="10" multiple class="form-control" style="width: 100%"></select>
+                                </div>
+                            <div class="form-group">
+                                <p class="form-control-static"><strong>Show Yeasts</strong></p>
+                                <!-- ko with: Yeasts -->
+                                <label class="radio-inline">
+                                    <input type="radio" name="filterYeast" id="filterYeast1" value="" data-bind="checked: WetDryFilter" checked> Both
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="filterYeast" id="filterYeast2" value="N" data-bind="checked: WetDryFilter"> Wet
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="filterYeast" id="filterYeast3" value="Y" data-bind="checked: WetDryFilter"> Dry
+                                </label>
+                                <!-- /ko -->
+                                </div>
+                            <div class="form-group">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="includeDryOrWetSubs" value="Y" data-bind="checked: SearchQuery.includeDryOrWetSubs"> Include Wet/Dry Substitutes?
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="includeManufacturerSubs" value="Y" data-bind="checked: SearchQuery.includeManufacturerSubs"> Include Manufacturer Substitutes?
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="includeSameManufacturerSubs" value="Y" data-bind="checked: SearchQuery.includeSameManufacturerSubs"> Include Same Manufacturer Substitutes?
+                                </label>
                             </div>
 
                             <label for="abvmin">ABV <span class="sr-only">Minimum</span></label>

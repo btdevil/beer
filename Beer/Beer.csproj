@@ -202,6 +202,7 @@
     <Compile Include="Controllers\RecipesController.cs" />
     <Compile Include="Controllers\Recipe_MaltsController.cs" />
     <Compile Include="Controllers\YeastsController.cs" />
+    <Compile Include="Controllers\YeastSubstitutesController.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -228,6 +229,7 @@
     <Compile Include="Models\viewRecipeMaltDetail.cs" />
     <Compile Include="Models\viewRelationshipExample.cs" />
     <Compile Include="Models\Yeast.cs" />
+    <Compile Include="Models\YeastSubstitute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
