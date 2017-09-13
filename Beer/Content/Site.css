@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top:15px;
 }
 
 
@@ -16,3 +17,56 @@
 }
 
 .noMatch { background-color: red;}
+.subMatch {
+    background-color: orange;
+}
+
+.slidein{
+    position: relative;
+    overflow: hidden;
+}
+
+    .slidein .slidein-child { position: absolute; top: 54px; right: 0; }
+
+@media screen and (max-width: 992px){
+    .slidein .slidein-child {
+        width: 100%;
+        right: -100%;
+        -webkit-transition-timing-function: ease;
+        -o-transition-timing-function: ease;
+        transition-timing-function: ease;
+        -webkit-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+        -webkit-transition-property: right;
+        -o-transition-property: right;
+        transition-property: right;
+    }
+    .slidein .slidein-master {
+        width: 100%;
+        -webkit-transition-timing-function: ease;
+        -o-transition-timing-function: ease;
+        transition-timing-function: ease;
+        -webkit-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+        -webkit-transition-property: left;
+        -o-transition-property: left;
+        transition-property: left;
+    }
+    .slidein .slidein-child.slidingin {
+        right: 0px;
+    }
+
+    .slidein .slidein-child.slidingout {
+        right: -100%;
+    }
+
+    .slidein .slidein-master.slidingout {
+        left: -100%;
+    }
+
+    .slidein .slidein-master.slidingin {
+        left: 0px;
+    }
+}

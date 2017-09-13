@@ -5,12 +5,15 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="alert alert-danger" data-bind="visible: error().length > 0"><p data-bind="text: error"></p></div>
-
-            <div>
-                <h2>
-                     <a role="button" data-toggle="collapse" data-parent="#recipesApp" href="#searchPanelCollapse" aria-expanded="true" aria-controls="searchPanelCollapse">Search for Recipes</a>
-                </h2>
-                <div id="searchPanelCollapse" class="collapse collapse in" role="tabpanel" aria-labelledby="searchPanelHeading">
+        <div class="panel-group" id="recipesApp" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="searchPanelHeading">
+                    <h2 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#recipesApp" href="#searchPanelCollapse" aria-expanded="true" aria-controls="searchPanelCollapse">Search for Recipes</a>
+                    </h2>
+                </div>
+                <div id="searchPanelCollapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="searchPanelHeading">
+                    <div class="panel-body">
                         <form data-bind="submit: searchRecipes">
                             <label for="malts">Malts</label>
                             <div class="form-group">
@@ -157,16 +160,19 @@
 
                             <button type="submit" class="btn btn-default">Submit</button>
                         </form>
+                    </div>
                 </div>
             </div>
 
-
-            <div class="slidein">
-                    <h2>
+            <div class="panel panel-default slidein">
+                <div class="panel-heading" role="tab" id="resultsPanelHeading">
+                    <h2 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#recipesApp" href="#resultsPanelCollapse" aria-expanded="false" aria-controls="resultsPanelCollapse">Recipe Results</a>
                         <a href="#" data-bind="click: sortRecipesAbvDesc">Sort by ABV <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a><a href="#" data-bind="click: sortRecipesAbvAsc">Sort by ABV <span class="glyphicon glyphicon-sort-by-attributes"></span></a>
                     </h2>
-                <div id="resultsPanelCollapse" class="collapse collapse" role="tabpanel" aria-labelledby="resultsPanelHeading">
+                </div>
+                <div id="resultsPanelCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="resultsPanelHeading">
+                    <div class="panel-body">
                         <div class="col-md-6 slidein-master">
                            
 
@@ -305,8 +311,47 @@
                                 <!-- /ko -->
                             </div>
                         </div>
+                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
+@*<div class="row" id="recipes">*@
+    <!--comment-->
+    
+        
+    @*</div>*@
+
+    @*<!-- ko if:Recipes.detail() -->
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Detail</h2>
+            </div>
+            <table class="table">
+                <tr><td>source2</td><td data-bind="text: Recipes.detail().source2"></td></tr>
+                <tr><td>number</td><td data-bind="text: Recipes.detail().number"></td></tr>
+                <tr><td>name</td><td data-bind="text: Recipes.detail().name"></td></tr>
+                <tr><td>yeastName</td><td data-bind="text: Recipes.detail().yeastName"></td></tr>
+                <tr><td>abv</td><td data-bind="text: Recipes.detail().abv"></td></tr>
+                <tr><td>ibu</td><td data-bind="text: Recipes.detail().ibu"></td></tr>
+                <tr><td>og</td><td data-bind="text: Recipes.detail().og"></td></tr>
+                <tr><td>fg</td><td data-bind="text: Recipes.detail().fg"></td></tr>
+                <tr><td>ebc</td><td data-bind="text: Recipes.detail().ebc"></td></tr>
+                <tr><td>hasAdjucts</td><td data-bind="text: Recipes.detail().hasAdjucts"></td></tr>
+                <tr><td>mashTemp</td><td data-bind="text: Recipes.detail().mashTemp"></td></tr>
+                <tr><td>mashTime</td><td data-bind="text: Recipes.detail().mashTime"></td></tr>
+                <tr><td>fermentation</td><td data-bind="text: Recipes.detail().fermentation"></td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- /ko -->*@
+
+    <div class="col-md-4">
+        <!-- TODO: Add new book -->
+    </div>
+</div>

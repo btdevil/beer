@@ -22,6 +22,7 @@ namespace Beer
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-theme.css",
                       "~/Content/select2.css",
                       "~/Content/select2-bootstrap.css",
                       "~/Content/nouislider.min.css",
