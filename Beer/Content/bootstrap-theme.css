@@ -1544,16 +1544,19 @@ h6,
     .h6 .small {
         font-weight: normal;
         line-height: 1;
-        color: #ccd2b6;
+        color: #333;
     }
 
 h1,
 .h1,
 h2,
-.h2,
+.h2 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
 h3,
 .h3 {
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 10px;
 }
 
@@ -6930,7 +6933,7 @@ button.list-group-item-danger {
 }
 
     .panel-primary > .panel-heading {
-        color: #ffffff;
+        color: #333333;
         background-color: #febd01;
         border-color: #febd01;
     }

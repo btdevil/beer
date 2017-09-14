@@ -1,4 +1,5 @@
 ﻿var BEER = window.BEER || {};
+BEER.components = {};
 
 BEER.utils = (function () {
     var process = {
@@ -46,8 +47,6 @@ BEER.utils = (function () {
     return process;
 })();
 
-BEER.components = {}
-
 BEER.components.slideIn = (function () {
     var process = {
         init: function () { },
@@ -58,7 +57,6 @@ BEER.components.slideIn = (function () {
 })();
 
 BEER.ViewModels = (function () {
-
     var process = {
         Yeast: function Yeast() {
             var self = this;
@@ -236,7 +234,6 @@ BEER.ViewModels = (function () {
             }
         }
     };
-
     return process
 })();
 
@@ -332,7 +329,6 @@ BEER.Models = (function () {
             self.minDefault = min;
             self.maxDefault = max
         },
-       
         Malt: function Malt(data, parent) {
             var self = this;
             ko.mapping.fromJS(data, {}, self);
@@ -514,10 +510,13 @@ BEER.MasterViewModel = function (data) {
     self.recipeMatch4 = ko.observableArray([]);
     self.recipeMatch5 = ko.observableArray([]);
     self.SearchQuery = new BEER.ViewModels.SearchQuery();
+    self.sort = ko.observable('');
+    self.searchHasRun = ko.observable(false);
 
     var recipesUri = '/api/recipes/';
 
     self.searchRecipes = function () {
+        self.sort('');
         self.SearchQuery.YeastSubs.removeAll();
         self.SearchQuery.getAllSubs();
 
@@ -526,32 +525,33 @@ BEER.MasterViewModel = function (data) {
         }
 
         if (self.SearchQuery.groupResults() === 'true') {
-            self.recipeMatcher();
+            recipeMatcher();
         } else {
-            self.basicSearchRecipes();
+            basicSearchRecipes();
         }
 
         if ($('#resultsPanelCollapse').hasClass('in') === false) {
             $('#resultsPanelCollapse').collapse('toggle');
         }
 
-         if ($('#searchPanelCollapse').hasClass('in') === true) {
+        if ($('#searchPanelCollapse').hasClass('in') === true) {
             $('#searchPanelCollapse').collapse('toggle');
         }
     }
 
-    self.basicSearchRecipes = function (formElement) {
-        //self.SearchQuery.buildSearchQuery();
-        self.resetRecipeModels();
+    self.slideIn = function () {
+        $('.slidein-child').removeClass('slidingout');
+        $('.slidein-master').removeClass('slidingin');
+        $('.slidein-child').addClass('slidingin');
+        $('.slidein-master').addClass('slidingout');
+    };
 
-        var serviceUri = '/api/recipes' + self.SearchQuery.recipeQuery() + '&getFullRecipe=false';
-
-        BEER.utils.ajaxHelper(serviceUri, 'GET', null, self).done(function (data) {
-            //ko.mapping.fromJS(data, {}, self.Recipes.Recipe);
-            var formattedData = { 'Recipes': data };
-            ko.mapping.fromJS(formattedData, BEER.Mappings.recipeMapping, self);
-        });
-    }
+    self.slideOut = function () {
+        $('.slidein-child').removeClass('slidingin');
+        $('.slidein-master').removeClass('slidingout');
+        $('.slidein-child').addClass('slidingout');
+        $('.slidein-master').addClass('slidingin');
+    };
 
     self.getRecipeDetail = function (item) {
 
@@ -566,72 +566,28 @@ BEER.MasterViewModel = function (data) {
 
     };
 
-    self.sortRecipesAbvDesc = function () {
-        self.Recipes.sort(function (a, b) {
-            return b.abv() - a.abv();
-        });
+    self.doSort = function () {
+        var selectValue = self.sort();
 
-        if (self.recipeMatch1().length > 0) {
-            self.recipeMatch1.sort(function (a, b) {
-                return b.abv() - a.abv();
-            });
-        }
-        if (self.recipeMatch2().length > 0) {
-            self.recipeMatch2.sort(function (a, b) {
-                return b.abv() - a.abv();
-            });
-        }
-        if (self.recipeMatch3().length > 0) {
-            self.recipeMatch3.sort(function (a, b) {
-                return b.abv() - a.abv();
-            });
-        }
-        if (self.recipeMatch4().length > 0) {
-            self.recipeMatch4.sort(function (a, b) {
-                return b.abv() - a.abv();
-            });
-        }
-        if (self.recipeMatch5().length > 0) {
-            self.recipeMatch5.sort(function (a, b) {
-                return b.abv() - a.abv();
-            });
+        switch (selectValue) {
+            case 'AbvAsc':
+                sortRecipesAbvAsc();
+                break;
+            case 'AbvDesc':
+                sortRecipesAbvDesc();
+                break;
+            case 'NameAsc':
+                sortRecipesNameAsc();
+                break;
+            default:
+                sortDefault();
+                break;
         }
 
-    };
-    self.sortRecipesAbvAsc = function () {
-        self.Recipes.sort(function (a, b) {
-            return a.abv() - b.abv();
-        });
-
-        if (self.recipeMatch1().length > 0) {
-            self.recipeMatch1.sort(function (a, b) {
-                return a.abv() - b.abv();
-            });
-        }
-        if (self.recipeMatch2().length > 0) {
-            self.recipeMatch2.sort(function (a, b) {
-                return a.abv() - b.abv();
-            });
-        }
-        if (self.recipeMatch3().length > 0) {
-            self.recipeMatch3.sort(function (a, b) {
-                return a.abv() - b.abv();
-            });
-        }
-        if (self.recipeMatch4().length > 0) {
-            self.recipeMatch4.sort(function (a, b) {
-                return a.abv() - b.abv();
-            });
-        }
-        if (self.recipeMatch5().length > 0) {
-            self.recipeMatch5.sort(function (a, b) {
-                return a.abv() - b.abv();
-            });
-        }
-
+        return true;
     }
 
-    self.findMatches = function () {
+    function findMatches() {
         var recipe = self.allRecipes();
         var queriedMalts = [];
         var queriedHops = [];
@@ -685,7 +641,7 @@ BEER.MasterViewModel = function (data) {
             }
 
             if (queriedYeasts.length > 0) {
-                yeastNonMatchCounter = $.grep(yeastIds, function (el) { return $.inArray(el, queriedYeasts) == -1;});
+                yeastNonMatchCounter = $.grep(yeastIds, function (el) { return $.inArray(el, queriedYeasts) == -1; });
             }
 
             totalCount = maltNonMatchCounter.concat(hopNonMatchCounter);
@@ -698,30 +654,45 @@ BEER.MasterViewModel = function (data) {
                 self.recipeMatch1.push(recipe[i]);
             } else if (totalCount.length === 2) {
                 self.recipeMatch2.push(recipe[i]);
-            }else if (totalCount.length === 3) {
+            } else if (totalCount.length === 3) {
                 self.recipeMatch3.push(recipe[i]);
-            }else if (totalCount.length === 4) {
+            } else if (totalCount.length === 4) {
                 self.recipeMatch4.push(recipe[i]);
-            }else {
+            } else {
                 self.recipeMatch5.push(recipe[i]);
             }
         }
 
     };
 
-    self.recipeMatcher = function () {
-        self.resetRecipeModels();
+    function basicSearchRecipes(formElement) {
+        //self.SearchQuery.buildSearchQuery();
+        resetRecipeModels();
+
+        var serviceUri = '/api/recipes' + self.SearchQuery.recipeQuery() + '&getFullRecipe=false';
+
+        BEER.utils.ajaxHelper(serviceUri, 'GET', null, self).done(function (data) {
+            //ko.mapping.fromJS(data, {}, self.Recipes.Recipe);
+            self.searchHasRun(true);
+            var formattedData = { 'Recipes': data };
+            ko.mapping.fromJS(formattedData, BEER.Mappings.recipeMapping, self);
+        });
+    };
+
+    function recipeMatcher() {
+        resetRecipeModels();
         var fullRecipeUri = 'api/recipes' + self.SearchQuery.recipeMandatoryQuery();
         BEER.utils.ajaxHelper(fullRecipeUri, 'GET', null, self).done(function (data) {
             //ko.mapping.fromJS(data, {}, self.Recipes.Recipe);
+            self.searchHasRun(true);
             var formattedData = { 'allRecipes': data };
             ko.mapping.fromJS(formattedData, BEER.Mappings.allRecipesMapping, self);
-            self.findMatches();
+            findMatches();
         });
 
     };
 
-    self.resetRecipeModels = function () {
+    function resetRecipeModels() {
 
         self.Recipes.removeAll();
         self.recipeMatch1.removeAll();
@@ -733,18 +704,148 @@ BEER.MasterViewModel = function (data) {
         self.allRecipes.removeAll();
     };
 
-    self.slideIn = function () {
-         $('.slidein-child').removeClass('slidingout');
-        $('.slidein-master').removeClass('slidingin');
-        $('.slidein-child').addClass('slidingin');
-        $('.slidein-master').addClass('slidingout');
+    function sortRecipesAbvDesc() {
+        self.Recipes.sort(function (a, b) {
+            return b.abv() - a.abv();
+        });
+
+        if (self.recipeMatch1().length > 0) {
+            self.recipeMatch1.sort(function (a, b) {
+                return b.abv() - a.abv();
+            });
+        }
+        if (self.recipeMatch2().length > 0) {
+            self.recipeMatch2.sort(function (a, b) {
+                return b.abv() - a.abv();
+            });
+        }
+        if (self.recipeMatch3().length > 0) {
+            self.recipeMatch3.sort(function (a, b) {
+                return b.abv() - a.abv();
+            });
+        }
+        if (self.recipeMatch4().length > 0) {
+            self.recipeMatch4.sort(function (a, b) {
+                return b.abv() - a.abv();
+            });
+        }
+        if (self.recipeMatch5().length > 0) {
+            self.recipeMatch5.sort(function (a, b) {
+                return b.abv() - a.abv();
+            });
+        }
+
     };
 
-    self.slideOut = function () {
-        $('.slidein-child').removeClass('slidingin');
-        $('.slidein-master').removeClass('slidingout');
-        $('.slidein-child').addClass('slidingout');
-        $('.slidein-master').addClass('slidingin');
+    function sortRecipesAbvAsc() {
+        self.Recipes.sort(function (a, b) {
+            return a.abv() - b.abv();
+        });
+
+        if (self.recipeMatch1().length > 0) {
+            self.recipeMatch1.sort(function (a, b) {
+                return a.abv() - b.abv();
+            });
+        }
+        if (self.recipeMatch2().length > 0) {
+            self.recipeMatch2.sort(function (a, b) {
+                return a.abv() - b.abv();
+            });
+        }
+        if (self.recipeMatch3().length > 0) {
+            self.recipeMatch3.sort(function (a, b) {
+                return a.abv() - b.abv();
+            });
+        }
+        if (self.recipeMatch4().length > 0) {
+            self.recipeMatch4.sort(function (a, b) {
+                return a.abv() - b.abv();
+            });
+        }
+        if (self.recipeMatch5().length > 0) {
+            self.recipeMatch5.sort(function (a, b) {
+                return a.abv() - b.abv();
+            });
+        }
+
+    };
+
+    function sortRecipesNameAsc() {
+        self.Recipes.sort(function (a, b) {
+            if (a.name() < b.name()) return -1;
+            if (a.name() > b.name()) return 1;
+            return 0;
+        });
+
+        if (self.recipeMatch1().length > 0) {
+            self.recipeMatch1.sort(function (a, b) {
+                if (a.name() < b.name()) return -1;
+                if (a.name() > b.name()) return 1;
+                return 0;
+            });
+        }
+        if (self.recipeMatch2().length > 0) {
+            self.recipeMatch2.sort(function (a, b) {
+                if (a.name() < b.name()) return -1;
+                if (a.name() > b.name()) return 1;
+                return 0;
+            });
+        }
+        if (self.recipeMatch3().length > 0) {
+            self.recipeMatch3.sort(function (a, b) {
+                if (a.name() < b.name()) return -1;
+                if (a.name() > b.name()) return 1;
+                return 0;
+            });
+        }
+        if (self.recipeMatch4().length > 0) {
+            self.recipeMatch4.sort(function (a, b) {
+                if (a.name() < b.name()) return -1;
+                if (a.name() > b.name()) return 1;
+                return 0;
+            });
+        }
+        if (self.recipeMatch5().length > 0) {
+            self.recipeMatch5.sort(function (a, b) {
+                if (a.name() < b.name()) return -1;
+                if (a.name() > b.name()) return 1;
+                return 0;
+            });
+        }
+
+    };
+
+    function sortDefault() {
+        self.Recipes.sort(function (a, b) {
+            return a.id() - b.id();
+        });
+
+        if (self.recipeMatch1().length > 0) {
+            self.recipeMatch1.sort(function (a, b) {
+                return a.id() - b.id();
+            });
+        }
+        if (self.recipeMatch2().length > 0) {
+            self.recipeMatch2.sort(function (a, b) {
+                return a.id() - b.id();
+            });
+        }
+        if (self.recipeMatch3().length > 0) {
+            self.recipeMatch3.sort(function (a, b) {
+                return a.id() - b.id();
+            });
+        }
+        if (self.recipeMatch4().length > 0) {
+            self.recipeMatch4.sort(function (a, b) {
+                return a.id() - b.id();
+            });
+        }
+        if (self.recipeMatch5().length > 0) {
+            self.recipeMatch5.sort(function (a, b) {
+                return a.id() - b.id();
+            });
+        }
+
     };
 }
 

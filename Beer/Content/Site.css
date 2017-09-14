@@ -7,29 +7,92 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    padding-top:15px;
+}
+
+.noUi-connect {
+    background: #428bca;
+}
+
+.page-header {
+    margin-top: 15px;
+}
+
+    .page-header h2 {
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+
+    .page-header .form-group {
+        margin-bottom: 0px;
+    }
+
+.remove-padding-right {
+    padding-right: 0px;
+}
+
+.remove-padding-left {
+    padding-left: 0px;
+}
+
+.remove-margin-top {
+    margin-top: 0px;
+}
+
+.no-padding {
+    padding: 0;
+    margin: 0;
 }
 
 
-.slider-cont{
-    padding-top:10px;
-    padding-bottom:50px;
+
+.hand-cursor {
+    cursor: pointer;
 }
 
-.noMatch { background-color: red;}
+.collapsed .glyphicon-menu-up:before {
+    content: "\e259";
+}
+
+.slider-cont {
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+.sort .form-group{margin-bottom:15px;}
+
+@media (max-width: 767px) {
+    .slider-cont {
+        padding-left: 30px;
+        padding-top: 15px;
+    }
+
+    .no-padding-xs {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.noMatch {
+    background-color: red;
+}
+
 .subMatch {
     background-color: orange;
 }
 
-.slidein{
+.slidein {
     position: relative;
     overflow: hidden;
 }
 
-    .slidein .slidein-child { position: absolute; top: 54px; right: 0; }
-
-@media screen and (max-width: 992px){
     .slidein .slidein-child {
+    }
+
+@media screen and (max-width: 767px) {
+    .slidein .slidein-child {
+        position: absolute;
+        top: 0px;
+        right: 0;
         width: 100%;
         right: -100%;
         -webkit-transition-timing-function: ease;
@@ -42,6 +105,7 @@
         -o-transition-property: right;
         transition-property: right;
     }
+
     .slidein .slidein-master {
         width: 100%;
         -webkit-transition-timing-function: ease;
@@ -54,6 +118,7 @@
         -o-transition-property: left;
         transition-property: left;
     }
+
     .slidein .slidein-child.slidingin {
         right: 0px;
     }

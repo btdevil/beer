@@ -6,307 +6,330 @@
     <div class="col-lg-12">
         <div class="alert alert-danger" data-bind="visible: error().length > 0"><p data-bind="text: error"></p></div>
 
-            <div>
-                <h2>
-                     <a role="button" data-toggle="collapse" data-parent="#recipesApp" href="#searchPanelCollapse" aria-expanded="true" aria-controls="searchPanelCollapse">Search for Recipes</a>
-                </h2>
-                <div id="searchPanelCollapse" class="collapse collapse in" role="tabpanel" aria-labelledby="searchPanelHeading">
-                        <form data-bind="submit: searchRecipes">
-                            <label for="malts">Malts</label>
-                            <div class="form-group">
-                                <select id="malts" data-bind="options: Malts.Malt, optionsText: 'malt', optionsValue : 'id', selectedOptions: SearchQuery.maltQuery, select2: {selection: SearchQuery.maltQuery}" size="10" multiple class="form-control" style="width: 100%"></select>
-                                <br />
-                            </div>
 
-                            <div class="form-group">
-                                <button type="button" class="btn btn-primary" id="allPales" data-bind="click: SearchQuery.addPales">Add All Pales</button>
-                                <button type="button" class="btn btn-primary" id="allExtraPales" data-bind="click: SearchQuery.addExtraPales">Add All Extra Pales</button>
-                            </div>
-
-                            <label for="hops">Hops</label>
-                            <div class="form-group">
-                                <select id="hops" data-bind="options: Hops.Hop, optionsText: 'hops', optionsValue : 'id', selectedOptions: SearchQuery.hopQuery, select2: {selection: SearchQuery.hopQuery}" size="10" multiple class="form-control" style="width: 100%"></select>
-                            </div>
-
-                            <label for="yeast">Yeast</label>
-                            <div class="form-group">
-                                <select id="yeast" data-bind="options: Yeasts.Yeast, optionsText: 'yeastName', optionsValue : 'id', selectedOptions: SearchQuery.yeastQuery, select2: {selection: SearchQuery.yeastQuery}" size="10" multiple class="form-control" style="width: 100%"></select>
-                                </div>
-                            <div class="form-group">
-                                <p class="form-control-static"><strong>Show Yeasts</strong></p>
-                                <!-- ko with: Yeasts -->
-                                <label class="radio-inline">
-                                    <input type="radio" name="filterYeast" id="filterYeast1" value="" data-bind="checked: WetDryFilter" checked> Both
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="filterYeast" id="filterYeast2" value="N" data-bind="checked: WetDryFilter"> Wet
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="filterYeast" id="filterYeast3" value="Y" data-bind="checked: WetDryFilter"> Dry
-                                </label>
-                                <!-- /ko -->
-                                </div>
-                            <div class="form-group">
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="includeDryOrWetSubs" value="Y" data-bind="checked: SearchQuery.includeDryOrWetSubs"> Include Wet/Dry Substitutes?
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="includeManufacturerSubs" value="Y" data-bind="checked: SearchQuery.includeManufacturerSubs"> Include Manufacturer Substitutes?
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="includeSameManufacturerSubs" value="Y" data-bind="checked: SearchQuery.includeSameManufacturerSubs"> Include Same Manufacturer Substitutes?
-                                </label>
-                            </div>
-
-                            <label for="abvmin">ABV <span class="sr-only">Minimum</span></label>
-                            <label for="abvmax" class="sr-only">ABV Maximum</label>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-2">
-                                        <input id="abvmin" type="text" class="form-control" data-bind="textInput: SearchQuery.abvSlider.min" />
-                                    </div>
-                                    <div class="col-xs-8 slider-cont">
-                                        <div id="abvSlider" data-bind="rangeSlider: {minValue: SearchQuery.abvSlider.min, maxValue: SearchQuery.abvSlider.max, minSlider: 0, maxSlider:20, decimal: 1, step:0.1, suffix: '%', pipDensity: 5, pipValues: [0,25, 50,75,100], pipMode: 'positions'}"></div>
-                                    </div>
-                                    <div class="col-xs-2">
-                                        <input id="abvmax" type="text" class="form-control" data-bind="textInput: SearchQuery.abvSlider.max" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <label for="ibumin">IBU <span class="sr-only">Minimum</span></label>
-                            <label for="ibumax" class="sr-only">IBU Maximum</label>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-2">
-                                        <input id="ibumin" type="text" class="form-control" data-bind="textInput: SearchQuery.ibuSlider.min" />
-                                    </div>
-                                    <div class="col-xs-8 slider-cont">
-                                        <div id="ibuSlider" data-bind="rangeSlider: {minValue: SearchQuery.ibuSlider.min, maxValue: SearchQuery.ibuSlider.max, minSlider: 0, maxSlider:440, decimal: 0, step:1, suffix: '', pipDensity: 5, pipValues: [0,100, 200,300,400, 440], pipMode: 'values'}"></div>
-                                    </div>
-                                    <div class="col-xs-2">
-                                        <input id="ibumax" type="text" class="form-control" data-bind="textInput: SearchQuery.ibuSlider.max" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <label for="ebcmin">EBC <span class="sr-only">Minimum</span></label>
-                            <label for="ebcmax" class="sr-only">EBC Maximum</label>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-2">
-                                        <input id="ebcmin" type="text" class="form-control" data-bind="textInput: SearchQuery.ebcSlider.min" />
-                                    </div>
-                                    <div class="col-xs-8 slider-cont">
-                                        <div id="ebcSlider" data-bind="rangeSlider: {minValue: SearchQuery.ebcSlider.min, maxValue: SearchQuery.ebcSlider.max, minSlider: 0, maxSlider:500, decimal: 0, step:1, suffix: '', pipDensity: 4, pipValues: [0,100, 200,300,400, 500], pipMode: 'values'}"></div>
-                                    </div>
-                                    <div class="col-xs-2">
-                                        <input id="ebcmax" type="text" class="form-control" data-bind="textInput: SearchQuery.ebcSlider.max" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <label for="fermentmin">Fermenation Temprature <span class="sr-only">Minimum</span></label>
-                            <label for="fermentmax" class="sr-only">Fermenation Temprature Maximum</label>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-2">
-                                        <input id="fermentmin" type="text" class="form-control" data-bind="textInput: SearchQuery.fermentSlider.min" />
-                                    </div>
-                                    <div class="col-xs-8 slider-cont">
-                                        <div id="fermentSlider" data-bind="rangeSlider: {minValue: SearchQuery.fermentSlider.min, maxValue: SearchQuery.fermentSlider.max, minSlider: 0, maxSlider:30, decimal: 0, step:1, suffix: 'C', pipDensity: 3.5, pipValues: [0,10,20,30], pipMode: 'values'}"></div>
-                                    </div>
-                                    <div class="col-xs-2">
-                                        <input id="fermentmax" type="text" class="form-control" data-bind="textInput: SearchQuery.fermentSlider.max" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p class="form-control-static"><strong>Has Adjuncts</strong></p>
-                            <div class="form-group">
-                                <label class="radio-inline">
-                                    <input type="radio" name="hasAdjuncts" id="hasAdjuncts1" value="" data-bind="checked: SearchQuery.hasAdjuctsQuery" checked> Both
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="hasAdjuncts" id="hasAdjuncts2" value="N" data-bind="checked: SearchQuery.hasAdjuctsQuery"> No
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="hasAdjuncts" id="hasAdjuncts3" value="Y" data-bind="checked: SearchQuery.hasAdjuctsQuery"> Yes
-                                </label>
-                            </div>
-
-                            <p class="form-control-static"><strong>Advanced options</strong></p>
-                            <div class="form-group">
-
-                                <p class="form-control-static"><strong>Group results?</strong><br />Selecting 'Yes' will group the results by exaxt matches, followed by recipes that would need 1-5 extra ingredients besides the ones select above</p>
-                                <label class="radio-inline">
-                                    <input type="radio" name="groupResults" id="groupResults1" value="true" data-bind="checked: SearchQuery.groupResults"> Yes
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="groupResults" id="groupResults1" value="false" data-bind="checked: SearchQuery.groupResults" checked> No
-                                </label>
-
-                                <p class="form-control-static"><strong>Yeast Optional?</strong><br />Select 'No' if you only want to see recipes using a particular yeast. Select 'Yes' if you want see all recipes, but mark different yeast as an extra ingredient</p>
-                                <label class="radio-inline">
-                                    <input type="radio" name="yeastMandatory" id="yeastMandatory1" value="true" data-bind="checked: SearchQuery.yeastMandatory" checked> Yes
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="yeastMandatory" id="yeastMandatory2" value="false" data-bind="checked: SearchQuery.yeastMandatory"> No
-                                </label>
-                            </div>
-
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
+        <div class="page-header hand-cursor" data-toggle="collapse" data-parent="#recipesApp" href="#searchPanelCollapse" aria-expanded="true" aria-controls="searchPanelCollapse">
+            <h2>Search for Recipes <span class="glyphicon glyphicon-menu-up pull-right"></span></h2>
+        </div>
+        <div id="searchPanelCollapse" class="collapse collapse in" role="tabpanel" aria-labelledby="searchPanelHeading">
+            <form data-bind="submit: searchRecipes">
+                <label for="malts">Malts</label>
+                <div class="form-group">
+                    <select id="malts" data-bind="options: Malts.Malt, optionsText: 'malt', optionsValue : 'id', selectedOptions: SearchQuery.maltQuery, select2: {selection: SearchQuery.maltQuery}" size="10" multiple class="form-control" style="width: 100%"></select>
+                    <br />
                 </div>
+
+                <div class="form-group">
+                    <button type="button" class="btn btn-info" id="allPales" data-bind="click: SearchQuery.addPales">Add All Pales</button>
+                    <button type="button" class="btn btn-info" id="allExtraPales" data-bind="click: SearchQuery.addExtraPales">Add All Extra Pales</button>
+                </div>
+
+                <label for="hops">Hops</label>
+                <div class="form-group">
+                    <select id="hops" data-bind="options: Hops.Hop, optionsText: 'hops', optionsValue : 'id', selectedOptions: SearchQuery.hopQuery, select2: {selection: SearchQuery.hopQuery}" size="10" multiple class="form-control" style="width: 100%"></select>
+                </div>
+
+                <label for="yeast">Yeast</label>
+                <div class="form-group">
+                    <select id="yeast" data-bind="options: Yeasts.Yeast, optionsText: 'yeastName', optionsValue : 'id', selectedOptions: SearchQuery.yeastQuery, select2: {selection: SearchQuery.yeastQuery}" size="10" multiple class="form-control" style="width: 100%"></select>
+                </div>
+                <div class="form-group">
+                    <p class="form-control-static"><strong>Show Yeasts</strong></p>
+                    <!-- ko with: Yeasts -->
+                    <label class="radio-inline">
+                        <input type="radio" name="filterYeast" id="filterYeast1" value="" data-bind="checked: WetDryFilter" checked> Both
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="filterYeast" id="filterYeast2" value="N" data-bind="checked: WetDryFilter"> Wet
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="filterYeast" id="filterYeast3" value="Y" data-bind="checked: WetDryFilter"> Dry
+                    </label>
+                    <!-- /ko -->
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="includeDryOrWetSubs" value="Y" data-bind="checked: SearchQuery.includeDryOrWetSubs"> Include Wet/Dry Substitutes?
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="includeManufacturerSubs" value="Y" data-bind="checked: SearchQuery.includeManufacturerSubs"> Include Manufacturer Substitutes?
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="includeSameManufacturerSubs" value="Y" data-bind="checked: SearchQuery.includeSameManufacturerSubs"> Include Same Manufacturer Substitutes?
+                    </label>
+                </div>
+
+                <label for="abvmin">ABV <span class="sr-only">Minimum</span></label>
+                <label for="abvmax" class="sr-only">ABV Maximum</label>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-4">
+                            <input id="abvmin" type="text" class="form-control" data-bind="textInput: SearchQuery.abvSlider.min" />
+                        </div>
+                        <div class="clearfix visible-xs-block"></div>
+                        <div class="col-sm-8 col-xs-11 slider-cont">
+                            <div id="abvSlider" data-bind="rangeSlider: {minValue: SearchQuery.abvSlider.min, maxValue: SearchQuery.abvSlider.max, minSlider: 0, maxSlider:20, decimal: 1, step:0.1, suffix: '%', pipDensity: 5, pipValues: [0,25, 50,75,100], pipMode: 'positions'}"></div>
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <input id="abvmax" type="text" class="form-control" data-bind="textInput: SearchQuery.abvSlider.max" />
+                        </div>
+                    </div>
+                </div>
+
+                <label for="ibumin">IBU <span class="sr-only">Minimum</span></label>
+                <label for="ibumax" class="sr-only">IBU Maximum</label>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-4">
+                            <input id="ibumin" type="text" class="form-control" data-bind="textInput: SearchQuery.ibuSlider.min" />
+                        </div>
+                        <div class="clearfix visible-xs-block"></div>
+                        <div class="col-sm-8 col-xs-11 slider-cont">
+                            <div id="ibuSlider" data-bind="rangeSlider: {minValue: SearchQuery.ibuSlider.min, maxValue: SearchQuery.ibuSlider.max, minSlider: 0, maxSlider:440, decimal: 0, step:1, suffix: '', pipDensity: 5, pipValues: [0,100, 200,300,400, 440], pipMode: 'values'}"></div>
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <input id="ibumax" type="text" class="form-control" data-bind="textInput: SearchQuery.ibuSlider.max" />
+                        </div>
+                    </div>
+                </div>
+
+                <label for="ebcmin">EBC <span class="sr-only">Minimum</span></label>
+                <label for="ebcmax" class="sr-only">EBC Maximum</label>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-4">
+                            <input id="ebcmin" type="text" class="form-control" data-bind="textInput: SearchQuery.ebcSlider.min" />
+                        </div>
+                        <div class="clearfix visible-xs-block"></div>
+                        <div class="col-sm-8 col-xs-11 slider-cont">
+                            <div id="ebcSlider" data-bind="rangeSlider: {minValue: SearchQuery.ebcSlider.min, maxValue: SearchQuery.ebcSlider.max, minSlider: 0, maxSlider:500, decimal: 0, step:1, suffix: '', pipDensity: 4, pipValues: [0,100, 200,300,400, 500], pipMode: 'values'}"></div>
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <input id="ebcmax" type="text" class="form-control" data-bind="textInput: SearchQuery.ebcSlider.max" />
+                        </div>
+                    </div>
+                </div>
+
+                <label for="fermentmin">Fermenation Temprature <span class="sr-only">Minimum</span></label>
+                <label for="fermentmax" class="sr-only">Fermenation Temprature Maximum</label>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-4">
+                            <input id="fermentmin" type="text" class="form-control" data-bind="textInput: SearchQuery.fermentSlider.min" />
+                        </div>
+                        <div class="clearfix visible-xs-block"></div>
+                        <div class="col-sm-8 col-xs-11 slider-cont">
+                            <div id="fermentSlider" data-bind="rangeSlider: {minValue: SearchQuery.fermentSlider.min, maxValue: SearchQuery.fermentSlider.max, minSlider: 0, maxSlider:30, decimal: 0, step:1, suffix: 'C', pipDensity: 3.5, pipValues: [0,10,20,30], pipMode: 'values'}"></div>
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <input id="fermentmax" type="text" class="form-control" data-bind="textInput: SearchQuery.fermentSlider.max" />
+                        </div>
+                    </div>
+                </div>
+
+                <p class="form-control-static"><strong>Has Adjuncts</strong></p>
+                <div class="form-group">
+                    <label class="radio-inline">
+                        <input type="radio" name="hasAdjuncts" id="hasAdjuncts1" value="" data-bind="checked: SearchQuery.hasAdjuctsQuery" checked> Both
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="hasAdjuncts" id="hasAdjuncts2" value="N" data-bind="checked: SearchQuery.hasAdjuctsQuery"> No
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="hasAdjuncts" id="hasAdjuncts3" value="Y" data-bind="checked: SearchQuery.hasAdjuctsQuery"> Yes
+                    </label>
+                </div>
+
+                <p class="form-control-static"><strong>Advanced options</strong></p>
+                <div class="form-group">
+
+                    <p class="form-control-static"><strong>Group results?</strong><br />Selecting 'Yes' will group the results by exaxt matches, followed by recipes that would need 1-5 extra ingredients besides the ones select above</p>
+                    <label class="radio-inline">
+                        <input type="radio" name="groupResults" id="groupResults1" value="true" data-bind="checked: SearchQuery.groupResults"> Yes
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="groupResults" id="groupResults1" value="false" data-bind="checked: SearchQuery.groupResults" checked> No
+                    </label>
+
+                    <p class="form-control-static"><strong>Yeast Optional?</strong><br />Select 'No' if you only want to see recipes using a particular yeast. Select 'Yes' if you want see all recipes, but mark different yeast as an extra ingredient</p>
+                    <label class="radio-inline">
+                        <input type="radio" name="yeastMandatory" id="yeastMandatory1" value="true" data-bind="checked: SearchQuery.yeastMandatory" checked> Yes
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="yeastMandatory" id="yeastMandatory2" value="false" data-bind="checked: SearchQuery.yeastMandatory"> No
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+
+        <div class="page-header clearfix collapsed hand-cursor" role="button" data-toggle="collapse" data-parent="#recipesApp" href="#resultsPanelCollapse" aria-expanded="false" aria-controls="resultsPanelCollapse">
+            <h2 class="remove-margin-top">
+                Recipe Results <span class="glyphicon glyphicon-menu-up pull-right"></span>
+            </h2>
+        </div>
+        <div id="resultsPanelCollapse" class="collapse slidein" role="tabpanel" aria-labelledby="resultsPanelHeading">
+
+            <div class="col-sm-6 slidein-master remove-padding-left no-padding-xs">
+                <!-- ko if: SearchQuery.groupResults() === 'true' && searchHasRun() === true -->
+                <h3 class="pull-left">Exact Matches</h3>
+                <!-- /ko -->
+                <form class="form-inline sort clearfix">
+
+                    <div class="form-group pull-right">
+                        <label class="sr-only" for="sorter">Sort</label>
+                        <select class="form-control" data-bind="value: sort, event: { change: doSort }">
+                            <option value="">Sort</option>
+                            <option value="AbvAsc">ABV Asc</option>
+                            <option value="AbvDesc">ABV Desc</option>
+                            <option value="NameAsc">Name Asc</option>
+                        </select>
+                    </div>
+                </form>
+
+
+
+                <div class="list-group">
+                    <!-- ko foreach: Recipes -->
+                    <a href="#top" class="list-group-item clearfix" data-bind="click: $parent.getRecipeDetail">
+                        <span data-bind="text: name"></span>
+                        <span class="badge" data-bind="text: formattedABV"></span>
+                    </a>
+                    <!-- /ko -->
+                    <!--ko if: Recipes().length === 0 && searchHasRun() === true -->
+                    <p>No exact matches</p>
+                    <!-- /ko -->
+                    <!-- ko if: SearchQuery.groupResults() === 'true' && searchHasRun() === true -->
+                    <h3>One additional ingredient</h3>
+                    <!--ko foreach: recipeMatch1 -->
+                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
+                        <span data-bind="text: name"></span>
+                        <span class="badge" data-bind="text: formattedABV"></span>
+                    </a>
+                    <!-- /ko -->
+                    <!--ko if: recipeMatch1().length === 0 && searchHasRun() === true -->
+                    <p>No results</p>
+                    <!-- /ko -->
+
+                    <h3>Two additional ingredient</h3>
+                    <!--ko foreach: recipeMatch2 -->
+                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
+                        <span data-bind="text: name"></span>
+                        <span class="badge" data-bind="text: formattedABV"></span>
+                    </a>
+                    <!-- /ko -->
+                    <!--ko if: recipeMatch2().length === 0 && searchHasRun() === true -->
+                    <p>No results</p>
+                    <!-- /ko -->
+
+                    <h3>Three additional ingredients</h3>
+                    <!--ko foreach: recipeMatch3 -->
+                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
+                        <span data-bind="text: name"></span>
+                        <span class="badge" data-bind="text: formattedABV"></span>
+                    </a>
+                    <!-- /ko -->
+                    <!--ko if: recipeMatch3().length === 0 && searchHasRun() === true -->
+                    <p>No results</p>
+                    <!-- /ko -->
+
+                    <h3>Four additional ingredients</h3>
+                    <!--ko foreach: recipeMatch4 -->
+                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
+                        <span data-bind="text: name"></span>
+                        <span class="badge" data-bind="text: formattedABV"></span>
+                    </a>
+                    <!-- /ko -->
+                    <!--ko if: recipeMatch4().length === 0 -->
+                    <p>No results</p>
+                    <!-- /ko -->
+
+                    <h3>Five+ additional ingredients</h3>
+                    <!--ko foreach: recipeMatch5 -->
+                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
+                        <span data-bind="text: name"></span>
+                        <span class="badge" data-bind="text: formattedABV"></span>
+                    </a>
+                    <!-- /ko -->
+                    <!--ko if: recipeMatch5().length === 0 -->
+                    <p>No results</p>
+                    <!-- /ko -->
+                    <!-- /ko -->
+
+                </div>
+                @*<ul class="list-unstyled" data-bind="foreach: Recipes.Recipe">
+                        <li>
+                            <strong><span data-bind="text: name"></span></strong>: <span data-bind="text: abv"></span>%
+                            <small><a href="#" data-bind="click: $parent.Recipes.getRecipeDetail">Details</a></small>
+                        </li>
+                    </ul>*@
             </div>
 
-
-            <div class="slidein">
-                    <h2>
-                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#recipesApp" href="#resultsPanelCollapse" aria-expanded="false" aria-controls="resultsPanelCollapse">Recipe Results</a>
-                        <a href="#" data-bind="click: sortRecipesAbvDesc">Sort by ABV <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a><a href="#" data-bind="click: sortRecipesAbvAsc">Sort by ABV <span class="glyphicon glyphicon-sort-by-attributes"></span></a>
-                    </h2>
-                <div id="resultsPanelCollapse" class="collapse collapse" role="tabpanel" aria-labelledby="resultsPanelHeading">
-                        <div class="col-md-6 slidein-master">
-                           
-
-                            <!-- ko if: SearchQuery.groupResults() === 'true' -->
-                            <h3>Exact Matches</h3>
-                            <!-- /ko -->
-                                <div class="list-group">
-                                    <!-- ko foreach: Recipes -->
-                                    <a href="#top" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
-                                        <span data-bind="text: name"></span>
-                                        <span class="badge" data-bind="text: formattedABV"></span>
-                                    </a>
-                                    <!-- /ko -->
-                                    
-                                    <!--ko if: Recipes().length === 0 -->
-                                    <p>No exact matches</p>
-                                    <!-- /ko -->
-
-                                    <!-- ko if: SearchQuery.groupResults() === 'true' -->
-                                    <h3>One additional ingredient</h3>
-                                    <!--ko foreach: recipeMatch1 -->
-                                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
-                                        <span data-bind="text: name"></span>
-                                        <span class="badge" data-bind="text: formattedABV"></span>
-                                    </a>
-                                    <!-- /ko -->
-                                    <!--ko if: recipeMatch1().length === 0 -->
-                                    <p>No results</p>
-                                    <!-- /ko -->
-
-                                    <h3>Two additional ingredient</h3>
-                                    <!--ko foreach: recipeMatch2 -->
-                                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
-                                        <span data-bind="text: name"></span>
-                                        <span class="badge" data-bind="text: formattedABV"></span>
-                                    </a>
-                                    <!-- /ko -->
-                                    <!--ko if: recipeMatch2().length === 0 -->
-                                    <p>No results</p>
-                                    <!-- /ko -->
-
-                                    <h3>Three additional ingredients</h3>
-                                    <!--ko foreach: recipeMatch3 -->
-                                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
-                                        <span data-bind="text: name"></span>
-                                        <span class="badge" data-bind="text: formattedABV"></span>
-                                    </a>
-                                    <!-- /ko -->
-                                    <!--ko if: recipeMatch3().length === 0 -->
-                                    <p>No results</p>
-                                    <!-- /ko -->
-
-                                    <h3>Four additional ingredients</h3>
-                                    <!--ko foreach: recipeMatch4 -->
-                                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
-                                        <span data-bind="text: name"></span>
-                                        <span class="badge" data-bind="text: formattedABV"></span>
-                                    </a>
-                                    <!-- /ko -->
-                                    <!--ko if: recipeMatch4().length === 0 -->
-                                    <p>No results</p>
-                                    <!-- /ko -->
-
-                                    <h3>Five+ additional ingredients</h3>
-                                    <!--ko foreach: recipeMatch5 -->
-                                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
-                                        <span data-bind="text: name"></span>
-                                        <span class="badge" data-bind="text: formattedABV"></span>
-                                    </a>
-                                    <!-- /ko -->
-                                    <!--ko if: recipeMatch5().length === 0 -->
-                                    <p>No results</p>
-                                    <!-- /ko -->
-                                    <!-- /ko -->
-
-                                </div>
-                                    @*<ul class="list-unstyled" data-bind="foreach: Recipes.Recipe">
-                                        <li>
-                                            <strong><span data-bind="text: name"></span></strong>: <span data-bind="text: abv"></span>%
-                                            <small><a href="#" data-bind="click: $parent.Recipes.getRecipeDetail">Details</a></small>
-                                        </li>
-                                    </ul>*@
-                        </div> 
-
-                        <div class="col-md-6 slidein-child">
-                            <div class="panel panel-default">
-                                <!-- ko foreach: SelectedRecipe -->
+            <div class="col-sm-6 slidein-child remove-padding-right no-padding-xs">
+                <!-- ko foreach: SelectedRecipe -->
+                <div class="panel panel-primary">
 
 
-                                <div class="panel-heading">
-                                    <h2 class="panel-title" data-bind="text: name"></h2>
-                                    <a href="#" data-bind="click: $parent.slideOut" name="detail">< back</a>
-                                </div>
+
+                    <div class="panel-heading">
+                        <h2 class="panel-title"> <!-- ko text: name --><!--/ko--><a href="#" class="pull-right visible-xs-block" data-bind="click: $parent.slideOut" name="detail"><span class="glyphicon glyphicon-menu-left"></span> back</a></h2>
+
+                    </div>
+                    <table class="table">
+                        <tr><td>Source</td><td data-bind="text: source2"></td></tr>
+                        <tr><td>Recipe No</td><td data-bind="text: number"></td></tr>
+                        <tr data-bind="css: {warning: yeastSubMatched()}"><td>Yeast</td><td data-bind="text: yeastName"></td></tr>
+                        <tr><td>ABV</td><td data-bind="text: formattedABV"></td></tr>
+                        <tr><td>IBU</td><td data-bind="text: ibu"></td></tr>
+                        <tr><td>OG</td><td data-bind="text: og"></td></tr>
+                        <tr><td>FG</td><td data-bind="text: fg"></td></tr>
+                        <tr><td>EBC</td><td data-bind="text: ebc"></td></tr>
+                        <tr><td>Has Ajuncts</td><td data-bind="text: hasAdjucts"></td></tr>
+                        <tr><td>Mash Temperature</td><td><span data-bind="text: mashTemp"></span>C</td></tr>
+                        <tr><td>Mash Time</td><td><span data-bind="text: mashTime"></span> minutes</td></tr>
+                        <tr><td>Fermentation Temperature</td><td data-bind="text: fermentation"></td></tr>
+                        <tr>
+                            <td>Malts</td>
+                            <td>
                                 <table class="table">
-                                    <tr><td>Source</td><td data-bind="text: source2"></td></tr>
-                                    <tr><td>Recipe No</td><td data-bind="text: number"></td></tr>
-                                    <tr><td>Yeast</td><td data-bind="text: yeastName, css: {subMatch: yeastSubMatched() === true, noMatch: yeastMatched() === false}"></td></tr>
-                                    <tr><td>ABV</td><td data-bind="text: formattedABV"></td></tr>
-                                    <tr><td>IBU</td><td data-bind="text: ibu"></td></tr>
-                                    <tr><td>OG</td><td data-bind="text: og"></td></tr>
-                                    <tr><td>FG</td><td data-bind="text: fg"></td></tr>
-                                    <tr><td>EBC</td><td data-bind="text: ebc"></td></tr>
-                                    <tr><td>Has Ajuncts</td><td data-bind="text: hasAdjucts"></td></tr>
-                                    <tr><td>Mash Temperature</td><td><span data-bind="text: mashTemp"></span>C</td></tr>
-                                    <tr><td>Mash Time</td><td><span  data-bind="text: mashTime"></span> minutes</td></tr>
-                                    <tr><td>Fermentation Temperature</td><td data-bind="text: fermentation"></td></tr>
                                     <tr>
-                                        <td>Malts</td>
-                                        <td>
-                                            <!-- ko foreach: recipe_Malts -->
-                                            <p data-bind="css: {noMatch: isMatched() === false}"><span data-bind="text: maltGenericName"></span>: <span data-bind="text: weight"></span>kg</p>
-                                            <!-- /ko -->
-                                        </td>
+                                        <!-- ko foreach: recipe_Malts -->
+                                        <td data-bind="css: {danger: isMatched() === false}"><span data-bind="text: maltGenericName"></span>: <span data-bind="text: weight"></span>kg</td>
+                                        <!-- /ko -->
                                     </tr>
-                                    <tr>
-                                        <td>Hops</td>
-                                        <td>
-                                            <!-- ko foreach: recipe_Hops -->
-                                            <p data-bind="css: {noMatch: isMatched() === false}"><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g - <span data-bind="text: stepName"></span></p>
-                                            <!-- /ko -->
-                                        </td>
-                                    </tr>
-                                    <tr><td>Total Hop Bill</td><td><span data-bind="text: totalHopsBill"></span>g</td></tr>
-                                    <tr>
-                                        <td>Total for each hop</td>
-                                        <td>
-                                            <!-- ko foreach: totalEachHop -->
-                                            <p><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g</p>
-                                            <!-- /ko -->
-                                        </td>
-                                    </tr>
-
                                 </table>
-
-
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hops</td>
+                            <td>
+                                <table class="table">
+                                    <tr>
+                                        <!-- ko foreach: recipe_Hops -->
+                                        <td data-bind="css: {danger: isMatched() === false}"><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g - <span data-bind="text: stepName"></span></td>
+                                        <!-- /ko -->
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr><td>Total Hop Bill</td><td><span data-bind="text: totalHopsBill"></span>g</td></tr>
+                        <tr>
+                            <td>Total for each hop</td>
+                            <td>
+                                <!-- ko foreach: totalEachHop -->
+                                <p><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g</p>
                                 <!-- /ko -->
-                            </div>
-                        </div>
+                            </td>
+                        </tr>
+
+                    </table>
+
+
+
                 </div>
+                <!-- /ko -->
             </div>
         </div>
     </div>
+</div>
 
