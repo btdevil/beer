@@ -10,7 +10,7 @@
         <div class="page-header hand-cursor" data-toggle="collapse" data-parent="#recipesApp" href="#searchPanelCollapse" aria-expanded="true" aria-controls="searchPanelCollapse">
             <h2>Search for Recipes <span class="glyphicon glyphicon-menu-up pull-right"></span></h2>
         </div>
-        <div id="searchPanelCollapse" class="collapse collapse in" role="tabpanel" aria-labelledby="searchPanelHeading">
+        <div id="searchPanelCollapse" class="collapse in" role="tabpanel" aria-labelledby="searchPanelHeading">
             <form data-bind="submit: searchRecipes">
                 <label for="malts">Malts</label>
                 <div class="form-group">
@@ -21,6 +21,9 @@
                 <div class="form-group">
                     <button type="button" class="btn btn-info" id="allPales" data-bind="click: SearchQuery.addPales">Add All Pales</button>
                     <button type="button" class="btn btn-info" id="allExtraPales" data-bind="click: SearchQuery.addExtraPales">Add All Extra Pales</button>
+                    <button type="button" class="btn btn-info" id="allCrystal" data-bind="click: SearchQuery.addCrystal">Add All Crystal</button>
+                    <button type="button" class="btn btn-info" id="allDarkCrystal" data-bind="click: SearchQuery.addDarkCrystal">Add All Dark Crystal</button>
+                    <button type="button" class="btn btn-info" id="myIngredients" data-bind="click: SearchQuery.addMyIngredients">Add My Ingredients</button>
                 </div>
 
                 <label for="hops">Hops</label>
@@ -48,7 +51,7 @@
                 </div>
                 <div class="form-group">
                     <label class="checkbox-inline">
-                        <input type="checkbox" id="includeDryOrWetSubs" value="Y" data-bind="checked: SearchQuery.includeDryOrWetSubs"> Include Wet/Dry Substitutes?
+                        <input type="checkbox" id="includeDryOrWetSubs" value="Y" data-bind="checked: SearchQuery.includeDryOrWetSubs" checked> Include Wet/Dry Substitutes?
                     </label>
                     <label class="checkbox-inline">
                         <input type="checkbox" id="includeManufacturerSubs" value="Y" data-bind="checked: SearchQuery.includeManufacturerSubs"> Include Manufacturer Substitutes?
@@ -129,10 +132,10 @@
                 <p class="form-control-static"><strong>Has Adjuncts</strong></p>
                 <div class="form-group">
                     <label class="radio-inline">
-                        <input type="radio" name="hasAdjuncts" id="hasAdjuncts1" value="" data-bind="checked: SearchQuery.hasAdjuctsQuery" checked> Both
+                        <input type="radio" name="hasAdjuncts" id="hasAdjuncts1" value="" data-bind="checked: SearchQuery.hasAdjuctsQuery"> Both
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="hasAdjuncts" id="hasAdjuncts2" value="N" data-bind="checked: SearchQuery.hasAdjuctsQuery"> No
+                        <input type="radio" name="hasAdjuncts" id="hasAdjuncts2" value="N" data-bind="checked: SearchQuery.hasAdjuctsQuery" checked> No
                     </label>
                     <label class="radio-inline">
                         <input type="radio" name="hasAdjuncts" id="hasAdjuncts3" value="Y" data-bind="checked: SearchQuery.hasAdjuctsQuery"> Yes
@@ -144,10 +147,10 @@
 
                     <p class="form-control-static"><strong>Group results?</strong><br />Selecting 'Yes' will group the results by exaxt matches, followed by recipes that would need 1-5 extra ingredients besides the ones select above</p>
                     <label class="radio-inline">
-                        <input type="radio" name="groupResults" id="groupResults1" value="true" data-bind="checked: SearchQuery.groupResults"> Yes
+                        <input type="radio" name="groupResults" id="groupResults1" value="true" data-bind="checked: SearchQuery.groupResults" checked> Yes
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="groupResults" id="groupResults1" value="false" data-bind="checked: SearchQuery.groupResults" checked> No
+                        <input type="radio" name="groupResults" id="groupResults1" value="false" data-bind="checked: SearchQuery.groupResults"> No
                     </label>
 
                     <p class="form-control-static"><strong>Yeast Optional?</strong><br />Select 'No' if you only want to see recipes using a particular yeast. Select 'Yes' if you want see all recipes, but mark different yeast as an extra ingredient</p>
@@ -163,7 +166,7 @@
             </form>
         </div>
 
-        <div class="page-header clearfix collapsed hand-cursor" role="button" data-toggle="collapse" data-parent="#recipesApp" href="#resultsPanelCollapse" aria-expanded="false" aria-controls="resultsPanelCollapse">
+        <div class="page-header clearfix collapsed hand-cursor" role="button" data-toggle="collapse" data-parent="#recipesApp" href="#resultsPanelCollapse" aria-expanded="true" aria-controls="resultsPanelCollapse">
             <h2 class="remove-margin-top">
                 Recipe Results <span class="glyphicon glyphicon-menu-up pull-right"></span>
             </h2>
@@ -172,7 +175,7 @@
 
             <div class="col-sm-6 slidein-master remove-padding-left no-padding-xs">
                 <!-- ko if: SearchQuery.groupResults() === 'true' && searchHasRun() === true -->
-                <h3 class="pull-left">Exact Matches</h3>
+                <h3 class="pull-left hand-cursor" role="button" data-toggle="collapse" data-target="#exact" aria-expanded="false" aria-controls="exact">Exact Matches<span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
                 <!-- /ko -->
                 <form class="form-inline sort clearfix">
 
@@ -189,18 +192,22 @@
 
 
 
-                <div class="list-group">
-                    <!-- ko foreach: Recipes -->
-                    <a href="#top" class="list-group-item clearfix" data-bind="click: $parent.getRecipeDetail">
-                        <span data-bind="text: name"></span>
-                        <span class="badge" data-bind="text: formattedABV"></span>
-                    </a>
-                    <!-- /ko -->
-                    <!--ko if: Recipes().length === 0 && searchHasRun() === true -->
-                    <p>No exact matches</p>
-                    <!-- /ko -->
-                    <!-- ko if: SearchQuery.groupResults() === 'true' && searchHasRun() === true -->
-                    <h3>One additional ingredient</h3>
+                <div class="list-group collapse in" id="exact">
+                        <!-- ko foreach: Recipes -->
+
+                        <a href="#top" class="list-group-item clearfix" data-bind="click: $parent.getRecipeDetail">
+                            <span data-bind="text: name"></span>
+                            <span class="badge" data-bind="text: formattedABV"></span>
+                        </a>
+                        <!-- /ko -->
+                        <!--ko if: Recipes().length === 0 && searchHasRun() === true -->
+                        <p>No exact matches</p>
+                        <!-- /ko -->
+                    </div>
+                <!-- ko if: SearchQuery.groupResults() === 'true' && searchHasRun() === true -->
+                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#oneAdd" aria-expanded="false" aria-controls="oneAdd">One additional ingredient<span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
+                <div class="list-group collapse" id="oneAdd">
+                   
                     <!--ko foreach: recipeMatch1 -->
                     <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
                         <span data-bind="text: name"></span>
@@ -210,8 +217,10 @@
                     <!--ko if: recipeMatch1().length === 0 && searchHasRun() === true -->
                     <p>No results</p>
                     <!-- /ko -->
-
-                    <h3>Two additional ingredient</h3>
+                </div>
+                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#twoAdd" aria-expanded="false" aria-controls="twoAdd">Two additional ingredient<span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
+                <div class="list-group collapse" id="twoAdd">
+                    
                     <!--ko foreach: recipeMatch2 -->
                     <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
                         <span data-bind="text: name"></span>
@@ -221,8 +230,10 @@
                     <!--ko if: recipeMatch2().length === 0 && searchHasRun() === true -->
                     <p>No results</p>
                     <!-- /ko -->
-
-                    <h3>Three additional ingredients</h3>
+                </div>
+                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#threeAdd" aria-expanded="false" aria-controls="threeAdd">Three additional ingredients<span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
+                <div class="list-group collapse" id="threeAdd">
+                   
                     <!--ko foreach: recipeMatch3 -->
                     <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
                         <span data-bind="text: name"></span>
@@ -232,8 +243,10 @@
                     <!--ko if: recipeMatch3().length === 0 && searchHasRun() === true -->
                     <p>No results</p>
                     <!-- /ko -->
-
-                    <h3>Four additional ingredients</h3>
+                </div>
+                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#fourAdd" aria-expanded="false" aria-controls="fourAdd">Four additional ingredients<span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
+                <div class="list-group collapse" id="fourAdd">
+                   
                     <!--ko foreach: recipeMatch4 -->
                     <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
                         <span data-bind="text: name"></span>
@@ -243,8 +256,10 @@
                     <!--ko if: recipeMatch4().length === 0 -->
                     <p>No results</p>
                     <!-- /ko -->
-
-                    <h3>Five+ additional ingredients</h3>
+                </div>
+                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#fiveAdd" aria-expanded="false" aria-controls="fiveAdd">Five+ additional ingredients<span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
+                <div class="list-group collapse" id="fiveAdd">
+                    
                     <!--ko foreach: recipeMatch5 -->
                     <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
                         <span data-bind="text: name"></span>
@@ -257,6 +272,7 @@
                     <!-- /ko -->
 
                 </div>
+                <!-- /ko -->
                 @*<ul class="list-unstyled" data-bind="foreach: Recipes.Recipe">
                         <li>
                             <strong><span data-bind="text: name"></span></strong>: <span data-bind="text: abv"></span>%
@@ -278,37 +294,43 @@
                     <table class="table">
                         <tr><td>Source</td><td data-bind="text: source2"></td></tr>
                         <tr><td>Recipe No</td><td data-bind="text: number"></td></tr>
-                        <tr data-bind="css: {warning: yeastSubMatched()}"><td>Yeast</td><td data-bind="text: yeastName"></td></tr>
+                        <tr data-bind="css: yeastCss"><td>Yeast</td><td data-bind="text: yeastName"></td></tr>
                         <tr><td>ABV</td><td data-bind="text: formattedABV"></td></tr>
                         <tr><td>IBU</td><td data-bind="text: ibu"></td></tr>
                         <tr><td>OG</td><td data-bind="text: og"></td></tr>
                         <tr><td>FG</td><td data-bind="text: fg"></td></tr>
                         <tr><td>EBC</td><td data-bind="text: ebc"></td></tr>
-                        <tr><td>Has Ajuncts</td><td data-bind="text: hasAdjucts"></td></tr>
+                        <tr data-bind="css: {danger: hasAdjucts() === 'Y'}"><td>Has Ajuncts</td><td data-bind="text: hasAdjucts"></td></tr>
                         <tr><td>Mash Temperature</td><td><span data-bind="text: mashTemp"></span>C</td></tr>
                         <tr><td>Mash Time</td><td><span data-bind="text: mashTime"></span> minutes</td></tr>
-                        <tr><td>Fermentation Temperature</td><td data-bind="text: fermentation"></td></tr>
+                        <tr data-bind="css: {info: fermentation() < 18}"><td>Fermentation Temperature</td><td><span data-bind="text: fermentation"></span>C</td></tr>
                         <tr>
                             <td>Malts</td>
-                            <td>
-                                <table class="table">
-                                    <tr>
+                            <td class="nested">
+                                <table class="table table-nested">
+                                    <tbody>
                                         <!-- ko foreach: recipe_Malts -->
-                                        <td data-bind="css: {danger: isMatched() === false}"><span data-bind="text: maltGenericName"></span>: <span data-bind="text: weight"></span>kg</td>
+                                        <tr>
+                                            <td data-bind="css: {danger: isMatched() === false}"><span data-bind="text: maltGenericName"></span>: <span data-bind="text: weight"></span>kg</td>
+                                        </tr>
                                         <!-- /ko -->
-                                    </tr>
+                                    </tbody>
                                 </table>
                             </td>
                         </tr>
                         <tr>
                             <td>Hops</td>
-                            <td>
-                                <table class="table">
-                                    <tr>
+                            <td class="nested">
+                                <table class="table table-nested">
+                                    <tbody>
+
                                         <!-- ko foreach: recipe_Hops -->
-                                        <td data-bind="css: {danger: isMatched() === false}"><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g - <span data-bind="text: stepName"></span></td>
+                                        <tr>
+                                            <td data-bind="css: {danger: isMatched() === false}"><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g - <span data-bind="text: stepName"></span></td>
+                                        </tr>
                                         <!-- /ko -->
-                                    </tr>
+
+                                    </tbody>
                                 </table>
                             </td>
                         </tr>

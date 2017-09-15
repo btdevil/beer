@@ -131,9 +131,9 @@ BEER.ViewModels = (function () {
             self.hopQuery = ko.observableArray([]);
             self.yeastQuery = ko.observableArray([]);
             self.yeastMandatory = ko.observable('true');
-            self.groupResults = ko.observable('false');
-            self.hasAdjuctsQuery = ko.observable('');
-            self.includeDryOrWetSubs = ko.observable(false);
+            self.groupResults = ko.observable('true');
+            self.hasAdjuctsQuery = ko.observable('N');
+            self.includeDryOrWetSubs = ko.observable(true);
             self.includeManufacturerSubs = ko.observable(false);
             self.includeSameManufacturerSubs = ko.observable(false);
             self.YeastSubs = ko.observableArray([]);
@@ -191,6 +191,23 @@ BEER.ViewModels = (function () {
             };
             self.addExtraPales = function () {
                 self.maltQuery.push(37,34,69);
+            };
+            self.addCrystal = function () {
+                self.maltQuery.push(27,28,29,46,73)
+            };
+            self.addDarkCrystal = function () {
+                self.maltQuery.push(32,68,83)
+            };
+
+            self.addMyIngredients = function () {
+                self.addPales();
+                self.addExtraPales();
+                self.addCrystal();
+                self.addDarkCrystal();
+
+                self.maltQuery.push(19, 66, 64, 49, 18, 40, 41, 42);
+                self.hopQuery.push(3, 20, 10, 43, 44, 59);
+                self.yeastQuery.push(35);
             };
 
 
@@ -320,6 +337,19 @@ BEER.Models = (function () {
                 }
                 return hopArray;
             });
+            self.yeastCss = ko.pureComputed(function () {
+                var subCssClass = 'warning';
+                var matchedClass = 'sucess';
+                var notMatched = 'danger';
+                var css = matchedClass;
+                if (self.yeastSubMatched() === true) {
+                    css = subCssClass;
+                } else if (self.yeastMatched() === false) {
+                    css = notMatched;
+                }
+
+                return css
+            }, self);
         },
         Slider: function Slider(min, max) {
             var self = this;
