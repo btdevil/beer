@@ -145,20 +145,12 @@
                 <p class="form-control-static"><strong>Advanced options</strong></p>
                 <div class="form-group">
 
-                    <p class="form-control-static"><strong>Show close matches?</strong><br />Selecting 'Yes' will group the results by exaxt matches, followed by recipes that would need 1-5 extra ingredients besides the ones select above</p>
+                    <p class="form-control-static"><strong>Show close matches?</strong><br />Selecting 'Yes' will group the results by exaxt matches, followed by recipes that would need 1-5 extra ingredients besides the ones selected above</p>
                     <label class="radio-inline">
-                        <input type="radio" name="groupResults" id="groupResults1" value="true" data-bind="checked: SearchQuery.groupResults, click: SearchQuery.yeastOpt" checked> Yes
+                        <input type="radio" name="groupResults" id="groupResults1" value="true" data-bind="checked: SearchQuery.groupResults" checked> Yes
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="groupResults" id="groupResults1" value="false" data-bind="checked: SearchQuery.groupResults, click: SearchQuery.yeastOpt"> No
-                    </label>
-
-                    <p class="form-control-static" id="yeast-label"><strong>Yeast Optional?</strong><br />Select 'No' if you only want to see recipes using a particular yeast. Select 'Yes' if you want see all recipes, but mark different yeast as an extra ingredient</p>
-                    <label class="radio-inline">
-                        <input type="radio" name="yeastMandatory" id="yeastMandatory1" value="true" data-bind="checked: SearchQuery.yeastMandatory" checked> Yes
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="yeastMandatory" id="yeastMandatory2" value="false" data-bind="checked: SearchQuery.yeastMandatory"> No
+                        <input type="radio" name="groupResults" id="groupResults1" value="false" data-bind="checked: SearchQuery.groupResults"> No
                     </label>
                 </div>
 
