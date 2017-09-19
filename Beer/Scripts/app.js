@@ -210,6 +210,37 @@ BEER.ViewModels = (function () {
                 self.yeastQuery.push(35);
             };
 
+            self.reset = function () {
+                self.maltQuery.removeAll();
+                self.hopQuery.removeAll();
+                self.yeastQuery.removeAll();
+                self.yeastMandatory('true');
+                self.groupResults('true');
+                self.hasAdjuctsQuery('N');
+                self.includeDryOrWetSubs(true);
+                self.includeManufacturerSubs(false);
+                self.includeSameManufacturerSubs(false);
+                self.YeastSubs.removeAll();
+                self.fullYeastQuery.removeAll();
+                self.abvSlider.min(0);
+                self.abvSlider.max(20);
+                self.ibuSlider.min(0);
+                self.ibuSlider.max(440);
+                self.ebcSlider.min(0);
+                self.ebcSlider.max(500);
+                self.fermentSlider.min(0);
+                self.fermentSlider.max(30);
+            };
+
+            self.yeastOpt = function () {
+                if (self.groupResults() === 'true') {
+                    enableYeastOpts();
+                } else {
+                    disableYeastOpts()
+                }
+                return true;
+            };
+
 
             function populateFullYeastQuery() {
                 self.fullYeastQuery.removeAll();
@@ -249,6 +280,23 @@ BEER.ViewModels = (function () {
                     
                 });
             }
+
+            function disableYeastOpts() {
+                $("#yeastMandatory1").prop('disabled', true);
+                $("#yeastMandatory2").prop('disabled', true);
+                $('#yeast-label').addClass('text-muted');
+                $('#yeast-label > lable').addClass('text-muted');
+                $("#yeastMandatory1").parent().addClass('text-muted');
+                $("#yeastMandatory2").parent().addClass('text-muted');
+            };
+
+            function enableYeastOpts() {
+                $("#yeastMandatory1").prop('disabled', false);
+                $("#yeastMandatory2").prop('disabled', false);
+                $('#yeast-label').removeClass('text-muted');
+                $("#yeastMandatory1").parent().removeClass('text-muted');
+                $("#yeastMandatory2").parent().removeClass('text-muted');
+            };
         }
     };
     return process
@@ -323,12 +371,14 @@ BEER.Models = (function () {
                 if (self.recipe_Hops() !== null) {
                     result = self.recipe_Hops.slice(0);
 
-                    result.reduce(function (res, value) {
+                    result.reduce(function (res, value, ss, xx) {
                         if (!res[value.hopName()]) {
+                            //create hop object if it doesn't exsist, so we can access the weight by hopNamr
                             res[value.hopName()] = {
                                 weight: 0,
                                 hopName: value.hopName()
                             };
+                            //add hop to hopArray with a *pointer* to the hop object in the reduced array. The weight will update in hopArray as it's totalled as it's a pointer rather than a copy.
                             hopArray.push(res[value.hopName()])
                         }
                         res[value.hopName()].weight += value.weight()
@@ -546,6 +596,7 @@ BEER.MasterViewModel = function (data) {
     var recipesUri = '/api/recipes/';
 
     self.searchRecipes = function () {
+        showLoading();
         self.sort('');
         self.SearchQuery.YeastSubs.removeAll();
         self.SearchQuery.getAllSubs();
@@ -664,14 +715,20 @@ BEER.MasterViewModel = function (data) {
 
             if (queriedMalts.length > 0) {
                 maltNonMatchCounter = $.grep(maltIds, function (el) { return $.inArray(el, queriedMalts) == -1; });
+            } else {
+                maltNonMatchCounter = maltIds;
             }
 
             if (queriedHops.length > 0) {
                 hopNonMatchCounter = $.grep(hopIds, function (el) { return $.inArray(el, queriedHops) == -1; });
+            } else {
+                hopNonMatchCounter = hopIds;
             }
 
             if (queriedYeasts.length > 0) {
                 yeastNonMatchCounter = $.grep(yeastIds, function (el) { return $.inArray(el, queriedYeasts) == -1; });
+            } else {
+                yeastNonMatchCounter = yeastIds
             }
 
             totalCount = maltNonMatchCounter.concat(hopNonMatchCounter);
@@ -706,6 +763,7 @@ BEER.MasterViewModel = function (data) {
             self.searchHasRun(true);
             var formattedData = { 'Recipes': data };
             ko.mapping.fromJS(formattedData, BEER.Mappings.recipeMapping, self);
+            hideLoading();
         });
     };
 
@@ -718,6 +776,7 @@ BEER.MasterViewModel = function (data) {
             var formattedData = { 'allRecipes': data };
             ko.mapping.fromJS(formattedData, BEER.Mappings.allRecipesMapping, self);
             findMatches();
+            hideLoading();
         });
 
     };
@@ -877,6 +936,20 @@ BEER.MasterViewModel = function (data) {
         }
 
     };
+
+    function showLoading() {
+        $('#spinner').show();
+        $('#spinner').addClass('spinner');
+        $('#recipeList').hide();
+        $('#recipeDetail').hide();
+    };
+
+    function hideLoading() {
+        $('#spinner').removeClass('spinner');
+        $('#spinner').hide();
+        $('#recipeList').show();
+        $('#recipeDetail').show();
+    }
 }
 
 ko.applyBindings(new BEER.MasterViewModel());

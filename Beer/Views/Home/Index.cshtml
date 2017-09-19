@@ -145,15 +145,15 @@
                 <p class="form-control-static"><strong>Advanced options</strong></p>
                 <div class="form-group">
 
-                    <p class="form-control-static"><strong>Group results?</strong><br />Selecting 'Yes' will group the results by exaxt matches, followed by recipes that would need 1-5 extra ingredients besides the ones select above</p>
+                    <p class="form-control-static"><strong>Show close matches?</strong><br />Selecting 'Yes' will group the results by exaxt matches, followed by recipes that would need 1-5 extra ingredients besides the ones select above</p>
                     <label class="radio-inline">
-                        <input type="radio" name="groupResults" id="groupResults1" value="true" data-bind="checked: SearchQuery.groupResults" checked> Yes
+                        <input type="radio" name="groupResults" id="groupResults1" value="true" data-bind="checked: SearchQuery.groupResults, click: SearchQuery.yeastOpt" checked> Yes
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="groupResults" id="groupResults1" value="false" data-bind="checked: SearchQuery.groupResults"> No
+                        <input type="radio" name="groupResults" id="groupResults1" value="false" data-bind="checked: SearchQuery.groupResults, click: SearchQuery.yeastOpt"> No
                     </label>
 
-                    <p class="form-control-static"><strong>Yeast Optional?</strong><br />Select 'No' if you only want to see recipes using a particular yeast. Select 'Yes' if you want see all recipes, but mark different yeast as an extra ingredient</p>
+                    <p class="form-control-static" id="yeast-label"><strong>Yeast Optional?</strong><br />Select 'No' if you only want to see recipes using a particular yeast. Select 'Yes' if you want see all recipes, but mark different yeast as an extra ingredient</p>
                     <label class="radio-inline">
                         <input type="radio" name="yeastMandatory" id="yeastMandatory1" value="true" data-bind="checked: SearchQuery.yeastMandatory" checked> Yes
                     </label>
@@ -162,7 +162,8 @@
                     </label>
                 </div>
 
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default">Search</button>
+                <button type="button" class="btn btn-default" data-bind="click: SearchQuery.reset">Reset</button>
             </form>
         </div>
 
@@ -173,7 +174,13 @@
         </div>
         <div id="resultsPanelCollapse" class="collapse slidein" role="tabpanel" aria-labelledby="resultsPanelHeading">
 
-            <div class="col-sm-6 slidein-master remove-padding-left no-padding-xs">
+            <div class="spinner" id="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+
+            <div class="col-sm-6 slidein-master remove-padding-left no-padding-xs" id="recipeList">
                 <!-- ko if: SearchQuery.groupResults() === 'true' && searchHasRun() === true -->
                 <h3 class="pull-left hand-cursor" role="button" data-toggle="collapse" data-target="#exact" aria-expanded="false" aria-controls="exact">Exact Matches<span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
                 <!-- /ko -->
@@ -281,7 +288,7 @@
                     </ul>*@
             </div>
 
-            <div class="col-sm-6 slidein-child remove-padding-right no-padding-xs">
+            <div class="col-sm-6 slidein-child remove-padding-right no-padding-xs" id="recipeDetail">
                 <!-- ko foreach: SelectedRecipe -->
                 <div class="panel panel-primary">
 
