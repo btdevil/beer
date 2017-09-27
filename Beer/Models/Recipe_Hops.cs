@@ -24,5 +24,6 @@ namespace Beer.Models
 
         [ForeignKey("StepID")]
         public HopStep HopStep { get; set; }
+
     }
 }

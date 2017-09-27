@@ -51,7 +51,8 @@ namespace Beer.Controllers
                               HasAdjucts = r.HasAdjucts,
                               MashTemp = r.MashTemp,
                               MashTime = r.MashTime,
-                              Fermentation = r.Fermentation
+                              Fermentation = r.Fermentation,
+                              BeerStylesID = r.BeerStylesID
                           };
             }
             else
@@ -93,7 +94,53 @@ namespace Beer.Controllers
                                   MaltGenericID = rm.MaltGenericID,
                                   MaltID = rm.MaltID,
                                   MaltGenericName = rm.MaltGeneric.Malt
-                              }).ToList()
+                              }).ToList(),
+                              BeerStylesID = r.BeerStylesID,
+                              TestName = r.BeerStyles.SubCategoryName,
+                              //BeerStyles = r.BeerStyles
+                              BeerStyles = new BeerStylesDTO
+                              {
+                                  ID = r.BeerStyles.ID,
+                                  CategoryId = r.BeerStyles.CategoryId,
+                                  SubCategoryId = r.BeerStyles.SubCategoryId,
+                                  SubCategoryName = r.BeerStyles.SubCategoryName,
+                                  OGLow = r.BeerStyles.OGLow,
+                                  OGHigh = r.BeerStyles.OGHigh,
+                                  FGLow = r.BeerStyles.FGLow,
+                                  FGHigh = r.BeerStyles.FGHigh,
+                                  IBULow = r.BeerStyles.IBULow,
+                                  IBUHigh = r.BeerStyles.IBUHigh,
+                                  SRMLow = r.BeerStyles.SRMLow,
+                                  SRMHigh = r.BeerStyles.SRMHigh,
+                                  SubCategoryLetter = r.BeerStyles.SubCategoryLetter,
+                                  StyleGuide = "BJCP"
+                              }
+                              //BeerStyles = r.BeerStyles.Select(bs => new BeerStylesDTO
+                              //{
+                              //    ID = bs.ID,
+                              //    CategoryName = bs.CategoryName,
+                              //    CategoryId = bs.CategoryId,
+                              //    SubCategoryId = bs.SubCategoryId,
+                              //    SubCategoryName = bs.SubCategoryName,
+                              //    Aroma = bs.Aroma,
+                              //    Appearance = bs.Appearance,
+                              //    Flavor = bs.Flavor,
+                              //    Mouthfeel = bs.Mouthfeel,
+                              //    Impression = bs.Impression,
+                              //    Comments = bs.Comments,
+                              //    Ingredients = bs.Ingredients,
+                              //    OGLow = bs.OGLow,
+                              //    OGHigh = bs.OGHigh,
+                              //    FGLow = bs.FGLow,
+                              //    FGHigh = bs.FGHigh,
+                              //    IBULow = bs.IBULow,
+                              //    IBUHigh = bs.IBUHigh,
+                              //    SRMLow = bs.SRMLow,
+                              //    SRMHigh = bs.SRMHigh,
+                              //    ABVLow = bs.ABVLow,
+                              //    ABVHigh = bs.ABVHigh,
+                              //    Examples = bs.Examples
+                              //}).ToList()
                           };
 
             }
@@ -197,7 +244,8 @@ namespace Beer.Controllers
                                               StepID = rh.StepID,
                                               HopName = rh.Hop.Hops,
                                               StepName = rh.HopStep.Step,
-                                              StepOrder = rh.HopStep.StepOrder
+                                              StepOrder = rh.HopStep.StepOrder,
+
                                           }).OrderBy(rh => rh.StepOrder).ThenBy(hn => hn.HopName).ToList(),
                                           Recipe_Malts = r.Recipe_Malts.Select(rm => new Recipe_MaltsDTO
                                           {
@@ -207,7 +255,28 @@ namespace Beer.Controllers
                                               MaltGenericID = rm.MaltGenericID,
                                               MaltID = rm.MaltID,
                                               MaltGenericName = rm.MaltGeneric.Malt
-                                          }).OrderByDescending(rm => rm.Weight).ThenBy(mn => mn.MaltGenericName).ToList()
+                                          }).OrderByDescending(rm => rm.Weight).ThenBy(mn => mn.MaltGenericName).ToList(),
+                                          BeerStylesID = r.BeerStylesID,
+                                          TestName = r.BeerStyles.SubCategoryName,
+                                          //BeerStyles = r.BeerStyles//,
+                                          BeerStyles = new BeerStylesDTO
+                                          {
+                                              ID = r.BeerStyles.ID,
+                                              CategoryId = r.BeerStyles.CategoryId,
+                                              SubCategoryId = r.BeerStyles.SubCategoryId,
+                                              SubCategoryName = r.BeerStyles.SubCategoryName,
+                                              SubCategoryLetter = r.BeerStyles.SubCategoryLetter,
+                                              OGLow = r.BeerStyles.OGLow,
+                                              OGHigh = r.BeerStyles.OGHigh,
+                                              FGLow = r.BeerStyles.FGLow,
+                                              FGHigh = r.BeerStyles.FGHigh,
+                                              IBULow = r.BeerStyles.IBULow,
+                                              IBUHigh = r.BeerStyles.IBUHigh,
+                                              SRMLow = r.BeerStyles.SRMLow,
+                                              SRMHigh = r.BeerStyles.SRMHigh,
+                                              StyleGuide = "BJCP"
+                                
+                                          }
                                       }).ToListAsync();
             if (recipe == null)
             {
@@ -216,6 +285,65 @@ namespace Beer.Controllers
 
             return Ok(recipe);
         }
+
+        // GET: api/Recipes/5
+        /// <summary>
+        /// Gets single recipe by ID
+        /// </summary>
+        /// <param name="id">The recipeID</param>
+        /// <returns></returns>
+        //[ResponseType(typeof(RecipeDTO))]
+        //[Route("api/Recipes/{id}/BeerXml")]
+        //public async Task<IHttpActionResult> GetBeerXml(int id)
+        //{
+
+        //    var recipe = await (from r in db.Recipes
+        //                        where r.ID == id
+        //                        select new RecipeDTO()
+        //                        {
+        //                            Source2 = r.Source2,
+        //                            Number = r.Number,
+        //                            Name = r.Name,
+        //                            YeastID = r.YeastID,
+        //                            YeastName = r.Yeast.YeastName,
+        //                            ID = r.ID,
+        //                            ABV = r.ABV,
+        //                            IBU = r.IBU,
+        //                            OG = r.OG,
+        //                            FG = r.FG,
+        //                            EBC = r.EBC,
+        //                            HasAdjucts = r.HasAdjucts,
+        //                            MashTemp = r.MashTemp,
+        //                            MashTime = r.MashTime,
+        //                            Fermentation = r.Fermentation,
+        //                            Recipe_Hops = r.Recipe_Hops.Select(rh => new Recipe_HopsDTO
+        //                            {
+        //                                ID = rh.ID,
+        //                                RecipeID = rh.RecipeID,
+        //                                Weight = rh.Weight,
+        //                                HopID = rh.HopID,
+        //                                StepID = rh.StepID,
+        //                                HopName = rh.Hop.Hops,
+        //                                StepName = rh.HopStep.Step,
+        //                                StepOrder = rh.HopStep.StepOrder
+        //                            }).OrderBy(rh => rh.StepOrder).ThenBy(hn => hn.HopName).ToList(),
+        //                            Recipe_Malts = r.Recipe_Malts.Select(rm => new Recipe_MaltsDTO
+        //                            {
+        //                                ID = rm.ID,
+        //                                RecipeID = rm.RecipeID,
+        //                                Weight = rm.Weight,
+        //                                MaltGenericID = rm.MaltGenericID,
+        //                                MaltID = rm.MaltID,
+        //                                MaltGenericName = rm.MaltGeneric.Malt
+        //                            }).OrderByDescending(rm => rm.Weight).ThenBy(mn => mn.MaltGenericName).ToList()
+        //                        }).ToListAsync();
+        //    if (recipe == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return Ok(recipe);
+        //}
 
         //public IQueryable<Recipe> GetRecipes(double ABVMax, double ABVMin = 0, int EBCMin = 0, int EBCMax = 0, string hasAdjunct = "")
         //{

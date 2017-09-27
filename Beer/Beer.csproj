@@ -209,8 +209,12 @@
     </Compile>
     <Compile Include="Models\BeerContext.cs" />
     <Compile Include="Models\BeerModel.cs" />
+    <Compile Include="Models\BeerStylesDTO.cs" />
+    <Compile Include="Models\BeerStyles.cs" />
     <Compile Include="Models\Hop.cs" />
+    <Compile Include="Models\HopStage.cs" />
     <Compile Include="Models\HopStep.cs" />
+    <Compile Include="Models\HopType.cs" />
     <Compile Include="Models\Malt.cs" />
     <Compile Include="Models\MaltGeneric.cs" />
     <Compile Include="Models\MaltManufacturer.cs" />
@@ -247,6 +251,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\beerStyles.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />

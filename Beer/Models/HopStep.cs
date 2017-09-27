@@ -13,5 +13,15 @@ namespace Beer.Models
         [StringLength(255)]
         public string Step { get; set; }
         public int StepOrder { get; set; }
+
+        public int HopTypeID { get; set; }
+
+        public int HopStageID { get; set; }
+
+        [ForeignKey("HopTypeID")]
+        public HopType HopType { get; set; }
+
+        [ForeignKey("HopStageID")]
+        public HopStage HopStage { get; set; }
     }
 }

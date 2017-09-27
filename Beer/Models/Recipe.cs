@@ -20,6 +20,11 @@ namespace Beer.Models
 
         public Yeast Yeast { get; set; }
 
+        public int BeerStylesID { get; set; }
+
+        //[ForeignKey("BeerStyleID")]
+        public BeerStyles BeerStyles { get; set; }
+
         public int ID { get; set; }
 
         public double? ABV { get; set; }
@@ -41,11 +46,21 @@ namespace Beer.Models
 
         public int? Fermentation { get; set; }
 
+        public string Description { get; set; }
+
+        public string Tips { get; set; }
+
+        
+
         [ForeignKey("RecipeID")]
         public ICollection<Recipe_Malts> Recipe_Malts { get; set; }
 
         [ForeignKey("RecipeID")]
         public ICollection<Recipe_Hops> Recipe_Hops { get; set; }
+
+
+
+        
 
         //public ICollection<MaltGeneric> MaltGenerics { get; set; }
 

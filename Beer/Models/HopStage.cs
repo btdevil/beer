@@ -1,4 +1,4 @@
-namespace Beer.Models
+﻿namespace Beer.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,13 +6,12 @@ namespace Beer.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Hop
+    public partial class HopStage
     {
         public int ID { get; set; }
 
         [StringLength(255)]
-        public string Hops { get; set; }
+        public string HopStageName { get; set; }
 
-        public double AA { get; set; }
     }
 }

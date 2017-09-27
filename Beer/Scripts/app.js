@@ -3,14 +3,18 @@ BEER.components = {};
 
 BEER.utils = (function () {
     var process = {
-        ajaxHelper: function (uri, method, data, self) {
+        ajaxHelper: function (uri, method, data, self, type) {
+            var dType = typeof type === 'undefined' ? 'json' : type;
+            var cTypeAccepts = typeof type === 'undefined' ? 'application/json' : 'application/'+ type +', text/'+ type +', */*'
             self.error(''); // Clear error message
             return $.ajax({
+                headers: {
+                    Accept: cTypeAccepts
+                },
                 type: method,
                 url: uri,
-                dataType: 'json',
-                contentType: 'application/json',
-                accepts: "application/json",
+                dataType: dType,
+                contentType: 'application/' + dType,
                 data: data ? JSON.stringify(data) : null
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 self.error(errorThrown);
@@ -637,6 +641,14 @@ BEER.MasterViewModel = function (data) {
 
         return true;
     }
+
+    self.beerXml = function (item) {
+        BEER.utils.ajaxHelper(recipesUri + item.id(), 'GET', null, self, 'xml').done(function (data) {
+            console.log('did run xml');
+            var formattedData = { 'SelectedRecipe': data };
+            console.log(data);
+        });
+    };
 
     function findMatches() {
         var recipe = self.allRecipes();

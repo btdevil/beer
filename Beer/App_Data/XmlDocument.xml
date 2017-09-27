@@ -533,6 +533,13 @@
             <param name="id">The recipeID</param>
             <returns></returns>
         </member>
+        <member name="M:Beer.Controllers.RecipesController.Dispose(System.Boolean)">
+            <summary>
+            Gets single recipe by ID
+            </summary>
+            <param name="id">The recipeID</param>
+            <returns></returns>
+        </member>
         <member name="M:Beer.Controllers.YeastsController.GetYeasts">
             <summary>
             Get all Yeasts
