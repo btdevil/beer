@@ -21,5 +21,6 @@ namespace Beer.Models
 
         [ForeignKey("MaltGenericID")]
         public MaltGeneric MaltGeneric { get; set; }
+
     }
 }

@@ -533,9 +533,9 @@
             <param name="id">The recipeID</param>
             <returns></returns>
         </member>
-        <member name="M:Beer.Controllers.RecipesController.Dispose(System.Boolean)">
+        <member name="M:Beer.Controllers.RecipesController.GetBeerXml(System.Int32)">
             <summary>
-            Gets single recipe by ID
+            Gets single recipe by ID for returning beerXML format
             </summary>
             <param name="id">The recipeID</param>
             <returns></returns>

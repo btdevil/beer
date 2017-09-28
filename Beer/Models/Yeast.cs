@@ -27,5 +27,7 @@ namespace Beer.Models
 
         [StringLength(255)]
         public string IsDry { get; set; }
+
+        public int? Attenuation { get; set; }
     }
 }

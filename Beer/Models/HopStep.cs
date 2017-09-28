@@ -18,6 +18,8 @@ namespace Beer.Models
 
         public int HopStageID { get; set; }
 
+        public string HopTime { get; set; }
+
         [ForeignKey("HopTypeID")]
         public HopType HopType { get; set; }
 

@@ -14,5 +14,8 @@ namespace Beer.Models
         [StringLength(255)]
         public string Malt { get; set; }
 
+        public double? PPG { get; set; }
+        public double? EBC { get; set; }
+
     }
 }

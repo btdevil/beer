@@ -6,6 +6,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    [Table("HopType")]
     public partial class HopType
     {
         public int ID { get; set; }

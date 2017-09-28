@@ -211,6 +211,7 @@
     <Compile Include="Models\BeerModel.cs" />
     <Compile Include="Models\BeerStylesDTO.cs" />
     <Compile Include="Models\BeerStyles.cs" />
+    <Compile Include="Models\BeerXmlDTO.cs" />
     <Compile Include="Models\Hop.cs" />
     <Compile Include="Models\HopStage.cs" />
     <Compile Include="Models\HopStep.cs" />
@@ -218,11 +219,14 @@
     <Compile Include="Models\Malt.cs" />
     <Compile Include="Models\MaltGeneric.cs" />
     <Compile Include="Models\MaltManufacturer.cs" />
+    <Compile Include="Models\MashDTO.cs" />
+    <Compile Include="Models\MashStepDTO.cs" />
     <Compile Include="Models\MyStock.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\RecipeDetailDTO.cs" />
     <Compile Include="Models\RecipeDTO.cs" />
     <Compile Include="Models\RecipeQuery.cs" />
+    <Compile Include="Models\Recipes.cs" />
     <Compile Include="Models\Recipe_Hops.cs" />
     <Compile Include="Models\Recipe_HopsDTO.cs" />
     <Compile Include="Models\Recipe_Malts.cs" />
@@ -233,6 +237,7 @@
     <Compile Include="Models\viewRecipeMaltDetail.cs" />
     <Compile Include="Models\viewRelationshipExample.cs" />
     <Compile Include="Models\Yeast.cs" />
+    <Compile Include="Models\YeastDTO.cs" />
     <Compile Include="Models\YeastSubstitute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

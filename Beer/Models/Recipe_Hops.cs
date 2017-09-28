@@ -19,11 +19,17 @@ namespace Beer.Models
 
         public int StepID { get; set; }
 
+        public int HopTypeID { get; set; }
+
         [ForeignKey("HopID")]
         public Hop Hop { get ; set;}
 
         [ForeignKey("StepID")]
         public HopStep HopStep { get; set; }
+
+        [ForeignKey("HopTypeID")]
+        public HopType HopType { get; set; }
+
 
     }
 }
