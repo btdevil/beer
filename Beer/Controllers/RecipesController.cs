@@ -6,6 +6,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Net.Http.Formatting;
 using System.Web.Http;
@@ -15,7 +16,6 @@ using Beer.Models;
 
 namespace Beer.Controllers
 {
-   
     public class RecipesController : ApiController
     {
         private BeerContext db = new BeerContext();
@@ -228,6 +228,7 @@ namespace Beer.Controllers
                                               Weight = rm.Weight,
                                               MaltGenericID = rm.MaltGenericID,
                                               MaltID = rm.MaltID,
+                                              PPG = rm.MaltGeneric.PPG,
                                               MaltGenericName = rm.MaltGeneric.Malt
                                           }).OrderByDescending(rm => rm.Weight).ThenBy(mn => mn.MaltGenericName).ToList(),
                                           BeerStylesID = r.BeerStylesID,
@@ -263,7 +264,7 @@ namespace Beer.Controllers
         /// Gets single recipe by ID for returning beerXML format
         /// </summary>
         /// <param name="id">The recipeID</param>
-        /// <returns></returns>
+        /// <returns>A downloadable BeerXMl</returns>
         [ResponseType(typeof(BeerXmlDTO))]
         [Route("api/Recipes/{id}/BeerXml")]
         public async Task<IHttpActionResult> GetBeerXml(int id)
@@ -299,6 +300,7 @@ namespace Beer.Controllers
                                         new MashStepDTO {
                                         MASH_STEP =
                                             new MashDTO {
+                                                NAME = "Mash 1",
                                                 MashTemp = r.MashTemp,
                                                 MashTime = r.MashTime,
                                                 TYPE = "Infusion",
@@ -318,6 +320,7 @@ namespace Beer.Controllers
                                         ID = rh.ID,
                                         RecipeID = rh.RecipeID,
                                         Weight = rh.Weight,
+                                        WeightSmall = rh.Weight,
                                         HopID = rh.HopID,
                                         StepID = rh.StepID,
                                         HopName = rh.Hop.Hops,
@@ -338,6 +341,7 @@ namespace Beer.Controllers
                                         MaltID = rm.MaltID,
                                         MaltGenericName = rm.MaltGeneric.Malt,
                                         PPG = rm.MaltGeneric.PPG,
+                                        YIELD = rm.MaltGeneric.PPG,
                                         EBC = rm.MaltGeneric.EBC,
                                         TYPE = "Grain"
                                     }).OrderByDescending(rm => rm.Weight).ThenBy(mn => mn.MaltGenericName).ToList(),
@@ -367,7 +371,12 @@ namespace Beer.Controllers
                 return NotFound();
             }
 
-            return Ok(new Recipes { Recipe = recipe.First() });
+            HttpResponseMessage responseMsg = Request.CreateResponse(HttpStatusCode.OK, new Recipes { Recipe = recipe.First() }, Configuration.Formatters.XmlFormatter);
+            responseMsg.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
+            responseMsg.Content.Headers.ContentDisposition.FileName = recipe.First().Name+".xml";
+            return ResponseMessage(responseMsg);
+
+            //return Ok(new Recipes { Recipe = recipe.First() });
         }
 
         //public IQueryable<Recipe> GetRecipes(double ABVMax, double ABVMin = 0, int EBCMin = 0, int EBCMax = 0, string hasAdjunct = "")

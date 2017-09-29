@@ -15,8 +15,24 @@ namespace Beer.Models
         [XmlIgnore]
         public int RecipeID { get; set; }
 
-        [XmlElement("AMOUNT")]
+        [XmlIgnore]
         public double? Weight { get; set; }
+
+        private double? weightsmall;
+        [XmlElement("AMOUNT")]
+        [JsonIgnore]
+        public double? WeightSmall
+        {
+            get
+            {
+                return Weight / 1000;
+            }
+
+            set
+            {
+                weightsmall = value;
+            }
+        }
 
         [XmlIgnore]
         public int HopID { get; set; }

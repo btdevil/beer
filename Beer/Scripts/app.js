@@ -643,12 +643,13 @@ BEER.MasterViewModel = function (data) {
     }
 
     self.beerXml = function (item) {
-        BEER.utils.ajaxHelper(recipesUri + item.id() + '/BeerXml', 'GET', null, self, 'xml').done(function (data) {
-            console.log('did run xml');
-            var formattedData = { 'SelectedRecipe': data };
-            console.log(data);
-             document.open('data:Application/octet-stream,' + encodeURIComponent(data));
-        });
+        window.location = recipesUri + item.id() + '/BeerXml';
+        //BEER.utils.ajaxHelper(recipesUri + item.id() + '/BeerXml', 'GET', null, self, 'xml').done(function (data) {
+        //    console.log('did run xml');
+        //    var formattedData = { 'SelectedRecipe': data };
+        //    console.log(data);
+        //     document.open('data:text/octet-stream,' + encodeURIComponent(data));
+        //});
     };
 
     function findMatches() {

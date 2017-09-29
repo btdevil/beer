@@ -13,6 +13,7 @@ namespace Beer.Models
     [XmlRoot("MASH_STEP")]
     public class MashDTO
     {
+        public string NAME { get; set; }
         [XmlElement("STEP_TEMP")]
         public int? MashTemp { get; set; }
         //[XmlArrayItem("STEP_TIME")]

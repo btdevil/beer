@@ -27,9 +27,22 @@ namespace Beer.Models
         [XmlElement("NAME")]
         public string MaltGenericName { get; set; }
 
-        [XmlElement("YIELD")]
-        [JsonIgnore]
+        [XmlIgnore]
         public double? PPG { get; set; }
+        private double? yeild;
+        
+        [JsonIgnore]
+        public double? YIELD {
+            get
+            {
+                return (PPG / 46.21)*100;
+            }
+            set
+            {
+                yeild = value;
+            }
+        }
+
         [XmlElement("COLOR")]
         [JsonIgnore]
         public double? EBC { get; set; }

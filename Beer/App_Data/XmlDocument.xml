@@ -538,7 +538,7 @@
             Gets single recipe by ID for returning beerXML format
             </summary>
             <param name="id">The recipeID</param>
-            <returns></returns>
+            <returns>A downloadable BeerXMl</returns>
         </member>
         <member name="M:Beer.Controllers.YeastsController.GetYeasts">
             <summary>

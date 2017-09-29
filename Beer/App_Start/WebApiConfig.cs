@@ -6,6 +6,8 @@ using Newtonsoft.Json;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Xml.Serialization;
+using System.Web.Routing;
+using System.Net.Http;
 
 namespace Beer
 {
@@ -34,6 +36,20 @@ namespace Beer
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+            string[] allowedMethods = { "GET"};
+
+            config.Routes.MapHttpRoute(
+                name: "DefaultApiWithExtension2",
+                routeTemplate: "api/{controller}/{id}.{ext}",
+                defaults: null,
+                constraints: new { httpMethod = new HttpMethodConstraint(allowedMethods) }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "DefaultApiWithExtension1",
+                routeTemplate: "api/{controller}.{ext}",
+                defaults: null,
+                constraints: new { httpMethod = new HttpMethodConstraint(allowedMethods) });
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
@@ -41,20 +57,17 @@ namespace Beer
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            //config.Routes.MapHttpRoute(
-            //    name: "FormatApi",
-            //    routeTemplate: "formatapi/{controller}/{id}/{format}",
-            //    defaults: new { id = RouteParameter.Optional, format = RouteParameter.Optional }
-            //);
-
             var xml = GlobalConfiguration.Configuration.Formatters.XmlFormatter;
             // Use XmlSerializer for instances of type "Product":
             xml.SetSerializer<Beer.Models.RecipeDTO>(new XmlSerializer(typeof(Beer.Models.RecipeDTO)));
 
-            config.Formatters.XmlFormatter.AddUriPathExtensionMapping("xml", "text/xml");
+            config.Formatters.XmlFormatter.AddUriPathExtensionMapping("xml", "application/octet-stream");
             config.Formatters.XmlFormatter.UseXmlSerializer = true;
             config.Formatters.JsonFormatter.AddUriPathExtensionMapping("json", "application/json");
             config.Formatters.Add(new BrowserJsonFormatter());
+            config.Formatters.XmlFormatter.MediaTypeMappings.Add(
+                new QueryStringMapping("type", "xml", new MediaTypeHeaderValue("text/xml"))
+            );
 
 
         }
