@@ -317,6 +317,44 @@ BEER.Models = (function () {
             }, self);
             self.recipe_Hops = ko.observableArray([]);
             self.recipe_Malts = ko.observableArray([]);
+            self.recipe_Others = ko.observableArray([]);
+            self.combinedHopsOther = ko.computed(function () {
+                var allBoiled = ko.observableArray([]);
+                ko.utils.arrayForEach(self.recipe_Hops(), function (item) {
+                    allBoiled.push({
+                        aa: item.aa,
+                        hopID: item.hopID,
+                        hopName: item.hopName,
+                        id: item.id,
+                        isMatched: item.isMatched,
+                        recipeID: item.recipeID,
+                        stepName: item.stepName,
+                        stepID: item.stepID,
+                        stepOrder: item.stepOrder,
+                        weight: item.weight,
+                    });
+                });
+
+                ko.utils.arrayForEach(self.recipe_Others(), function (item) {
+                    allBoiled.push({
+                        aa: ko.observable(0),
+                        hopID: item.otherID,
+                        hopName: item.otherName,
+                        id: item.id,
+                        isMatched: ko.observable(false),
+                        recipeID: item.recipeID,
+                        stepName: item.stepName,
+                        stepID: item.stepID,
+                        stepOrder: item.stepOrder,
+                        weight: item.weight,
+                    });
+                });
+
+                allBoiled.sort(function (a, b) {
+                    return a.stepOrder() - b.stepOrder();
+                });
+                return allBoiled;
+            });
             ko.mapping.fromJS(data, BEER.Mappings.hopMaltMapping, self);
             self.totalHopsBill = ko.computed(function () {
                 var totalWeight = 0;
@@ -403,6 +441,10 @@ BEER.Models = (function () {
                 return isMatched;
             }, self);
         },
+        Other: function Other(data, parent) {
+            var self = this;
+            ko.mapping.fromJS(data, {}, self);
+        },
         Yeast: function Yeast(data) {
             var self = this;
             ko.mapping.fromJS(data, {}, self);
@@ -453,6 +495,11 @@ BEER.Mappings = (function () {
             'recipe_Malts': {
                 create: function (options) {
                     return new BEER.Models.Malt(options.data, options.parent);
+                }
+            },
+            'recipe_Others': {
+                create: function (options) {
+                    return new BEER.Models.Other(options.data, options.parent);
                 }
             }
         },

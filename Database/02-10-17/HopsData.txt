@@ -1,0 +1,428 @@
+ID,Hops
+1,Admiral
+2,Ahtanum
+3,Amarillo
+4,Apollo
+5,Azacca
+6,Cascade (AU)
+7,AU35
+8,Archer
+9,Boadicea
+10,Bramling Cross
+11,Brewers Gold
+12,Bobek
+13,Cascade
+14,Cashmere
+15,Styrian Cardinal
+16,Celeia
+17,Centennial
+18,Challernger
+19,Chinook
+20,Citra
+21,Columbus
+22,Comet
+23,Denali
+24,East Kent Goldings
+25,El Dorado
+26,Endeavor
+27,Enigma
+28,Eureka
+29,Ekuanot
+30,Falconers Flight
+31,First Gold
+32,Flyers
+33,Fuggles
+34,Galaxy
+35,Hallertauer Blanc
+36,Hallertauer Mittlefruh
+37,Hallertauer Hersbrucker
+38,Hull Melon
+39,Magnum
+40,Lemon Drop
+41,Minstrel
+42,Mandarina
+43,Mosaic
+44,Motueka
+45,Nelson Sauvin
+46,Northdown
+47,Northern Brewer
+48,Cascade (NZ)
+49,Riwaka
+50,Wai-iti
+51,Olicana
+52,Pacifica
+53,Perle
+54,Phoenix
+55,Pioneer
+56,Rakau
+57,Saaz
+58,Savinjski Goldings
+59,Simcoe
+60,Sorachi Ace
+61,Styrian Wolf
+62,Summit
+63,Target
+64,Vic Secret
+65,Warrior
+66,Willamette
+67,Yellow Sub
+68,Bellma
+69,Cluster
+70,Ella
+71,Fantasia
+72,Nugget
+73,Pacific Gem
+74,Pacific Jade
+75,Palisade
+76,Progress
+77,Southern Star
+78,Tettnanger
+79,Topaz
+80,Zues
+81,Zythos
+82,Galena
+83,Crystal
+84,Liberty
+85,Pacific Hallertau
+86,Hercules
+87,Hersbrucker
+88,Green Bullet
+89,HBC 369
+90,Tomahawk
+91,Bravo
+92,Waimea
+93,Equinox
+94,*Agave Syrup
+95,*Almonds
+96,*Allspice
+97,Mt Hood
+98,*Bay Leaves
+99,*Bitter Orange Peel
+100,*Blackberry
+101,*Blackberry Concentrate
+102,*Blackcurrant
+103,*Blackcurrant Concentrate
+104,*Blood Orange
+105,*Blueberries
+106,*Blueberry Concentrate
+107,*Cocoa
+108,*Cocoa Nibs
+109,*Caraway
+110,*Cascara
+111,Dana
+112,EXP 366
+113,Goldings
+114,Kohatu
+115,Sterling
+116,Strisselspalt
+117,Styrian Goldings
+118,*Chilli
+119,*Chilli Powder
+120,*Cinnamon
+121,*Cloudberries
+122,*Clove
+123,*Coconut Chips
+124,*Coffee
+125,*Coffee Beans
+126,*Cold Infused Coffee
+127,*Columbus Extract
+128,*Coriander
+129,*Coriander Seeds
+130,*Cranberry
+131,*Cranberry juice
+132,*Crushed Coridaner Seeds
+133,*Cucumber
+134,*Cumin
+135,*Dark Musvado Sugar
+136,*Elderflower
+137,*Fresh Limes
+138,*Ginger
+139,*Ginger Powder
+140,*Grains of Paradise
+141,*Grapefruit Peel
+142,*Ground coffee
+143,*Habanero
+144,*Habanero Powder
+145,*Hibiscus
+146,*Honey
+147,*Indian Coriander
+148,*Jasmine
+149,Jester
+150,*Juniper Berries
+151,*Lactose
+152,*Lemon
+153,*Lemon Drop Chili
+154,*Lemon Peel
+155,*Limonnik berries
+156,*Lingonberries
+157,*Liquorice
+158,*Mango
+159,*Mango Puree
+160,*Mangoes (5 Pureed)
+161,*Maple Syrup
+162,*Melon
+163,*Mint
+164,*Nutmeg
+165,*Oak Chips
+166,*Oak Chips soakied in Mezcal
+167,*Oat Husks
+168,*Orange
+169,*Orange blossom honey
+170,*Orange Peel
+171,*Peppercorns
+172,*Peppercorns (Pink)
+173,*Perigold Truffle
+174,*Pineapple
+175,*Pumkin puree
+176,*Raisins
+177,*Raspberries
+178,*Rhubarb
+179,*Roasted Hazelnuts
+180,*Rosemary
+181,*Sea Buckthorn
+182,*Sea Buckthorn Puree
+183,*Sour Cherry
+184,*Sour Cherry Puree
+185,*Star Anise
+186,*Sweet Cherry
+187,*Sweet Orange Peel
+188,*Toasted Coconut Chips
+189,*Vanilla
+190,*Vanilla Extract
+191,*Vanilla Pods
+192,*Whole Chilli
+193,*Yuzu Juice
+194,*Yuzu juice (ml)
+ID,Hops,AA,Area,Type
+1,Admiral,14.9,UK,Bittering
+2,Ahtanum,6,US,Aroma
+3,Amarillo,9,US,Aroma
+4,Apollo,20.5,US,Bittering
+5,Azacca,12,US,Dual
+6,Cascade (AU),7.2000000000000002,New World,Dual
+7,AU35,6,New World,Aroma
+8,Archer,4.5,UK,Aroma
+9,Boadicea,5.0999999999999996,UK,Aroma
+10,Bramling Cross,6,UK,Dual
+11,Brewers Gold,7,Europe,Bittering
+12,Bobek,3.9500000000000002,Europe,Dual
+13,Cascade,5.7999999999999998,US,Dual
+14,Cashmere,8.3000000000000007,US,Dual
+15,Styrian Cardinal,10.199999999999999,Europe,Aroma
+16,Celeia,3.5,Europe,Dual
+17,Centennial,10.5,US,Aroma
+18,Challernger,7,UK,Dual
+19,Chinook,13,US,Dual
+20,Citra,12,US,Dual
+21,Columbus,15,US,Dual
+22,Comet,9.5,US,Bittering
+23,Denali,14.6,US,Aroma
+24,East Kent Goldings,5.5,UK,Aroma
+25,El Dorado,16,US,Dual
+26,Endeavor,9.25,UK,Dual
+27,Enigma,16.5,New World,Dual
+28,Eureka,17,US,Dual
+29,Ekuanot,14.4,US,Aroma
+30,Falconers Flight,11.199999999999999,US,Dual
+31,First Gold,7.5,UK,Dual
+32,Flyer,9,UK,Bittering
+33,Fuggles,4.7999999999999998,UK,Aroma
+34,Galaxy,14.199999999999999,New World,Dual
+35,Hallertauer Blanc,9.6999999999999993,Europe,Aroma
+36,Hallertauer Mittlefruh,4.25,Europe,Aroma
+37,Hallertauer Hersbrucker,3,Europe,Aroma
+38,Hull Melon,5.5,Europe,Aroma
+39,Magnum,12,Europe,Bittering
+40,Lemon Drop,5.5,US,Aroma
+41,Minstrel,7.4699999999999998,UK,Aroma
+42,Mandarina Bavaria,6.2999999999999998,Europe,Aroma
+43,Mosaic,12.300000000000001,US,Dual
+44,Motueka,7,New World,Aroma
+45,Nelson Sauvin,12,New World,Dual
+46,Northdown,8,UK,Dual
+47,Northern Brewer,9,Europe,Dual
+48,Cascade (NZ),7,New World,Dual
+49,Riwaka,5.5,New World,Aroma
+50,Wai-iti,3.5,New World,Aroma
+51,Olicana,6.9000000000000004,UK,Dual
+52,Pacifica,5.5,New World,Aroma
+53,Perle,8.3000000000000007,Europe,Dual
+54,Phoenix,10,UK,Dual
+55,Pioneer,8.5,UK,Dual
+56,Rakau,10.5,New World,Dual
+57,Saaz,3.7999999999999998,Europe,Aroma
+58,Savinjski Goldings,3.1000000000000001,Europe,Aroma
+59,Simcoe,13,US,Dual
+60,Sorachi Ace,13,US,Bittering
+61,Styrian Wolf,14.199999999999999,Europe,Dual
+62,Summit,17.5,US,Bittering
+63,Target,11,UK,Dual
+64,Vic Secret,18.399999999999999,New World,Dual
+65,Warrior,16,US,Bittering
+66,Willamette,5,US,Aroma
+67,Yellow Sub,7.9000000000000004,US,Aroma
+68,Bellma,12.1,US,Dual
+69,Cluster,7,US,Dual
+70,Ella,15,New World,Aroma
+71,Fantasia,4.2999999999999998,US,Dual
+72,Nugget,13.300000000000001,US,Dual
+73,Pacific Gem,15,New World,Bittering
+74,Pacific Jade,13,New World,Aroma
+75,Palisade,7.5,US,Aroma
+76,Progress,5.5,UK,Aroma
+77,Southern Star,13.6,SA,Bittering
+78,Tettnanger,4.5,Europe,Aroma
+79,Topaz,16.399999999999999,New World,Aroma
+80,Zues,14.300000000000001,US,Bittering
+81,Zythos,15,US,Aroma
+82,Galena,13,US,Bittering
+83,Crystal,4.5,US,Aroma
+84,Liberty,4,US,Aroma
+85,Pacific Hallertau,5,New World,Aroma
+86,Herkules,3.5,Europe,Bittering
+87,Hersbrucker,14.5,Europe,Aroma
+88,Green Bullet,12.5,New World,Dual
+89,HBC 369 (Mosaic),12.300000000000001,US,Dual
+90,Tomahawk,15,US,Bittering
+91,Bravo,13,US,Bittering
+92,Waimea,14.4,New World,Dual
+93,Equinox,15,US,Aroma
+94,*Agave Syrup,0,,
+95,*Almonds,0,,
+96,*Allspice,0,,
+97,Mt Hood,6,US,Aroma
+98,*Bay Leaves,0,,
+99,*Bitter Orange Peel,0,,
+100,*Blackberry,0,,
+101,*Blackberry Concentrate,0,,
+102,*Blackcurrant,0,,
+103,*Blackcurrant Concentrate,0,,
+104,*Blood Orange,0,,
+105,*Blueberries,0,,
+106,*Blueberry Concentrate,0,,
+107,*Cocoa,0,,
+108,*Cocoa Nibs,0,,
+109,*Caraway,0,,
+110,*Cascara,0,,
+111,Dana,6.4000000000000004,Europe,Aroma
+112,EXP 366 (Ekuanot),14.4,US,Aroma
+113,Goldings,5,UK,Dual
+114,Kohatu,6.5,New World,Aroma
+115,Sterling,7.5,US,Dual
+116,Strisselspalt,4,Europe,Aroma
+117,Styrian Goldings,5.25,Europe,Aroma
+118,*Chilli,0,,
+119,*Chilli Powder,0,,
+120,*Cinnamon,0,,
+121,*Cloudberries,0,,
+122,*Clove,0,,
+123,*Coconut Chips,0,,
+124,*Coffee,0,,
+125,*Coffee Beans,0,,
+126,*Cold Infused Coffee,0,,
+127,*Columbus Extract,0,,
+128,*Coriander,0,,
+129,*Coriander Seeds,0,,
+130,*Cranberry,0,,
+131,*Cranberry juice,0,,
+132,*Crushed Coridaner Seeds,0,,
+133,*Cucumber,0,,
+134,*Cumin,0,,
+135,*Dark Musvado Sugar,0,,
+136,*Elderflower,0,,
+137,*Fresh Limes,0,,
+138,*Ginger,0,,
+139,*Ginger Powder,0,,
+140,*Grains of Paradise,0,,
+141,*Grapefruit Peel,0,,
+142,*Ground coffee,0,,
+143,*Habanero,0,,
+144,*Habanero Powder,0,,
+145,*Hibiscus,0,,
+146,*Honey,0,,
+147,*Indian Coriander,0,,
+148,*Jasmine,0,,
+149,Jester,8.3900000000000006,UK,Aroma
+150,*Juniper Berries,0,,
+151,*Lactose,0,,
+152,*Lemon,0,,
+153,*Lemon Drop Chili,0,,
+154,*Lemon Peel,0,,
+155,*Limonnik berries,0,,
+156,*Lingonberries,0,,
+157,*Liquorice,0,,
+158,*Mango,0,,
+159,*Mango Puree,0,,
+160,*Mangoes (5 Pureed),0,,
+161,*Maple Syrup,0,,
+162,*Melon,0,,
+163,*Mint,0,,
+164,*Nutmeg,0,,
+165,*Oak Chips,0,,
+166,*Oak Chips soaked in Mezcal,0,,
+167,*Oat Husks,0,,
+168,*Orange,0,,
+169,*Orange blossom honey,0,,
+170,*Orange Peel,0,,
+171,*Peppercorns,0,,
+172,*Peppercorns (Pink),0,,
+173,*Perigold Truffle,0,,
+174,*Pineapple,0,,
+175,*Pumkin puree,0,,
+176,*Raisins,0,,
+177,*Raspberries,0,,
+178,*Rhubarb,0,,
+179,*Roasted Hazelnuts,0,,
+180,*Rosemary,0,,
+181,*Sea Buckthorn,0,,
+182,*Sea Buckthorn Puree,0,,
+183,*Sour Cherry,0,,
+184,*Sour Cherry Puree,0,,
+185,*Star Anise,0,,
+186,*Sweet Cherry,0,,
+187,*Sweet Orange Peel,0,,
+188,*Toasted Coconut Chips,0,,
+189,*Vanilla,0,,
+190,*Vanilla Extract,0,,
+191,*Vanilla Pods,0,,
+192,*Whole Chilli,0,,
+193,*Yuzu Juice,0,,
+194,*Yuzu juice (ml),0,,
+195,*Oak Chips soaked in Islay,0,,
+196,*Oak Chips soaked in Jura,0,,
+197,*Guarana Powder,0,,
+198,*Kola Nut Powder,0,,
+199,*Poppy Seed,0,,
+200,*Heather Honey,0,,
+201,*Strawberries,0,,
+202,*Oak Chips soaked in Highland,0,,
+203,*Oak Chips soaked in Lowland,0,,
+204,*Naga Chilli,0,,
+205,*White Cane Sugar,0,,
+206,*Wasabi Powder,0,,
+207,*Wasabi Paste,0,,
+208,*Sea Salt,0,,
+209,*Rum (ml),0,,
+210,*Tayberries,0,,
+211,*Purple Raspberries,0,,
+212,*Toasted Oak Chips,0,,
+213,*Highland Toffee (bars),0,,
+214,*Lycil Berries,0,,
+215,*Ginseng,0,,
+216,*Kolabu,0,,
+217,*Gingko,0,,
+218,*Matcha Tea,0,,
+219,*Maca Powder,0,,
+220,*Rum soaked raisins,0,,
+221,*Oak Chips soaked in Rum,0,,
+222,*Coriander Powder,0,,
+223,*Chipotle Peppers,0,,
+224,*Bramble,0,,
+225,*Popcorn,0,,
+226,*Passionfruit,0,,
+227,*Raspberry Puree,0,,
+228,*Cherry Concentrate,0,,
+229,*Bitter Almond Extract,0,,
+230,*Tahitian Vanilla Beans,0,,
+231,*Peach,0,,
+232,*Apricot,0,,

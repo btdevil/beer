@@ -58,6 +58,8 @@ namespace Beer.Models
         [ForeignKey("RecipeID")]
         public ICollection<Recipe_Hops> Recipe_Hops { get; set; }
 
+        [ForeignKey("RecipeID")]
+        public ICollection<Recipe_Others> Recipe_Others { get; set; }
 
 
         

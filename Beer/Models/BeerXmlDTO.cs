@@ -84,6 +84,11 @@ namespace Beer.Models
         [XmlArrayItem("HOP")]
         public List<Recipe_HopsDTO> Recipe_Hops { get; set; }
 
+        [ForeignKey("RecipeID")]
+        [XmlArray("OTHERS")]
+        [XmlArrayItem("OTHER")]
+        public List<Recipe_OthersDTO> Recipe_Others { get; set; }
+
         //[ForeignKey("BeerStyleID")]
         [XmlElement("STYLE")]
         public BeerStylesDTO BeerStyles { get; set; }

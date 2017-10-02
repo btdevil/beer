@@ -12,7 +12,7 @@
 USE [master]
 GO
 
-/****** Object:  Database [Beer]    Script Date: 25/08/2017 16:02:34 ******/
+/****** Object:  Database [Beer]    Script Date: 02/10/2017 10:06:04 ******/
 CREATE DATABASE [Beer]
  CONTAINMENT = NONE
  ON  PRIMARY 

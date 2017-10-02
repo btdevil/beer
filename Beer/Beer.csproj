@@ -222,6 +222,8 @@
     <Compile Include="Models\MashDTO.cs" />
     <Compile Include="Models\MashStepDTO.cs" />
     <Compile Include="Models\MyStock.cs" />
+    <Compile Include="Models\Other.cs" />
+    <Compile Include="Models\OthersDTO.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\RecipeDetailDTO.cs" />
     <Compile Include="Models\RecipeDTO.cs" />
@@ -231,6 +233,7 @@
     <Compile Include="Models\Recipe_HopsDTO.cs" />
     <Compile Include="Models\Recipe_Malts.cs" />
     <Compile Include="Models\Recipe_MaltsDTO.cs" />
+    <Compile Include="Models\Recipe_Others.cs" />
     <Compile Include="Models\viewMyStock.cs" />
     <Compile Include="Models\viewPossibleRecipe.cs" />
     <Compile Include="Models\viewRecipeHopDetail.cs" />

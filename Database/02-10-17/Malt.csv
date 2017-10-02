@@ -1,0 +1,868 @@
+"ID","Malt","PPG","PotentialSG","Manufacturer","Moisture","ExtractLKG","ExtractPercent","ColourEBCIMin","ColourEBCIMax","ColourEBCEMin","ColourEBCEMax","ColourLovibondMin","ColourLovibondMax","Nitrogen","Protien","RatioSNRMin","RatioSNRMax","RatioKIMin","RatioKIMax","RatioSTMin","RatioSTMax","IDP","EDPWK","ADPLinter","Max","Characteristics","Usage"
+"1","Pale Ale","38","1.038","1","4","308","81.5","4","6","5","7","2","3","1.7","10.6","36","42","40","45","40","45","40","140","45","100","","UK Pale Ale or Bitter"
+"2","Pale Ale Low Colour","38","1.038","1","4.5","308","81.5","3","4","3.5","4.5","1.5","2","1.7","10.6","36","42","40","45","40","45","40","140","45","0","","UK Pale Ale or Bitter"
+"3","Maris Otter Pale Ale","38","1.038","1","4","308","81.5","4","6","5","7","2","3","1.55","9.7","36","42","40","45","40","45","40","140","45","0","","UK Pale Ale or Bitter"
+"4","Maris Otter Blend","38","1.038","1","4","308","81.5","4","6","5","7","2","3","1.55","9.7","36","42","40","45","40","45","40","140","45","0","","UK Pale Ale or Bitter"
+"5","Maris Otter Low Colour","38","1.038","1","4.5","308","81.5","3","4","3.5","4.5","2","2","1.55","9.7","36","42","40","45","40","45","40","140","45","0","","UK Pale Ale or Bitter"
+"6","Scottish Ale","38","1.038","1","4","308","81.5","3","4","3.5","4.5","2","2","1.6","10","36","42","40","45","40","45","40","140","45","0","",""
+"7","Pilsen/Lager","37","1.037","1","4.5","306","81","2","3","3","4","1","2","1.7","10.6","35","40","38","42","38","42","60","215","65","100","","Traditionally in the UK, Crystal malt of colour 70 -80 ?ASBC has been used at about 5% of the grist to give the characteristic colour and flavour of UK Bitters and Pale Ales. Adjustment of the amount and/or colour of the Crystal malt may brew some very distinctive beers, but this may require some careful experimentation. Crystal malts have been used in the brewing of Lager beers, but, again, considerable care is required to ensure that whilst a distinctive flavour is achieved, the crystal flavour and colour does not become too dominant. In all beers they can help prevent the formation of oxidation flavours. Crystal malts have little or no enzymatic power."
+"8","Vienna","36","1.036","1","3.5","305","80.5","6","8","8","10","3","4","1.7","11","36","42","40","46","40","46","42","145","50","90","",""
+"9","Munich","37","1.037","1","3.5","304","80","7","10","10","15","4","6","1.7","11","36","42","40","44","40","44","35","120","40","80","It is used in the production of dark Dunkel Lagers, which are dark in colour with a brownish tinge. In such beers Munich malt is only a part of the grist, along with pale Lager malt and perhaps Caramalt.",""
+"10","Dextrin","33","1.033","1","7","250","70","2.5","4","3","4.5","1.5","2","1.75","11","0","0","0","0","0","0","0","0","0","0","",""
+"11","Amber","35","1.035","1","4.5","275","77","80","100","85","105","45","60","1.75","11","0","0","0","0","0","0","0","0","0","20","A traditional British specification, amber malt has a light, biscuity, dry flavour and can be used to produce some Bitter and Mild Ales and sweet Stouts in the UK, as well as the traditional London Porters that have come back into favour recently. It is used to colour and flavour darker ales and to add some viscosity. The flavour is quite intense and caution in the use of this material is required.","Bitter, Mild Ales, sweet Stouts, London Porters"
+"12","Brown","33","1.033","1","4.5","275","77","100","120","110","130","50","70","1.75","11","0","0","0","0","0","0","0","0","0","0","malt imparts a very bitter, burnt flavour to beer.",""
+"13","Pale Chocolate","35","1.035","1","0","0","0","450","550","500","600","280","340","0","0","0","0","0","0","0","0","0","0","0","0","",""
+"14","Chocolate","35","1.035","1","4","200","0","800","1000","900","1100","450","550","0","0","0","0","0","0","0","0","0","0","0","10","Typically used in the production of Porters and sweet Stouts chocolate malt is made in a similar fashion to amber malt, though higher final temperatures are used, and is intermediate with black malt. Its flavour, which derives from pyrazines and pyrroles (heterocyclic aromatic organic compounds), is sharp and can be acrid, so care is needed in its use. Chocolate malts contain little or no enzymatic power.","Porters and sweet Stouts"
+"15","Black","35","1.035","1","4","200","0","1100","1400","1200","1500","550","650","0","0","0","0","0","0","0","0","0","0","0","10","","Porters and sweet Stouts"
+"16","Roasted Barley","35","1.035","1","0","0","0","1100","1400","1200","1500","550","650","0","0","0","0","0","0","0","0","0","0","0","10","",""
+"17","Light Caramalt","35","1.035","1","8","200","0","10","30","15","35","13","17","0","0","0","0","0","0","0","0","0","0","0","20","Having a distinctive toffee flavour which becomes more intense as colour is increased, Caramalts are used to give colour and flavour to pale Lager beers. However, they should be used with care to avoid making the beer too dark or giving it too cloying a flavour. At the higher end of the colour range burnt or roasted malt flavours may begin to appear. They also change the oxidation - reduction state of a beer, and can therefore improve the stability of a beer by preventing the formation of oxidised (cardboard) flavours.",""
+"18","Medium Caramalt","35","1.035","1","8","200","0","50","70","55","75","30","37","0","0","0","0","0","0","0","0","0","0","0","0","Having a distinctive toffee flavour which becomes more intense as colour is increased, Caramalts are used to give colour and flavour to pale Lager beers. However, they should be used with care to avoid making the beer too dark or giving it too cloying a flavour. At the higher end of the colour range burnt or roasted malt flavours may begin to appear. They also change the oxidation - reduction state of a beer, and can therefore improve the stability of a beer by preventing the formation of oxidised (cardboard) flavours.",""
+"19","Dark Caramalt","35","1.035","1","0","0","0","70","100","80","110","50","60","0","0","0","0","0","0","0","0","0","0","0","0","Having a distinctive toffee flavour which becomes more intense as colour is increased, Caramalts are used to give colour and flavour to pale Lager beers. However, they should be used with care to avoid making the beer too dark or giving it too cloying a flavour. At the higher end of the colour range burnt or roasted malt flavours may begin to appear. They also change the oxidation - reduction state of a beer, and can therefore improve the stability of a beer by preventing the formation of oxidised (cardboard) flavours.",""
+"20","Light Crystal","35","1.035","1","8","200","0","90","110","100","120","60","70","0","0","0","0","0","0","0","0","0","0","0","0","Traditionally in the UK, Crystal malt of colour 70 -80 ?ASBC has been used at about 5% of the grist to give the characteristic colour and flavour of UK Bitters and Pale Ales. Adjustment of the amount and/or colour of the Crystal malt may brew some very distinctive beers, but this may require some careful experimentation. Crystal malts have been used in the brewing of Lager beers, but, again, considerable care is required to ensure that whilst a distinctive flavour is achieved, the crystal flavour and colour does not become too dominant. In all beers they can help prevent the formation of oxidation flavours. Crystal malts have little or no enzymatic power.","UK Bitters and Pale Ales"
+"21","Medium Crystal","35","1.035","1","8","200","0","130","150","140","160","70","80","0","0","0","0","0","0","0","0","0","0","0","0","Traditionally in the UK, Crystal malt of colour 70 -80 ?ASBC has been used at about 5% of the grist to give the characteristic colour and flavour of UK Bitters and Pale Ales. Adjustment of the amount and/or colour of the Crystal malt may brew some very distinctive beers, but this may require some careful experimentation. Crystal malts have been used in the brewing of Lager beers, but, again, considerable care is required to ensure that whilst a distinctive flavour is achieved, the crystal flavour and colour does not become too dominant. In all beers they can help prevent the formation of oxidation flavours. Crystal malts have little or no enzymatic power.","UK Bitters and Pale Ales"
+"22","Dark Crystal","35","1.035","1","4","200","0","170","210","185","230","95","115","0","0","0","0","0","0","0","0","0","0","0","0","Traditionally in the UK, Crystal malt of colour 70 -80 ?ASBC has been used at about 5% of the grist to give the characteristic colour and flavour of UK Bitters and Pale Ales. Adjustment of the amount and/or colour of the Crystal malt may brew some very distinctive beers, but this may require some careful experimentation. Crystal malts have been used in the brewing of Lager beers, but, again, considerable care is required to ensure that whilst a distinctive flavour is achieved, the crystal flavour and colour does not become too dominant. In all beers they can help prevent the formation of oxidation flavours. Crystal malts have little or no enzymatic power.","UK Bitters and Pale Ales"
+"23","Very Dark Crystal","35","1.035","1","0","0","0","250","320","270","350","153","165","0","0","0","0","0","0","0","0","0","0","0","0","Traditionally in the UK, Crystal malt of colour 70 -80 ?ASBC has been used at about 5% of the grist to give the characteristic colour and flavour of UK Bitters and Pale Ales. Adjustment of the amount and/or colour of the Crystal malt may brew some very distinctive beers, but this may require some careful experimentation. Crystal malts have been used in the brewing of Lager beers, but, again, considerable care is required to ensure that whilst a distinctive flavour is achieved, the crystal flavour and colour does not become too dominant. In all beers they can help prevent the formation of oxidation flavours. Crystal malts have little or no enzymatic power.","lager and golden ale"
+"24","Peated","34","1.034","1","5","308","81.5","3","4","3.5","4.5","1.5","2","1.65","10.3","36","42","38","44","38","44","60","215","65","0","",""
+"25","Finest Maris Otter","38","1.038","4","3.5","308","81.5","5","7","5.5","7.5","2.5","3.5","1.6","10","38","43","43","48","43","48","45","140","50","100","The consistently reliable Maris Otter? continues to provide the qualities expected by the brewer","Ales"
+"26","Extra Pale Maris Otter","38","1.038","4","4.5","308","81.5","2.5","3.5","3","4","1.5","2","1.6","10","38","43","43","48","43","48","50","150","55","100","Lower colour version of Maris Otter? Ale malt suitable for lager and golden ale brewing","lagers and other pale beers such as golden ales"
+"27","Best Ale","36","1.036","4","3.5","310","82","5","7","5.5","7.5","2.5","3.5","1.65","10.3","38","43","43","48","43","48","45","140","50","100","Higher color and balanced sweet, malty flavor","ales, porters and stouts"
+"28","Extra Pale","38","1.038","4","4.5","310","82","2.5","3.5","3","4","1.5","2","1.65","10.3","38","43","43","48","43","48","50","145","55","100","Lower colour version of Best Ale Malt suitable for lager and golden ale brewing",""
+"29","Europils","38","1.038","4","4.5","308","81.5","2.5","3.5","3","4","1.5","2","1.75","11","36","40","43","48","43","48","60","200","66","100","Traditional European-style malt suitable for all pilsner types","pilsner type brews"
+"30","Clear Choice Ale","38","1.038","4","4","308","81.5","4","6","4.5","6.5","2","3","1.75","10.9","37","46","42","52","45","52","45","140","50","100","improved haze stability and enhanced flavor stability. Additionally, the absence of polyphenols increases malty, sweet notes and reduces astringent and bitter notes in the finished beer.",""
+"31","Clear Choice Extra Pale","38","1.038","4","4.5","308.5","81.5","2.5","4","3","4.5","1.5","2","1.75","10.9","37","46","42","52","45","52","50","150","55","100","improved haze stability and enhanced flavor stability. Additionally, the absence of polyphenols increases malty, sweet notes and reduces astringent and bitter notes in the finished beer.",""
+"32","Organic Ale","38","1.038","4","4","308.6","81.5","4.5","7","5","7.5","2.5","4","1.6","10","37","44","42","50","42","50","0","0","0","100","Malts produced from organic barley with full supply-chain traceability guaranteed",""
+"33","Organic Extra Pale","38","1.038","4","4.5","308.5","81.5","2.5","4","3","4.5","1.5","2","1.6","10","37","44","42","50","42","50","0","0","0","100","Malts produced from organic barley with full supply-chain traceability guaranteed",""
+"34","Vienna","35","1.035","4","4.5","302","80","5","9","6","10","3","4","1.65","10.3","0","0","0","0","0","0","0","0","0","0","Its origins lie in Vienna or amber lagers, but Vienna Malt will give golden hues to other beers and will
+increase body and mouthfeel. It retains sufficient enzyme activity to be used as base malt in all-malt grists.The subtle malty flavours associated with Vienna Malt provide toffee and caramel notes.",""
+"35","Munich Light","37","1.037","4","4.5","299","79","15","25","17","","7","","1.8","11.3","0","0","0","0","0","0","0","0","0","20","contrast with the caramel-like flavors associated with crystal malts and the golden to reddish hues of the color is popular in some beer styles.",""
+"36","Munich Dark","37","1.037","4","4.5","299","79","40","50","","60","","22","1.8","11.3","0","0","0","0","0","0","0","0","0","20","contrast with the caramel-like flavors associated with crystal malts and the golden to reddish hues of the color is popular in some beer styles.",""
+"37","CaraGold","34","1.034","4","0","0","0","12","16","13","17","5","8","0","0","0","0","0","0","0","0","0","0","0","0","A slightly higher coloured malt than the regular Cara, Cara Gold will add depth to a beer and bring sweetness and golden/amber colour, good for lower ABV, paler beers.",""
+"38","Caramalt","35","1.035","4","0","0","0","23","32","25","35","10","15","0","0","0","0","0","0","0","0","0","0","0","25","Very useful for imparting body and a slight malty sweetness to blonde beers due to its low colour and longer chain, dextrin sugars.",""
+"39","Light Crystal (Crystal 150)","35","1.035","4","0","0","0","145","165","160","180","60","70","0","0","0","0","0","0","0","0","0","0","0","20","A great malt for adding sweet, caramel flavour to pale/amber ales. IPA?s and bitters. The lower colour is due to the shorter kilning time and this maintains the sweetness with getting too intense with the caramel notes. It will bring deep red colour to the beers depending on how much is used.",""
+"40","Medium Crystal (Crystal 240)","35","1.035","4","0","0","0","225","265","250","290","95","110","0","0","0","0","0","0","0","0","0","0","0","10","Roasted for longer to develop a more toffee like aroma and flavour, good for red/brown/ruby bitters and ales where it will add flavour complexity and punch through bitterness more than the light crystal.",""
+"41","Dark Crystal (Crystal 400)","35","1.035","4","0","0","0","380","435","420","480","155","185","0","0","0","0","0","0","0","0","0","0","0","10","The most intensely flavoured and coloured of our crystal malts, we move into a different arena on aroma with roasted/sweet coffee appearing and a slight burnt caramel note, good for full flavoured dark brown and ruby ales, stouts and porters",""
+"42","Amber","37","1.037","4","0","0","0","55","75","60","80","23","35","0","0","0","0","0","0","0","0","0","0","0","15","Amber is the lowest coloured of the roasted malts and imparts a toasty, biscuity maltiness to bitter, ales, milds, porters and stouts, good for depth of flavour without too much intensity. It has no diastatic power and should only be used up to 15% of the grist.",""
+"43","Brown","35","1.035","4","0","0","0","110","135","120","150","45","60","0","0","0","0","0","0","0","0","0","0","0","10","It has a strong, dark-toasted grain flavor, slightly nutty with a hint of bitter chocolate. Brown malt imparts dark amber to light brown hues. It is used in many older English ale styles, and is an essential ingredient for traditional porters.",""
+"44","Chocolate","35","1.035","4","0","0","0","820","1000","900","1100","340","420","0","0","0","0","0","0","0","0","0","0","0","10","More intense in colour and flavour with distinct roasted coffee aroma and flavour along with bittersweet dark chocolate undertones. Perfect for adding depth to brown ales and bitters and a must in strong milds, stouts and porters.",""
+"45","Black","35","1.035","4","0","0","0","1100","1300","1250","1450","450","550","0","0","0","0","0","0","0","0","0","0","0","10","Smoother than roasted barley giving full roasted flavour along with a slightly tart acridity, in small amounts this malt will give a reddish hue without becoming too intense. Use at higher levels for robust to give an edge to robust porters.",""
+"46","Roasted Barley","35","1.035","4","0","0","0","1100","1300","1250","1450","450","550","0","0","0","0","0","0","0","0","0","0","0","10","As the name suggests, this grain isn?t malted. Roasted Barley imparts a dry, intensely roasted, astringent flavour and is used in guiness style stouts and strong porter. At levels below 1.5% of the grist it can be used to adjust colour and give a dry clean finish to a beer",""
+"47","Dextrin","33","1.033","4","7","300","79.5","2","3","2.5","3.5","1.5","2","1.8","11.25","26","35","30","40","30","40","0","0","0","10","Dextrin malt is germinated in the process to create longer chain sugars that survive the mashing process to give higher attenuation limits and thus fuller tasting beers. It can provide extra body and improve the head retention of your brew.",""
+"48","Wheat","38","1.038","4","6.5","320","84.5","2.5","4.5","3","5","1.5","2.5","2.2","13.8","38","46","44","51","44","51","130","400","143","55","wheat malt can be used as the base malt at around 55% inclusion for wheat beers and, when mixed with barley malt, wheat malt can improve head retention, improve mouthfeel and introduce flavor changes in other beer types. Enhance body and head retention; it brings a subtle smoothness to beers when used up to 15%. Beyond this percentage, it will start to create hazy Weissen/ Wit type beers.","Wheat beers and other beers"
+"49","Toasted Wheat","25","1.025","4","6","325","85.8","20","30","22.3","33.5","9","13","2.1","13.1","38","46","43.1","51.7","43.1","51.7","60","215","67","50","Toasted Wheat Malt can add bready and nutty flavours to different types of beer. It will improve head retention and is used at up to 10% inclusion for Ales and 50% for wheat beers.","Wheat beers and ales"
+"50","Rye","35","1.035","4","4.5","327.9","86.5","22","32","24","35","9.5","14","1.6","10","45","55","45","55","45","55","45","180","62","25","when mixed with barley malt, rye malt can improve head retention, improve mouthfeel and introduce flavor changes of a toffee/caramel note at lower inclusion rates and a spicy after-palate at higher inclusion rates. Most notably, rye malt will also impart a reddish hue to beers.",""
+"51","Naked Oat","33","1.033","4","3.5","285","75","1.5","2.5","2","3","1.2","1.6","2.1","13","17","22","20","25","20","25","15","50","17","0","Oat malt gives smoothness and body to darker beers and is particularly good in stouts.",""
+"52","Torrefied Wheat","35","1.035","4","10","310","81.9","2.5","4.5","2.8","5","1.5","2.3","0","0","0","0","0","0","0","0","0","0","0","0","Promotes head retention and adds body.",""
+"53","Flaked Torrefied Barley","36","1.036","4","10","308","81.9","2.5","4.5","2.8","5","1.5","2.3","0","0","0","0","0","0","0","0","0","0","0","0","Promotes head retention and adds body.",""
+"54","Flaked Torrefied Maize","34","1.034","4","8.5","328","86.5","1.3","1.3","1.5","1.5","1","1","0","0","0","0","0","0","0","0","0","0","0","0","Promotes head retention and adds body.",""
+"55","Flaked Torrefied Rice","32","1.032","4","8.5","305","80.6","1.3","1.3","1.5","1.5","1","1","0","0","0","0","0","0","0","0","0","0","0","0","Lightens wort colour and adds a unique sweetness to the wort which is similar to cornflakes.",""
+"56","Flaked Torrefied Oats","37","1.037","4","11","292","77.2","2.5","4.5","2.8","5","1.5","2.3","0","0","0","0","0","0","0","0","0","0","0","0","Lightens wort colour and reduces protein levels, imparts a characteristic dryness to finished beers.",""
+"57","Maris Otter","36","1.036","7","0","308","0","3.4","5.2","4.5","7","1.7","2.4","1.6","0","0","0","37","42","0","0","0","156","0","100","authentic, full malty taste compared to standard pale ale malts.","Any warm fermented beers"
+"58","Maris Otter Extra Pale","36","1.036","7","0","308","0","2.2","3.4","0","0","1.3","1.7","0","0","0","0","0","0","0","0","","0","0","100","","	IPA, bitter, golden ales, light beers"
+"59","Maris Otter / Propino","36","1.036","7","0","308","0","3.4","5.2","0","0","1.7","2.4","0","0","0","0","0","0","0","0","0","0","0","100","","Any warm fermented beers"
+"60","Propino Pale (Spring)","36","1.036","7","3.5","310","81.5","3.4","5.2","4.5","7","1.7","2.4","1.6","0","0","0","37","42","0","0","0","156","0","100","","Any warm fermented beers"
+"61","Propino Extra Pale","36","1.036","7","0","310","0","2.2","3.4","0","0","1.3","1.7","0","0","0","0","0","0","0","0","0","0","0","100","","	IPA, bitter, golden ales, light beers"
+"62","Venture Pale","36","1.036","7","0","310","0","3.4","5.2","0","0","1.7","2.4","0","0","0","0","0","0","0","0","0","0","0","100","Pleasant and characteristic malt odour with a malty and slightly sweet taste.","Any warm fermented beers"
+"63","Lager","37","1.037","7","0","308","0","2.8","3.4","0","0","1.5","1.7","0","0","0","0","0","0","0","0","0","0","0","100","","Any cold fermented beers"
+"64","Pilsner","36","1.036","7","0","308","0","2.5","2.4","0","0","1.4","1.7","0","0","0","0","0","0","0","0","0","0","0","100","Well-modified 2-row English malt, no need for stepped mash. Use for making lighter colored beers with a more delicate malty and sweet flavor. Produces fuller body than many Pilsner-style malts","Any cold fermented beers"
+"65","Munich","37","1.037","7","0","300","0","12","20","0","0","5","8","0","0","0","0","0","0","0","0","0","0","0","70","","Any beer"
+"66","Vienna","35","1.035","7","0","308","0","7","12","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","",""
+"67","Super Pale","36","1.036","7","0","310","0","2","3","0","0","1.2","1.6","0","0","0","0","0","0","0","0","0","0","0","100","","	IPA, bitter, golden ales, light beers"
+"68","Mild","37","1.037","7","0","308","0","5","6","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","",""
+"69","Caramalt","35","1.035","7","0","290","0","22","43","0","0","8.8","16.7","0","0","0","0","0","0","0","0","0","0","0","20","","IPA, bitter, mild, stout, porter, golden"
+"70","Crystal 110","33","1.033","7","0","285","0","95","125","0","0","36.3","47.6","0","0","0","0","0","0","0","0","0","0","0","15","","	IPA, bitter, mild, stout, porter"
+"71","Crystal 150","33","1.033","7","0","285","0","130","170","0","0","49.5","64.6","0","0","0","0","0","0","0","0","0","0","0","15","","	IPA, bitter, mild, stout, porter"
+"72","Crystal 240","33","1.033","7","0","285","0","210","270","0","0","79.9","102.3","0","0","0","0","0","0","0","0","0","0","0","15","","	IPA, bitter, mild, stout, porter"
+"73","Crystal 400","33","1.033","7","0","277","0","360","440","0","0","136.3","166.5","0","0","0","0","0","0","0","0","0","0","0","15","","	IPA, bitter, mild, stout, porter"
+"74","Dark Crystal Rye","33","1.033","7","0","277","0","200","300","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","15","",""
+"75","Amber","35","1.035","7","0","270","0","40","75","0","0","15.5","28.8","0","0","0","0","0","0","0","0","0","0","0","15","","Mild, bitter, ales, IPA, brown ale, Porter, Stout"
+"76","Brown","33","1.033","7","0","250","0","140","160","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","10","",""
+"77","Light Chocolate","32","1.032","7","0","250","0","400","600","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","10","","Mild, bitter, ales, IPA, brown ale, Porter, Stout"
+"78","Chocolate","35","1.035","7","0","250","0","900","1100","0","0","340","414","0","0","0","0","0","0","0","0","0","0","0","10","","Mild, bitter, ales, IPA, brown ale, Porter, Stout"
+"79","Black","33","1.033","7","0","230","0","1200","1400","0","0","453","528","0","0","0","0","0","0","0","0","0","0","0","8","","Mild, bitter, ales, IPA, brown ale, Porter, Stout"
+"80","Roast Barley","25","1.025","7","0","230","0","1050","1450","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","8","","Mild, bitter, ales, IPA, brown ale, Porter, Stout"
+"81","Wheat","37","1.037","7","0","315","0","5","5","0","0","2.3","2.3","0","0","0","0","0","0","0","0","0","0","0","100","","Lager, Ales, Wheat Beers"
+"82","Torrified Wheat","35","1.035","7","0","280","0","2","6","0","0","1.2","2.7","0","0","0","0","0","0","0","0","0","0","0","10","","All beers"
+"83","Malted Wheat Flakes","36","1.036","7","0","0","0","25","55","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","10","",""
+"84","Malted Rye Flakes","36","1.036","7","0","0","0","10","40","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","10","",""
+"85","Malted Oats","33","1.033","7","0","230","0","3","7","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","15","",""
+"86","Maris Otter","36","1.036","10","4.5","311","0","3.75","5.75","4.5","7","0","0","1.6","0","0","0","36","42","0","0","0","0","0","100","A flavoursome, reliable malt. Easily processed and very consistent. Highly popular with craft brewers","English Ale"
+"87","Maris Otter Low Colour","36","1.036","10","5","311","0","3","3","3.6","3.6","0","0","1.6","0","0","0","36","42.5","0","0","0","0","0","100","A lighter colour version of Maris Otter","Light coloured ales and Lagers"
+"88","Pale Ale","36","1.036","10","4.5","313","0","3.27","5.75","4.5","7","0","0","1.6","0","0","0","36","42.5","0","0","0","0","0","100","A well modified malt giving flavoursome, well rounded wort","English Ale"
+"89","Pale Ale Low Colour","36","1.036","10","5","313","0","3","3","3.6","3.6","0","0","1.6","0","0","0","36","42.5","0","0","0","0","0","100","A lighter colour version of the Pale Ale malt","Light coloured ales and Lagers"
+"90","Lager","36","1.036","10","4.5","311","0","3","3","3.6","3.6","0","0","1.6","0","0","0","36","42.5","0","0","0","0","0","100","A light golden, fully modified malt suitable for infusion or decoction mashes","Lagers"
+"91","Wheat","36","1.036","10","6","314","0","4.2","4.2","5","5","0","0","2.2","0","0","0","20","30","0","0","0","0","0","80","3-5% Improves head retention and mouth feel at lower levels#Provides the flavor and mouthfeel of wheat beers","Ales Wheat Beer/Weissbiers"
+"92","Rye","36","1.036","10","6","319","0","5.75","5.75","7","7","0","0","1.5","0","0","0","40","50","0","0","0","0","0","50","5-50% Adds toffee/caramel and low level spicy notes#Adds spicy notes typical of a rye beer and a reddish hue","Ales Rye beer"
+"93","Mild Ale","35","1.035","10","4.5","305","0","8","12","10","14","0","0","0","0","0","0","0","0","0","0","0","0","0","100","Less fermentable than Pale Ale malt. Sweet/nutty notes with a light golden/copper colour","Mild and Brown Ales"
+"94","Munich","35","1.035","10","4.5","305","0","12","17","15","20","0","0","0","0","0","0","0","0","0","0","0","0","0","100","Less fermentable than Pale Ale malt. Sweet/nutty notes with a golden/copper colour","Dark Lagers"
+"95","Vienna","35","1.035","10","4.5","305","0","8","12","10","14","0","0","0","0","0","0","0","0","0","0","0","0","0","100","Less fermentable than Pale Ale malt. Sweet/nutty notes with a light golden/copper colour","Mild and Brown Ales"
+"96","Flaked Torrefied Barley","34","1.034","10","10","283","0","2.1","3.8","2.5","4.5","0","0","0","0","0","0","0","0","0","0","0","0","0","10","Pre-cooked/non-malted cereal, can be added directly to a mash. Gives grainy notes and improves head retention","Adjunct"
+"97","Flaked Maize","36","1.036","10","8.5","307","0","1.1","1.1","1.3","1.3","0","0","0","0","0","0","0","0","0","0","0","0","0","10","Pre-cooked/non-malted cereal, can be added directly to a mash. Neutral flavour in ales, gives subtle corn notes in lighter styles","Adjunct"
+"98","Flaked Malted Oats","32","1.032","10","11","266","0","2.4","4.6","2.8","5.5","0","0","0","0","0","0","0","0","0","0","0","0","0","5","Pre-cooked/malted cereal, can be added directly to a mash. Adds toasted/biscuity notes, Improves mouth-feel and head retention","Adjunct"
+"99","Torrefied Wheat","34","1.034","10","10","285","0","2.1","3.8","2.5","4.5","0","0","0","0","0","0","0","0","0","0","0","0","0","10","Pre-cooked/non-malted cereal, can be added directly to a mash. Adds toasted/biscuity notes, Improves head retention","Adjunct"
+"100","CaraGold","32","1.032","10","7.5","290","0","8","14","10","17","0","0","0","0","0","0","0","0","0","0","0","0","0","10","Very low colour malt. Adds malty, fruity and toffee notes. Increases body/fullness and gives a softer, rounder mouthfeel","Adjunct for Lager"
+"101","Caramalt","32","1.032","10","7.5","290","0","20","35","23","42","0","0","0","0","0","0","0","0","0","0","0","0","0","10","Sweeter, giving more caramel notes than standard crystal but giving no roasted/nutty flavours. Greatly increases head retention/body","Adjunct for Lager and light coloured ales"
+"102","Crystal 100","32","1.032","10","5","280","0","90","110","105","130","0","0","0","0","0","0","0","0","0","0","0","0","0","10","Gives sweet and malty notes ans a light golden hue. Improves head retention and beer stability.","Colour and Flavour Adjunct"
+"103","Crystal 140","32","1.032","10","4.5","280","0","140","160","165","190","0","0","0","0","0","0","0","0","0","0","0","0","0","10","Gives caramel and toffee notes with a golden hue. Improves head retention and beer stability","Colour and Flavour Adjunct"
+"104","Crystal 200","32","1.032","10","4.5","274","0","180","220","215","265","0","0","0","0","0","0","0","0","0","0","0","0","0","10","Adds burnt toffee notes and a deep golden/ruby red colour. Improves head retention and beer stability.","Colour and Flavour Adjunct"
+"105","Crystal 400","32","1.032","10","3.5","275","0","380","440","450","525","0","0","0","0","0","0","0","0","0","0","0","0","0","10","Adds burnt toffee notes and a deep golden/ruby red colour. Improves head retention and beer stability.","Colour and Flavour Adjunct"
+"106","Crystal Rye","32","1.032","10","5","282","0","120","180","140","220","0","0","0","0","0","0","0","0","0","0","0","0","0","10","Rye flavour with sweet, malty and dry liquorice/toffee notes","Adjunct"
+"107","Amber","33","1.033","10","3","280","0","40","70","45","85","0","0","0","0","0","0","0","0","0","0","0","0","0","5","Lightly roasted giving less harsh notes when compared to higher roasted products. Dry baked biscuity flavour",""
+"108","Brown","33","1.033","10","3.5","280","0","90","120","105","145","0","0","0","0","0","0","0","0","0","0","0","0","0","5","Dryer and less sweet than crystal malt of the same colour. Has mild coffee/biscuity notes. Low fermentability","Brown ale and Sweet Stout"
+"109","Chocolate Low Colour","33","1.033","10","3.5","285","0","350","550","415","665","0","0","0","0","0","0","0","0","0","0","0","0","0","5","Moderate coffee notes with mild burnt toast notes. Similar to chocolate malt but less harsh","Dark beers and Stout"
+"110","Chocolate","33","1.033","10","3.5","275","0","900","1100","1070","1310","0","0","0","0","0","0","0","0","0","0","0","0","0","5","Strong coffee notes with mild burnt toast notes. Similar to black malt but less harsh and bitter","Dark beers and Stout"
+"111","Black","32","1.032","10","3.5","270","0","1200","1500","1400","1800","0","0","0","0","0","0","0","0","0","0","0","0","0","5","Astringent, smoky, harsh with burnt coffee/burnt toast notes. Less acrid than roasted barley","Porters and Stout"
+"112","Roasted Barley","32","1.032","10","3.5","270","0","1200","1500","1400","1800","0","0","0","0","0","0","0","0","0","0","0","0","0","10","Sharp, astringent and burnt. Gives paler head than black or chocolate malt.","Stout"
+"113","Crystal Wheat","32","1.032","10","5","270","0","100","150","120","180","0","0","0","0","0","0","0","0","0","0","0","0","0","10","Mild notes of caramel, almonds, more ""biscuity"" than Crystal malt.","Adjunct"
+"115","Maris Otter Pale Ale","38","1.038","6","4","308","80","4","6","5","7.5","2.3","3","1.6","10","38","42","40","45","38","42","0","0","0","100","Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.","Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts."
+"116","Halcyon Pale Ale","38","1.038","6","4","306","80","4","6","5","7.5","2.3","3","1.65","10.5","38","42","40","45","38","42","0","0","0","100","Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.","Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts."
+"117","Golden Promise Pale Ale","38","1.038","6","4","308","80","4","6","5","7.5","2.3","3","1.6","10","38","42","40","45","38","42","0","0","0","100","Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.","Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts."
+"118","Winter Barley Pale Ale","38","1.038","6","4","306","80","4","6","5","7.5","2.3","3","1.65","10.5","38","42","40","45","38","42","0","0","0","100","Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.","Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts."
+"119","Spring Barley Pale Ale","38","1.038","6","4","308","80","4","6","5","7.5","2.3","3","1.65","10.5","38","42","40","45","38","42","0","0","0","100","Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.
+Well modified producing consistent extract within the standard ale colour range giving sweet & flavourful worts.","Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts.
+Ale malts are the main ingredient for all types of bitters, milds and stouts."
+"120","Maris Otter Low Colour","38","1.038","6","4","306","80","2.5","3.5","3","5","1.5","2.1","1.6","10","38","42","40","45","38","42","0","0","0","100","Light golden colour & sweet wort.","90% - 100% of pale ale brews."
+"121","Lager","36","1.036","6","4","306","80","2.5","3.5","3","5","1.5","2.1","1.65","10.5","38","42","40","45","38","42","0","0","0","100","Light golden colour & sweet wort.","90% - 100% of lager brews."
+"122","Mild Ale","37","1.037","6","4","306","80","6","7","7.5","9","3.5","4","1.65","10.5","38","42","40","45","38","42","0","0","0","100","Darker wort than Pale Ale malts.","Base for bitters and stouts."
+"123","Vienna","35","1.035","6","4","304","79","8","12","10","15","4","7","1.65","10.5","38","42","40","45","38","42","0","0","0","20","Darker wort, aromatic, sweet, flavourful wort.","Lager & Ales up to 20% of grist."
+"124","Munich Malt","37","1.037","6","4","304","79","18","24","22","30","9","12","1.65","10.5","38","42","40","45","38","42","0","0","0","20","Darker wort, aromatic, sweet, flavourful wort.","Lager & Ales up to 20% of grist."
+"125","Wheat","37","1.037","6","4.5","310","80","2.5","4","3","5","1.5","2.1","1.95","12.2","38","42","40","45","38","42","0","0","0","40","Head retention & lacing, dry biscuity flavour.","Wheat beers and adjunct, up to 40% of grist."
+"126","Oats","32","1.032","6","4.5","230","60","4","6","5","7.5","1.5","3","1.9","11.9","26","32","29","34","26","32","0","0","0","10","Enhance body, flavour of dark beers, sweet kernels.","Adjunct, 5% - 10% of grist."
+"127","Rye","37","1.037","6","4.5","290","75","5","8","7","10","2.3","3.8","1.75","10.9","38","44","41","46","38","44","0","0","0","10","Sweet, biscuity and flavourful.","Adjunct, 5% - 10% of grist."
+"128","Pale Caramalt","33","1.033","6","7.5","270","70","10","15","12","20","10","12","1.85","11.6","0","0","0","0","0","0","0","0","0","10","Very pale, light, sweet wort.","Adjunct, 5% - 10% of grist (pale ales, lagers)."
+"129","Caramalt","34","1.034","6","7","270","70","20","30","25","40","20","30","1.85","11.6","0","0","0","0","0","0","0","0","0","10","Pale golden colour. Very light, sweet malt flavour.","Adjunct, 5% - 10% of grist (pale ales, lagers)."
+"130","Pale Crystal","33","1.033","6","6.5","270","70","50","70","60","90","40","50","1.85","11.6","0","0","0","0","0","0","0","0","0","10","Golden wort. Light, sweet malty flavour.","Adjunct, 5% - 10% of grist (pale ales, lagers)."
+"131","Crystal","34","1.034","6","5","270","70","120","140","150","175","60","70","1.85","11.6","0","0","0","0","0","0","0","0","0","10","Orange wort. Caramel-toffee flavour.","Adjunct, 5% - 10% of grist (ales)."
+"132","Crystal II","33","1.033","6","4.5","270","70","160","180","200","225","80","90","1.85","11.6","0","0","0","0","0","0","0","0","0","10","Darker wort. Cinder-toffee flavour.","Adjunct, 5% - 10% of grist (ales)."
+"133","Dark Crystal","33","1.033","6","4.5","265","70","200","240","250","300","110","130","1.85","11.6","0","0","0","0","0","0","0","0","0","10","Adds ruby red colour to beer. Burnt toffee flavour.","Adjunct, 5% - 10% of grist (ales)."
+"134","Red Crystal","35","1.035","6","4.5","265","70","300","340","350","450","0","0","1.85","0","0","0","0","0","0","0","0","0","0","10","Adds ruby red colour to beer. Burnt toffee flavour.","Adjunct, 5% - 10% of grist (ales)."
+"135","Crystal Wheat","34","1.034","6","5","270","70","100","150","125","190","45","75","1.95","12.2","0","0","0","0","0","0","0","0","0","10","Dry, more ""biscuity"" than Crystal malt.","Adjunct, 5% - 10% of grist (ales)."
+"136","Crystal Rye","34","1.034","6","5","270","70","100","200","125","250","45","95","1.85","11.6","0","0","0","0","0","0","0","0","0","10","Dry liquorice toffee flavour.","Adjunct, 5% - 10% of grist (ales)."
+"137","Amber","33","1.033","6","4.5","270","70","90","110","110","140","38","48","1.85","11.6","0","0","0","0","0","0","0","0","0","0","Dry, mild coffee flavour, amber colour.","Adjunct for bitters."
+"138","Brown","33","1.033","6","4.5","270","70","140","160","175","200","66","76","1.85","11.6","0","0","0","0","0","0","0","0","0","5","Dry, mild coffee flavour, darker amber hue.","Adjunct for bitters."
+"139","Pale Chocolate","33","1.033","6","4.5","270","70","450","550","560","690","200","260","1.85","11.6","0","0","0","0","0","0","0","0","0","5","Smooth coffee flavour, brown colour.","Adjunct for bitters, milds & stouts. 3 - 5% of grist."
+"140","Chocolate","34","1.034","6","4.5","270","70","880","1000","1100","1250","390","450","1.85","11.6","0","0","0","0","0","0","0","0","0","5","Strong coffee flavour, darker brown colour.","Adjunct for bitters, milds & stouts. 3 - 5% of grist."
+"141","Black","33","1.033","6","4.5","270","70","1100","1400","1300","1600","490","600","1.85","11.6","0","0","0","0","0","0","0","0","0","5","Strong, burnt coffee flavour. Dark brown.","Adjunct for bitters, milds & stouts. 3 - 5% of grist."
+"142","Roasted Barley","32","1.032","6","4.5","265","68.5","1100","1400","1300","1600","490","600","1.85","11.6","0","0","0","0","0","0","0","0","0","0","Sharp, dry, bitter flavour. Dark brown.","Adjunct for bitters, milds & stouts."
+"143","Roasted Wheat","32","1.032","6","4.5","270","70","600","1000","700","1100","250","400","1.95","12.2","0","0","0","0","0","0","0","0","0","5","Softer flavour than roast barley malts.","Adjunct for bitters, milds & stouts. 3 - 5% of grist."
+"144","Roasted Rye","0","0","6","4.5","260","67.5","350","700","450","850","140","240","1.85","11.6","0","0","0","0","0","0","0","0","0","5","Dry, biscuity flavour.","Adjunct for bitters, milds & stouts. 3 - 5% of grist."
+"145","Peated","34","1.034","6","5.5","308","80","3","5","3.8","6.5","1.5","3.5","1.6","10.3","40","44","40","44","9.1","9.7","0","0","0","10","Phenol: Medium: 15-25ppm","Flavour and aroma adjunct."
+"146","Torrefied Wheat","35","1.035","6","10","280","72","2.5","3.5","3","4.5","1.5","3","2.1","13.1","0","0","0","0","0","0","0","0","0","10","Head retention & lacing in ales.","Adjunct up to 10% for ales."
+"147","Flaked Barley","35","1.035","6","10","250","64","2.5","3.5","3","4.5","1.5","3","2.1","13.1","0","0","0","0","0","0","0","0","0","10","Little flavour, dilutes nitrogen.","Adjunct up to 10% for stouts."
+"148","Flaked Maize","34","1.034","6","10","290","75","2.5","3.5","3","4.5","1.5","3","0","0","0","0","0","0","0","0","0","0","0","10","Flavour reducing, smooth.","Adjunct up to 10% for lagers."
+"149","Pale Ale","38","1.038","11","4.5","0","79","0","0","5.5","7.5","2.6","3.4","0","11.5","0","0","37","43","0","0","0","0","0","100","Produced from quality two-row spring barley. Provides excellent body and pale color. Processed
+specifically for ?English? characteristics. Highly modified for use with both single- or multi-step
+infusion. Perfect foundation grist for all ales, but yields great results in lager-making, too. Low
+protein and glucan levels for easy lautering and high extract efficiency. Provides excellent body,
+pale color, and complex maltiness to finished brew. Flavor: notes of bread, died fruits and honey","Ale; all other beer types; Porter; Lager; Stout; Belgian Specialty Beers"
+"150","Floor-Malted Bohemian Pilsner","38","1.038","11","5.5","0","79","0","0","3","5","1.6","2.3","0","11.5","0","0","38","44","0","0","0","0","0","100","Produced from quality czech-grown two-row spring barley (authentic Bohemian barley varieties
+Bojos and Tolar). Made in an orginal floor malting facility. Produces authentic traditional Bohemianstyle
+malt flavors and aromas. Traditional, authentic floor malt produced in Czech. Republic
+according to highest Weyermann? quality standards. Flavor: intense malt aroma, notes of honey and
+biscuit","Authentic Bohemian Pilsners; Pils; Light Beer; alcohol-reduced Beer; non-alcoholic
+Beer; all other beer types"
+"151","Munich I","38","1.038","11","4.5","0","78","0","0","12","18","5.1","7","0","12.5","0","0","37","46","0","0","0","0","0","100","Produced from quality two-row spring barley. Imparts strongly malty notes to finished beer.
+Intended mainly for dark ales and lagers. Flavor: characteristic brewing malt with rich malt aromas;
+notes of light caramel, honey and bread","Munich-Style Helles; Mai-Bock; Dark Beer; Bock Beer; Festbiere; October Beer;
+Stout; Maerzenbier; Dark Ale;"
+"152","Munich II","37","1.037","11","4","0","78","0","0","29","25","8","9.9","0","12.5","0","0","38","47","0","0","0","0","0","100","Produced from quality two-row spring barley. Imparts strongly malty notes to finished beer.
+Intended mainly for dark ales and lagers. Flavor: richt malt aroma, notes of light caramel, honey and
+bread","Dark Beer; Dubbel; Festbiere; Stout; Bock Beer; October Beer; Maerzenbier;"
+"153","Pale Rye","39","1.039","11","6","0","81","0","0","4","10","2","4.3","0","0","0","0","0","0","0","0","0","0","0","60","Produced from quality rye. Lends biscuit-like, smooth, almost oily, (typical) rye component to
+finished beer. Flavor: strong emphasis on typical rye aroma; malty-sweet; notes of bread and honey","Rye Ale; Multigrain Beers; Rye Lager; top-fermented Specialty Beers; Specialty
+Beer"
+"154","Pilsner","37","1.037","11","5","0","80.5","0","0","2.5","4.5","1.5","2.2","0","11.5","0","0","36","42.5","0","0","0","0","0","100","Produced from quality two-row spring barley. Perfect foundation grist for all lagers. Excellent
+modification and favorable protein and glucan levels. Excellent lautering properties. Provides
+finished beer with substantial body and mouthfeel, as well as good foam development and head
+retention. Very flexible grain with high extract efficiency for reliable lager-making in any brew
+house, including pub ale systems. Yields optimum results for any process from single-step to multistep
+infusion, to decoction. Flavor: malty-sweet and gentle notes of honey","alcohol-reduced Beer; all other beer types; Pils; non-alcoholic Beer;"
+"155","Vienna","37","1.037","11","5.5","0","79","0","0","6","9","2.8","3.9","0","12.5","0","0","37","45.5","0","0","0","0","0","100","Produced from quality two-row spring barley. Full bodied, golden colored smooth tasting beers.
+Imparts malty notes to finished beer. Intended for ales and lagers. Flavor: malty-sweet, gentle
+notes of honey and nuts (almond, hazelnut)","Vienna Beer Style; Festbiere; Maerzenbier; Mai-Bock; Ale; Lager; Dark Ale; Stout;"
+"156","Pale Wheat","39","1.039","11","5.5","0","82","0","0","3","5","1.7","2.4","0","13","0","0","37.5","47","0","0","0","0","0","100","Produced from quality wheat. Ideal foundation grain for pale Weizenbiers, such as Hefeweizen and
+Kristallweizen. Essential ingredient in North American pub wheat ales. Adds creaminess, body, and
+complex wheat flavors to top-fermented beers. Flavor: notes of bread, nuts, biscuit, toffee and
+light caramel","""Hefe-Weizen""; German-Style Wheat Ale; ""Dunkle-Weizen""; Weizenbock; Wheat
+Beer; ""K?lsch"";"
+"157","Melanoidin","37","1.037","11","4.5","0","75","0","0","60","80","23","31","0","0","0","0","0","0","0","0","0","0","0","20","Produced from quality spring barley. High degree of modification of both proteins and starches.
+Excellent friability. Low ?-glucan values. Highly acidic. Highly malt-aromatic. Adds deep-amber to
+red-brown color, maltiness, body, and mouthfeel to finished beer. Promotes flavor stability. Flavor:
+intense maltiness; notes of honey and biscuit","Red Colored Beer; Red Ales; Dark Ale; Amber Beer; Dark Beer; Lager; Kellerbiere;
+Bock Beer; Scottish Ales; Irish-Style Red Ale;"
+"158","Dark Wheat","39","1.039","11","5","0","81","0","0","15","20","6.2","8.1","0","14","0","0","33","47","0","0","0","0","0","100","Produced from quality wheat. Signature malt for Bavarian Dunkelweizen and similar beers. Adds
+creaminess, body, and complex wheat flavors, as well as some color to top-fermented beers. Flavor:
+notes of bread, biscuit, honey, toffee, and caramel","""Dunkle-Weizen""; ""Hefe-Weizen""; top-fermented ""Schankbier""; Wheat Beer;
+""K?lsch""; Weizenbock; ""Altbier"";"
+"159","Extra Pale Premium Pilsner","38","1.038","11","4.5","0","90.5","0","0","2","2.5","1.2","1.4","0","11.5","0","0","37.5","40","0","0","0","0","0","100","Produced from quality two-row spring barley. Produces authenic Pilsner-style flavors and aromas,
+extra pale beer color. Perfect foundation grist for all extra pale lagers. Excellent modification and
+favorable protein and glucan levels. Excellent lautering properties. Provides finished beer with
+substantial body and mouthfeel, as well as good foam development and head retention. Very flexible
+grain with high extract efficiency for reliable lager-making in any brew house, including pub ale
+systems. Yields optimum results for any process from single-step to multi-step infusion, to
+decoction. Flavor: malty-sweet and gentle notes of honey","Pilsners; Pils; non-alcoholic Beer; alcohol-reduced Beer; all other beer types;"
+"160","Floor-Malted Bohemian Dark","38","1.038","11","4.5","0","78","0","0","12","20","5.1","8.1","0","12","0","0","36.5","45.5","0","0","0","0","0","100","Produced from quality czech-grown two-row spring barley (authentic Bohemian barley varieties
+Bojos and Tolar). Intensified malt aroma and taste, malt sweetness. Traditional, authentic dark floor
+malt produced in Czech. Republic according to highest Weyermann? quality standards. Flavor:
+intensely malt aroma; malty-sweet; notes of bread and biscuit","American-Style Dark Lager; Dark Ale; Bohemian Dark Lagers; Bohemian Festival
+Beers; Bohemian Bock Beer; Dubbel;"
+"161","Acidulated","27","1.027","11","10","0","0","0","0","2.5","12","1.5","5.1","0","0","0","0","0","0","0","0","0","0","0","10","Produced from quality spring barley. Lowers mash, wort, and beer pH. Contains 1?2% lactic acid.
+Enhances enzymatic activity in mash and improves extract efficiency. Lightens color in pale brews.
+Enhances stability and extends shelf life of finished beer. Promotes well-rounded, complex beer
+flavor. Recommended Quantities: Each 1% lowers mash pH by 0.1. Flavor: fruity and sour","Pils; Lager; Wheat Beer; alcohol-reduced Beer; all other beer types;"
+"162","Abbey","33","1.033","11","4.5","0","75","0","0","40","50","16","19","0","0","0","0","0","0","0","0","0","0","0","50","Produced from quality spring barley. High degree of modification of both proteins and starches.
+Excellent friability. Low beta-glucan values. Highly acidic. Highly malt-aromatic. Adds deep-amber to
+red-brown color, maltiness, body, and mouthfeel to finished beer. Promotes flavor stability. Flavor:
+intense malt aroma; notes of honey, nuts and chocolate","Dubbel; Ale; Belgian-Style Abbey Ale; Belgian- and French-Style Ale; Belgian-Style
+Strong Specialty Ale; Belgian Specialty Beers; Belgian ""Blonde"" Beers; Belgian
+""Bruin"" Beers; Festbiere; Belgian Amber Beers; Belgian Ales; Fruit Beers; Tripel;"
+"163","CaraWheat","37","1.037","11","6.5","0","68","0","0","110","140","42","53","0","0","0","0","0","0","0","0","0","0","0","15","Produced from quality wheat. Nearly 100% level of caramelization. Adds creaminess, body, color, and
+some phenolic wheat flavors to top-fermented beers. Flavor: mild notes of caramel, almonds, biscuit;
+bready aroma","Belgian-Style Witbier; Red Ales; ""Hefe-Weizen""; top-fermented Specialty Beers;
+""Dunkle-Weizen"";"
+"164","CaraRye","32","1.032","11","6.5","0","74","0","0","150","200","57","76","0","0","0","0","0","0","0","0","0","0","0","15","Produced from quality rye. Carefully caramelized brown kernels lend a slightly aromatic, biscuit-like,
+smooth rye component and dark-brown color to finished beer. Flavor: typical rye aroma; intense
+aroma of bread, coffee, dark chocolate, and dried fruits","Specialty Beer; Rye Lagers; Multigrain Beers; Ale; Rye Ale;"
+"165","CaraRed","36","1.036","11","7.5","0","74","0","0","40","60","16","23","0","0","0","0","0","0","0","0","0","0","0","25","Produced from quality spring barley. Perfect for adding red color values to red ales and Vienna
+lagers. Slightly aromatic. Contributes gentle maltiness as well as some body to finished beer. Flavor:
+malty-sweet; notes of caramel, honey and biscuit","""Hefe-Weizen""; Red Ales; Scottish Ales; ""Altbier""; Bock Beer; Wheat Beer; Red
+Colored Beer; Amber Beer;"
+"166","CaraPils","33","1.033","11","7","0","75","0","0","2.5","6.5","1.5","2.9","0","0","0","0","0","0","0","0","0","0","0","40","Produced from quality spring barley. Characteristics: for enhanced foam production, head retention,
+and fuller body and mouthfeel. Flavor: malty-sweet; gentle notes of caramel","Pils; Light Beer; alcohol-reduced Beer; non-alcoholic Beer; Lager;"
+"167","CaraMunich Type III","37","1.037","11","6.5","0","73","0","0","140","160","53","60.5","0","0","0","0","0","0","0","0","0","0","0","10","Produced from quality spring barley. Golden-brown, slightly aromatic kernels. Contributes darkamber
+to deep-coppery color to finished beer. Adds mouthfeel as well as rich malt accent to brew.
+Flavor: intense caramel aroma; notes of biscuit","Festbiere; Amber Beer; Bock Beer; Light Beer; Dark Ale; October Beer; Brown Ale;"
+"168","CaraMunich Type II","36","1.036","11","6.5","0","73","0","0","110","130","42","49","0","0","0","0","0","0","0","0","0","0","0","10","Produced from quality spring barley. Golden-brown, slightly aromatic kernels. Contributes darkamber
+to deep-coppery color to finished beer. Adds mouthfeel as well as rich malt accent to brew.
+Flavor: intense caramel aroma; notes of biscuit","Dark Beer; Festbiere; Light Beer; Nourishing Beer; Bock Beer; Dark Ale; October
+Beer; Red Ales; Brown Ale;"
+"169","CaraMunich Type I","36","1.036","11","6.5","0","73","0","0","80","100","31","38","0","0","0","0","0","0","0","0","0","0","0","10","Produced from quality spring barley. Golden-brown, slightly aromatic kernels. Contributes darkamber
+to deep-coppery color to finished beer. Adds mouthfeel as well as rich malt accent to brew.
+Flavor: intense caramel aroma; notes of biscuit","Dark Beer; Festbiere; Nourishing Beer; Light Beer; Bock Beer; October Beer;
+Dark Lagers; Red Ales; Brown Ale; Amber Beer;"
+"170","CaraHell","36","1.036","11","9","0","74","0","0","20","30","8.1","11.8","0","0","0","0","0","0","0","0","0","0","0","30","Produced from quality spring barley. Golden-brown, slightly aromatic kernels. Provide finished beer
+with full, rounded aroma, depth of color, and firm, creamy head. Flavor: malty-sweet; gentle notes
+of caramel","Lager; ""Hefe-Weizen""; Ale; Festbiere; Mai-Bock; Light Beer; Bock Beer;
+Maerzenbier; alcohol-reduced Beer; non-alcoholic Beer;"
+"171","Carafa Type 3","36","1.036","11","3.8","0","65","0","0","1300","1500","488","563","0","0","0","0","0","0","0","0","0","0","0","5","Produced from quality spring barley. Carefully roasted to add coffee-brown color, espresso-like
+bouquet, dark-beer aroma, and body to finished beer. Produces opaque beer with mild, but
+noticeable roasted aftertaste. Flavor: notes of coffee, cocoa, dark chocolate, intense roastiness","Porter; Dark Beer; Bock Beer; Stout; ""Altbier""; Black beer (Schwarzbier); Dark
+Lagers; Dark Ale;"
+"172","Carafa Type 2","36","1.036","11","3.8","0","65","0","0","1100","1200","413","450","0","0","0","0","0","0","0","0","0","0","0","5","Produced from quality spring barley. Carefully roasted to add coffee-brown color, espresso-like
+bouquet, dark-beer aroma, and body to finished beer. Produces opaque beer with mild, but
+noticeable roasted aftertaste. Flavor: notes of coffee, cocoa, dark chocolate, intense roastiness","Porter; Dark Beer; Bock Beer; Stout; ""Altbier""; Black beer (Schwarzbier); Dark
+Lagers; Dark Ale;"
+"173","Carafa Type 1","36","1.036","11","3.8","0","65","0","0","800","1000","300","375","0","0","0","0","0","0","0","0","0","0","0","5","Produced from quality spring barley. Carefully roasted to add coffee-brown color, espresso-like
+bouquet, dark-beer aroma, and body to finished beer. Produces opaque beer with mild, but
+noticeable roasted aftertaste. Flavor: notes of coffee, cocoa, dark chocolate, intense roastiness","Porter; Dark Beer; Bock Beer; Stout; ""Altbier""; Black beer (Schwarzbier); Dark
+Lagers; Dark Ale;"
+"174","Carafa Special Type 3","32","1.032","11","3.8","0","65","0","0","1300","1500","488","563","0","0","0","0","0","0","0","0","0","0","0","5","Produced from quality spring barley. CARAFA SPECIAL? is the de-husked version of CARAFA?.
+Using our unique process, we remove the husks from carefully selected grains before malting and
+roasting them. Reduces astringency and bitterness, while adding coffee-brown color, a coffee-like
+bouquet, darkbeer aroma, as well as body and mouthfeel to finished beer but without introducing
+harsh flavors. Even small amounts of CARAFA SPECIAL? malts in the grain bill produce dark beers
+of unusual smoothness and mildness, with a firm, creamy, white head. Flavor: notes of coffee, cocoa
+and dark chocolate","Porter; Dark Beer; Bock Beer; Stout; ""Altbier""; Black beer (Schwarzbier);"
+"175","Carafa Special Type 2","32","1.032","11","3.8","0","65","0","0","1100","1200","413","450","0","0","0","0","0","0","0","0","0","0","0","5","Produced from quality spring barley. CARAFA SPECIAL? is the de-husked version of CARAFA?.
+Using our unique process, we remove the husks from carefully selected grains before malting and
+roasting them. Reduces astringency and bitterness, while adding coffee-brown color, a coffee-like
+bouquet, darkbeer aroma, as well as body and mouthfeel to finished beer but without introducing
+harsh flavors. Even small amounts of CARAFA SPECIAL? malts in the grain bill produce dark beers
+of unusual smoothness and mildness, with a firm, creamy, white head. Flavor: notes of coffee, cocoa
+and dark chocolate","Porter; Dark Beer; Bock Beer; Stout; ""Altbier""; Dark Lagers; Black beer
+(Schwarzbier);"
+"176","Carafa Special Type 1","32","1.032","11","3.8","0","65","0","0","800","1000","300","375","0","0","0","0","0","0","0","0","0","0","0","5","Produced from quality spring barley. CARAFA SPECIAL? is the de-husked version of CARAFA?.
+Using our unique process, we remove the husks from carefully selected grains before malting and
+roasting them. Reduces astringency and bitterness, while adding coffee-brown color, a coffee-like
+bouquet, darkbeer aroma, as well as body and mouthfeel to finished beer but without introducing
+harsh flavors. Even small amounts of CARAFA SPECIAL? malts in the grain bill produce dark beers
+of unusual smoothness and mildness with a firm, creamy, white head. Flavor: notes of coffee, cocoa
+and dark chocolate","Porter; Dark Beer; Bock Beer; Stout; ""Altbier""; Black beer (Schwarzbier); Dark
+Ale;"
+"177","CaraBohemian","33","1.033","11","6.5","0","73","0","0","170","220","64","83","0","0","0","0","0","0","0","0","0","0","0","15","Produced from quality spring barley. Dark Golden-brown, slightly aromatic kernels. Contributes darkamber
+to deepcoppery color to finished beer. Adds mouthfeel as well as a rich malt accent to brew.
+Aroma: bread, dark caramel, and toffee","Bohemian Lagers; Bohemian Bock Beer; Bohemian Specialty Beers; Porter; Stout;
+Ale; Bock Beer; Bohemian Dark Lagers;"
+"178","CaraBelge","33","1.033","11","9","0","74","0","0","30","35","11.8","13.7","0","0","0","0","0","0","0","0","0","0","0","30","Produced from quality spring barley. Golden-brown, slightly aromatic kernels. Provide finished beer
+with full, rounded aroma, depth of color, and firm, creamy head. Flavor: dried fruits, nuts and
+caramel","non-alcoholic Beer; Belgian-Style Witbier; Belgian Amber Beers; Belgian ""Blonde""
+Beers; Belgian ""Bruin"" Beers; Dubbel; Tripel; Grodziskie (Gr?tzer Beer); Fruit
+Beers; Light Beer; Mai-Bock; Belgian- and French-Style Ale;"
+"179","CaraAroma","36","1.036","11","7","0","74","0","0","350","450","131","169","0","0","0","0","0","0","0","0","0","0","0","15","Produced from quality spring barley. Flavor: notes of roasted nuts, dark caramel and dried fruits.
+Enhances mouthfeel. Adds deep red color. Promotes flavor stability.","Barley Wine-Style Ale; Amber Beer; Porter; Stout; Bock Beer; October Beer;
+Lager; Dark Ale; Irish-Style Red Ale; Maerzenbier; Mai-Bock;"
+"180","CaraAmber","36","1.036","11","4.5","0","75","0","0","60","80","23","31","0","0","0","0","0","0","0","0","0","0","0","20","Produced from quality spring barley. Gentle, malty caramel flavors. Enhances mouthfeel. Adds deep
+red color. Promotes flavor stability. Flavor: notes of toffee, caramel and bread","Bock Beer; Ale; Brown Ale; Lager; Kellerbiere; Amber Lager; Irish-Style Red Ale;
+October Beer; Maerzenbier; Mai-Bock;"
+"181","Brewers","37","1.037","2","4.2","0","79.5","0","0","0","0","1.8","1.8","0","11.5","0","0","42","42","42","42","0","0","140","100","Clean, sweet, mild malty ? Malted in small batches, making it an excellent fit for small batch craft brewing;","use as base malt for all styles"
+"182","Full Pint Brewers","37","1.037","2","4.6","0","80","0","0","0","0","1.7","1.7","0","11.2","0","0","40.8","40.8","40.8","40.8","0","0","150","100","Clean, sweet, mild malty ? Single varietal base malt; contributes a light straw color",""
+"183","Synergy Select Pilsen","38","1.038","2","4.5","0","82.4","0","0","0","0","1.8","1.8","0","10.9","0","0","42","42","42","42","0","0","100","100","Balanced malty flavor with subtle honey, bready and cracker notes ? A true European-style Pilsen Malt"," European style Pilsners and Lagers"
+"184","Pilsen","37","1.037","2","4.5","0","78","0","0","0","0","1.2","1.2","0","11.3","0","0","37","37","37","37","0","0","140","100","Clean, sweet, delicately malty ? Lightest color base malt available; produces light colored, clean, crisp wort; excellent choice for lagers","Lagers"
+"185","Wheat, White","39","1.039","2","5","0","84","0","0","0","0","2.8","2.8","0","11.5","0","0","41","41","41","41","0","0","120","0","Sweet, malty, wheat, mild bread dough ? Use as part or all of base malt in wheat beers; improves head and head retention in all styles","All"
+"186","Wheat, Red","38","1.038","2","5","0","79","0","0","0","0","3","3","0","12.5","0","0","39","39","39","39","0","0","110","0","Creamy, sweet, malty, wheat flour ? Use as part or all of base malt in wheat beers; runs efficiently through the brewhouse"," Hefeweizen and other traditional wheat styles"
+"187","Goldpils Vienna","37","1.037","2","3.5","0","78","0","0","0","0","3.5","3.5","0","12","0","0","35","35","35","35","0","0","80","100","Rich malty, hint of biscuity notes ? Superb example of this classic malt style; finishes exceptionally clean, contributes light golden color","Up to 100% Vienna and Oktoberfest/Marzen beer styles. Ales and rich, full flavored dark beers. 10% or more All but the lightest beer styles for additional flavor. Especially helpful for developing warm, malty and light biscuity flavors. 10-15% High gravity beers like a Bock Beer, more in low gravity beers."
+"188","Pale Ale","37","1.037","2","4","0","78.5","0","0","0","0","3.5","3.5","0","11.7","0","0","42","42","42","42","0","0","85","100","Rich malty, hints of biscuit and nuts ? Fully modified, high extract, low protein malt; proprietary process develops unique flavor","Up to 100% Ales (an exception being Koelsch) and rich, full flavored dark beers. 10% or more All but the lightest beer styles for additional flavor. Especially helpful for developing warm, malty and toasty flavors. 10-15% High gravity beers like a Bock Beer, more in low gravity beers."
+"189","Ashburne Mild","36","1.036","2","3.5","0","77","0","0","0","0","5.3","5.3","0","11.7","0","0","40","40","40","40","0","0","65","50","Slightly malty and sweet, subtle toasty note ? Use as base or high percentage specialty malt; lends higher residual maltiness/mouthfeel","10-25% Any style needing an enhanced malty flavor and aroma. Up to 50% Bock/ Doppelbock style beers for an exaggerated maltiness"
+"190","Bonlander Munich 10L","35","1.035","2","3.3","0","78","0","0","0","0","10","10","0","11.7","0","0","38","38","38","38","0","0","40","50","Clean, slightly sweet, rich malty ? European-style Munich Malt with clean, malty flavor; golden amber leaning toward orange hues","10-20% Any beer that benefits from enhanced malty flavor. Up to 50% Bock-style beers"
+"191","Aromatic Munich 20L","33","1.033","2","2.5","0","77","0","0","0","0","20","20","0","11.7","0","0","36","36","36","36","0","0","20","50","Very smooth, clean, slightly sweet, rich intense malty ? European-style dark Munich Malt with clean, intense malty flavor","5-15% Any style needing an enhanced malty flavor and aroma. Up to 50% Bock/Doppelbock style beers for an exaggerated matiness"
+"192","CaraPils","33","1.033","2","6.5","0","75","0","0","0","0","1.5","1.5","0","0","0","0","0","0","0","0","0","0","0","5","No flavor or color contribution ? Very unique dextrine-style malt adds body, foam retention and stability; full glassy",""
+"193","CaraPils Copper","33","1.033","2","5.5","0","75","0","0","0","0","30","30","0","0","0","0","0","0","0","0","0","0","0","30","Malty, graham cracker, toasty ? Unique dextrine-style malt adds body, foam retention, beer stability, color and flavor","10% adds copper/orange hues. 20% reddish color. 30% is solidly a red ale"
+"194","Victory","34","1.034","2","2.5","0","75","0","0","0","0","28","28","0","0","0","0","0","0","0","0","0","0","0","25","Toasty, biscuity, baking bread, nutty, clean ? Biscuit-style malt; well suited for ales and lagers alike; deep golden to brown hues","2-8% Doppelbock, Mild Ales. 5-15 Amber ales and lagers, Brown Ales. 5-25% Scotch ales and other dark beers"
+"195","Special Roast","33","1.033","2","2.5","0","72","0","0","0","0","40","40","0","0","0","0","0","0","0","0","0","0","0","10","Toasty, biscuity, bran flakes, sourdough, tangy ? Biscuit-style malt; proprietary process develops distinguishing sourdough/tangy flavor","5-10% Excellent in IPA, ESB, Amber, Nut Brown Ale, Porter and other dark beer styles"
+"196","Extra Special Malt","34","1.034","2","0","0","73","0","0","0","0","130","130","0","0","0","0","0","0","0","0","0","0","0","15","Toasted marshmallow, toast, mild coffee, prunes, dry, woody ? Hybrid drum roasted malt; has both caramel and dry roasted flavors","Up to 5% Background notes of toasted marshmallow, toast, mild coffee, prunes, dry, woody. 5 - 10% Red to amber color with pleasant toffee aroma notes. Belgian ales, English ales for complexity, porters. 10 - 15% Develops a much deeper reddish/brown color with fuller malty body and more pronounce raisin/toasty
+aroma. Dopplebocks."
+"197","Rye","35","1.035","2","4.5","0","84","0","0","0","0","3.7","3.7","0","10","0","0","50","50","50","50","0","0","105","35","Spicy rye ? Use in rye beers or to build flavor or add interest to other styles; use in 5% increments until desired flavor is achieved","1-3% Adds dryness and a touch of spicy rye flavor and interest to many beer styles, from medium flavored lagers to dark ales. 5% Rye Pale Ales, Wheat and Smoked Beers. 10-35% Roggenbier (German Rye Beer), American Rye Beer"
+"198","Smoked, Apple Wood","37","1.037","2","6","0","80.5","0","0","0","0","6","6","0","11","0","0","45","45","45","45","0","0","110","60","Pronounced smoke, applewood, sweet, smooth ? Smooth smoke aromas","5-10% Noticeable smoke character in lighter styles such as Scottish Ales and Oktoberfests. 10-20% Pronounced smoke character in lighter styles like Scottish Ales and Oktoberfests. 30-60% Noticeable to pronounced smoke character in darker styles like Stouts and Porters. Briess Smoked Malt delivers intense smoked flavor. We recommend limiting usage to 60% of the grist."
+"199","Smoked, Cherry Wood","37","1.037","2","6","0","80.5","0","0","0","0","5","5","0","11","0","0","45","45","45","45","0","0","110","60","Pronounced smoke, subtle fruity, malty sweet, smooth, clean ? Sweeter than Mesquite Smoked Malt; pleasant smoke aroma","5-10% Noticeable smoke character in lighter styles such as Scottish Ales and Oktoberfests. 10-20% Pronounced smoke character in lighter styles like Scottish Ales and Oktoberfests. 30-60% Noticeable to pronounced smoke character in darker styles like Stouts and Porters. Briess Smoked Malt delivers intense smoked flavor. We recommend limiting usage to 60% of the grist."
+"200","Smoked, Mesquite","37","1.037","2","6","0","80.5","0","0","0","0","5","5","0","11","0","0","45","45","45","45","0","0","110","60","Pronounced smoke, upfront earthy mesquite, smooth, slightly sweet ? Less sweet than Cherry Wood Smoked Malt; smooth smoke aroma","5-10% Noticeable smoke character in lighter styles such as Scottish Ales and Oktoberfests. 10-20% Pronounced smoke character in lighter styles like Scottish Ales and Oktoberfests. 30-60% Noticeable to pronounced smoke character in darker styles like Stouts and Porters. Briess Smoked Malt delivers intense smoked flavor. We recommend limiting usage to 60% of the grist."
+"201","Caramel 10L","34","1.034","2","7","0","77","0","0","0","0","10","10","0","0","0","0","0","0","0","0","0","0","0","15","Candy-like sweetness, mild caramel ? Drum roasted, crystallized malt; improves foam; enhances viscosity; contributes golden hues","3-7% For balance in Pilsners. 5-10% California Common Beer, Doppelbocks and Dark Lagers. 5-15% Vienna, Marzen and Oktoberfest. 10-15% Bitter Ales, Pale Ales, Mild Ales, Strong Ales and Belgian Ales. 5-15% Certain styles of Brown Ales, Scotch Ales, Stouts and Porters"
+"202","Caramel 20L","34","1.034","2","6","0","77","0","0","0","0","20","20","0","0","0","0","0","0","0","0","0","0","0","15","Candy-like sweetness, mild caramel ? Drum roasted, crystallized malt; improves foam; enhances viscosity; contributes golden hues","3-7% For balance in Pilsners. 5-10% California Common Beer, Doppelbocks and Dark Lagers. 5-15% Vienna, Marzen and Oktoberfest. 10-15% Bitter Ales, Pale Ales, Mild Ales, Strong Ales and Belgian Ales. 5-15% Certain styles of Brown Ales, Scotch Ales, Stouts and Porters"
+"203","Caramel 30L","34","1.034","2","5.5","0","77","0","0","0","0","30","30","0","0","0","0","0","0","0","0","0","0","0","15","Sweet, caramel, toffee ? Drum roasted, crystallized malt; improves foam; enhances viscosity; golden hues","3-7% For balance in Pilsners. 5-10% California Common Beer, Doppelbocks and Dark Lagers. 5-15% Vienna, Marzen and Oktoberfest. 10-15% Bitter Ales, Pale Ales, Mild Ales, Strong Ales and Belgian Ales. 5-15% Certain styles of Brown Ales, Scotch Ales, Stouts and Porters"
+"204","Caramel 40L","34","1.034","2","5.5","0","77","0","0","0","0","40","40","0","0","0","0","0","0","0","0","0","0","0","15","Sweet, caramel, toffee ? Drum roasted, crystallized malt; improves foam; enhances viscosity; golden hues","3-7% For balance in Pilsners. 5-10% California Common Beer, Doppelbocks and Dark Lagers. 5-15% Vienna, Marzen and Oktoberfest. 10-15% Bitter Ales, Pale Ales, Mild Ales, Strong Ales and Belgian Ales. 5-15% Certain styles of Brown Ales, Scotch Ales, Stouts and Porters"
+"205","Caramel 60L","34","1.034","2","5","0","77","0","0","0","0","60","60","0","0","0","0","0","0","0","0","0","0","0","15","Sweet, pronounced caramel ? Drum roasted, crystallized malt; improves foam; enhances viscosity; deep golden to red hues","1-3% For balance in Pilsners. 5-10% California Common Beer, Vienna, Marzen and Oktoberfest. 5-15% Doppelbocks, Dark Lagers and Barley Wine. 5-15% Certain styles of Brown Ales, Scotch Ales, Stouts and Porters"
+"206","Caramel 80L","34","1.034","2","4.5","0","76","0","0","0","0","80","80","0","0","0","0","0","0","0","0","0","0","0","15","Pronounced caramel, slight burnt sugar, raisiny ? Drum roasted, crystallized malt; improves foam; enhances viscosity; red to deep red hues","1-3% For balance in Pilsners. 5-10% California Common Beer, Vienna, Marzen and Oktoberfest. 5-15% Doppelbocks, Dark Lagers and Barley Wine. 5-15% Certain styles of Brown Ales, Scotch Ales, Stouts and Porters"
+"207","Caramel 90L","33","1.033","2","4","0","75","0","0","0","0","90","90","0","0","0","0","0","0","0","0","0","0","0","15","Pronounced caramel, burnt sugar, raisiny, prunes ? Drum roasted, crystallized malt; improves foam; enhances viscosity; red to deep red hues","1-3% For balance in Pilsners. 5-10% California Common Beer, Vienna, Marzen and Oktoberfest. 5-15% Doppelbocks, Dark Lagers and Barley Wine. 5-15% Certain styles of Brown Ales, Scotch Ales, Stouts and Porters"
+"208","Caramel 120L","32","1.032","2","3","0","76","0","0","0","0","120","120","0","0","0","0","0","0","0","0","0","0","0","15","Pronounced caramel, burnt sugar, raisiny, prunes ? Drum roasted, crystallized malt; improves foam; enhances viscosity; red to deep red hues","3-7% For balance in Pilsners. 5-10% California Common Beer, Doppelbocks and Dark Lagers. 5-15% Vienna, Marzen and Oktoberfest. 10-15% Bitter Ales, Pale Ales, Mild Ales, Strong Ales and Belgian Ales. 5-15% Certain styles of Brown Ales, Scotch Ales, Stouts and Porters"
+"209","Caramel Rye","32","1.032","2","5","0","80","0","0","0","0","60","60","0","0","0","0","0","0","0","0","0","0","0","20","Slightly sweet, caramel, bready, spicy rye ? Uniquely smooth and subtle yet complex rye malt; leans toward burnt orange and brown color","1-5% Adds touches of depth to lighter-flavor beers like Pilsner, Oktoberfest and Bock. 5-10% Adds complexity to malt-forward beers.. 10-20% Adds an intriguing softness and slight rye-like character. Use in all rye-style beers for toast flavor and color as well as in Scottish Ales, Doppelbock, Dunkels, Stouts, Porters and other medium to dark ales and
+lagers"
+"210","Caramel Vienne 20L","35","1.035","2","4.5","0","78","0","0","0","0","20","20","0","0","0","0","0","0","0","0","0","0","0","10","Soft toffee, caramel, malty ? Use in Vienna-style lagers and Belgian-style Abbey Ales","3-10% Frequently used in Vienna-style lagers and Belgian-style Abbey Ales."
+"211","Caramel Munich 60L","34","1.034","2","3.5","0","77","0","0","0","0","60","60","0","0","0","0","0","0","0","0","0","0","0","0","Caramel, roasted, malty ? Use in IPAs, Pale Ales, Oktoberfest, and Porters; amber to red hues","IPA, Pale Ale, Oktoberfest and Porters"
+"212","Caracrystal Wheat","34","1.034","2","4","0","78","0","0","0","0","55","55","0","0","0","0","0","0","0","0","0","0","0","25","Sweet, smooth, malty, bready, subtle caramel, dark toast, exceptionally clean finish ? Foam and foam retention; orange to mahogany hues","5-10% Subtle sweetness and flavor with pale orange tones. 10-15% Mild sweetness and flavor plus orange tones. 15-25% More pronounced flavor with dark orange to mahogany tones"
+"213","Carabrown","34","1.034","2","2.2","0","79","0","0","0","0","55","55","0","0","0","0","0","0","0","0","0","0","0","25","Smooth, slightly sweet malty, lightly toasted, biscuity, nutty, graham cracker, clean dry finish ? Light brown to orange hues","5-10% Subtle sweet malty, lightly toasted flavors and light brown/orange color contributions. 10-15% Smooth, more accentuated toasted, biscuity, nutty, graham cracker flavors and slightly dry finish. 15-25% More pronounced yet smooth toasted, biscuity, nutty, graham cracker flavors and slightly dry finish"
+"214","Chocolate","35","1.035","2","5.5","0","0","0","0","0","0","350","350","0","0","0","0","0","0","0","0","0","0","0","10","Rich roasted coffee, cocoa ? Brown hues; use in all styles for color","1-10% Porters, Stouts, Brown Ales, Dunkel and other dark beers"
+"215","Dark Chocolate","33","1.033","2","5.5","0","0","0","0","0","0","420","420","0","0","0","0","0","0","0","0","0","0","0","10","Rich smooth coffee ? Brown hues; use in all styles for color","1-10% Porters, Stouts, Brown Ales, Dunkel and other dark beers"
+"216","Black","32","1.032","2","6","0","0","0","0","0","0","500","500","0","0","0","0","0","0","0","0","0","0","0","10","Dry roasted, sharp to neutral ? Use in dark beers for flavor; use in all styles for color with little flavor; has little impact on foam color","1-3% All styles for color with little or no flavor. 1-10% Porter and Stout"
+"217","Black Malted Barley Flour","32","1.032","2","6","0","0","0","0","0","0","500","500","0","0","0","0","0","0","0","0","0","0","0","10","Dry roasted, sharp to neutral ? Use in dark beers for flavor; use in all styles for color with little flavor; has little impact on foam color","1-3% All styles for color with little or no flavor. 1-10% Porter and Stout"
+"218","Blackprinz","33","1.033","2","6","0","0","0","0","0","0","500","500","0","0","0","0","0","0","0","0","0","0","0","10","Subtle, smooth, no bitter, astringent, dry flavors or aftertaste, very delicate, clean flavor, mild roasted malty flavor","1-2% Minor color adjustment with little to no flavor impact in lighter colored lagers and ales. 2-5% Adds color with subtle, smooth flavor. 5-10% Use in larger quantities for color plus mild roasted malty flavor"
+"219","Midnight Wheat","33","1.033","2","6.5","0","0","0","0","0","0","550","550","0","0","0","0","0","0","0","0","0","0","0","7","Subtle, smooth, no bitter, astringent, dry flavors or aftertaste, starts slightly sweet, hints of roasted flavor, finishes exceptionally clean","1-2% Minor color adjustment with little to no flavor impact in lighter colored lagers and ales. 2-5% Adds color with subtle, very smooth flavor. 5-7% Use in larger quantities for color plus hints of smooth roasted flavor"
+"220","Roasted Barley","33","1.033","2","5","0","0","0","0","0","0","300","300","0","0","0","0","0","0","0","0","0","0","0","7","Coffee, intense bitter, dry ? Provides color and rich, sharp flavor which is characteristic of Stout and some Porters; impacts foam color","3-7 % Contributes coffee flavor to Porter and Stout"
+"221","Black Barley","32","1.032","2","6","0","0","0","0","0","0","500","500","0","0","0","0","0","0","0","0","0","0","0","7","Coffee, intense bitter, dry ? Provides color and rich, sharp flavor which is characteristic of Stout and some Porters; impacts foam color","3-7 % Contributes coffee flavor to Porter and Stout"
+"223","Pilsen 2RS","37","1.037","3","4.5","0","80.5","0","0","4","6","1.9","2.8","0","11.5","0","0","35","45","0","0","0","250","0","100","The lightest in colour, this malt is well-modified and is perfectly suited for single-step infusion or for decoction mashing. Our Ch?teau Pilsen malt carries a strong, sweet malt flavour and has a sufficient enzymatic power to be used as base malt.","All beer types. Can be used up to 100 % for pale beers (Pilsner, Lager) or as part of the mix for the other beers."
+"224","Pilsen 6RS","37","1.037","3","4.5","0","80","0","0","6","6","2.7","2.7","0","11.5","0","0","36","45","0","0","0","300","0","50","The lightest in colour, this malt is well-modified and is perfectly suited for single-step infusion or for decoction mashing. Compared to Ch?teau Pilsen 2RS, Ch?teau Pilsen 6RW has a more important diastatic power. Our Ch?teau Pilsen malt carries a strong, sweet malt flavour and has a sufficient enzymatic power to be used as base malt.","All beer types. Can be used at up to 50% together with Pilsen 2RS for pale beers (Pilsner, Lager) or as part of the mix for the other beers."
+"225","Vienna","37","1.037","3","4.5","0","80","0","0","4","7","2.1","3.2","0","11.5","0","0","37","45","0","0","0","0","0","100","Imparts a richer flavour of malt and grain than Pilsen malt and adds subtle aromas of caramel and toffee. Ch?teau Vienna malt is kilned at slightly higher temperatures than Pilsen Malt. As a result Ch?teau Vienna malt gives a deeper golden colour to the beer increasing at the same time its body and fullness. Due to the higher kilning temperature, the enzyme activity of Ch?teau Vienna malt is slightly lower than that of Pilsen Malt. Nevertheless, our Ch?teau Vienna malt has a sufficient enzymatic activity to be used in combination with large proportion of specialty malts.","All beer styles, Vienna lager. To enhance colour and aroma of light beers. Up to 100% of the mix."
+"226","Pale Ale","37","1.037","3","4.5","0","80","0","0","7","10","3.2","4.3","0","11.5","0","0","38","45","0","0","0","250","0","80","Usually used as a base malt or in combination with Pilsen 2RS malt to impart a richer malt flavour and additional colour. Being deeper in colour, this malt can add a golden hue to the wort. It is used with strong yeasts to produce amber and bitter beers. Ch?teau Pale Ale malt is kilned longer and is usually better modified, providing a more pronounced flavour than Pilsen 2RS. The enzymatic activity of Ch?teau Pale Ale malt is sufficient when used with large proportion of non-enzymatic specialty malts.","Pale ale styles and bitter beers, most traditional English beer styles. Up to 80% of the mix."
+"227","Munich Light","37","1.037","3","0","0","0","0","0","13","17","5.4","6.9","0","0","0","0","38","46","0","0","0","150","0","60","Rich, golden malt. Provides a modest colour increase toward a nice, golden-orange colour. Adds a pronounced grainy malty flavour to many beer styles without affecting the foam stability and body. Is also used in small quantities in combination with Ch?teau Pilsen 2RS to produce light colour beers, improving the malty flavour and giving the beer a richer colour. Enhances the taste of character beers.","Pale ale, amber, brown, strong and dark beers, bocks. Up to 60% of the mix."
+"228","Munich","37","1.037","3","0","0","0","0","0","21","28","8.4","11.1","0","11.5","0","0","0","0","0","0","0","0","0","60","Rich, golden malt. Provides a modest colour increase toward a nice, golden-orange colour. Adds a pronounced grainy malty flavour to many beer styles without affecting the foam stability and body. Is also used in small quantities in combination with Ch?teau Pilsen 2RS to produce light colour beers, improving the malty flavour and giving the beer a richer colour. Enhances the taste of character beers.","Pale ale, amber, brown, strong and dark beers, bocks. Up to 60% of the mix."
+"229","Melano Light","36","1.036","3","0","0","79","0","0","36","44","14.1","17.1","0","0","0","0","0","0","0","0","0","0","0","20","Very aromatic, with intense malty flavour. Gives fullness and roundness to the beer colour, improves flavour stability and promotes red colour in your beer. Gives beer fuller body. This specialty variety has been described as ?turbo Munich?.","Amber and dark beers, Scottish type and red coloured beers like Scottish ales, amber ales, red ales, and Irish ales. Up to 20% of the mix."
+"230","Melano","36","1.036","3","0","0","78","0","0","75","85","28.7","32.4","0","0","0","0","0","0","0","0","0","0","0","20","Very aromatic, with intense malty flavour. Gives fullness and roundness to the beer colour, improves flavour stability and promotes red colour in your beer. Gives beer fuller body. This specialty variety has been described as ?turbo Munich?.","Amber and dark beers, Scottish type and red coloured beers like Scottish ales, amber ales, red ales, and Irish ales.Up to 20% of the mix."
+"231","Abbey","36","1.036","3","0","0","0","0","0","41","49","15.9","18.9","0","0","0","0","0","0","0","0","0","0","0","25","Ch?teau Abbey? malt is a more toasted form of pale malt. Gives a strong taste of cooked bread, nuts and fruit. Ch?teau Abbey? malt has a bitter flavour which mellows on ageing, and can be quite intensely flavoured. Ch?teau Abbey? malt is typically used as a small proportion of the grist in the production of beers requiring some substantial depth of colour.","Pale ale beers, Abbey beers,brown porter and special beers, in a diverse range of British beers.Up to 25% of the mix."
+"232","Biscuit","35","1.035","3","4.7","0","77","0","0","45","55","17.4","21.2","0","0","0","0","0","0","0","0","0","0","0","25","Ch?teau Biscuit? malt produces a very pronounced ""toasty"" finish in the beer. Imparts a warm bread and biscuit-like aroma and flavour. Promotes a light to medium warm brown colour of the mash. This malt is used to improve the roasted flavour and aroma that characterize ales and lagers lending the subtle properties of black and chocolate malts. No enzymes. Must be mashed with malts having a surplus of diastatic power.","All special beers and as well for English ales, brown ales and porters. Up to 25% of the mix.
+All special beers and as well for English ales, brown ales and porters. Up to 25% of the mix."
+"233","CaraClair","36","1.036","3","8.5","0","78","0","0","8","8","3.56","3.56","0","11.5","0","0","0","0","0","0","0","0","0","30","Ch?teau Cara Clair is a type of Belgian caramel malt. Intensifies the beer?s body and its smoothness, promotes head formation and retention. Creates soft biscuit notes in the beer aroma.","Pilsner Lager, alcohol-reduced beer, light beer, Bock beer. Up to 30% of the mix."
+"234","CaraBlonde","36","1.036","3","8.5","0","78","0","0","17","24","6.9","9.6","0","11.5","0","0","0","0","0","0","0","0","0","30","Ch?teau Cara Blond? imparts a mild caramel-sweet aroma adding golden colour to beer. A distinguishing characteristic of all caramel malts is glassiness. This glassy endosperm creates the desirable non-fermentable components that give true caramel malt the ability to contribute mouthfeel, head, head retention, and extended beer stability.","Light lagers, light ales, with little or no alcohol, white beers. Up to 30% of the mix."
+"235","CaraRuby","35","1.035","3","8","0","78","0","0","45","55","17.4","21.1","0","0","0","0","0","0","0","0","0","0","0","25","Ch?teau Cara Ruby? malt imparts a rich caramel-sweet aroma and a toffee-like flavour, adding light amber to reddish colour to beer. A distinguishing characteristic of all caramel malts is glassiness. This glassy endosperm creates the desirable non-fermentable components that give true caramel malt the ability to contribute mouthfeel, head, head retention, and extended beer stability.","Brown Ales, Brune des Flandres, Bock, Scottish Ales. Up to 25% of the mix."
+"236","CaraGold","36","1.036","3","8","0","78","0","0","110","130","41.8","49.3","0","0","0","0","0","0","0","0","0","0","0","20","Ch?teau Cara Gold? malt imparts a strong caramel-sweet aroma and unique toffee-like and brown sugar flavour, adding a rich amber colour to beer. A distinguishing characteristic of all caramel malts is glassiness. This glassy endosperm creates the desirable non-fermentable components that give true caramel malt the ability to contribute mouthfeel, head, head retention, and extended beer stability.","Brown and dark beers. Up to 20% of the mix."
+"237","CaraArome","36","1.036","3","4.5","0","78","0","0","95","105","36.2","39.6","0","0","0","0","0","0","0","0","0","0","0","20","Ch?teau Ar?me malt provides a rich malty aroma and flavour to amber and dark lager beers. Compared to other traditional coloured malts, Ch?teau Ar?me has a higher diastatic power and imparts a smoother bitterness.","Special very aromatic beers. Up to 20% of the mix."
+"238","Crystal","36","1.036","3","4.5","0","78","0","0","142","158","53.8","59.8","0","0","0","0","0","0","0","0","0","0","0","20","This caramel-copper coloured malt provides a rich malt flavour and aroma to amber and dark lager beers. Compared to other traditional coloured malts, Ch?teau Crystal? has an even stronger diastatic power and imparts a smoother bitterness.","Aromatic and coloured beers. Perfect for any beer in which high profile malt is required. Excellent choice for Belgian ales and German bock beer styles. Up to 20% of the mix."
+"239","Caf? Light","35","1.035","3","4.5","0","77","0","0","220","280","83.1","105.6","0","0","0","0","0","0","0","0","0","0","0","10","Ch?teau Caf? Light? malt imparts a nutty and light to reach coffee flavour and aroma to beers, brings in a ""coffee"" note in Stouts and Porters. Adds a smooth mouthfeel and complexity to any dark ale. Reinforces the colour of the beer.","Stouts, porters, Scottish ale, dark Belgian style beer, slightly in brown ales for hints of fresh roasted coffee. Up to 10% of the mix."
+"240","Caf?","35","1.035","3","4.5","0","75.5","0","0","420","520","158.1","195.6","0","0","0","0","0","0","0","0","0","0","0","10","Ch?teau Caf? malt imparts a nutty and light to reach coffee flavour and aroma to beers, brings in a ""coffee"" note in Stouts and Porters. Adds a smooth mouth feel and complexity to any dark ale. Reinforces the colour of the beer.","Stouts, porters, Scottish ale, dark Belgian style beer, slightly in brown ales for hints of fresh roasted coffee; Up to 10% of the mix"
+"241","Special B","35","1.035","3","6","0","77","0","0","260","320","98","0","0","0","0","0","0","0","0","0","0","0","0","10","Is used to produce a deep red to dark brown-black colour and fuller body. Unique flavour and aroma. Gives much colour and raisin-like flavour. Imparts a rich malty taste and a hint of nut and plum flavour. May substitute Chocolate and Black malt if bitterness is not desired.","Abbey ales, dubbels, porters, brown ales, doppelbocks. Up to 10% of the mix."
+"242","Chocolat","35","1.035","3","4.5","0","75","0","0","800","1000","300.6","375.6","0","0","0","0","0","0","0","0","0","0","0","7","Ch?teau Chocolat malt is a highly roasted malt with a deep brown colour. This is where its name comes from. Ch?teau Chocolat malt is used to adjust the colour of beer and imparts a nutty, toasted flavour. Ch?teau Chocolat malt shares many of the characteristics of Black Malt but provides a less bitter flavour than Black malt and is lighter than Black, because it is roasted for a slightly shorter period of time and the end temperatures are not so high.","Brown, strong, darker and black beers, such as porters, stouts and brown ales. Up to 7% of the mix."
+"243","Black","34","1.034","3","4.5","0","73.5","0","0","1200","1450","450.6","544.3","0","0","0","0","0","0","0","0","0","0","0","6","Enhances the aroma of character beers by producing a more stringent flavour than other coloured malts. Imparts a slight burnt or smoky flavour.","Very coloured beers, stouts and porters. 3-6% of the mix."
+"244","Black of Black","33","1.033","3","5","0","72","0","0","400","600","150.6","225.6","0","0","0","0","0","0","0","0","0","0","0","5","This very special roasted malt offers a great advantage: Ch?teau Black Of Black gives the beer the flavour and aroma typical of the traditional Black malt without intensifying the beer?s colour. Imparts well-balanced and agreeable roasted notes to the finished beer. Now you can brew an amber-coloured beer with a more pronounced roasted character, which had not been possible until Castle Malting? created its unique technology for producing Ch?teau Black Of Black","From amber to very coloured beers, Stouts and Porters. Recommended max. proportion: 5% of the mix."
+"245","Roasted Barley","30","1.03","3","45","0","65","0","0","1000","1400","375.6","525.6","0","0","0","0","0","0","0","0","0","0","0","0","Ch?teau Roasted Barley is a highly roasted barley that imparts a burnt, grainy, coffee-like flavor to your beer. It has many characteristics of Ch?teau Black malt, though it is far more complex. It actually has some starch that can be converted during the mash, thus impacting the specific gravity. Ch?teau Roasted Barley will also lend to the sweetness to the beer. If compared to Ch?teau Chocolat and Ch?teau Black malts, roasted barley produces the lightest colored head. Imparts a deep red mahogany color to beer and very strong roasted flavor. Gives dryness to Porters and Stouts.","Stouts, Porters, Nut Brown Ales and other dark beer styles"
+"246","Wheat Blanc","38","1.038","3","5.5","0","83","0","0","7.5","7.5","3.4","3.4","0","14","0","0","0","0","0","0","0","0","0","35","Enhances the peculiar taste of wheat beers. Ch?teau Wheat Blanc malt is essential in making wheat beers but is also used in barley malt-based beers (3?5%) thanks to its protein level that gives the beer a fuller mouthfeel and enhanced head stability. Wheat has no outer husk and therefore has fewer tannins than barley. Wheat malt is much stickier than barley malt due to the higher protein content and may cause lautering problems if not given a ""Protein Rest"" during the mash.","Wheat beers, white, light beers, beers with low or no alcohol. Recommended max. proportion: up to 35% of the mix"
+"247","Wheat Munich Light","39","1.039","3","5","0","84","0","0","14","18","5.8","7.3","0","14","0","0","38","38","0","0","0","0","0","30","Not particularly dark in colour but richer in flavour than the standard Wheat malt. You will have a slimmer, more sparkling beer with a typical ale aroma.","Dark wheat beer styles, weizenbocks, stouts or in smaller proportions to add body and head retention to other dark ales. Up to 30% of the mix."
+"248","Wheat Munich 25","39","1.039","3","5","0","83","0","0","21","28","8.4","11.1","0","14","0","0","38","38","0","0","0","0","0","30","Not particularly dark in colour but richer in flavour than the standard Wheat malt. You will have a slimmer, more sparkling beer with a typical ale aroma.","Dark wheat beer styles, weizenbocks, stouts or in smaller proportions to add body and head retention to other dark ales. Up to 30% of the mix."
+"249","Wheat Crystal","36","1.036","3","6.5","0","82","0","0","140","160","53.1","60.6","0","13.5","0","0","0","0","0","0","0","0","0","20","Ch?teau Wheat Crystal imparts to the beer a rich character of cooked wheat, corn flakes and a slight aroma of coffee. Increasing the coloration, our new malt will highlight the aromatic notes of baked bread and biscuit in your beer. The beer will have a golden to light amber colour and a light to medium body.","Belgian Witbier; Hefeweizen; Kristallweizen, Dunkelweizens, Weizenbock; Up to 20% of the mix."
+"250","Wheat Chocolat","33","1.033","3","4.5","0","77","0","0","800","1100","0","0","0","0","0","0","0","0","0","0","0","0","0","20","Ch?teau Wheat Chocolate malt is a highly roasted malt, though not as high as black malt. With the help of this malt a deep brown colour with hints of black coffee and bittersweet chocolate flavour can be achieved in beer. The wheat version of Chocolate malt has a more pronounced dark chocolate character compared to its barley counterpart. This malt adds colour and flavour to a wide variety of dark beer styles and is used to smooth out certain English-style dark beers, such as stouts, porters, or brown ales. Ch?teau Wheat Chocolate is husk free and was especially developed by Castle Malting to avoid astringency, bitterness and dry flavour or aftertaste in beers. This malt can replace in a proportion of 1:1 the de-husked* chocolate malt, imparting a smoother flavour.","English-style dark beers, stouts, porters, or brown ales. Up to 20% of the mix."
+"251","Wheat Black","33","1.033","3","4.5","0","77","0","0","1100","1400","0","0","0","0","0","0","0","0","0","0","0","0","0","20","Ch?teau Wheat Black is a very special roasted wheat malt that will add complex flavours to your beers, the most pronounced note being coffee with intense roasted characters. Thanks to our unique roasting technology, this malt will not bring any astringency to the beer. Please note you will not obtain any taste typical of non-roasted wheat malts.","Dunkelweizen, Altbier, Black IPAs, Schwarzbiers, and specialty ales. Up to 20% of the mix."
+"252","Diastatic","37","1.037","3","7","0","80","0","0","2.5","4","1.4","2","0","11.5","0","0","0","0","0","0","0","380","0","30","Provides the necessary diastatic power in mashing when low-enzyme malt or unmalted grain is used; raises the extraction efficiency.","Any type of beer. Recommended: up to 30% of the mix."
+"253","Peated","37","1.037","3","5","0","80","0","0","4","4","2.1","2.1","0","11.5","0","0","40","45","0","0","0","250","0","10","Imparts a distinctive smoky, spicy aroma and flavour, typical for classic German beer styles. Smoked beer brewed with Ch?teau Peated malt tastes like a forest fire - but in a good way!! It has a rich head and a mouthfeel similar to sparkling ale.","Scottish ale, porters, smoked beer, special beers. Recommended proportion: up to 10% of the mix."
+"254","Buckwheat","30","1.03","3","8","0","65.3","0","0","4","15","2.1","6.2","0","11","0","0","0","0","0","0","0","0","0","40","Ch?teau Buckwheat malt is used in the production of gluten-free beer. Adds a particular nutty and malty flavor to your beer. It also can be used in specialty beers to render a rich and deep tone. NB! Buckwheat malt has no diastatic power.","Any type of gluten-free beer; up to 40 % of the mix."
+"255","Oats","27","1.027","3","7","0","78.5","0","0","5","5","2.4","2.4","0","14","0","0","0","0","0","0","0","0","0","15","Ch?teau Oat malt gives a distinctive silkiness to the beer. Great for enhancing body, head retention, and flavor of dark beers. Used as a flavor adjunct, it enhances a biscuit taste in the beer and gives it a unique texture and a creamy mouthfeel. Adds texture and flavor to any dark English beer style.","Dark beers, porters, stouts, robust British ales, winter beers. Up to 15% of the mix."
+"256","Spelt","37","1.037","3","6","0","79.5","0","0","3","7","1.7","3.2","0","17","0","0","0","0","0","0","0","0","0","15","Ch?teau Spelt malt imparts a sweet nutty flavor, adds a spicy aroma and an earthy character to your beer. Great for Belgian Saison and Wheat beer styles.","Belgian saison, wheat beers, special beers. Up to 15% of the mix."
+"257","Smoked","35","1.035","3","5","0","77","0","0","4","12","2.1","5","0","11.5","0","0","40","45","0","0","0","250","0","15","Smoked over beech wood, this malt develops an intense smoky and sweet-key flavor in your beer or whisky.","Smoked beers, specialty beers, Rauchbier, Alaskan smoked ales, Scottish ales, whisky. Up to 15% of the mix."
+"258","Acid","34","1.034","3","10","0","74","0","0","6","16","2.8","6.6","0","11.5","0","0","0","0","0","0","0","0","0","0","Ch?teau Acid malt improves the performance of the hydrolytic enzymes and provides a better mash working. It also intensifies the fermentation by adjusting the pH level. Acid malt enhances a well-rounded taste in your beer and gives stability to its head.","Any ale or lager, wheat beers, light beers for optimizing the pH level."
+"259","Rye","37","1.037","3","6","0","81","0","0","3","8","1.7","3.6","0","11","0","0","0","0","0","0","0","0","0","30","Gives a golden color to your beer. This malt imparts a unique touch of rye flavor and adds an interesting complexity by performing a new twist in many well-known beer styles.","Rye ales and lagers, special beers, seasonal beers. Up to 30% of the mix."
+"260","Barley Flakes","35","1.035","3","11","0","0","0","0","3","7","1.7","7","0","11.5","0","0","0","0","0","0","0","0","0","0","Chit Barley Malt Flakes retain many of the characteristics of raw barley and are used to improve foam stability and to balance malt with high solubility. Impart a rich dry-grainy flavor to beer and is used primarily in stout. This malt improves head formation and stability.","Any beer type."
+"261","Wheat Flakes","23","1.023","3","10","0","0","0","0","3","7","1.7","3.2","0","12","0","0","0","0","0","0","0","0","0","0","Chit wheat malt flakes retain many of the characteristics of raw wheat and are used to improve foam stability and balance malt with high solubility. The flakes can be added directly into the mash.","Any type of beer."
+"262","Oak Smoked Wheat","36.8","1.0368","11","5.5","0","82","0","0","4","6","2.1","2.8","0","13.5","0","0","38","45","0","0","0","0","0","100","Produced from quality wheat. Carefully dried over hot, smoky ambers of well-aged oak wood to
+achieve characteristic, while preserving relatively pale color. Flavor: mild, delicate, and well-rounded
+aroma of oak smoke; malty-sweet; notes of vanilla and honey","Grodziskie (Gr?tzer Beer); Smoked Ales; Ale; Specialty Beer; Smoked Wheat Ales;
+Porter; Wheat Beer; ""Hefe-Weizen""; Smoked Beer;"
+"263","Roasted Barley","30","1.03","11","3.8","0","65","0","0","1000","1300","0","0","0","0","0","0","0","0","0","0","0","0","0","5","Produced from quality spring barley. Processed slowly and thoroughly by our drum process. Evenly
+roasted specialty grain. Adds plenty of dark color and clean depth of flavor to very dark brews.
+Flavor: typical roasty aroma; notes of coffee and cocoa","Imperial Stout; Stout; Porter;"
+"264","Special W","33","1.033","11","6.5","0","73","0","0","280","320","105.6","120.6","0","0","0","0","0","0","0","0","0","0","0","30","Produced from quality spring barley. Dark-brown, slightly aromatic kernels. Contributes dark-amber
+to deep-coppery color to finished beer. Adds mouthfeel as well as a rich malt accent to brew. Very
+intense, complex, mild, caramel flavor; bread crust; raisins","Porter; Stout; Black beer (Schwarzbier); Barley Wine-Style Ale; Belgian-Style
+Abbey Ale; Belgian ""Bruin"" Beers; Belgian Specialty Beers; German-Style
+Doppelbock or Eisbock;"
+"265","Floor-malted Bohemian Wheat","38","1.038","11","5.5","0","81","0","0","4.5","7","2.2","3.2","0","13.5","0","0","37","36","0","0","0","0","0","100","Produced from quality czech-grown wheat. Intensified wheat malt aroma and taste, mild sweetness,
+creamy mouthfeel. Traditional, authentic floor malt produced in Czech. Republic according to
+highest Weyermann? quality standards.","Bohemian Wheat Beers; Wheat Beer; full-bodied international beers; Ale;"
+"266","Roasted Rye","29","1.029","11","4","0","65","0","0","500","800","188","300","0","0","0","0","0","0","0","0","0","0","0","5","Produced from quality rye. Produce typical roasty aroma. Roasted evenly by our slow and thorough
+drum process. Provides finished beer with typical rye notes, as well as some color and clean
+roastiness. Flavor: Typical roasty aroma; bready; notes of dark chocolate","Rye Lagers; Specialty Beer; Lager; Multigrain Beers;"
+"267","Chocolate Wheat","34","1.034","11","4","0","65","0","0","900","1200","338","451","0","0","0","0","0","0","0","0","0","0","0","5","Produced from quality wheat. Processed slowly and thoroughly by our drum process. Evenly roasted,
+coffee-brown, aromatic kernels. Adds deep-opaque color and complex flavors to very dark ales.
+Flavor: mild roasty aroma; notes of coffee, dark chocolate, and bread","""Dunkle-Weizen""; ""Altbier""; top-fermented Specialty Beers; Wheat Beer;
+Specialty Beer;"
+"268","Spelt","32","1.032","11","6","0","80","0","0","3","7","1.7","3.2","0","17","0","0","0","0","0","0","0","0","0","100","Produced from quality spelt.","Multigrain Beers; Specialty Beer; top-fermented Specialty Beers; Spelt beers;"
+"269","Chocolate Rye","32","1.032","11","4","0","65","0","0","500","800","188","300","0","0","0","0","0","0","0","0","0","0","0","5","Produced from quality rye. Carefully and evenly roasted rye malt. Enhances deep opacity, aroma, and
+creaminess of dark ales. Flavor: mild notes of coffee, chocolate, nuts and bread","top-fermented Specialty Beers; Specialty Beer; Rye Lagers; Rye Lager;"
+"270","Chocolate Spelt","32","1.032","11","4","0","65","0","0","450","1000","170","376","0","0","0","0","0","0","0","0","0","0","0","5","Produced from quality spelt. Spelt wheat, also known as dinkel, is an old wheat variety. Intended for
+specialty beers. Processed slowly and thoroughly by our drum process. Evenly roasted, coffeebrown,
+aromatic kernels. Adds color and complex flavors to very dark brews. Flavor: intense roast
+aroma; intense notes of coffee and chocolate","Spelt beers; Specialty Beer; top-fermented Specialty Beers; Porter; Stout;"
+"271","Bohemian Pilsner","37","1.037","11","5","0","80","0","0","4","6","2.1","2.8","0","11.5","0","0","38","42","0","0","0","0","0","100","Produced from quality czech-grown spring barley (authentic Bohemian barley varieties Bojos and
+Malz). Processed specifically for ?Bohemian? characteristics to impart a full body, golden-blond
+color, and complex maltiness to the finished brew. Flavor: intense malt aromas, malty-sweet","non-alcoholic Beer; all other beer types; Authentic Bohemian Pilsners; Pils; Belgian
+Ales; Light Beer; alcohol-reduced Beer;"
+"272","Finest Pale Ale Golden Promise","37","1.037","8","3.7","306","81","4","6","4.5","6.5","2.2","3","1.55","9.69","38","42","40","44","40","44","70","228","75","100","Light Malty. When you need a high performing well balanced malt to complement your big hops, look no further than Golden Promise. It gives beautiful mouthfeel to bring balance to beers with even the gutsiest hops. And when you drop the gravity for a session beer, you won?t lose out on body. This gives the biggest base of any malt without adding colour, resulting in exceptional beers. Just ask any of our award winning customers who use Golden Promise ? the results speak for themselves.","Session IPAs, Highly Hopped Keg Beers, Cask Ales, SMASH Beers, Premium All-Rounder"
+"273","Finest Pale Ale Maris Otter","37","1.037","8","3.7","306","81","4","6","4.5","6.5","2.2","3","1.55","9.69","38","42","40","44","40","44","70","228","75","100","Rich Malty. Maris Otter?s superior Brewhouse Performance is fantastic. The ?Rolls Royce? of malts for the traditional brewer, this legendary heritage barley variety is the base malt for traditional English Bitter beers. Maris Otter has a low nitrogen content and high extract, producing a rich malty flavour with exceptional Brewhouse Performance and beer clarity.","Cask Ales and English-Style Bitters, Premium All-Rounder"
+"274","Low Colour Maris Otter","36","1.036","8","3.7","305","80.5","2","4","2.5","4.5","1.3","2.1","1.55","9.69","35","42","37","44","37","44","70","228","75","100","Light Malty, Fresh. If you need a well modified, high performing malt with a low colour, then Low Colour Maris Otter is the perfect choice. This heritage barley variety is used to produce an exceptional quality base malt, with a high extract and enzymic activity and low nitrogen content. Low Colour Maris Otter is kilned at a low temperature, making it perfect for Cask IPAs and Light Coloured Ales.
+Light Malty, Fresh","Light Coloured Cask Ales and IPAs, Premium All-Rounder"
+"275","Best Pale Ale","36","1.036","8","3.7","305","80.5","4","6","4.5","6.5","2.2","3","1.55","9.69","38","42","40","44","40","44","70","228","75","100","Rich Malty. For the principal ingredient in keg, bottle or cask ales, we use top quality UK two-row barley to produce a plump, well-modified malt with good extract and enzymic activity. The versatility of this base malt lends itself to balance hoppy beers and provides a robust malty note to a Traditional Bitter or Belgian-style beer.","Cask, Keg or Bottled Ales, Porters and Stouts, Coloured Ales, Lagers, IPAs, SMaSH Beers, All-Rounder"
+"276","Extra Pale Ale","36","1.036","8","3.7","305","80.5","2.4","4.5","2.5","4.5","1.5","2.2","1.6","10","38","42","40","44","40","44","70","228","75","100","Rich Malty. Extra Pale Ale Malt is an excellent base malt for Brewers who require a low colour, well modified malt. The plump grains of UK two-row barley ensure uniformity and consistency, as well as good extract and enzymic activity. If you?re limited on base malt storage, Extra Pale Ale Malt doubles as a great light-coloured base for both Lagers and Ales.","Light Coloured Ales and Lagers, All-Rounder"
+"277","Finest Lager","37","1.037","8","4.5","307","81","2","4","2.5","4.5","1.3","2.1","1.8","11.25","36","41","38","46","38","46","65","228","75","100","Light Malty, fresh. Finest Lager Malt is a superb low colour lager malt. Well modified, high extract UK spring two row barley give high enzymic activity, low colour, low nitrogen, and exceptional Brewhouse performance. It can be used to make any style of lager with its clean, light malty taste.","Pilsner, Amber and Dark Lagers, Belgian Tripel and Bock. 100% for Pilsner, Up to 95% for Amber and Dark Lagers, Belgian Tripel and Bock"
+"278","Vienna","33","1.033","8","3.5","280","75","5","10","6","12","2.4","4.3","0","0","0","0","0","0","0","0","0","0","0","100","Malty, Nutty. Our Vienna malt enhances the light colour, flavour and aroma of all light beers. Light, bready, malty notes bring body to Light Ales, Best Bitters and Czech Lagers. Use as a base malt for highly hopped IPA and American Ales to provide great balance and depth.","Belgian Beers and Hop Forward IPA"
+"279","Munich","37","1.037","8","4","303","80","18","25","20","27","7.3","9.9","1.8","11.25","45","45","50","50","50","50","20","60","25","100","Bready, Malty. Our Munich malt brings rich malty flavours and golden hues to light beers. If you?re struggling to bring up the mouthfeel in really hoppy keg beers, try adding a generous proportion of Munich malt to your grist. An excellent base malt for Strong Bitter, Dark Amber Ales, Brown Ales and Milds. Munich Malt brings intense colour and malty notes, without compromising enzymic action. Despite its continental name, this malt provides a fantastic malty base for British Ales and Bitters.","Pale Ale, Strong Bitter, Dark Amber Ale, Brown Ale, Bock. 5-15% Light Beers 100% Darkens Beers Up"
+"280","Imperial","33","1.033","8","3.5","280","75","40","50","45","55","15.6","19.3","0","0","0","0","0","0","0","0","0","0","0","80","Biscuit Dry Sweetness (Honey/Plums), Bread Crust. Our Imperial Malt imparts a full-bodied flavour and biscuit aroma. The warm brown notes it adds to the wort intensify the depth of colour, without compromising enzymic activity.","Light Ales, Brown Ales, Porter and Stout. Up to 20% in Light Ales to enhance flavour, Up to 50% in Brown Ales & Porters, Up to 80% in Dark Beers & Stouts"
+"281","Aromatic","33","1.033","8","5","260","70","50","70","50","70","19.3","26.3","0","0","0","0","0","0","0","0","0","0","0","50","Malty, Honey, Raisins, Complex Sweetness with Sour After-Notes. The secret weapon in the British Ale Brewer?s arsenal, our aromatic malt has a slightly higher acidity to balance pH. Its complex sweetness with sour after-notes gives a magnificent mouthfeel. This, combined with intense malty notes and raisin, makes our Aromatic Malt a versatile product that can be used from as little as 5% to give warm honey aromas and up to 50% as a base malt for Dark Beers to give raisin and plum notes. Brings a beautiful brown depth of colour.","Ales, Mild, Porter and Bock. Up to 10% Produces a Honey Flavour in Beer, Up to 20% gives Raisin Notes, Up to 50% in Mild, Porters and Bocks Bocks enhances Malty/Fruity Notes
+Ales, Mild, Porter and Bock. Up to 10% Produces a Honey Flavour in Beer, Up to 20% gives Raisin Notes, Up to 50% in Mild, Porters and Bocks Bocks enhances Malty/Fruity Notes"
+"282","Cornish Gold","36","1.036","8","4","303","80","18","25","20","27","7.3","9.9","1.8","11.25","45","45","50","50","50","50","20","60","25","100","Bready, Malty. Made from 100% Cornish grown, two-row spring barley, our Cornish Gold brings rich malty flavours and golden hues to light beers. An excellent base malt for Strong Bitter, Dark Amber Ales, Brown Ales and Milds. Cornish Gold brings intense colour and malty notes, without compromising enzymic action. This malt provides a fantastic malty base for British Ales and Bitters.","Pale Ale, Strong Bitter, Dark Amber Ale, Brown Ale, Bock. 5-15% Light Beers, 100% Darkens Beers Up"
+"283","Caramalt","32","1.032","8","7.5","265","71","30","42","30","42","11.8","16.3","0","0","0","0","0","0","0","0","0","0","0","20","Sweet, Mild Toffee, Grassy. Our Caramalt is a sweet, chewy and heavenly malt. It contributes golden-hued colour enhancement and flavour enrichment from its mild toffee notes in Lagers and Extra Pale Ales. Due to its low colour, it?s incredibly versatile and can be used to enhance almost any beer style that needs a little sweetness.","Suitable for adding to most beers"
+"284","Premium English Caramalt","32","1.032","8","3.5","265","71","54","66","54","66","20.8","25.3","0","0","0","0","0","0","0","0","0","0","0","0","?Horlicks?, Sweet Malt, ?Shreddies?. Premium English Caramalt is our top of the range Cara. Used in Light Coloured Beers, it imparts a deliciously sweet malty flavour without the burnt character that higher colour crystals bring. Excellent for colour adjustment on delicately flavoured Lagers and Ales, Premium English Caramalt gives a slight colour increase. It also works well in highly hopped beer to balance out bitterness and citrus aromas.","IPA, English Pale, Wheat Beer and Bock
+IPA, English Pale, Wheat Beer and Bock"
+"285","Crystal Light","32","1.032","8","6","265","69","95","113","95","113","36.2","42.9","0","0","0","0","0","0","0","0","0","0","0","15","Biscuit, Caramel, Dried Fruit (Apricots), Nutty. Our Crystal Light brings mild caramel and toffee flavours to beers, whilst contributing a beautiful golden hue. Its clean, mild sweetness brings depth of flavour where extra body is required, without adding overtly toasted or roasted characters.","IPAs, Best Bitters, Brown Ales"
+"286","Crystal T50","32","1.032","8","5","265","69","126","140","130","145","48","53","0","0","0","0","0","0","0","0","0","0","0","20","Delicate Malty Notes, Honey, Slight Toffee. The secret to our Crystal T50 is in the name. Each batch targets 50 Lovibond colour (130EBC). The specification on Crystal T50 was created with one of our most acclaimed clients in mind. With an exceptionally tight consistency - it?s a fantastic crystal that crunches in the mouth offering. Crystal T50 provides amazing colour and delicate malty flavours to beer.","IPA, Pale Ale, and Bitters
+IPA, Pale Ale, and Bitters
+IPA, Pale Ale, and Bitters"
+"287","Crystal Medium","32","1.032","8","5","265","69","167","190","167","190","63.2","71.8","0","0","0","0","0","0","0","0","0","0","0","15","Pronounced Caramel, Toffee Sweetness. Caramel and toffee notes come to the forefront in our Crystal Medium. Our expert roasters use their skills to bring you a crystal that adds stunning deep golden and red hues to your beer, whilst imparting deeper caramel notes.","Pale Ales, Bitter, Brown Ale, Porter"
+"288","Crystal Dark","32","1.032","8","5","265","69","250","285","250","285","94.3","107.5","0","0","0","0","0","0","0","0","0","0","0","15","Burnt Caramel, Toffee, Raisins. With our Crystal Dark, we get into the delicious realms of complex toffee and burnt sugar, but without the astringency of roasted malt. Our unique roasting process allows us to produce exceptional uniformity in each batch, ensuring each grain of malt is perfectly crystallised.","Dark Ales, Brown Ale, Red Ale, Dark Mild, Scotch Ales"
+"289","Crystal Extra Dark","32","1.032","8","5","265","69","450","500","450","500","169.3","188.1","0","0","0","0","0","0","0","0","0","0","0","10","Raisins, Christmas Cake. The beautiful rich brown of the grain gives an insight to the exquisite dried fruit and burnt sugar flavours that are imparted by this expertly crafted dark crystal. Used in small amounts, Crystal Extra Dark will help balance flavour and colour in Dark Beers, whilst enhancing head retention.","Stout, Extra Strong Bitter, Porter"
+"290","DRC","33","1.033","8","5","265","69","280","320","280","320","105.6","120.6","0","0","0","0","0","0","0","0","0","0","0","20","Heavy Caramel, Subtle Taste of Plums & Raisins. Due to its unique production process, Simpsons? DRC? can be used to substitute darker roasted malts in Dark Beers where the astringency and bitterness inherent to roast malts is not desired. This means that it can be used at a higher rate in the grist to add complex caramel and dried fruit notes with a beautiful red-brown hue.","Pale Ales, British Strong Ales, Belgian Abbey"
+"291","Heritage Crystal","32","1.032","8","5","265","69","167","190","167","190","63.2","71.8","0","0","0","0","0","0","0","0","0","0","0","15","Caramel, Toffee. The uniformity and excellent malting characteristics that have ensured Maris Otter has been the favoured barley variety of the British Brewer, also lend themselves to ensuring exceptionally good crystal malt. We?ve hand-crafted this heritage barley variety to produce an outstanding medium crystal that brings flavour and depth of colour to Ales and Bitters.","Ales and Bitters"
+"292","Amber","38","1.038","8","5","265","69","54","71","54","71","20.8","27.2","0","0","0","0","0","0","0","0","0","0","0","20","Dry, Biscuit. Perhaps the most versatile of all our roasted products, Simpsons? Amber Malt can be used in a wide variety of beers to add biscuity toasty notes and a beautiful brown hue. Its delicate roast flavour makes it suitable for adding toasty notes to all Dark Beers, as well as lighter Ales and Lagers. Amber Malt brings a clean, crisp dryness to balance delicate floral hops and increases foam stability.","California Common, Stout & Extra Stout, Export, Best Bitter, Dark Lager, Fullers 1845"
+"293","Brown","32","1.032","8","4","265","69","430","600","430","600","161.8","225.6","0","0","0","0","0","0","0","0","0","0","0","10","Coffee Beans. Our Brown Malt imparts a rich coffee aroma ideal for Stouts and Porters. It delivers a smooth mouthfeel as well as increasing foam stability. The hue is a deep mahogany that brings warmth and depth to dark beers. Often a forgotten malt.","London Porter, Mid to Dark Belgian Styles, Brown Ale"
+"294","Chocolate","32","1.032","8","3","265","69","1067","1300","1067","1300","400.7","488.1","0","0","0","0","0","0","0","0","0","0","0","10","Dark Chocolate. Our Chocolate Malt gives beer a stunning dark brown colour. Chocolate overtones and hints of coffee bring richness and complexity at higher usages in Stouts and Porters.","Winter Warmers, Porter and Stout, Dark Mild, Bock"
+"295","Black","32","1.032","8","3","265","69","1433","1900","1433","1900","538","713.1","0","0","0","0","0","0","0","0","0","0","0","10","Cocoa, Neutral. Our Black Malt is excellent for darkening beer colour without imparting too much astringency or roast characteristics. The flavour is surprisingly neutral, with a clean dryness that makes it an incredibly versatile product.
+Cocoa, Neutral. Our Black Malt is excellent for darkening beer colour without imparting too much astringency or roast characteristics. The flavour is surprisingly neutral, with a clean dryness that makes it an incredibly versatile product.","Porter, London Brown Ale, Black Hoppy Beers and Black Lager"
+"296","Roasted Barley","32","1.032","8","3","240","62","1300","1900","1300","1900","488.1","713.1","0","0","0","0","0","0","0","0","0","0","0","5","Coffee Beans. Roasted Barley is a typical ingredient of dry Irish Stouts. Although the colour specification is very similar to Black Malt, Roasted Barley has an intense roasted coffee flavour that bestows a deep, dark colour with flavours to match.","Irish Stout, Heavy, Imperial Stout"
+"297","Oats","28","1.028","8","7","230","74","2","4","2","4","1.3","2.1","0","0","0","0","0","0","0","0","0","0","0","20","Oaty breakfast cereal taste. Simpsons Malted Oats have large, thick husks which helps with run off. Once you crack it open, the creaminess of the oats releases a silky smoothness which imparts a sumptuous velvety texture to your beer. This fullness allows it to take as many hops as you can throw at it for a juice bomb, providing balance. In more traditional usage, Malted Oats provide the back bone of creaminess in Oatmeal Stouts and Porters, smoothing the astringency that may result from the heavy use of roasted grains and adding a complexity of flavour. Malted Oats is a hugely versatile product that can be added to any beer style to impart a creamy, velvety smooth mouthfeel.","Oatmeal Stouts and Porters, Pale Ales and East Coast style IPAs, Double IPA Juice Bombs"
+"298","Wheat","38","1.038","8","4.5","315","82.9","2","6","2","6","1.3","2.1","1.95","12.9","36","42","41","47","41","47","0","0","0","70","Citrus, Bready. Wheat malt can be added at 5% to most Light Beers to increase foam stability without affecting haze or flavour. Used at up to 70% as a base malt for Wheat Beer, it imparts a bready flavour and characteristic citrus notes.","Bitter, Scotch Ale, White IPA, Wheat Beers. 
+5-15% in Bitter, Scotch Ale, White IPA, 50-70% in Wheat Beers"
+"299","Golden Naked Oats","32","1.032","8","7","265","69","12","24","12","24","5.1","9.6","0","0","0","0","0","0","0","0","0","0","0","10","Nutty, Creamy, Porridge. This huskless oat crystal malt is quite simply delicious. An exotic ingredient for the adventurous brewer, it brings a subtle nutty flavour. Its creaminess brings mouthfeel and balance to strong, hop forward beers. One taste and we?re sure you?ll be inspired to start creating a new recipe.","Oat Stouts and Speciality Beers"
+"300","Red Rye Crystal","30","1.03","8","2","250","65","237","310","237","310","89.4","116.8","0","0","0","0","0","0","0","0","0","0","0","10","Sweet, Malty, Bread Crust. Red Rye Crystal imparts a beautiful ruby red hue to beers, whilst offering a well-rounded, sweet, malty flavour. A great Autumnal flavour for seasonal beers.","Rye Beers, Red Beers"
+"301","Rye","36","1.036","8","7","300","78","2","6","2","6","1.3","2.8","0","0","0","0","0","0","0","0","0","0","0","20","Spicy. Malted Rye contributes a spicy rye note to beers. It adds a unique flavour, giving fullness and mouthfeel and is superb when used in conjunction with Red Rye Crystal. If using at greater than 20%, rice husks are recommended to aid filtration. As well as its use in traditional Rye Beers, Malted Rye is excellent in hoppy Beer styles, complementing citrus hops with its spice.","Rye IPA and Speciality Beers"
+"302","Dextrin","31","1.031","8","7","260","67.5","1.3","1.6","1.3","1.6","1","1.2","0","0","0","0","0","0","0","0","0","0","0","20","Mouthfeel and Foam. A handy little tool to keep up your sleeve, Dextrin Malt can be used sparingly to add body, mouthfeel and foam stability to any beer. Particularly useful in very light, hop forward IPAs to balance bitterness, it?s great in lower attenuated sweet beers, such as Mild and Sweet Stout.","Dark, Mild and Sweet Stout. Up to 5% to Improve Mouthfeel and Foam Stability in any Beer 10?20% in Dark Mild and Sweet Stout"
+"303","Ale","35","1.035","9","4.5","0","81","0","0","6","9","3","4","0","11.5","0","0","38","45","0","0","0","250","0","100","Swaen?Ale is used to correct over-pale malts, to produce ?golden? beer and to improve palate fullness. For this a steeping degree of 44 to 46% is used, the malt is normally modified and not overmodified, it is cured at 90-95?C and thereby a colour of 6 to 9 EBC is obtained. It?s not just a darker base malt but a unique part of your unique recipes. Swaen?Ale is in harmony with our specialty malts for your craft beers.","Pale Ale styles and bitter beers, most traditional English beer styles, strong export beers."
+"304","WhiteSwaen Classic","39","1.039","9","5.5","0","82","0","0","3","5","1.7","2.3","0","13.8","0","0","0","0","0","0","0","0","0","75","Imparts special taste of wheat beers. This wheat malt is essential in making wheat beers but is also used in barley malt-based beers (3?5%) thanks to its protein level that gives the beer a fuller mouthfeel and enhanced head stability. Very rapidly cured at 80?C to aviod increased colour formation. Produces smooth, sparkling beers which emphasise the typical top fermented beer and wheat aroma. Excellent wheat beers with aromas, perfect for styles. Typical top-fermented aroma.","Wheat beer, light beers, Wit, Weizen, alcohol-reduced and non-alcoholic beers, top fermented beers, K?lsch, Ale, Hefeweizen, Alt"
+"305","GreenSwaen Ale","35","1.035","9","4.5","0","81","0","0","6","9","3","4","0","11.5","0","0","38","45","0","0","0","250","0","100","GreenSwaen?Ale is used to correct over-pale malts, to produce ?golden? beer and to improve palate fullness. For this a
+steeping degree of 44 to 46% is used, the malt is normally modified and not overmodified, it is cured at 90-95?C and thereby a colour of 6 to 9 EBC is obtained. It?s not just a darker base malt but a unique part of your unique recipes. GreenSwaen?Ale is in harmony with our specialty malts for your craft beers. Produces excellent Lagers, Ales.","Pale Ale styles and bitter beers, most traditional English beer styles, strong export beers."
+"306","GoldSwaen Amber","35","1.035","9","6.5","0","78","0","0","60","80","23","30","0","0","0","0","0","0","0","0","0","0","0","30","Has reddish shine and typical aroma which serves to intensify and stabilise the flavour. Intensifies the beer?s body and its smoothness, promotes head formation and retention. Caramel malts are produced in several colour stages. They make a considerable contribution to the palate fullness and body, intensification of the malt aroma, the full taste and colour and better head retention. Full red colour, improved flavour stability and fullness, notes of toffee and bread.","Pilsner, light beers, red beers, alcohol reduced beers, Bockbier, export beers, special beers, dark beers."
+"307","BlackSwaen Barley","25","1.025","9","4.5","0","73","0","0","1000","1250","375","470","0","0","0","0","0","0","0","0","0","0","0","5","BlackSwaen?Barley imparts the typical roasty aroma. Perfect for colouring. Typical roasty aroma. Enhances deeper colour","Schwarzbier, Stout, Porter, Ales, Bockbier, Altbier, dark beers, all beer types for colouring."
+"308","PlatinumSwaen Spelt","37","1.037","9","4.5","0","82","0","0","5","10","2.3","4","0","16","0","0","0","0","0","0","0","0","0","20","Fine combination of typical spelt and malt aromas. Nice spicy notes with a touch of hazelnut. Spicyness and mouthfeel.","Belgian saison, special beers, wheat beers"
+"309","Pilsen MD","37","1.037","5","4.5","0","80","0","0","2.5","3.5","1.4","1.8","0","11.5","0","0","35","40","0","0","230","0","0","100","Mild malty. Light in color and low in protein. Our Pilsen is made from the finest European two-row barley. This malt is well modified and can easily be mashed with a single ? temperature infusion. Due to the high enzymatic power it can be used up to 100% of the grain bill in all types of beer.","All types of beer"
+"310","Wheat MD","38","1.038","5","6.5","0","83","0","0","2.5","3.5","1.4","1.8","0","12.5","0","0","0","0","0","0","0","0","0","70","Wheat malt gives the specific taste and haze to your wheat beer. Adding wheat malt in smaller amounts will enhance the head retention.","Wheat beers, Hefe ? Weize, Light beers"
+"311","Pale Ale MD","37","1.037","5","4.5","0","80","0","0","8","10","3.8","3.8","0","12","0","0","35","50","0","0","0","0","0","100","Our Pale Ale malt is fully modified, kilned longer and more intensively. This malt gives your beer a golden colour.","Amber beers, Ales, Stout, Bock beers, Lagers"
+"312","Munich MD","37","1.037","5","4.5","0","79.5","0","0","13.5","16.5","6","6","0","12","0","0","35","50","0","0","0","0","0","80","This malt has a pronounced malty flavor, aroma and an orange - amber colour. It improves the character and full bodiness of the beer.","Amber beers, Ales, Stout, Bock beers, Lagers"
+"313","Aromatic MD / Amber MD","37","1.037","5","4.5","0","79","0","0","40","60","19","19","0","12","0","0","0","0","0","0","0","0","0","30","The intensive germination and a mildly kilning will add a very strong malt aroma and a deep reddish color. Amber malt clearly improves flavor stability.  The malt is rather low in diastatic power therefore it can only be used up to 30%.","Trappist, Abbey, Amber beers, Ales, Bock beers"
+"314","Aroma 100 MD","37","1.037","5","4.5","0","77","0","0","90","110","38","38","0","12","0","0","0","0","0","0","0","0","0","20","This malt has improves flavor stability, fullness and rounding of the beer color. It pronounces the malty flavor.","Amber beers, Red Colored beer, Ales, Stout, Bock beers, Lagers"
+"315","Aroma 150 MD","37","1.037","5","4.5","0","77","0","0","130","170","57","57","0","12","0","0","0","0","0","0","0","0","0","20","This malt has improves flavor stability, fullness and rounding of the beer color. It pronounces the malty flavor.","
+Amber beers, Red Colored beer, Ales, Stout, Bock beers, Lagers
+Amber beers, Red Colored beer, Ales, Stout, Bock beers, Lagers"
+"316","Cara 20 MD","32","1.032","5","9.5","0","75","0","0","10","23","8","8","0","12.5","0","0","0","0","0","0","0","0","0","30","The Cara 20  is a very light crystal/caramel malt. The malt is produced in the drum. Due to the  caramelisation and low drying temperatures its specific taste is achieved. Adding this type of malt increases the foam stability of your beers. Trough it?s light colour it can even be added in low percentages in your Pilsen beer to improve the foamstability.","Pale Ale, Golden Ale, Light beer, Pilsen"
+"317","Cara 50 MD","32","1.032","5","7.5","0","75","0","0","40","60","20","20","0","12.5","0","0","0","0","0","0","0","0","0","25","The Cara 50  is a very light crystal/caramel malt use by a lot of Belgian breweries in producing Abbey beers. The malt is produced in the drum. Due to the  caramelisation and low drying temperatures its specific taste is achieved.","Belgian Abbey beers, Pale Ale, Golden Ale"
+"318","Cara 120 MD","32","1.032","5","6","0","74","0","0","100","140","45","45","0","12.5","0","0","0","0","0","0","0","0","0","15","The Cara 120  is a darker caramel malt use by a lot of Belgian breweries in producing Abbey beers. The malt is produced in the drum. The malt will impart a rich caramel-sweet arome and full flavor, as well as intense dark color.","Belgian Abbey and Trappist beers, Pale Ale, Golden Ale"
+"319","Special B","30","1.03","5","5","0","72","0","0","270","350","115","135","0","12.5","0","0","0","0","0","0","0","0","0","10","Through it?s unique double drying process, the Special B has an unique arome and flavor. The Special B imparts an heavy caramel taste and is often credited with the raisin-like flavor ot some Belgian Abbey beers. It can substitute Chocolate and black malt when bitterness is not desired.","Double Belgian Abbey and Trappist beers, Stout, Dark Ale"
+"320","Biscuit MD","32","1.032","5","4.5","0","75","0","0","42","70","19","27","0","12.5","0","0","0","0","0","0","0","0","0","15","This toasted malt will provide a ?warm bread or biscuit flavor and aroma and will lend a garnet-brown color. This malt is also produced in the roasting drum and has no enzymes. So it must be mashed with malts having high diastatic power.","All special beers, Belgian Abbey beers, Ales, bockbeers"
+"321","Mroost 900 MD (Chocolate)","30","1.03","5","4.5","0","70","0","0","800","1000","340","340","0","12.5","0","0","0","0","0","0","0","0","0","5","This roasted malt is roasted at high temperatures and afterwards rapidly cooled when the desired color is achieved. Of course this malt gives the beer a darker aroma and beer color. Due to our unique production methods our roasted malts are less astringent.","Dark special beers, Double Abbey beer, Stout, Dark Ales, bock beers
+Dark special beers, Double Abbey beer, Stout, Dark Ales, bock beers"
+"322","Mroost 1400 MD (De-Bittered Black)","30","1.03","5","4.5","0","70","0","0","1300","1500","530","530","0","12.5","0","0","0","0","0","0","0","0","0","5","This roasted malt is roasted at high temperature and afterwards rapidly cooled when the desired color is achieved. Of course this malt gives the beer a darker aroma and beer color. The malt gives an smoky/burnt flavor to dark beers. Due to our unique production methods our roasted malts are less astringent.","Dark special beers, Stout, Dark Ales, bock beers"
+"323","Peated roasted barley MD","30","1.03","5","4.5","0","70","0","0","1000","1400","453","453","0","12.5","0","0","0","0","0","0","0","0","0","5","This roasted pealed barley is roasted at high temperatures and afterwards rapidly cooled when the desired color is achieved. Of course this barley gives the beer a darker aroma and beer color. The barley gives an smoky/burnt flavor to dark beers. Because we are using pealed barley the undesired astringent flavor from the husk of the barley disappears!","Dark special beers, Stout, Dark Ales, bock beers"
+"324","Toasted Wheat MD","37","1.037","5","6.5","0","0","0","0","0","0","12","12","0","0","0","0","0","0","0","0","0","0","0","5","This toasted wheat malt is slightly toasted. Therefore it has a bread-like, nutty flavor.","Dark special beers, Stout, Dark Ales, bock beers"
+"325","1823 London Lager","37","1.037","1","4.5","308","80.5","2","3","0","0","1.5","2","1.7","10.5","35","40","0","0","0","0","68","0","75","0","Produced with the highest quality two-row spring barley that is grown by some of our long established farming families that have supplied malting barley into our malthouse at Witham (situated on the outskirts of London) for over the last 50 years. Our master maltsters then convert the barley in a style that produces a classic high extract, low DMS lager malt that is low in colour that delivers a characterful lager that has fresh malty flavours and excellent mouthfeel as the key signatures components of the clean crisp lager that the consumers experience.",""
+"326","1823 Maris Otter Finest Ale","38","1.038","1","4","310","82","4","6","0","0","2","3","1.55","9.7","36","42","0","0","0","0","50","0","55","0","This is one of our finest two row Winter barley Ale malts that is produced utilising one of the UK?s oldest brewing varieties to meet the niche requirements of a growing number of dedicated craft brewers that choose Maris Otter? malt as the base of many of the great traditional British style beers they produce. This malt is produced from the cream of the Maris Otter? crop, selecting some of the lowest protein barley grown by farmers keen to support the traditions of the variety. This then allows our master maltsters to produce a very traditional low protein malt which is packed with character and flavour. Replicating the original style of Maris Otter? malts that our maltsters would have produced 50yrs ago when the variety was first grown harnessing purely the farmers skill & knowledge of his land.",""
+"327","1823 Maris Otter Crystal","35","1.035","1","4.5","285","78","130","150","0","0","70","80","0","0","0","0","0","0","0","0","0","0","0","0","Our highest quality medium colour crystal malt produced at our Witham site using one of the best known English two-row winter barley varieties recognised as the heart and soul of many exceptional craft ales. The barley is grown by a limited number of dedicated farmers who work with this traditional English brewing variety, which has one of the longest crop cycles at 300 days. It is then down to our highly skilled maltsters and roasters to work hand in hand to produce one of our highest quality crystallised malts. The true art of the roasters skills/trade where they draw on all of their sensory skills to determine just when that right time is to drop the roaster burners and allow the malt to coast to the peak temperature that ensures that they achieve a malt that is packed full of very sweet honey, caramel flavours yet has a slightly bitter finish. This is the ideal product to provide enhanced colour, depth of flavour profile and aroma to any Maris Otter? based ale.",""
+"328","1823 Greenwich Crystal","35","1.035","1","4.5","285","78","130","150","0","0","70","80","0","0","0","0","0","0","0","0","0","0","0","0","A classic recipe from our original Greenwich roasting house in London. This classic slow matured malt produces sweet caramel and toffee flavours from traditional methods used in the 30s and 40s. This premium crystal malt is made from the finest winter barley and malted in our Wanderhaufen in our Witham maltings before being roasted in our purpose built roasters. The finished crystal malt produced is bursting with flavour and colour that will produce a complex range of sweet caramel, toffee flavours and enhanced mouthfeel/linger in the final ales produced using this malt.",""
+"329","Lager","36","1.036","9","4.5","0","81","0","0","3","4","1.7","2.1","0","11.5","0","0","35","45","0","0","0","250","0","100","The lightest in colour. Swaen?Lager can
+be easily mashed with a single-temperature
+infusion. Has a strong, sweet malt flavour
+and perfect nature to be used as base malt.
+Brings sweet malt flavour & enzymatic
+power. Strong, sweet malt flavour, light golden
+hue, produces excellent Pilsner and Lager.","Pilsner, Lager, Ale, K?lsch, light beers,
+export beers, special beers, all other beers."
+"330","Munich Dark","37","1.037","9","4.5","0","80","0","0","15","25","6","10","0","11.6","0","0","48","48","0","0","0","0","0","50","Swaen?Munich Dark imparts the basis
+of the dark beer character. When you?re
+looking for distinct malty flavour for strong
+colours & body your malt is the
+Swaen?Munich Dark. Perfect for traditional
+darker beers. Even brings deeper colours
+than Munich Light.
+Processing barley with higher protein
+content. Intensive germination at temperatures
+of 18-20?C, higher degree of steeping
+of 45-48%. A moist-warm initial drying
+or withering. Curing temperature of 95
+to 105?C for 4-5 hrs. Provides the basis
+for the dark beer character, is used up to
+100% of the grist. Enhanced dark beer body, head and
+aroma.","Amber coloured beers; Amber beer, Alt,
+dark Lagers, dark beers (dunkel), M?rzen,
+Bockbier, Brown Ale, Dark Ale, Stout."
+"331","Munich Light","37","1.037","9","4.6","0","80","0","0","12","15","5","6","0","11.7","0","0","48","48","0","0","0","0","0","75","Processing barley with higher protein
+content. Intensive germination at
+temperature of 18?C, higher degree of
+steeping of 45-48%. A moist-warm initial
+drying or withering. Curing temperature
+of 95 to 105?C. Provides the basis for the
+dark beer character is used up to 100% of
+the grist.
+Swaen?Munich Light imparts the basis of
+the dark beer character. If you?re looking
+for distinct malty flavour for strong colours
+& body your best choice is
+Swaen?Munich Light.
+Perfect for traditional dark beers. Enhanced dark beer body, head and
+aroma.","Amber coloured beers, Alt, dark Lagers,
+dark beers (dunkel), M?rzen, Bockbier,
+Brown Ale, dark Ale, Stout."
+"332","Pilsner","36","1.036","9","4.5","0","81","0","0","3","4.5","1.7","2.2","0","11.5","0","0","34","43","0","0","0","250","0","100","Swaen?Pilsner is an obvious choice for
+base malt, for every type of beer. Strong,
+sweet malt flavour, and sufficient enzymatic
+power. Allows the flavour of specialty malts
+to come through. High quality raw material
+for your excellent beers.Strong, sweet malt flavour, light golden
+hue, produces excellent Pilsners and
+Lagers.","Pilsner, Lager, Ale, K?lsch, light beers,
+export beers, special beers, all other beers."
+"333","Amber","35","1.035","9","4.5","0","77","0","0","40","60","15","23","0","0","0","0","0","0","0","0","0","0","0","25","Obvious choice for colouring and malty
+flavours, for every type of beer. Allows the
+flavour of malts to come through especially
+biscuit hints. Also imparts bread scent and
+taste. Similar to Munich malt but with more
+intense aroma. Strong, sweet malt flavour, golden hue
+produces excellent Pilsners, Lagers and
+Ales.","Pilsner, Lager, Ale, light beers, special
+beers, all other beers."
+"334","Melany","37","1.037","9","4.5","0","77","0","0","60","80","23","30","0","0","0","0","0","0","0","0","0","0","0","0","Obvious choice for colouring and malty
+flavours for every type of beer. Allows the
+flavour of malts to come through, especially
+biscuit hints. Also imparts bread scent and
+taste. Similar to Munich malt but with more
+intense aroma. Strong, sweet malt flavour, golden hue
+produces excellent Pilsner, Lager, Ale.","Pilsner, Lager, Ale, light beers, special
+beers, all other beers."
+"335","Vienna","36","1.036","9","4.5","0","80","0","0","9","12","4","5","0","11.5","0","0","37","45","0","0","0","0","0","75","Our Vienna malt is perfect to correct
+over-pale malts, to produce ?golden? beer
+and to improve palate fullness. It has richer
+flavour of malt and grain than Pilsner malt,
+at the same time increasing the body and
+the fullness of the beer.
+Swaen?Vienna has sufficient enzymatic
+activity to be used with combination of
+large proportion of special malts. Also
+adds subtle aromas of toffee. Smooth taste, golden colour, full body.","Vienna beer styles, Pale Ale, blond Ale,
+Amber Lager, golden Ale, M?rzen, Porter,
+export beers, all other beers."
+"336","WhiteSwaen Dark","39","1.039","9","5.5","0","82","0","0","10","20","4.3","8.1","0","14","0","0","38","38","0","0","0","0","0","60","Richer in flavour than WhiteSwaen?
+Classic. You will have a flimsy, more
+sparkling beer with a typical ale aroma.
+Perfect to making wheat beers but also
+used in barley malt-based beers. Gives the
+beer fuller body and head stability. Cured
+at 100 to 110 ?C. Dark wheat malt is used
+predominantly for dark wheat beers, alt
+beers, and dark low alcohol beers. Best
+pick for outstanding wheat & other special
+beers. Excellent wheat beers with aromas perfect
+for styles. Typical top-fermented aroma.","Wheat beer, light beers, alcohol-reduced
+and non-alcoholic beers, top fermented
+beers, K?lsch, Ale, Hefeweizen, Alt."
+"337","GoldSwaen Aroma","30","1.03","9","4.5","0","75","0","0","350","450","130","170","0","0","0","0","0","0","0","0","0","0","0","10","GoldSwaen?Aroma intensifies the beer?s
+body and its smoothness, promotes head
+formation and retention. Caramel malts are
+produced in several colour stages. They
+make a considerable contribution to the
+palate fullness and body, intensification of
+the malt aroma, the full taste and colour
+and better head retention.
+By the special production procedure
+GoldSwaen?Aroma has a dark-reddish
+shine and a typical aroma which serves to
+intensify and stabilise the flavour. Provides
+a rich malty aroma and flavour to Amber
+and dark Lager beers. Compared to other
+traditional coloured malts, GoldSwaen?
+Aroma is a real spice for your beer. Gives fuller body, mild notes of nuts,
+caramel, and fruits. Improved malt aroma,
+deep saturated red colour.","GoldSwaen?Aroma is used for up to 15%
+of the grist for dark beers, such as Amber,
+Ale, Dark Ale, Stout or Porter."
+"338","GoldSwaen Belge","35","1.035","9","7","0","78","0","0","30","40","12","16","0","0","0","0","0","0","0","0","0","0","0","45","GoldSwaen?Belge imparts
+honey-gold-coloured hue and restrained
+notes of caramel. Strengthen the typical
+flavour of belgian craft beers. Caramel notes, better head retention,
+improved aroma, fuller body, deep instinct
+colour","Belgian speciality beers, Belgian blonde,
+Belgian brown, Belgian amber, Tripel,
+Dubbel."
+"339","GoldSwaen Brown","34","1.034","9","4.5","0","77","0","0","200","240","75","90","0","0","0","0","0","0","0","0","0","0","0","20","GoldSwaen?Brown intensifies the beer?s
+body and its smoothness, promotes head
+formation and retention. Caramel malts
+are produced in several colour stages.They
+make a considerable contribution to the
+palate fullness and body, intensification of
+the malt aroma, the full taste and colour
+and better head retention. By the special
+production procedure GoldSwaen?Brown
+has a dark bronze shine and a typical aroma
+which serves to a intensify and stabilise
+the flavour. Intense caramel & biscuit aroma, round
+body and colour. Improved head retention.","Pilsner, light beers, alcohol reduced beers,
+Bockbier, export beers, special beers, dark
+beers."
+"340","GoldSwaen Classic","34","1.034","9","5.5","0","77","0","0","110","130","40","50","0","0","0","0","0","0","0","0","0","0","0","20","GoldSwaen?Classic is a type of caramel
+malt. Intensifies the beer?s body and its
+smoothness, promotes head formation and
+retention. Creates soft toffee notes in the
+beer aroma. By the special production procedure
+GoldSwaen?Classic has a reddish
+shine and a typical aroma which serves to
+intensify and stabilise the flavour.
+GoldSwaen?Classic is used in dark festival
+beers and nutrient beers. Brings a darker
+golden hue to your beers between
+GoldSwaen?Munich Light and
+GoldSwaen?Munich Dark. Intense caramel & malt aroma, full round
+flavour, notes of biscuit.","Pilsner, light beers, alcohol reduced beers,
+Bockbier, export beer, special beers, dark
+beers. 5-10% for dark beers, 1-5% for light beer,
+Pale ale.
+Up to 20%"
+"341","GoldSwaen Brown Supreme","33","1.033","9","4.5","0","76","0","0","280","320","105","120","0","0","0","0","0","0","0","0","0","0","0","40","GoldSwaen?Brown Supreme intensifies the
+beer?s body and its smoothness, promotes
+head formation and retention. Caramel
+malts are produced in several colour stages.
+They make a considerable contribution
+to the palate fullness and body, intensification
+of the malt aroma, the full taste and
+colour and better head retention. By the
+special production procedure
+GoldSwaen?Brown Supreme has a dark
+bronze shine and a typical aroma which
+serves to intensify and stabilise the flavour. Intense caramel & biscuit aroma, round
+body and colour. Improved head retention.","Pilsner, light beers, alcohol reduced beers,
+Bockbier, export beers, special beers, dark
+beers."
+"342","GoldSwaen Hell","35","1.035","9","8","0","79","0","0","20","30","8","12","0","0","0","0","0","0","0","0","0","0","0","50","GoldSwaen?Hell gives a slight
+caramel-sweet aroma and golden colour
+to your beer. Remarkable mouthfeel, head,
+head retention, and extended beer stability. Caramel notes, better head retention,
+improved aroma, fuller body, deep intense
+colour.","Pilsner, light beers, alcohol reduced beers,
+Bockbier, export beers, special beers, dark
+beers."
+"343","GoldSwaen Light","33","1.033","9","9","0","75","0","0","10","20","4","8","0","0","0","0","0","0","0","0","0","0","0","50","GoldSwaen?Light is a type of caramel
+malt. Intensifies the beer?s body and its
+smoothness. Promotes head formation and
+retention. Creates soft toffee notes in the
+beer aroma. Caramel malts are produced
+in several colour stages. They make a considerable
+contribution to the palate fullness
+and body, intensification of the malt aroma,
+the full taste and colour and better head
+retention.
+GoldSwaen?Light enhances the colour
+slightly, brings sweetness and malty aroma
+to your beer. Improved foam, head retention, fuller body","Pilsner, light beers, alcohol reduced beers,
+Bockbier, export beers, special beers, dark
+beers."
+"344","GoldSwaen Munich Dark","34","1.034","9","5.5","0","77","0","0","130","160","50","60","0","0","0","0","0","0","0","0","0","0","0","20","GoldSwaen?Munich Dark by the special
+production procedure has a reddish shine
+and a typical aroma which serves to
+intensify and stabilise the flavour.
+GoldSwaen?Munich Dark used in dark
+festival beers and nutrient beers. Also
+brings the tipical hint of Munich malt, which
+is distinct malty flavour and strong colour.
+Intensifies the beer?s body and its
+smoothness. Caramel malts are produced
+in several colour stages. They make a
+considerable contribution to the palate
+fullness and body, intensification of the malt
+aroma, the full taste and colour and better
+head retention. Intense caramel & malt aroma, full round
+flavour, notes of biscuit.","Pilsner, light beers, alcohol reduced beers,
+Bockbier, export beers, special beers, dark
+beers. 5-10% for dark beers, 1-5% for light beers,
+Pale Ale.
+Up to 20%."
+"345","GoldSwaen Munich Light","34","1.034","9","4.5","0","80","0","0","80","110","30","40","0","0","0","0","0","0","0","0","0","0","0","25","GoldSwaen?Munich Light intensifies the
+beer?s body and its smoothness. Promotes
+head formation and retention. Caramel
+malts are produced in several colour stages.
+They make a considerable contribution
+to the palate fullness and body, intensification
+of the malt aroma, the full taste and
+colour and better head retention.
+Thanks to the special production procedure
+GoldSwaen?Munich Light has a reddish
+shine and a typical aroma which serves to
+intensify and stabilise the flavour. Used in
+dark festival beers and nutrient beers. If you
+want to find the ?golden mean? between
+light gold and reddish hue, choose this
+one. Intense caramel & malt aroma, full round
+flavour, notes of biscuit.","Pilsner, light beers, alcohol reduced beers,
+Bockbier, export beers, special beers, dark
+beers. 5-10 for dark beers, 1-5% for light beers,
+Pale Ale.
+Up to 25%."
+"346","GoldSwaen Red","35","1.035","9","7","0","78","0","0","40","60","15","23","0","0","0","0","0","0","0","0","0","0","0","35","GoldSwaen?Red is used for up to 25% of
+the grist, particularly in the production of
+Ale, red Lager, Altbier or Lager. Has reddish
+shine and typical aroma which serves
+to intensify and stabilise the flavour. Improved malt aroma, red colour, fuller
+body, notes of biscuit & honey.","Pilsner, light beers, alcohol reduced beers,
+Bockbier, export beers, special beers, dark
+beers."
+"347","GoldSwaen Rye","38","1.038","9","6","0","81","0","0","150","200","57","76","0","0","0","0","0","0","0","0","0","0","0","5","GoldSwaen?Rye enhances the aroma
+of beers with typical rye flavour. Imparts
+a mild smoky and typical roasty aroma.
+Gives nice brown colour to your beer. Typical roasty aroma. Enhances deeper
+colour.","Schwarzbier, dark beers, Stout, Porter, Ale,
+Bockbier, Altbier, all beer types for
+colouration."
+"348","GoldSwaen Wheat","37","1.037","9","5.5","0","82","0","0","100","140","38","53","0","0","0","0","0","0","0","0","0","0","0","15","GoldSwaen?Wheat brings intensified
+caramel aroma, notes of bread, caramel
+and toffee. Also gives fuller body. Emphasized typical wheat aroma,
+enhanced colour. Mild notes of almond,
+biscuits and bread. Promoted fullness.","Schwarzbier, dark beers, Stout, Porter, Ale,
+Bockbier, Altbier, dark wheat beers, all
+beer types for colouration."
+"349","BlackSwaen Biscuit","36","1.036","9","4.5","0","79","0","0","70","90","27","35","0","0","0","0","0","0","0","0","0","0","0","20","Obvious choice for colouring and malty
+flavours, for every type of beer. Strong,
+sweet malt flavour, and sufficient enzymatic
+power. Gives the flavour of specialty malts,
+especially biscuit hints. Also imparts bread
+aroma and taste. Strong, sweet malt flavour, golden hue
+produces excellent Pilsners, Lagers, Ales.","Pilsners, Lagers, Ales, K?lsch, light beers,
+export beers, special beers, all other beers."
+"350","BlackSwaen Black","25","1.025","9","4.5","0","73","0","0","1000","1250","375","470","0","0","0","0","0","0","0","0","0","0","0","5","BlackSwaen?Black brings special character
+for your beer. Enhances the aroma of
+beers by producing a more determinative
+flavour than other coloured malts. Imparts a
+slight burnt or smoky flavour. Adds aroma, colour and body, with a mild
+smooth flavour.","Schwarzbier, dark beers, Stout, Porter, Ale,
+Bockbier, Altbier, all beer types for colouring."
+"351","BlackSwaen Chocolate B","28","1.028","9","4.5","0","75","0","0","800","1000","300","375","0","0","0","0","0","0","0","0","0","0","0","5","BlackSwaen?Chocolate B brings deeper
+aroma as well as beer colour for dark
+beers. A highly roasted malt with a deep
+brown colour. Used to adjust the colour of
+beer and imparts a nutty, toasted flavour.
+Provides a less bitter flavour than
+BlackSwaen?Black malt and it also has
+lighter colour, because it is roasted for
+shorter period of time and at lower
+temperatures. Deeper aroma and colour of dark beers.
+Smoky notes.","Schwarzbier, dark beers, Stout, Porter, Ale
+beer, Bockbier, Altbier, all beer types for
+colouring."
+"352","BlackSwaen Chocolate W","25","1.025","9","4.5","0","78","0","0","800","1000","300","375","0","0","0","0","0","0","0","0","0","0","0","5","BlackSwaen?Chocolate W roasted wheat
+malt is for top fermented beers, used in
+amounts of 1% for Altbier or dark wheat
+beers. To enhance colour and mild toast
+hints. For real specialties, in a special way. Improved colour as well as intensified
+aroma of dark, top fermented beers. Slight
+roast aroma.","Schwarzbier, dark beers, Stout, Porter, Ale,
+Bockbier, Altbier, dark wheat beers, all
+beer types for colouring."
+"353","BlackSwaen Coffee","28","1.028","9","4.5","0","77","0","0","500","800","190","300","0","0","0","0","0","0","0","0","0","0","0","10","BlackSwaen?Coffee imparts a nutty and
+creamy taste to reach coffee flavour and
+aroma to beers. Adds a smooth mouth feel
+and complexity to any dark Ale.
+Reinforces the colour of the beer. Crafted
+for unmistakable notes to your special
+beers. Brings in a ?coffee? note to Stouts
+and Porters. Aroma of dark top fermented beers,
+improved colour.","Stouts, Porters, Scottish Ale, dark Belgian
+style beers, slightly in brown Ales for hints
+of fresh roasted coffee."
+"354","BlackSwaen Black Extra","25","1.025","9","4.5","0","71","0","0","1250","1400","470","530","0","0","0","0","0","0","0","0","0","0","0","5","BlackSwaen?Black Extra is our darkest
+roasted malt. Brings special character for
+your beer. Enhances the aroma of beers
+by producing a more determinative flavour
+than other coloured malts. Imparts a slight
+burnt or smoky flavour.
+You just found the black diamond! Adds aroma, colour and body, with a mild
+smooth flavour","Schwarzbier, dark beers, Stout, Porter, Ale
+beer, Bockbier, Altbier, all beer types for
+colouring."
+"355","BlackSwaen Black W","25","1.025","9","4.5","0","78","0","0","1000","1250","375","470","0","0","0","0","0","0","0","0","0","0","0","5","BlackSwaen?Black W roasted wheat malt
+is for top fermented beers, used in amounts
+of 1% for Altbier or dark wheat beers.
+To enhance colour and mild toast hints,
+meanwhile gives better head retention and
+body. For real specialties in a special way. Improved colour as well as intensified
+aroma of dark, top fermented beers. Slight
+roast aroma.","Schwarzbier, dark beer, Stout, Porter, Ale
+beer, Bockbier, Altbier, dark wheat beers,
+all beer types for coloruation."
+"356","BlackSwaen Coffee Light W","25","1.025","9","4.5","0","78","0","0","300","500","110","190","0","0","0","0","0","0","0","0","0","0","0","10","BlackSwaen?Coffee Light W imparts a
+nutty and creamy taste to reach a mild
+coffee flavour and aroma to beers, brings
+a ?coffee? note in Stouts and Porters. Adds
+a smooth mouth feel and complexity to any
+dark Ale without any malt bitterness.
+Reinforces the colour of the beer. Crafted
+for unmistakable notes to your special
+beers. Improved colour as well as intensified
+aroma of dark, top fermented beers. Slight
+roast aroma.","Schwarzbier , dark beers, Stout, Porter,
+Ale, Bockbier, Altbier, dark wheat beers, all
+beer types for coloring."
+"357","BlackSwaen Honey Bisuit","36","1.036","9","4.5","0","80","0","0","80","90","30","35","0","0","0","0","0","0","0","0","0","0","0","20","Distinguishes well balanced flavour and
+aroma profile. The typical dry biscuit
+combined with sweet malty and honey taste
+with a touch of chocolate. The distinged aromas and flavours add
+extra complexity to the different beer styles.","Belgian style Blondes and Triples, Ale and
+Brown Ale. Seasonal autumn and winter
+beers, barrel aged Ale."
+"358","Beech Smoked Barley","37","1.037","11","5","0","77","0","0","4","8","2.1","3.6","0","13","0","0","38","45","0","0","0","0","0","100","Produced from quality two-row spring barley. Unique in the world. Initially formulated specifically
+for the traditional Bamberg Rauchbier (Bamberg Smoked Beer). Can be used for any kind of lager or
+ale with a complex flavor. Carefully dried over hot, smoky ambers of well-aged beech wood to
+achieve characteristic smoky flavor, while preserving relatively pale color. Flavor: characteristic,
+well-rounded aroma of beech wood smoke; malty-sweet; notes of vanilla and honey","Smoked Wheat Ales; Porter; Smoked Beer; Kellerbiere; Scottish Ales; Smoked
+Ales; Smoked Porter;"

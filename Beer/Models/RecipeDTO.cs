@@ -58,6 +58,8 @@ namespace Beer.Models
         //[ForeignKey("BeerStyleID")]
         public BeerStylesDTO BeerStyles { get; set; }
 
+        public List<Recipe_OthersDTO> Recipe_Others {get; set;}
+
 
     }
 }

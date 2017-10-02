@@ -51,11 +51,11 @@ namespace Beer.Models
 
         [XmlElement("ALPHA")]
         public double? AA { get; set; }
-        [JsonIgnore]
-        public string FORM { get; set; }
-        [JsonIgnore]
-        public string USE { get; set; }
-        [JsonIgnore]
-        public string TIME { get; set; }
+        [XmlElement("FORM")]
+        public string HopType { get; set; }
+        [XmlElement("USE")]
+        public string HopStage { get; set; }
+        [XmlElement("TIME")]
+        public string HopTime { get; set; }
     }
 }

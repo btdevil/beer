@@ -324,7 +324,7 @@
                                 <table class="table table-nested">
                                     <tbody>
 
-                                        <!-- ko foreach: recipe_Hops -->
+                                        <!-- ko foreach: combinedHopsOther() -->
                                         <tr>
                                             <td data-bind="css: {danger: isMatched() === false}"><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g - <span data-bind="text: stepName"></span></td>
                                         </tr>

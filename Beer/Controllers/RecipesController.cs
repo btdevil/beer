@@ -87,6 +87,17 @@ namespace Beer.Controllers
                                   StepOrder = rh.HopStep.StepOrder,
                                   AA = rh.Hop.AA
                               }).ToList(),
+                              Recipe_Others = r.Recipe_Others.Select(ro => new Recipe_OthersDTO
+                              {
+                                  ID = ro.ID,
+                                  RecipeID = ro.RecipeID,
+                                  Weight = ro.Weight,
+                                  OtherID = ro.OtherID,
+                                  StepID = ro.StepID,
+                                  OtherName = ro.Other.Other,
+                                  StepName = ro.HopStep.Step,
+                                  StepOrder = ro.HopStep.StepOrder
+                              }).OrderBy(ro => ro.StepOrder).ThenBy(otn => otn.OtherName).ToList(),
                               Recipe_Malts = r.Recipe_Malts.Select(rm => new Recipe_MaltsDTO
                               {
                                   ID = rm.ID,
@@ -218,9 +229,23 @@ namespace Beer.Controllers
                                               HopName = rh.Hop.Hops,
                                               StepName = rh.HopStep.Step,
                                               StepOrder = rh.HopStep.StepOrder,
-                                              AA = rh.Hop.AA
+                                              AA = rh.Hop.AA,
+                                              HopType = rh.HopType.HopTypeName,
+                                              HopStage = rh.HopStep.HopStage.HopStageName,
+                                              HopTime = rh.HopStep.HopTime
 
                                           }).OrderBy(rh => rh.StepOrder).ThenBy(hn => hn.HopName).ToList(),
+                                          Recipe_Others = r.Recipe_Others.Select(ro => new Recipe_OthersDTO
+                                          {
+                                              ID = ro.ID,
+                                              RecipeID = ro.RecipeID,
+                                              Weight = ro.Weight,
+                                              OtherID = ro.OtherID,
+                                              StepID = ro.StepID,
+                                              OtherName = ro.Other.Other,
+                                              StepName = ro.HopStep.Step,
+                                              StepOrder = ro.HopStep.StepOrder
+                                          }).OrderBy(ro => ro.StepOrder).ThenBy(otn => otn.OtherName).ToList(),
                                           Recipe_Malts = r.Recipe_Malts.Select(rm => new Recipe_MaltsDTO
                                           {
                                               ID = rm.ID,
@@ -327,11 +352,22 @@ namespace Beer.Controllers
                                         StepName = rh.HopStep.Step,
                                         StepOrder = rh.HopStep.StepOrder,
                                         AA = rh.Hop.AA,
-                                        FORM = rh.HopType.HopTypeName,
-                                        USE = rh.HopStep.HopStage.HopStageName,
-                                        TIME = rh.HopStep.HopTime
+                                        HopType = rh.HopType.HopTypeName,
+                                        HopStage = rh.HopStep.HopStage.HopStageName,
+                                        HopTime = rh.HopStep.HopTime
 
                                     }).OrderBy(rh => rh.StepOrder).ThenBy(hn => hn.HopName).ToList(),
+                                    Recipe_Others = r.Recipe_Others.Select(ro => new Recipe_OthersDTO
+                                    {
+                                        ID = ro.ID,
+                                        RecipeID = ro.RecipeID,
+                                        Weight = ro.Weight,
+                                        OtherID = ro.OtherID,
+                                        StepID = ro.StepID,
+                                        OtherName = ro.Other.Other,
+                                        StepName = ro.HopStep.Step,
+                                        StepOrder = ro.HopStep.StepOrder
+                                    }).OrderBy(ro => ro.StepOrder).ThenBy(otn => otn.OtherName).ToList(),
                                     Recipe_Malts = r.Recipe_Malts.Select(rm => new Recipe_MaltsDTO
                                     {
                                         ID = rm.ID,

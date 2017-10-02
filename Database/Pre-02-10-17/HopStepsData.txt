@@ -1,0 +1,12 @@
+ID,Step
+1,Start Boil 0min
+2,Middle Boil 30min
+3,End Boil 60min
+4,Dry Hop
+5,Whirlpool
+6,15 min
+7,Conditioning
+8,45 min
+9,90 min
+10,FV
+11,Mash
