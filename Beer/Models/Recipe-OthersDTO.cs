@@ -49,11 +49,13 @@ namespace Beer.Models
         [XmlIgnore]
         public int StepOrder { get; set; }
 
+        [XmlElement("USE")]
+        public string HopStage { get; set; }
+
         [JsonIgnore]
-        public string FORM { get; set; }
+        public bool AMOUNT_IS_WEIGHT { get; set; }
+
         [JsonIgnore]
-        public string USE { get; set; }
-        [JsonIgnore]
-        public string TIME { get; set; }
+        public string TYPE { get; set; }
     }
 }

@@ -223,7 +223,7 @@
     <Compile Include="Models\MashStepDTO.cs" />
     <Compile Include="Models\MyStock.cs" />
     <Compile Include="Models\Other.cs" />
-    <Compile Include="Models\OthersDTO.cs" />
+    <Compile Include="Models\Recipe-OthersDTO.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\RecipeDetailDTO.cs" />
     <Compile Include="Models\RecipeDTO.cs" />

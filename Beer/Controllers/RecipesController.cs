@@ -366,7 +366,10 @@ namespace Beer.Controllers
                                         StepID = ro.StepID,
                                         OtherName = ro.Other.Other,
                                         StepName = ro.HopStep.Step,
-                                        StepOrder = ro.HopStep.StepOrder
+                                        StepOrder = ro.HopStep.StepOrder,
+                                        HopStage = ro.HopStep.HopStage.HopStageName,
+                                        AMOUNT_IS_WEIGHT = true,
+                                        TYPE = "Other"
                                     }).OrderBy(ro => ro.StepOrder).ThenBy(otn => otn.OtherName).ToList(),
                                     Recipe_Malts = r.Recipe_Malts.Select(rm => new Recipe_MaltsDTO
                                     {
