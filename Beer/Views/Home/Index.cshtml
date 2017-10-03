@@ -7,8 +7,8 @@
         <div class="alert alert-danger" data-bind="visible: error().length > 0"><p data-bind="text: error"></p></div>
 
 
-        <div class="page-header hand-cursor" data-toggle="collapse" data-parent="#recipesApp" href="#searchPanelCollapse" aria-expanded="true" aria-controls="searchPanelCollapse">
-            <h2>Search for Recipes <span class="glyphicon glyphicon-menu-up pull-right"></span></h2>
+        <div class="page-header hand-cursor clearfix extra-padding no-margin" data-toggle="collapse" data-parent="#recipesApp" href="#searchPanelCollapse" aria-expanded="true" aria-controls="searchPanelCollapse">
+            <h2 class="double-margin"><span class="glyphicon glyphicon-search rounded-back"></span>Search for Recipes <span class="glyphicon glyphicon-menu-up pull-right"></span></h2>
         </div>
         <div id="searchPanelCollapse" class="collapse in" role="tabpanel" aria-labelledby="searchPanelHeading">
             <form data-bind="submit: searchRecipes">
@@ -159,10 +159,28 @@
             </form>
         </div>
 
-        <div class="page-header clearfix collapsed hand-cursor" role="button" data-toggle="collapse" data-parent="#recipesApp" href="#resultsPanelCollapse" aria-expanded="true" aria-controls="resultsPanelCollapse">
-            <h2 class="remove-margin-top">
-                Recipe Results <span class="glyphicon glyphicon-menu-up pull-right"></span>
-            </h2>
+        <div class="page-header clearfix collapsed hand-cursor double-padding no-margin" role="button" data-toggle="collapse" data-parent="#recipesApp" href="#resultsPanelCollapse" aria-expanded="true" aria-controls="resultsPanelCollapse">
+            <form class="form-inline sort clearfix">
+                <div class="form-group">
+                    <h2 class="clearfix double-margin">
+                        <span class="glyphicon glyphicon-th-list rounded-back pull-left"></span>
+                        <span class="pull-left">Recipe Results </span>
+                        <label class="sr-only" for="sorter">Sort</label>
+                        <span class="glyphicon glyphicon-menu-up pull-right"></span>
+                        <select class="form-control pull-right" data-bind="value: sort, event: { change: doSort }, click: stopCollapse">
+                            <option value="">Sort</option>
+                            <option value="AbvAsc">ABV Asc</option>
+                            <option value="AbvDesc">ABV Desc</option>
+                            <option value="NameAsc">Name Asc</option>
+                        </select>
+                       
+                    </h2>
+
+
+
+
+                </div>
+            </form>
         </div>
         <div id="resultsPanelCollapse" class="collapse slidein" role="tabpanel" aria-labelledby="resultsPanelHeading">
 
@@ -173,42 +191,32 @@
             </div>
 
             <div class="col-sm-6 slidein-master remove-padding-left no-padding-xs" id="recipeList">
-                <!-- ko if: SearchQuery.groupResults() === 'true' && searchHasRun() === true -->
-                <h3 class="pull-left hand-cursor" role="button" data-toggle="collapse" data-target="#exact" aria-expanded="false" aria-controls="exact">Exact Matches<span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
-                <!-- /ko -->
-                <form class="form-inline sort clearfix">
 
-                    <div class="form-group pull-right">
-                        <label class="sr-only" for="sorter">Sort</label>
-                        <select class="form-control" data-bind="value: sort, event: { change: doSort }">
-                            <option value="">Sort</option>
-                            <option value="AbvAsc">ABV Asc</option>
-                            <option value="AbvDesc">ABV Desc</option>
-                            <option value="NameAsc">Name Asc</option>
-                        </select>
-                    </div>
-                </form>
+                <!-- ko if: SearchQuery.groupResults() === 'true' && searchHasRun() === true -->
+                <h3 class="hand-cursor" role="button" data-toggle="collapse" data-target="#exact" aria-expanded="false" aria-controls="exact">Exact Matches <span class="badge" data-bind="text: Recipes().length"></span><span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
+                <!-- /ko -->
+
 
 
 
                 <div class="list-group collapse in" id="exact">
-                        <!-- ko foreach: Recipes -->
+                    <!-- ko foreach: Recipes -->
 
-                        <a href="#top" class="list-group-item clearfix" data-bind="click: $parent.getRecipeDetail">
-                            <span data-bind="text: name"></span>
-                            <span class="badge" data-bind="text: formattedABV"></span>
-                        </a>
-                        <!-- /ko -->
-                        <!--ko if: Recipes().length === 0 && searchHasRun() === true -->
-                        <p>No exact matches</p>
-                        <!-- /ko -->
-                    </div>
+                    <a href="#top" class="list-group-item clearfix" data-bind="click: $parent.getRecipeDetail">
+                        <span data-bind="text: name"></span>
+                        <span class="badge" data-bind="text: formattedABV"></span>
+                    </a>
+                    <!-- /ko -->
+                    <!--ko if: Recipes().length === 0 && searchHasRun() === true -->
+                    <p>No exact matches</p>
+                    <!-- /ko -->
+                </div>
                 <!-- ko if: SearchQuery.groupResults() === 'true' && searchHasRun() === true -->
-                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#oneAdd" aria-expanded="false" aria-controls="oneAdd">One additional ingredient<span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
+                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#oneAdd" aria-expanded="false" aria-controls="oneAdd">One ingredient <span class="badge" data-bind="text: recipeMatch1().length"></span><span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
                 <div class="list-group collapse" id="oneAdd">
-                   
+
                     <!--ko foreach: recipeMatch1 -->
-                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
+                    <a href="#" class="list-group-item clearfix" data-bind="click: $parent.getRecipeDetail">
                         <span data-bind="text: name"></span>
                         <span class="badge" data-bind="text: formattedABV"></span>
                     </a>
@@ -217,11 +225,11 @@
                     <p>No results</p>
                     <!-- /ko -->
                 </div>
-                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#twoAdd" aria-expanded="false" aria-controls="twoAdd">Two additional ingredient<span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
+                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#twoAdd" aria-expanded="false" aria-controls="twoAdd">Two ingredients <span class="badge" data-bind="text: recipeMatch2().length"></span><span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
                 <div class="list-group collapse" id="twoAdd">
-                    
+
                     <!--ko foreach: recipeMatch2 -->
-                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
+                    <a href="#" class="list-group-item clearfix" data-bind="click: $parent.getRecipeDetail">
                         <span data-bind="text: name"></span>
                         <span class="badge" data-bind="text: formattedABV"></span>
                     </a>
@@ -230,11 +238,11 @@
                     <p>No results</p>
                     <!-- /ko -->
                 </div>
-                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#threeAdd" aria-expanded="false" aria-controls="threeAdd">Three additional ingredients<span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
+                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#threeAdd" aria-expanded="false" aria-controls="threeAdd">Three ingredients <span class="badge" data-bind="text: recipeMatch3().length"></span><span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
                 <div class="list-group collapse" id="threeAdd">
-                   
+
                     <!--ko foreach: recipeMatch3 -->
-                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
+                    <a href="#" class="list-group-item clearfix" data-bind="click: $parent.getRecipeDetail">
                         <span data-bind="text: name"></span>
                         <span class="badge" data-bind="text: formattedABV"></span>
                     </a>
@@ -243,11 +251,11 @@
                     <p>No results</p>
                     <!-- /ko -->
                 </div>
-                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#fourAdd" aria-expanded="false" aria-controls="fourAdd">Four additional ingredients<span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
+                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#fourAdd" aria-expanded="false" aria-controls="fourAdd">Four ingredients <span class="badge" data-bind="text: recipeMatch4().length"></span><span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
                 <div class="list-group collapse" id="fourAdd">
-                   
+
                     <!--ko foreach: recipeMatch4 -->
-                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
+                    <a href="#" class="list-group-item clearfix" data-bind="click: $parent.getRecipeDetail">
                         <span data-bind="text: name"></span>
                         <span class="badge" data-bind="text: formattedABV"></span>
                     </a>
@@ -256,11 +264,11 @@
                     <p>No results</p>
                     <!-- /ko -->
                 </div>
-                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#fiveAdd" aria-expanded="false" aria-controls="fiveAdd">Five+ additional ingredients<span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
+                <h3 class="hand-cursor collapsed" role="button" data-toggle="collapse" data-target="#fiveAdd" aria-expanded="false" aria-controls="fiveAdd">Five+ ingredients <span class="badge" data-bind="text: recipeMatch5().length"></span><span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
                 <div class="list-group collapse" id="fiveAdd">
-                    
+
                     <!--ko foreach: recipeMatch5 -->
-                    <a href="#" class="list-group-item" data-bind="click: $parent.getRecipeDetail">
+                    <a href="#" class="list-group-item clearfix" data-bind="click: $parent.getRecipeDetail">
                         <span data-bind="text: name"></span>
                         <span class="badge" data-bind="text: formattedABV"></span>
                     </a>
@@ -292,8 +300,7 @@
                     </div>
                     <table class="table">
                         <tr><td colspan="2"><a href="#" data-bind="click: $parent.beerXml">Export to Beer XML</a></td></tr>
-                        <tr><td>Source</td><td data-bind="text: source2"></td></tr>
-                        <tr><td>Recipe No</td><td data-bind="text: number"></td></tr>
+                        <tr><td>Source</td><td><!-- ko text: source2 --><!--/ko--> <!--ko if: number !== "null"--> <!-- ko text: number -->#<!--/ko--><!-- /ko --></td></tr>
                         <tr data-bind="css: yeastCss"><td>Yeast</td><td data-bind="text: yeastName"></td></tr>
                         <tr><td>ABV</td><td data-bind="text: formattedABV"></td></tr>
                         <tr><td>IBU</td><td data-bind="text: ibu"></td></tr>

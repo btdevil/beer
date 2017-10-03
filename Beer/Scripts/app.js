@@ -668,7 +668,7 @@ BEER.MasterViewModel = function (data) {
 
     };
 
-    self.doSort = function () {
+    self.doSort = function (e) {
         var selectValue = self.sort();
 
         switch (selectValue) {
@@ -686,7 +686,7 @@ BEER.MasterViewModel = function (data) {
                 break;
         }
 
-        return true;
+        return false;
     }
 
     self.beerXml = function (item) {
@@ -697,6 +697,10 @@ BEER.MasterViewModel = function (data) {
         //    console.log(data);
         //     document.open('data:text/octet-stream,' + encodeURIComponent(data));
         //});
+    };
+
+    self.stopCollapse = function (data, e) {
+        e.stopPropagation();
     };
 
     function findMatches() {
