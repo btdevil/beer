@@ -44,5 +44,7 @@ namespace Beer.Models
 
         public System.Data.Entity.DbSet<Beer.Models.Recipe_Others> Recipe_Others { get; set; }
 
+        public System.Data.Entity.DbSet<Beer.Models.EbcColour> EbcColour { get; set; }
+
     }
 }

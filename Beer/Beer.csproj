@@ -195,6 +195,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\EbcColoursController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HopsController.cs" />
     <Compile Include="Controllers\MaltGenericsController.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Models\BeerStylesDTO.cs" />
     <Compile Include="Models\BeerStyles.cs" />
     <Compile Include="Models\BeerXmlDTO.cs" />
+    <Compile Include="Models\EbcColour.cs" />
     <Compile Include="Models\Hop.cs" />
     <Compile Include="Models\HopStage.cs" />
     <Compile Include="Models\HopStep.cs" />
@@ -258,6 +260,17 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\boil-icon.png" />
+    <Content Include="img\bottle.png" />
+    <Content Include="img\hop-icon-trans.png" />
+    <Content Include="img\hop-icon.png" />
+    <Content Include="img\malt-icon-trans.png" />
+    <Content Include="img\malt-icon.png" />
+    <Content Include="img\mash-icon.png" />
+    <Content Include="img\recipe-icon.png" />
+    <Content Include="img\water-icon.png" />
+    <Content Include="img\yeast-icon-trans.png" />
+    <Content Include="img\yeast-icon.png" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\beerStyles.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -323,7 +336,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

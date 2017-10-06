@@ -28,6 +28,7 @@ namespace Beer.Models
         public virtual DbSet<HopType> HopType { get; set; }
         public virtual DbSet<Others> Others { get; set; }
         public virtual DbSet<Recipe_Others> Recipe_Others { get; set; }
+        public virtual DbSet<EbcColour> EbcColour { get; set; }
         public virtual DbSet<viewMyStock> viewMyStocks { get; set; }
         public virtual DbSet<viewPossibleRecipe> viewPossibleRecipes { get; set; }
         public virtual DbSet<viewRecipeHopDetail> viewRecipeHopDetails { get; set; }

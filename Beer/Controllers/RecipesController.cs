@@ -47,6 +47,8 @@ namespace Beer.Controllers
                               IBU = r.IBU,
                               OG = r.OG,
                               FG = r.FG,
+                              OGDecimal = r.OG,
+                              FGDecimal = r.FG,
                               EBC = r.EBC,
                               HasAdjucts = r.HasAdjucts,
                               MashTemp = r.MashTemp,
@@ -70,6 +72,8 @@ namespace Beer.Controllers
                               IBU = r.IBU,
                               OG = r.OG,
                               FG = r.FG,
+                              OGDecimal = r.OG,
+                              FGDecimal = r.FG,
                               EBC = r.EBC,
                               HasAdjucts = r.HasAdjucts,
                               MashTemp = r.MashTemp,
@@ -214,6 +218,8 @@ namespace Beer.Controllers
                                           IBU = r.IBU,
                                           OG = r.OG,
                                           FG = r.FG,
+                                          OGDecimal = r.OG,
+                                          FGDecimal = r.FG,
                                           EBC = r.EBC,
                                           HasAdjucts = r.HasAdjucts,
                                           MashTemp = r.MashTemp,
@@ -272,6 +278,8 @@ namespace Beer.Controllers
                                               IBUHigh = r.BeerStyles.IBUHigh,
                                               SRMLow = r.BeerStyles.SRMLow,
                                               SRMHigh = r.BeerStyles.SRMHigh,
+                                              ABVLow = r.BeerStyles.ABVLow,
+                                              ABVHigh = r.BeerStyles.ABVHigh,
                                               StyleGuide = "BJCP"
                                 
                                           }
@@ -400,6 +408,8 @@ namespace Beer.Controllers
                                         IBUHigh = r.BeerStyles.IBUHigh,
                                         SRMLow = r.BeerStyles.SRMLow,
                                         SRMHigh = r.BeerStyles.SRMHigh,
+                                        ABVLow = r.BeerStyles.ABVLow,
+                                        ABVHigh = r.BeerStyles.ABVHigh,
                                         StyleGuide = "BJCP"
 
                                     }

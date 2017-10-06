@@ -95,6 +95,10 @@ namespace Beer.Models
         public double? SRMLow { get; set; }
         [XmlElement("COLOR_MAX")]
         public double? SRMHigh { get; set; }
+        [XmlElement("ABV_MIN")]
+        public double? ABVLow { get; set; }
+        [XmlElement("ABV_MAX")]
+        public double? ABVHigh { get; set; }
 
 
     }

@@ -3,6 +3,26 @@ BEER.components = {};
 
 BEER.utils = (function () {
     var process = {
+        ebcHexMax: 70,
+        srmConvert: 1.97,
+        beerStyle: {
+            ebc: { min: 0, max: 78.8 },
+            gravity: { min: 0.995, max: 1.120 },
+            abv: { min: 0, max: 19 },
+            ibu: { min: 0, max: 120 },
+            ebcRange: function () {
+                return this.ebc.max - this.ebc.min;
+            },
+            gravityRange: function () {
+                return this.gravity.max - this.gravity.min;
+            },
+            abvRange: function () {
+                return this.abv.max - this.abv.min;
+            },
+            ibuRange: function () {
+                return this.ibu.max - this.ibu.min;
+            }
+        },
         ajaxHelper: function (uri, method, data, self, type) {
             var dType = typeof type === 'undefined' ? 'json' : type;
             var cTypeAccepts = typeof type === 'undefined' ? 'application/json' : 'application/'+ type +', text/'+ type +', */*'
@@ -46,6 +66,16 @@ BEER.utils = (function () {
                 (rv[x[key()]] = rv[x[key()]] || []).push(x);
                 return rv;
             }, {});
+        },
+        calculateTop: function (max, high, range) {
+            if (high > max) {
+                return '0%';
+            } else {
+                return (((max - high) / range) * 100) + '%';
+            }
+        },
+        calculateHeight: function (high, low, range) {
+            return (((high - low) / range) * 100) + '%';
         }
     };
     return process;
@@ -261,6 +291,22 @@ BEER.ViewModels = (function () {
                     
                 });
             }
+        },
+        EbcColour: function EbcColour() {
+            var self = this;
+            self.EbcColour = ko.observableArray();
+            self.error = ko.observableArray();
+
+            var serviceUri = '/api/ebccolour/';
+
+            function getAllEbcColours() {
+                BEER.utils.ajaxHelper(serviceUri, 'GET', null, self).done(function (data) {
+                    ko.mapping.fromJS(data, BEER.Mappings.EbcColourMapping, self.EbcColour);
+                });
+            }
+
+            // Fetch the initial data.
+            getAllEbcColours();
         }
     };
     return process
@@ -274,10 +320,10 @@ BEER.Models = (function () {
             self.hq = parent.SearchQuery.hopQuery;
             self.yq = parent.SearchQuery.yeastQuery;
             self.ysq = parent.SearchQuery.fullYeastQuery;
-            self.formattedABV = ko.computed(function () {
+            self.formattedABV = ko.pureComputed(function () {
                 return self.abv().toFixed(1) + '%';
             }, self);
-            self.yeastMatched = ko.computed(function () {
+            self.yeastMatched = ko.pureComputed(function () {
                 var isMatched = false;
                 for (var i = 0, iLen = self.yq().length; i < iLen; i++) {
                     if (self.yq()[i] === self.yeastID()) {
@@ -287,7 +333,7 @@ BEER.Models = (function () {
                 }
                 return isMatched;
             }, self);
-            self.yeastSubMatched = ko.computed(function () {
+            self.yeastSubMatched = ko.pureComputed(function () {
                 var isExactMatch = false;
                 var isSubMatched = false;
                 var isMatched = false;
@@ -356,7 +402,7 @@ BEER.Models = (function () {
                 return allBoiled;
             });
             ko.mapping.fromJS(data, BEER.Mappings.hopMaltMapping, self);
-            self.totalHopsBill = ko.computed(function () {
+            self.totalHopsBill = ko.pureComputed(function () {
                 var totalWeight = 0;
                 if (self.recipe_Hops() !== null) {
                     self.recipe_Hops().forEach(function (element) {
@@ -367,7 +413,7 @@ BEER.Models = (function () {
                 }
                 return totalWeight;
             });
-            self.totalEachHop = ko.computed(function () {
+            self.totalEachHop = ko.pureComputed(function () {
                 var hopArray = [];
                 var result = [];
                 if (self.recipe_Hops() !== null) {
@@ -401,6 +447,43 @@ BEER.Models = (function () {
                 }
 
                 return css
+            }, self);
+            self.colorHex = ko.pureComputed(function () {
+                var hex = "";
+                if (self.ebc() >= BEER.utils.ebcHexMax) {
+                    hex = "#000000";
+                } else {
+
+                    var match = ko.utils.arrayFirst(parent.ebcColours.EbcColour(), function (item) {
+                        return item.ebc() == self.ebc();
+                    });
+
+                    if (match === null) {
+                        match = ko.utils.arrayFirst(parent.ebcColours.EbcColour(), function (item) {
+                        return item.ebc() == self.ebc() + 1;
+                    });
+                    }
+
+                    if (match !== null) {
+                        hex = match.hex();
+                    }
+                }
+                return hex;
+            }, self);
+            self.ebcTop = ko.pureComputed(function () {
+                return BEER.utils.calculateTop(BEER.utils.beerStyle.ebc.max, self.ebc(), BEER.utils.beerStyle.ebcRange());
+            }, self);
+            self.fgTop = ko.pureComputed(function () {
+                return BEER.utils.calculateTop(BEER.utils.beerStyle.gravity.max, self.fgDecimal(), BEER.utils.beerStyle.gravityRange());
+            }, self);
+            self.ogTop = ko.pureComputed(function () {
+                return BEER.utils.calculateTop(BEER.utils.beerStyle.gravity.max, self.ogDecimal(), BEER.utils.beerStyle.gravityRange())
+            }, self);
+            self.ibuTop = ko.pureComputed(function () {
+                return BEER.utils.calculateTop(BEER.utils.beerStyle.ibu.max, self.ibu(), BEER.utils.beerStyle.ibuRange())
+            }, self);
+            self.abvTop = ko.pureComputed(function () {
+                return BEER.utils.calculateTop(BEER.utils.beerStyle.abv.max, self.abv(), BEER.utils.beerStyle.abvRange())
             }, self);
         },
         Slider: function Slider(min, max) {
@@ -458,6 +541,51 @@ BEER.Models = (function () {
             var self = this;
             self.name = data.hopName;
             self.totalWeight = data.weight;
+        },
+        EbcColour: function (data) {
+            var self = this;
+            ko.mapping.fromJS(data, {}, self);
+        },
+        BeerStyle: function (data, parent) {
+            var self = this;
+            ko.mapping.fromJS(data, {}, self);
+            self.ebcLow = ko.pureComputed(function () {
+                return self.srmLow() * BEER.utils.srmConvert;
+            }, self);
+            self.ebcHigh = ko.pureComputed(function () {
+                return self.srmHigh() * BEER.utils.srmConvert;
+            }, self);
+            self.ebcTop = ko.pureComputed(function () {
+                return BEER.utils.calculateTop(BEER.utils.beerStyle.ebc.max, self.ebcHigh(), BEER.utils.beerStyle.ebcRange());
+            }, self);
+            self.ebcHeight = ko.pureComputed(function () {
+                return BEER.utils.calculateHeight(self.ebcHigh(), self.ebcLow(), BEER.utils.beerStyle.ebcRange());
+            }, self);
+            self.fgTop = ko.pureComputed(function () {
+                return BEER.utils.calculateTop(BEER.utils.beerStyle.gravity.max, self.fgHigh(), BEER.utils.beerStyle.gravityRange());
+            }, self);
+            self.fgHeight = ko.pureComputed(function () {
+                return BEER.utils.calculateHeight(self.fgHigh(), self.fgLow(), BEER.utils.beerStyle.gravityRange());
+            }, self);
+            self.ogTop = ko.pureComputed(function () {
+                return BEER.utils.calculateTop(BEER.utils.beerStyle.gravity.max, self.ogHigh(), BEER.utils.beerStyle.gravityRange())
+            }, self);
+            self.ogHeight = ko.pureComputed(function () {
+                return BEER.utils.calculateHeight(self.ogHigh(), self.ogLow(), BEER.utils.beerStyle.gravityRange());
+            }, self);
+            self.ibuTop = ko.pureComputed(function () {
+                return BEER.utils.calculateTop(BEER.utils.beerStyle.ibu.max, self.ibuHigh(), BEER.utils.beerStyle.ibuRange())
+            }, self);
+            self.ibuHeight = ko.pureComputed(function () {
+                return BEER.utils.calculateHeight(self.ibuHigh(), self.ibuLow(), BEER.utils.beerStyle.ibuRange());
+            }, self);
+            self.abvTop = ko.pureComputed(function () {
+                return BEER.utils.calculateTop(BEER.utils.beerStyle.abv.max, self.abvHigh(), BEER.utils.beerStyle.abvRange())
+            }, self);
+            self.abvHeight = ko.pureComputed(function () {
+                return BEER.utils.calculateHeight(self.abvHigh(), self.abvLow(), BEER.utils.beerStyle.abvRange());
+             }, self);
+
         }
     };
     return process;
@@ -501,6 +629,11 @@ BEER.Mappings = (function () {
                 create: function (options) {
                     return new BEER.Models.Other(options.data, options.parent);
                 }
+            },
+            'beerStyles': {
+                create: function (options) {
+                    return new BEER.Models.BeerStyle(options.data, options.parent);
+                }
             }
         },
         maltMaping: {
@@ -523,6 +656,12 @@ BEER.Mappings = (function () {
             create: function (options) {
                 return new BEER.Models.YeastSubs(options.data);
             }
+        },
+        EbcColourMaping: {
+            create: function (options) {
+                return new BEER.Models.EbcColour(options.data);
+            }
+
         }
     };
     return process;
@@ -591,6 +730,7 @@ BEER.MasterViewModel = function (data) {
     self.Yeasts = new BEER.ViewModels.Yeast();
     self.Malts = new BEER.ViewModels.Malt();
     self.Hops = new BEER.ViewModels.Hop();
+    self.ebcColours = new BEER.ViewModels.EbcColour();
     self.Recipes = ko.observableArray();
     self.SelectedRecipe = ko.observable();
     self.error = ko.observableArray();
@@ -641,19 +781,11 @@ BEER.MasterViewModel = function (data) {
         }, 200));
     }
 
-    self.slideIn = function () {
-        $('.slidein-child').removeClass('slidingout');
-        $('.slidein-master').removeClass('slidingin');
-        $('.slidein-child').addClass('slidingin');
-        $('.slidein-master').addClass('slidingout');
-    };
-
-    self.slideOut = function () {
-        $('.slidein-child').removeClass('slidingin');
-        $('.slidein-master').removeClass('slidingout');
-        $('.slidein-child').addClass('slidingout');
-        $('.slidein-master').addClass('slidingin');
-    };
+    self.toggle = function () {
+        $('.slidein-child').toggleClass('slideshow');
+        $('.slidein-master').toggleClass('slidehide');
+        $('.slidein').toggleClass('show-overflow');
+    }
 
     self.getRecipeDetail = function (item) {
 
@@ -661,7 +793,7 @@ BEER.MasterViewModel = function (data) {
             console.log('did run');
             var formattedData = { 'SelectedRecipe': data };
             ko.mapping.fromJS(formattedData, BEER.Mappings.selectedRecipeMapping, self);
-            self.slideIn();
+            self.toggle();
         });
 
         return true;
@@ -977,15 +1109,15 @@ BEER.MasterViewModel = function (data) {
     function showLoading() {
         $('#spinner').show();
         $('#spinner').addClass('spinner');
-        $('#recipeList').hide();
-        $('#recipeDetail').hide();
+        $('#recipeList').addClass('hidden');
+        $('#recipeDetail').addClass('hidden');
     };
 
     function hideLoading() {
         $('#spinner').removeClass('spinner');
         $('#spinner').hide();
-        $('#recipeList').show();
-        $('#recipeDetail').show();
+        $('#recipeList').removeClass('hidden');
+        $('#recipeDetail').removeClass('hidden');
     }
 }
 

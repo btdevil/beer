@@ -35,6 +35,38 @@ namespace Beer.Models
 
         public int? FG { get; set; }
 
+        private double? ogdecimal;
+        public double? OGDecimal {
+            get
+            {
+                string s = ogdecimal.HasValue ? ogdecimal.Value.ToString("#\\.###") : string.Empty;
+                decimal m = Decimal.Parse(s);
+
+                double d = (double)m;
+                return d;
+            }
+            set
+            {
+                ogdecimal = value;
+            }
+        }
+
+        private double? fgdecimal;
+        public double? FGDecimal {
+            get
+            {
+                string s = fgdecimal.HasValue ? fgdecimal.Value.ToString("#\\.###") : string.Empty;
+                decimal m = Decimal.Parse(s);
+
+                double d = (double)m;
+                return d;
+            }
+            set
+            {
+                fgdecimal = value;
+            }
+        }
+
         public int? EBC { get; set; }
 
         public string HasAdjucts { get; set; }
