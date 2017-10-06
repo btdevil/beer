@@ -190,7 +190,7 @@
                 <div class="bounce3"></div>
             </div>
 
-            <div class="col-md-6 slidein-master remove-padding-left no-padding-xs" id="recipeList">
+            <div class="col-sm-6 slidein-master remove-padding-left no-padding-xs" id="recipeList">
 
                 <!-- ko if: SearchQuery.groupResults() === 'true' && searchHasRun() === true -->
                 <h3 class="hand-cursor" role="button" data-toggle="collapse" data-target="#exact" aria-expanded="false" aria-controls="exact">Exact Matches <span class="badge" data-bind="text: Recipes().length"></span><span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
@@ -295,7 +295,7 @@
                     </ul>*@
             </div>
 
-            <div class="col-md-6 slidein-child remove-padding-right no-padding-xs" id="recipeDetail">
+            <div class="col-sm-6 slidein-child remove-padding-right no-padding-xs" id="recipeDetail">
                 <!-- ko foreach: SelectedRecipe -->
                 <div class="panel panel-primary">
 
@@ -307,7 +307,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-xs-3">
+                            <div class="col-xs-3 col-sm-12 col-md-3">
                                 <p><!-- ko text: source2 --><!--/ko--> <!--ko if: number !== "null"--> #<span data-bind="text: number"></span><!-- /ko --></p>
                                 <p data-bind="text: beerStyles.subCategoryName"></p>
 
@@ -319,7 +319,7 @@
                                 <p data-bind="css: {'bg-danger': hasAdjucts() === 'Y'}">Has Ajuncts: <span data-bind="text: hasAdjucts"></span></p>
                                 <p><a href="#" data-bind="click: $parent.beerXml">Export to Beer XML</a></p>
                             </div>
-                            <div class="col-xs-9">
+                            <div class="col-xs-9 col-sm-12 col-md-9">
                                 <div class="beer-style clearfix">
                                     <div class="bs-info">
                                         <div class="bs-line">
