@@ -923,7 +923,8 @@ BEER.MasterViewModel = function (data) {
         //self.SearchQuery.buildSearchQuery();
         resetRecipeModels();
 
-        var serviceUri = '/api/recipes' + self.SearchQuery.recipeQuery() + '&getFullRecipe=false';
+        //changed to true to handle recipe searching on yeast only
+        var serviceUri = '/api/recipes' + self.SearchQuery.recipeQuery() + '&getFullRecipe=true';
 
         //console.log(serviceUri);
 

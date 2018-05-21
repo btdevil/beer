@@ -257,3 +257,11 @@ table.table-nested:first-child tr:first-child td:first-child {
     background-color: #febd01;
     width:15px;
 }
+
+.bs-recipe-line {
+    padding: 8px;
+    margin: 0px;
+    display: block;
+}
+
+.bs-recipe-title{}

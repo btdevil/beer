@@ -308,16 +308,16 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-3 col-sm-12 col-md-3">
-                                <p><!-- ko text: source2 --><!--/ko--> <!--ko if: number !== "null"--> #<span data-bind="text: number"></span><!-- /ko --></p>
-                                <p data-bind="text: beerStyles.subCategoryName"></p>
+                                <p class="bs-recipe-line"><!-- ko text: source2 --><!--/ko--> <!--ko if: number !== "null"--> #<span data-bind="text: number"></span><!-- /ko --></p>
+                                <p class="bs-recipe-line" data-bind="text: beerStyles.subCategoryName"></p>
 
-                                <p>ABV: <span data-bind="text: formattedABV"></span></p> 
-                                <p>IBU: <span data-bind="text: ibu"></span></p> 
-                                <p>OG: <span data-bind="text: og"></span></p> 
-                                <p>FG: <span data-bind="text: fg"></span></p> 
-                                <p>EBC: <span data-bind="text: ebc"></span></p> 
-                                <p data-bind="css: {'bg-danger': hasAdjucts() === 'Y'}">Has Ajuncts: <span data-bind="text: hasAdjucts"></span></p>
-                                <p><a href="#" data-bind="click: $parent.beerXml">Export to Beer XML</a></p>
+                                <p class="bs-recipe-line">ABV: <span data-bind="text: formattedABV"></span></p> 
+                                <p class="bs-recipe-line">IBU: <span data-bind="text: ibu"></span></p> 
+                                <p class="bs-recipe-line">OG: <span data-bind="text: og"></span></p> 
+                                <p class="bs-recipe-line">FG: <span data-bind="text: fg"></span></p> 
+                                <p class="bs-recipe-line">EBC: <span data-bind="text: ebc"></span></p> 
+                                <p class="bs-recipe-line" data-bind="css: {'bg-danger': hasAdjucts() === 'Y'}">Has Ajuncts: <span data-bind="text: hasAdjucts"></span></p>
+                                <p class="bs-recipe-line"><a href="#" data-bind="click: $parent.beerXml">Export to Beer XML</a></p>
                             </div>
                             <div class="col-xs-9 col-sm-12 col-md-9">
                                 <div class="beer-style clearfix">
@@ -359,45 +359,45 @@
                                 </div>
                             </div>
                         </div>
-                        <span data-bind="css: yeastCss"><img src="~/img/yeast-icon-trans.png" class="round-icon" />Yeast<span data-bind="text: yeastName"></span></span>
+                        <span  class="bs-recipe-line" data-bind="css: yeastCss"><img src="~/img/yeast-icon-trans.png" class="round-icon" />Yeast: <span data-bind="text: yeastName"></span></span>
                        
-                        <span><img src="~/img/mash-icon.png" class="round-icon" />Mash Temperature</span><span><span data-bind="text: mashTemp"></span>C</span>
-                        <span>Mash Time</span><span><span data-bind="text: mashTime"></span> minutes</span>
-                        <span data-bind="css: {'bg-info': fermentation() < 18}">Fermentation Temperature <span data-bind="text: fermentation"></span>C</span>
+                        <span class="bs-recipe-line bs-recipe-icon"><img src="~/img/mash-icon.png" class="round-icon" />Mash Temperature: <span data-bind="text: mashTemp"></span>C</span>
+                        <span class="bs-recipe-line bs-recipe-icon"><img src="~/img/mash-icon.png" class="round-icon" />Mash Time: <span data-bind="text: mashTime"></span> minutes</span>
+                        <span class="bs-recipe-line bs-recipe-icon" data-bind="css: {'bg-info': fermentation() < 18}"><img src="~/img/fermentation-icon.png" class="round-icon" />Fermentation Temperature: <span data-bind="text: fermentation"></span>C</span>
 
-                        <span><img src="~/img/malt-icon-trans.png" class="round-icon" />Malts</span>
+                        @*<span class="bs-recipe-line bs-recipe-icon"><img src="~/img/malt-icon-trans.png" class="round-icon" />Malts</span>*@
 
                         <table class="table table-nested">
                             <tbody>
                                 <!-- ko foreach: recipe_Malts -->
                                 <tr>
-                                    <td data-bind="css: {danger: isMatched() === false}"><span data-bind="text: maltGenericName"></span>: <span data-bind="text: weight"></span>kg</td>
+                                    <td data-bind="css: {danger: isMatched() === false}"><img src="~/img/malt-icon-trans.png" class="round-icon" /><span data-bind="text: maltGenericName"></span>: <span data-bind="text: weight"></span>kg</td>
                                 </tr>
                                 <!-- /ko -->
                             </tbody>
                         </table>
 
 
-                        <span><img src="~/img/hop-icon-trans.png" width="30" height="30" /> Hops</span>
+                        @*<span class="bs-recipe-line bs-recipe-icon"><img src="~/img/hop-icon-trans.png" width="30" height="30" /> Hops</span>*@
 
                         <table class="table table-nested">
                             <tbody>
 
                                 <!-- ko foreach: combinedHopsOther() -->
                                 <tr>
-                                    <td data-bind="css: {danger: isMatched() === false}"><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g - <span data-bind="text: stepName"></span></td>
+                                    <td data-bind="css: {danger: isMatched() === false}"><img src="~/img/hop-icon-trans.png" width="30" height="30" /><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g - <span data-bind="text: stepName"></span></td>
                                 </tr>
                                 <!-- /ko -->
 
                             </tbody>
                         </table>
 
-                        <span>Total Hop Bill<span data-bind="text: totalHopsBill"></span>g</span>
+                        <span class="bs-recipe-line">Total Hop Bill<span data-bind="text: totalHopsBill"></span>g</span>
 
-                        <span>Total for each hop</span>
+                        <span class="bs-recipe-line">Total for each hop</span>
 
                         <!-- ko foreach: totalEachHop -->
-                        <p><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g</p>
+                        <p  class="bs-recipe-line"><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g</p>
                         <!-- /ko -->
                     </div>
                     <table class="table">
