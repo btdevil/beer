@@ -199,6 +199,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HopsController.cs" />
     <Compile Include="Controllers\MaltGenericsController.cs" />
+    <Compile Include="Controllers\MyStockController.cs" />
     <Compile Include="Controllers\RecipesCorsController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
     <Compile Include="Controllers\Recipe_MaltsController.cs" />
@@ -274,6 +275,7 @@
     <Content Include="img\yeast-icon.png" />
     <Content Include="recipe-template.html" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\beerSearch.js" />
     <Content Include="Scripts\beerStyles.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -311,6 +313,7 @@
     <Content Include="Scripts\knockout.mapping-latest.debug.js" />
     <Content Include="Scripts\knockout.mapping-latest.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\myStock.js" />
     <Content Include="Scripts\nouislider.js" />
     <Content Include="Scripts\nouislider.min.js" />
     <Content Include="Scripts\respond.js" />
@@ -336,6 +339,7 @@
     <Content Include="Scripts\select2.min.js" />
     <Content Include="Views\Home\Index - Copy.cshtml" />
     <Content Include="Views\Home\Index - Copy %282%29.cshtml" />
+    <Content Include="Views\MyStock\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

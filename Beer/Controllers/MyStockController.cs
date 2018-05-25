@@ -6,12 +6,11 @@ using System.Web.Mvc;
 
 namespace Beer.Controllers
 {
-    public class HomeController : Controller
+    public class MyStockController : Controller
     {
+        // GET: MyStock
         public ActionResult Index()
         {
-            ViewBag.Title = "Search";
-
             return View();
         }
     }

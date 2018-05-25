@@ -33,7 +33,17 @@ namespace Beer
               "~/Scripts/knockout.mapping-latest.js",
               "~/Scripts/select2.min.js",
               "~/Scripts/nouislider.min.js",
-              "~/Scripts/app.js"));
+              "~/Scripts/app.js",
+              "~/Scripts/beerSearch.js"
+              ));
+
+            bundles.Add(new ScriptBundle("~/bundles/myStock").Include(
+              "~/Scripts/knockout-{version}.js",
+              "~/Scripts/knockout.mapping-latest.js",
+              "~/Scripts/select2.min.js",
+              "~/Scripts/app.js",
+              "~/Scripts/myStock.js"
+                ));
         }
     }
 }
