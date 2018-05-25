@@ -8,7 +8,7 @@
 
 
         <div class="page-header hand-cursor clearfix extra-padding no-margin" data-toggle="collapse" data-parent="#recipesApp" href="#searchPanelCollapse" aria-expanded="true" aria-controls="searchPanelCollapse">
-            <h2><span class="glyphicon glyphicon-search rounded-back"></span>Search for Recipes <span class="glyphicon glyphicon-menu-up pull-right"></span></h2>
+            <h2 class="double-margin"><span class="glyphicon glyphicon-search rounded-back"></span>Search for Recipes <span class="glyphicon glyphicon-menu-up pull-right"></span></h2>
         </div>
         <div id="searchPanelCollapse" class="collapse in" role="tabpanel" aria-labelledby="searchPanelHeading">
             <form data-bind="submit: searchRecipes">
@@ -162,8 +162,9 @@
         <div class="page-header clearfix collapsed hand-cursor double-padding no-margin" role="button" data-toggle="collapse" data-parent="#recipesApp" href="#resultsPanelCollapse" aria-expanded="true" aria-controls="resultsPanelCollapse">
             <form class="form-inline sort clearfix">
                 <div class="form-group">
-                    <h2 class="clearfix">
-                        <span class="glyphicon glyphicon-th-list rounded-back"></span>Recipe Results 
+                    <h2 class="clearfix double-margin">
+                        <span class="glyphicon glyphicon-th-list rounded-back pull-left"></span>
+                        <span class="pull-left">Recipe Results </span>
                         <label class="sr-only" for="sorter">Sort</label>
                         <span class="glyphicon glyphicon-menu-up pull-right"></span>
                         <select class="form-control pull-right" data-bind="value: sort, event: { change: doSort }, click: stopCollapse">
@@ -301,22 +302,24 @@
 
 
                     <div class="panel-heading">
-                        <h2 class="panel-title"> <span class="round-icon round-icon-recipe"><!-- ko text: name --><!--/ko--></span><a href="#" class="pull-right visible-xs-inline-block" data-bind="click: $parent.toggle" name="detail"><span class="glyphicon glyphicon-menu-left"></span> back</a><br /></h2>
+                        <h2 class="panel-title"> <img src="~/img/recipe-icon.png" class="round-icon" /><!-- ko text: name --><!--/ko--><a href="#" class="pull-right hidden-lg" data-bind="click: $parent.toggle" name="detail"><span class="glyphicon glyphicon-menu-left"></span> back</a><br /></h2>
 
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-xxs-12 col-xs-3 col-sm-12 col-md-3 no-padding">
-                              <p class="bs-recipe-line"><!-- ko text: source2 --><!--/ko--> <!--ko if: number !== "null"--> #<span data-bind="text: number"></span><!-- /ko --></p>
-                                        <p class="bs-recipe-line" data-bind="text: beerStyles.subCategoryName"></p>
-                                  
-                                        <p class="bs-recipe-line" data-bind="css: {'bg-danger': hasAdjucts() === 'Y'}">Has Ajuncts: <span data-bind="text: hasAdjucts"></span></p>
-                                  
-                                        
-                                    
-                               
+                            <div class="col-xs-3 col-sm-12 col-md-3">
+                                <p class="bs-recipe-line"><!-- ko text: source2 --><!--/ko--> <!--ko if: number !== "null"--> #<span data-bind="text: number"></span><!-- /ko --></p>
+                                <p class="bs-recipe-line" data-bind="text: beerStyles.subCategoryName"></p>
+
+                                <p class="bs-recipe-line">ABV: <span data-bind="text: formattedABV"></span></p> 
+                                <p class="bs-recipe-line">IBU: <span data-bind="text: ibu"></span></p> 
+                                <p class="bs-recipe-line">OG: <span data-bind="text: og"></span></p> 
+                                <p class="bs-recipe-line">FG: <span data-bind="text: fg"></span></p> 
+                                <p class="bs-recipe-line">EBC: <span data-bind="text: ebc"></span></p> 
+                                <p class="bs-recipe-line" data-bind="css: {'bg-danger': hasAdjucts() === 'Y'}">Has Ajuncts: <span data-bind="text: hasAdjucts"></span></p>
+                                <p class="bs-recipe-line"><a href="#" data-bind="click: $parent.beerXml">Export to Beer XML</a></p>
                             </div>
-                            <div class="col-xxs-12 col-xs-9 col-sm-12 col-md-9 xs-no-padding">
+                            <div class="col-xs-9 col-sm-12 col-md-9">
                                 <div class="beer-style clearfix">
                                     <div class="bs-info">
                                         <div class="bs-line">
@@ -356,21 +359,68 @@
                                 </div>
                             </div>
                         </div>
-                        
+                        <span  class="bs-recipe-line" data-bind="css: yeastCss"><img src="~/img/yeast-icon-trans.png" class="round-icon" />Yeast: <span data-bind="text: yeastName"></span></span>
+                       
+                        <span class="bs-recipe-line bs-recipe-icon"><img src="~/img/mash-icon.png" class="round-icon" />Mash Temperature: <span data-bind="text: mashTemp"></span>C</span>
+                        <span class="bs-recipe-line bs-recipe-icon"><img src="~/img/mash-icon.png" class="round-icon" />Mash Time: <span data-bind="text: mashTime"></span> minutes</span>
+                        <span class="bs-recipe-line bs-recipe-icon" data-bind="css: {'bg-info': fermentation() < 18}"><img src="~/img/fermentation-icon.png" class="round-icon" />Fermentation Temperature: <span data-bind="text: fermentation"></span>C</span>
+
+                        @*<span class="bs-recipe-line bs-recipe-icon"><img src="~/img/malt-icon-trans.png" class="round-icon" />Malts</span>*@
+
+                        <table class="table table-nested">
+                            <tbody>
+                                <!-- ko foreach: recipe_Malts -->
+                                <tr>
+                                    <td data-bind="css: {danger: isMatched() === false}"><img src="~/img/malt-icon-trans.png" class="round-icon" /><span data-bind="text: maltGenericName"></span>: <span data-bind="text: weight"></span>kg</td>
+                                </tr>
+                                <!-- /ko -->
+                            </tbody>
+                        </table>
+
+
+                        @*<span class="bs-recipe-line bs-recipe-icon"><img src="~/img/hop-icon-trans.png" width="30" height="30" /> Hops</span>*@
+
+                        <table class="table table-nested">
+                            <tbody>
+
+                                <!-- ko foreach: combinedHopsOther() -->
+                                <tr>
+                                    <td data-bind="css: {danger: isMatched() === false}"><img src="~/img/hop-icon-trans.png" width="30" height="30" /><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g - <span data-bind="text: stepName"></span></td>
+                                </tr>
+                                <!-- /ko -->
+
+                            </tbody>
+                        </table>
+
+                        <span class="bs-recipe-line">Total Hop Bill<span data-bind="text: totalHopsBill"></span>g</span>
+
+                        <span class="bs-recipe-line">Total for each hop</span>
+
+                        <!-- ko foreach: totalEachHop -->
+                        <p  class="bs-recipe-line"><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g</p>
+                        <!-- /ko -->
                     </div>
                     <table class="table">
-                        <tr data-bind="css: yeastCss"><td class="bs-column-label"><span class="round-icon round-icon-yeast">Yeast</span></td><td data-bind="text: yeastName"></td></tr>
-                        <tr><td class="bs-column-label"><span class="round-icon round-icon-mash">Mash Temp</span></td><td><span data-bind="text: mashTemp"></span>C</td></tr>
-                        <tr><td  class="bs-column-label"><span class="round-icon round-icon-mash">Mash Time</span></td><td><span data-bind="text: mashTime"></span> minutes</td></tr>
-                        <tr data-bind="css: {info: fermentation() < 18}"><td  class="bs-column-label"><span class="round-icon round-icon-fermentation">Fermentation</span></td><td><span data-bind="text: fermentation"></span>C</td></tr>
+                        <tr><td colspan="2"><a href="#" data-bind="click: $parent.beerXml">Export to Beer XML</a></td></tr>
+                        <tr><td>Source</td><td><!-- ko text: source2 --><!--/ko--> <!--ko if: number !== "null"--> <!-- ko text: number -->#<!--/ko--><!-- /ko --></td></tr>
+                        <tr data-bind="css: yeastCss"><td>Yeast</td><td data-bind="text: yeastName"></td></tr>
+                        <tr><td>ABV</td><td data-bind="text: formattedABV"></td></tr>
+                        <tr><td>IBU</td><td data-bind="text: ibu"></td></tr>
+                        <tr><td>OG</td><td data-bind="text: og"></td></tr>
+                        <tr><td>FG</td><td data-bind="text: fg"></td></tr>
+                        <tr><td>EBC</td><td data-bind="text: ebc"></td></tr>
+                        <tr data-bind="css: {danger: hasAdjucts() === 'Y'}"><td>Has Ajuncts</td><td data-bind="text: hasAdjucts"></td></tr>
+                        <tr><td>Mash Temperature</td><td><span data-bind="text: mashTemp"></span>C</td></tr>
+                        <tr><td>Mash Time</td><td><span data-bind="text: mashTime"></span> minutes</td></tr>
+                        <tr data-bind="css: {info: fermentation() < 18}"><td>Fermentation Temperature</td><td><span data-bind="text: fermentation"></span>C</td></tr>
                         <tr>
-                            <td class="td-top bs-column-label"><span class="round-icon round-icon-malt">Malts</span></td>
+                            <td>Malts</td>
                             <td class="nested">
                                 <table class="table table-nested">
                                     <tbody>
                                         <!-- ko foreach: recipe_Malts -->
-                                        <tr data-bind="css: {danger: isMatched() === false}">
-                                            <td class="bs-column-malt"><span data-bind="text: maltGenericName"></span>:</td><td class="bs-column-mweight"> <span data-bind="text: weight"></span>kg</td>
+                                        <tr>
+                                            <td data-bind="css: {danger: isMatched() === false}"><span data-bind="text: maltGenericName"></span>: <span data-bind="text: weight"></span>kg</td>
                                         </tr>
                                         <!-- /ko -->
                                     </tbody>
@@ -378,14 +428,14 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="td-top bs-column-label"><span class="round-icon round-icon-hop">Hops</span></td>
+                            <td>Hops</td>
                             <td class="nested">
                                 <table class="table table-nested">
                                     <tbody>
 
                                         <!-- ko foreach: combinedHopsOther() -->
-                                        <tr data-bind="css: {danger: isMatched() === false}">
-                                            <td class="bs-column-hop"><span data-bind="text: hopName"></span>: </td><td class="bs-column-hweight"><span data-bind="text: weight"></span>g </td><td data-bind="text: stepName" class="bs-column-hstep"></td>
+                                        <tr>
+                                            <td data-bind="css: {danger: isMatched() === false}"><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g - <span data-bind="text: stepName"></span></td>
                                         </tr>
                                         <!-- /ko -->
 
@@ -393,30 +443,15 @@
                                 </table>
                             </td>
                         </tr>
-
-
-                        <tr><td class="bs-column-label"><span class="round-icon round-icon-hop">Total Hop Bill</span></td><td><span data-bind="text: totalHopsBill"></span>g</td></tr>
+                        <tr><td>Total Hop Bill</td><td><span data-bind="text: totalHopsBill"></span>g</td></tr>
                         <tr>
-                            <td class="td-top bs-column-label"><span class="round-icon round-icon-hop">Each hop</span></td>
-                            <td class="nested">
-                                
-                                @*<p><span data-bind="text: hopName" class="bs-total-hop"></span>: <span data-bind="text: weight"></span>g</p>*@
-                                <table class="table table-nested">
-                                    <tbody>
-
-                                        <!-- ko foreach: totalEachHop -->
-                                        <tr data-bind="css: {danger: isMatched === false}">
-                                            <td class="bs-column-hop"><span data-bind="text: hopName"></span>: </td>
-                                            <td class="bs-column-hweight"><span data-bind="text: weight"></span>g </td>
-                                        </tr>
-                                        <!-- /ko -->
-
-                                    </tbody>
-                                </table>
-                                  
+                            <td>Total for each hop</td>
+                            <td>
+                                <!-- ko foreach: totalEachHop -->
+                                <p><span data-bind="text: hopName"></span>: <span data-bind="text: weight"></span>g</p>
+                                <!-- /ko -->
                             </td>
                         </tr>
-                        <tr><td colspan="2"><a href="#" class="btn btn-default" data-bind="click: $parent.beerXml">Export to Beer XML</a></td></tr>
 
                     </table>
 

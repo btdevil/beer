@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <link href="/Content/bootstrap.css" rel="stylesheet">
+    <link href="/Content/bootstrap-theme.css" rel="stylesheet">
+    <link href="/Content/select2.css" rel="stylesheet">
+    <link href="/Content/select2-bootstrap.css" rel="stylesheet">
+    <link href="/Content/nouislider.min.css" rel="stylesheet">
+    <link href="/Content/site.css" rel="stylesheet">
+
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+
+</head>
+<body>
+    <div class="col-sm-6 slidein-child remove-padding-right no-padding-xs slideshow" id="recipeDetail">
+        <!-- ko foreach: SelectedRecipe -->
+        <div class="panel panel-primary">
+
+
+
+            <div class="panel-heading">
+                <h2 class="panel-title"> <img src="/img/recipe-icon.png" class="round-icon"><!-- ko text: name -->BLITZ SERIES<!--/ko--><a href="#" class="pull-right hidden-lg" data-bind="click: $parent.toggle" name="detail"><span class="glyphicon glyphicon-menu-left"></span> back</a><br></h2>
+
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-12 col-md-3">
+                        <p class="bs-recipe-line"><!-- ko text: source2 -->DiyDog<!--/ko--> <!--ko if: number !== "null"--> #<span data-bind="text: number">220</span><!-- /ko --></p>
+                        <p class="bs-recipe-line" data-bind="text: beerStyles.subCategoryName">Weissbier</p>
+
+                        <p class="bs-recipe-line">ABV: <span data-bind="text: formattedABV">3.2%</span></p>
+                        <!--<p class="bs-recipe-line">IBU: <span data-bind="text: ibu">8</span></p>
+                        <p class="bs-recipe-line">OG: <span data-bind="text: og">1032</span></p>
+                        <p class="bs-recipe-line">FG: <span data-bind="text: fg">1007</span></p>
+                        <p class="bs-recipe-line">EBC: <span data-bind="text: ebc">8</span></p>-->
+                        <p class="bs-recipe-line" data-bind="css: {'bg-danger': hasAdjucts() === 'Y'}">Has Ajuncts: <span data-bind="text: hasAdjucts">N</span></p>
+                        <p class="bs-recipe-line"><a href="#" data-bind="click: $parent.beerXml">Export to Beer XML</a></p>
+                    </div>
+                    <div class="col-xs-9 col-sm-12 col-md-9">
+                        <div class="beer-style clearfix">
+                            <div class="bs-info">
+                                <div class="bs-line">
+                                    <div class="bs-range" data-bind="style: {top: beerStyles.ebcTop, height: beerStyles.ebcHeight}" style="top: 85%; height: 10%;"></div>
+                                    <div class="bs-recipe" data-bind="style: {top: ebcTop}" style="top: 89.8477%;"></div>
+                                </div>
+                                <span>EBC:</span><span data-bind="text: ebc">8</span>
+                            </div>
+                            <div class="bs-info">
+                                <div class="bs-line">
+                                    <div class="bs-range" data-bind="style: {top: beerStyles.ogTop, height: beerStyles.ogHeight}" style="top: 54.4%; height: 6.4%;"></div>
+                                    <div class="bs-recipe" data-bind="style: {top: ogTop}" style="top: 70.4%;"></div>
+                                </div>
+                                <span>OG:</span><span data-bind="text: og">1032</span>
+                            </div>
+                            <div class="bs-info">
+                                <div class="bs-line">
+                                    <div class="bs-range" data-bind="style: {top: beerStyles.fgTop, height: beerStyles.fgHeight}" style="top: 84.8%; height: 3.2%;"></div>
+                                    <div class="bs-recipe" data-bind="style: {top: fgTop}" style="top: 90.4%;"></div>
+                                </div>
+                                <span>FG:</span><span data-bind="text: fg">1007</span>
+                            </div>
+                            <div class="bs-info">
+                                <div class="bs-line">
+                                    <div class="bs-range" data-bind="style: {top: beerStyles.ibuTop, height: beerStyles.ibuHeight}" style="top: 87.5%; height: 5.83333%;"></div>
+                                    <div class="bs-recipe" data-bind="style: {top: ibuTop}" style="top: 93.3333%;"></div>
+                                </div>
+                                <span>IBU:</span><span data-bind="text: ibu">8</span>
+                            </div>
+                            <div class="bs-info">
+                                <div class="bs-line">
+                                    <div class="bs-range" data-bind="style: {top: beerStyles.abvTop, height: beerStyles.abvHeight}" style="top: 70.5263%; height: 6.84211%;"></div>
+                                    <div class="bs-recipe" data-bind="style: {top: abvTop}" style="top: 83.1579%;"></div>
+                                </div>
+                                <span>ABV:</span><span data-bind="text: formattedABV">3.2%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="bs-recipe-line warning" data-bind="css: yeastCss"><img src="/img/yeast-icon-trans.png" class="round-icon">Yeast: <span data-bind="text: yeastName">Wyeast 1056 American Ale</span></span>
+
+                <span class="bs-recipe-line bs-recipe-icon"><img src="/img/mash-icon.png" class="round-icon">Mash Temperature: <span data-bind="text: mashTemp">999</span>C</span>
+                <span class="bs-recipe-line bs-recipe-icon"><img src="/img/mash-icon.png" class="round-icon">Mash Time: <span data-bind="text: mashTime">999</span> minutes</span>
+                <span class="bs-recipe-line bs-recipe-icon" data-bind="css: {'bg-info': fermentation() < 18}"><img src="/img/fermentation-icon.png" class="round-icon">Fermentation Temperature: <span data-bind="text: fermentation">21</span>C</span>
+
+
+
+                <table class="table table-nested">
+                    <tbody>
+                        <!-- ko foreach: recipe_Malts -->
+                        <tr>
+                            <td data-bind="css: {danger: isMatched() === false}"><img src="/img/malt-icon-trans.png" class="round-icon"><span data-bind="text: maltGenericName">Pale Ale</span>: <span data-bind="text: weight">1.6</span>kg</td>
+                        </tr>
+
+                        <tr>
+                            <td data-bind="css: {danger: isMatched() === false}"><img src="/img/malt-icon-trans.png" class="round-icon"><span data-bind="text: maltGenericName">Wheat</span>: <span data-bind="text: weight">1.6</span>kg</td>
+                        </tr>
+                        <!-- /ko -->
+                    </tbody>
+                </table>
+
+
+
+
+                <table class="table table-nested">
+                    <tbody>
+
+                        <!-- ko foreach: combinedHopsOther() -->
+                        <tr>
+                            <td data-bind="css: {danger: isMatched() === false}"><img src="/img/hop-icon-trans.png" width="30" height="30" class="round-icon"><span data-bind="text: hopName">Bramling Cross</span>: <span data-bind="text: weight">10</span>g - <span data-bind="text: stepName">Start Boil 0min</span></td>
+                        </tr>
+                        <!-- /ko -->
+
+                    </tbody>
+                </table>
+
+                <span class="bs-recipe-line"><img src="/img/hop-icon-trans.png" width="30" height="30" class="round-icon">Total Hop Bill: <span data-bind="text: totalHopsBill">10</span>g</span>
+
+
+
+                <!-- ko foreach: totalEachHop -->
+                <p class="bs-recipe-line"><img src="/img/hop-icon-trans.png" width="30" height="30" class="round-icon">Total <span data-bind="text: hopName">Bramling Cross</span>: <span data-bind="text: weight">10</span>g</p>
+                <!-- /ko -->
+            </div>
+            <table class="table">
+                <tbody>
+                    <tr><td colspan="2"><a href="#" data-bind="click: $parent.beerXml">Export to Beer XML</a></td></tr>
+                    <tr><td>Source</td><td><!-- ko text: source2 -->DiyDog<!--/ko--> <!--ko if: number !== "null"--> <!-- ko text: number -->220<!--/ko--><!-- /ko --></td></tr>
+                    <tr data-bind="css: yeastCss" class="warning"><td><img src="/img/yeast-icon-trans.png" class="round-icon"> Yeast</td><td data-bind="text: yeastName">Wyeast 1056 American Ale</td></tr>
+                    <!--<tr><td>ABV</td><td data-bind="text: formattedABV">3.2%</td></tr>
+                    <tr><td>IBU</td><td data-bind="text: ibu">8</td></tr>
+                    <tr><td>OG</td><td data-bind="text: og">1032</td></tr>
+                    <tr><td>FG</td><td data-bind="text: fg">1007</td></tr>
+                    <tr><td>EBC</td><td data-bind="text: ebc">8</td></tr>-->
+                    <tr data-bind="css: {danger: hasAdjucts() === 'Y'}"><td>Has Ajuncts</td><td data-bind="text: hasAdjucts">N</td></tr>
+                    <tr><td><img src="/img/mash-icon.png" class="round-icon">Mash Temperature</td><td><span data-bind="text: mashTemp">999</span>C</td></tr>
+                    <tr><td><img src="/img/mash-icon.png" class="round-icon">Mash Time</td><td><span data-bind="text: mashTime">999</span> minutes</td></tr>
+                    <tr data-bind="css: {info: fermentation() < 18}"><td><img src="/img/fermentation-icon.png" class="round-icon">Fermentation Temperature</td><td><span data-bind="text: fermentation">21</span>C</td></tr>
+                    <tr>
+                        <td><img src="/img/malt-icon-trans.png" class="round-icon">Malts</td>
+                        <td class="nested">
+                            <table class="table table-nested">
+                                <tbody>
+                                    <!-- ko foreach: recipe_Malts -->
+                                    <tr>
+                                        <td data-bind="css: {danger: isMatched() === false}"><span data-bind="text: maltGenericName">Pale Ale</span>: <span data-bind="text: weight">1.6</span>kg</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td data-bind="css: {danger: isMatched() === false}"><span data-bind="text: maltGenericName">Wheat</span>: <span data-bind="text: weight">1.6</span>kg</td>
+                                    </tr>
+                                    <!-- /ko -->
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="/img/hop-icon-trans.png" width="30" height="30" class="round-icon">Hops</td>
+                        <td class="nested">
+                            <table class="table table-nested">
+                                <tbody>
+
+                                    <!-- ko foreach: combinedHopsOther() -->
+                                    <tr>
+                                        <td data-bind="css: {danger: isMatched() === false}"><span data-bind="text: hopName">Bramling Cross</span>: <span data-bind="text: weight">10</span>g - <span data-bind="text: stepName">Start Boil 0min</span></td>
+                                    </tr>
+                                    <!-- /ko -->
+
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td>Total Hop Bill</td><td><span data-bind="text: totalHopsBill">10</span>g</td></tr>
+                    <tr>
+                        <td>Total for each hop</td>
+                        <td>
+                            <!-- ko foreach: totalEachHop -->
+                            <p><span data-bind="text: hopName">Bramling Cross</span>: <span data-bind="text: weight">10</span>g</p>
+                            <!-- /ko -->
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+        </div>
+        <!-- /ko -->
+    </div>
+</body>
+</html>

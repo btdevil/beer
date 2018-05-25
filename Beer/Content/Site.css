@@ -1,4 +1,4 @@
-﻿body {
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -39,229 +39,330 @@
     margin: 0;
 }
 
-.no-margin {
-    margin: 0px;
+.btn{
+    margin-bottom:2px;
 }
 
-.extra-padding {
-    padding-bottom:12px;
+@media (max-width: 768px) {
+    .xs-no-padding {
+        padding:0px;
+    }
 }
 
-.double-margin, h2.double-margin {
-    margin-top: 15px;
+@media (max-width: 580px) {
+    .col-xxs-12{
+        width:100%;
+    }
 }
 
-.hand-cursor {
-    cursor: pointer;
-}
+    .no-margin {
+        margin: 0px;
+    }
 
-#searchPanelCollapse, #resultsPanelCollapse {
-    margin-top:15px;
-}
+    .extra-padding {
+        padding-bottom: 12px;
+    }
 
-.collapsed .glyphicon-menu-up:before {
-    content: "\e259";
-}
+    .double-margin, h2.double-margin {
+        margin-top: 15px;
+    }
 
-.slider-cont {
-    padding-top: 10px;
-    padding-bottom: 50px;
-}
+    .hand-cursor {
+        cursor: pointer;
+    }
 
-.sort .form-group {
-    width: 100%;
-}
+    #searchPanelCollapse, #resultsPanelCollapse {
+        margin-top: 15px;
+    }
+
+    .collapsed .glyphicon-menu-up:before {
+        content: "\e259";
+    }
+
+    .slider-cont {
+        padding-top: 10px;
+        padding-bottom: 50px;
+    }
+
+    .sort .form-group {
+        width: 100%;
+    }
 
 .sort select {
-    margin-right: 5%;
-    width: auto;
-}
-
-.round-icon{
-    width:30px;
+    margin-right: 18px;
+    width: 95px;
+    padding: 3px;
     height:30px;
-    margin-right:5px;
 }
 
-@media (max-width: 767px) {
-    .slider-cont {
-        padding-left: 30px;
-        padding-top: 15px;
+    img.round-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
     }
 
-    .no-padding-xs {
-        padding: 0;
-        margin: 0;
-    }
-}
-
-.noMatch {
-    background-color: red;
-}
-
-.subMatch {
-    background-color: orange;
-}
-
-.slidein {
-    position: relative;
-    overflow:hidden;
-}
-
-.table > tbody > tr > td.nested {
-    padding: 0;
-}
-
-.table-nested {
-    margin-bottom: 0;
-    background-color: rgba(211, 216, 193, 0.4);
-}
-
-table.table-nested:first-child tr:first-child td:first-child {
-    /*border-top:0px;*/
-}
-
-.rounded-back:before {
-    color: #fff;
-    background-color: #febd01;
-    font-size: 0.7em;
-    padding: 5px 7px;
-    border-radius: 15px;
-    margin-right: 5px;
-}
-
-.ebcBlob{
-    width:18px;
-    height:18px;
-    border-radius:9px;
-    float:left;
-    margin-right:5px;
-}
-
-@media screen and (max-width: 767px) {
-    .slidein .slidein-child {
-        position: absolute;
-        top: 0px;
-        width: 100%;
-        right: -110%;
-        transition:right 0.5s ease; 
-    }
-
-    .slidein .slidein-master {
-        width: 100%;
-        left:0;
-        transition: left 0.5s ease, height 0s ease 0.5s;
-        height:auto;
-    }
-
-    .slidein .slidein-child.slideshow {
-        right: 0px;
-    }
-
-    .slidein .slidein-master.slidehide {
-        left: -110%;
-        height: 0px;
-        transition: left 0.5s ease, height 0s ease;
-    }
-}
-
-.show-overflow{
-    overflow:visible;
-}
-
-.spinner {
-    margin: 0 auto 0;
-    width: 70px;
-    text-align: center;
-    display:none;
-}
-
-.spinner > div {
-    width: 18px;
-    height: 18px;
-    background-color: #333;
-    border-radius: 100%;
+.round-icon {
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding: 6px 0 0 32px;
     display: inline-block;
-    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    background-size: 30px;
+    min-height: 30px;
 }
 
-.spinner .bounce1 {
-    -webkit-animation-delay: -0.32s;
-    animation-delay: -0.32s;
+.round-icon-recipe{
+    background-image: url(../img/recipe-icon.png);
 }
 
-.spinner .bounce2 {
-    -webkit-animation-delay: -0.16s;
-    animation-delay: -0.16s;
+.round-icon-yeast {
+    background-image: url(../img/yeast-icon-trans.png);
 }
 
-@-webkit-keyframes sk-bouncedelay {
-    0%, 80%, 100% {
-        -webkit-transform: scale(0)
+.round-icon-mash {
+    background-image: url(../img/mash-icon.png);
+}
+
+.round-icon-fermentation {
+    background-image: url(../img/fermentation-icon.png);
+}
+
+.round-icon-malt {
+    background-image: url(../img/malt-icon-trans.png);
+}
+
+.round-icon-hop {
+    background-image: url(../img/hop-icon-trans.png);
+}
+
+    @media (max-width: 767px) {
+        .slider-cont {
+            padding-left: 30px;
+            padding-top: 15px;
+        }
+
+        .no-padding-xs {
+            padding: 0;
+            margin: 0;
+        }
+
+        .panel-title .round-icon{
+            width:75%;
+        }
     }
 
-    40% {
-        -webkit-transform: scale(1.0)
-    }
-}
-
-@keyframes sk-bouncedelay {
-    0%, 80%, 100% {
-        -webkit-transform: scale(0);
-        transform: scale(0);
+    .noMatch {
+        background-color: red;
     }
 
-    40% {
-        -webkit-transform: scale(1.0);
-        transform: scale(1.0);
+    .subMatch {
+        background-color: orange;
     }
-}
 
-.min-350{
-    min-width:380px;
-}
+    .slidein {
+        position: relative;
+        overflow: hidden;
+    }
 
-.min-155 {
-    min-width: 155px;
-}
+    .table > tbody > tr > td.nested {
+        padding: 0;
+    }
 
-.beer-style{
-    margin:0 auto;
-    width:350px;
-    text-align: center;
-}
+    .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+        vertical-align: middle;
+    }
 
-.bs-info{
-    width:20%;
-    float:left;
-}
+        .table > tbody > tr > td.td-top {
+            vertical-align: top;
+        }
 
-.bs-line {
-    margin: 0 auto;
-    background-color: #e9ece0;
-    width: 15px;
-    height: 200px;
-    position: relative;
-}
+    .table-nested {
+        margin-bottom: 0;
+        background-color: rgba(211, 216, 193, 0.4);
+        min-height: 46.67px;
+    }
 
-.bs-range{
-    position:absolute;
-    background-color:#575f3b;
-    width:15px;
-}
+    .table.table-nested > tbody > tr:first-child > td {
+        border-top: 0px;
+    }
 
-.bs-recipe{
-    height:2px;
-    position:absolute;
-    background-color: #febd01;
-    width:15px;
-}
+    table.table-nested:first-child tr:first-child td:first-child {
+        /*border-top:0px;*/
+    }
 
-.bs-recipe-line {
-    padding: 8px;
-    margin: 0px;
-    display: block;
-}
+    .rounded-back:before {
+        color: #fff;
+        background-color: #febd01;
+        font-size: 0.7em;
+        padding: 5px 7px;
+        border-radius: 15px;
+        margin-right: 5px;
+    }
 
-.bs-recipe-title{}
+    .ebcBlob {
+        width: 18px;
+        height: 18px;
+        border-radius: 9px;
+        float: left;
+        margin-right: 5px;
+    }
+
+    @media screen and (max-width: 767px) {
+        .slidein .slidein-child {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            right: -110%;
+            transition: right 0.5s ease;
+        }
+
+        .slidein .slidein-master {
+            width: 100%;
+            left: 0;
+            transition: left 0.5s ease, height 0s ease 0.5s;
+            height: auto;
+        }
+
+        .slidein .slidein-child.slideshow {
+            right: 0px;
+        }
+
+        .slidein .slidein-master.slidehide {
+            left: -110%;
+            height: 0px;
+            transition: left 0.5s ease, height 0s ease;
+        }
+    }
+
+    .show-overflow {
+        overflow: visible;
+    }
+
+    .spinner {
+        margin: 0 auto 0;
+        width: 70px;
+        text-align: center;
+        display: none;
+    }
+
+        .spinner > div {
+            width: 18px;
+            height: 18px;
+            background-color: #333;
+            border-radius: 100%;
+            display: inline-block;
+            -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+            animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        }
+
+        .spinner .bounce1 {
+            -webkit-animation-delay: -0.32s;
+            animation-delay: -0.32s;
+        }
+
+        .spinner .bounce2 {
+            -webkit-animation-delay: -0.16s;
+            animation-delay: -0.16s;
+        }
+
+    @-webkit-keyframes sk-bouncedelay {
+        0%, 80%, 100% {
+            -webkit-transform: scale(0)
+        }
+
+        40% {
+            -webkit-transform: scale(1.0)
+        }
+    }
+
+    @keyframes sk-bouncedelay {
+        0%, 80%, 100% {
+            -webkit-transform: scale(0);
+            transform: scale(0);
+        }
+
+        40% {
+            -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+        }
+    }
+
+    .min-350 {
+        min-width: 380px;
+    }
+
+    .min-155 {
+        min-width: 155px;
+    }
+
+    .beer-style {
+        margin: 0 auto;
+        width: 350px;
+        text-align: center;
+    }
+
+    @media (max-width:768px) {
+        .beer-style {
+            width: 340px;
+        }
+    }
+
+    .bs-info {
+        width: 20%;
+        float: left;
+    }
+
+    .bs-line {
+        margin: 0 auto;
+        background-color: #e9ece0;
+        width: 15px;
+        height: 200px;
+        position: relative;
+    }
+
+    .bs-range {
+        position: absolute;
+        background-color: #575f3b;
+        width: 15px;
+    }
+
+    .bs-recipe {
+        height: 2px;
+        position: absolute;
+        background-color: #febd01;
+        width: 15px;
+    }
+
+    .bs-recipe-line {
+        padding: 8px;
+        margin: 0px;
+        display: block;
+    }
+
+    .bs-recipe-title {
+    }
+
+    .bs-total-hop {
+        width: 40%;
+        display: inline-block;
+    }
+
+    .bs-label-column {
+        width: 40%;
+    }
+
+    .bs-column-malt {
+        width: 40%;
+    }
+
+    .bs-column-mwight {
+    }
+
+    .bs-column-hop {
+        width: 40%;
+    }
+
+    .bs-column-hweight {
+    }
+
+    .bs-column-hstep {
+    }

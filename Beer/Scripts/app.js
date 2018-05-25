@@ -377,7 +377,7 @@ BEER.Models = (function () {
                         stepName: item.stepName,
                         stepID: item.stepID,
                         stepOrder: item.stepOrder,
-                        weight: item.weight,
+                        weight: item.weight
                     });
                 });
 
@@ -392,7 +392,7 @@ BEER.Models = (function () {
                         stepName: item.stepName,
                         stepID: item.stepID,
                         stepOrder: item.stepOrder,
-                        weight: item.weight,
+                        weight: item.weight
                     });
                 });
 
@@ -424,7 +424,8 @@ BEER.Models = (function () {
                             //create hop object if it doesn't exsist, so we can access the weight by hopNamr
                             res[value.hopName()] = {
                                 weight: 0,
-                                hopName: value.hopName()
+                                hopName: value.hopName(),
+                                isMatched: value.isMatched()
                             };
                             //add hop to hopArray with a *pointer* to the hop object in the reduced array. The weight will update in hopArray as it's totalled as it's a pointer rather than a copy.
                             hopArray.push(res[value.hopName()])
