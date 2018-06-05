@@ -512,19 +512,19 @@ namespace Beer.Controllers
         //}
 
         // POST: api/Recipes
-        //[ResponseType(typeof(Recipe))]
-        //public async Task<IHttpActionResult> PostRecipe(Recipe recipe)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        [ResponseType(typeof(Recipe))]
+        public async Task<IHttpActionResult> PostRecipe(Recipe recipe)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    db.Recipes.Add(recipe);
-        //    await db.SaveChangesAsync();
+            db.Recipes.Add(recipe);
+            await db.SaveChangesAsync();
 
-        //    return CreatedAtRoute("DefaultApi", new { id = recipe.ID }, recipe);
-        //}
+            return CreatedAtRoute("DefaultApi", new { id = recipe.ID }, recipe);
+        }
 
         // DELETE: api/Recipes/5
         //[ResponseType(typeof(Recipe))]

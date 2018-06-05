@@ -553,6 +553,19 @@
             <param name="id">The YeastID</param>
             <returns></returns>
         </member>
+        <member name="M:Beer.Controllers.BeerStylesController.GetBeerStyles">
+            <summary>
+            Get all Yeasts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Beer.Controllers.BeerStylesController.GetBeerStyles(System.Int32)">
+            <summary>
+            Get single yeast by YeastID
+            </summary>
+            <param name="id">The YeastID</param>
+            <returns></returns>
+        </member>
         <member name="M:Beer.Extensions.IsNullOrEmpty(System.Array)">
             <summary>Indicates whether the specified array is null or has a length of zero.</summary>
             <param name="array">The array to test.</param>

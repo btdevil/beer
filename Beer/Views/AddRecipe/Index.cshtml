@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewBag.Title = "AddRecipe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/addRecipe")
+}
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="panel-title">Add Recipe</h2>
+            </div>
+            <div class="panel-body">
+                <form data-bind="submit: addRecipe">
+                    <label for="Source2">Source</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="Source2" data-bind="value:newRecipe.Source2" />
+                        <br />
+                    </div>
+                    <label for="Number">Number</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="Number" data-bind="value:newRecipe.Number" />
+                        <br />
+                    </div>
+
+                    <label for="Name">Name</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="Name" data-bind="value:newRecipe.Name" />
+                        <br />
+                    </div>
+                    @*<label for="name">Yeast</label>
+        <div class="form-group">
+            <input type="text" class="form-control" style="width: 100%" id="YeastID" data-bind="value:newRecipe.YeastID" />
+            <br />
+        </div>*@
+                    <label for="YeastID">Yeast</label>
+                    <div class="form-group">
+                        <select id="YeastID" data-bind="options: Yeasts.Yeast, optionsText: 'yeastName', optionsValue : 'id', value: newRecipe.YeastID, select2: {selection: newRecipe.YeastID, closeOnSelect: true}" size="10" class="form-control" style="width: 100%"></select>
+                    </div>
+
+                    <label for="BeerStylesID">Beer Style</label>
+                    <div class="form-group">
+                        <select id="BeerStylesID" data-bind="options: BeerStyle.BeerStyle, optionsText: 'subCategoryName', optionsValue : 'id', value: newRecipe.BeerStylesID, select2: {selection: newRecipe.BeerStylesID, closeOnSelect: true}" size="10" class="form-control" style="width: 100%"></select>
+                    </div>
+
+                    @*<label for="name">Name</label>
+        <div class="form-group">
+            <input type="text" class="form-control" style="width: 100%" id="name" data-bind="value:newRecipe.ID" />
+            <br />
+        </div>*@
+                    <label for="ABV">ABV</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="ABV" data-bind="value:newRecipe.ABV" />
+                        <br />
+                    </div>
+                    <label for="IBU">IBU</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="IBU" data-bind="value:newRecipe.IBU" />
+                        <br />
+                    </div>
+                    <label for="OG">OG</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="OG" data-bind="value:newRecipe.OG" />
+                        <br />
+                    </div>
+                    <label for="FG">FG</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="FG" data-bind="value:newRecipe.FG" />
+                        <br />
+                    </div>
+                    <label for="EBC">EBC</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="EBC" data-bind="value:newRecipe.EBC" />
+                        <br />
+                    </div>
+                    <label for="HasAdjucts">HasAdjuncts</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="HasAdjucts" data-bind="value:newRecipe.HasAdjucts" />
+                        <br />
+                    </div>
+                    <label for="MashTemp">MashTemp</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="MashTemp" data-bind="value:newRecipe.MashTemp" />
+                        <br />
+                    </div>
+                    <label for="MashTime">MashTime</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="MashTime" data-bind="value:newRecipe.MashTime" />
+                        <br />
+                    </div>
+                    <label for="Fermentation">Fermentation</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="Fermentation" data-bind="value:newRecipe.Fermentation" />
+                        <br />
+                    </div>
+                    <label for="Description">Decsription</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="Description" data-bind="value:newRecipe.Description" />
+                        <br />
+                    </div>
+                    <label for="Tips">Tips</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" id="Tips" data-bind="value:newRecipe.Tips" />
+                        <br />
+                    </div>
+                    <!-- ko foreach: newRecipe.Recipe_Malts -->
+                    <label data-bind="uniqueFor: MaltGenericID">Malts</label>
+                    <div class="form-group">
+                        <select data-bind="options: $root.Malts.Malt, optionsText: 'malt', optionsValue : 'id', value: MaltGenericID, select2: {selection: MaltGenericID, closeOnSelect: true}, uniqueId: MaltGenericID" size="10" class="form-control" style="width: 100%"></select>
+                        <br />
+                    </div>
+
+                    <label data-bind="uniqueFor: Weight">Weight</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" data-bind="value:Weight, uniqueId: Weight" />
+                        <br />
+                    </div>
+
+                    <!-- /ko -->
+                    <button data-bind="click: addMalt" class="btn btn-info">Add Malt</button><br />
+                    <!-- ko foreach: newRecipe.Recipe_Hops -->
+                    <label data-bind="uniqueFor: HopID">Hops</label>
+                    <div class="form-group">
+                        <select data-bind="options: $root.Hops.Hop, optionsText: 'hops', optionsValue : 'id', value: HopID, select2: {selection: HopID, closeOnSelect: true}, uniqueId: HopID" size="10" class="form-control" style="width: 100%"></select>
+                    </div>
+                    <label data-bind="uniqueFor: Weight">Weight</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" data-bind="value:Weight, uniqueId: Weight" />
+                        <br />
+                    </div>
+                    <label data-bind="uniqueFor: StepID">Usage Time</label>
+                    <div class="form-group">
+                        <select data-bind="options: $root.HopSteps.HopStep, optionsText: 'step', optionsValue : 'id', value: StepID, select2: {selection: StepID, closeOnSelect: true}, uniqueId: StepID" size="10" class="form-control" style="width: 100%"></select>
+                    </div>
+                    <!-- /ko -->
+                    <button data-bind="click: addHop" class="btn btn-info">Add Hop</button><br />
+                    <!-- ko foreach: newRecipe.Recipe_Others -->
+                    <label data-bind="uniqueFor: OtherID">Extras</label>
+                    <div class="form-group">
+                        <select data-bind="options: $root.Others.Other, optionsText: 'other', optionsValue : 'id', value: OtherID, select2: {selection: OtherID, closeOnSelect: true}, uniqueId: OtherID" size="10" class="form-control" style="width: 100%"></select>
+                    </div>
+                    <label data-bind="uniqueFor: Weight">Weight</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="width: 100%" data-bind="value:Weight, uniqueId: Weight" />
+                        <br />
+                    </div>
+                    <label data-bind="uniqueFor: StepID">Usage Time</label>
+                    <div class="form-group">
+                        <select data-bind="options: $root.HopSteps.HopStep, optionsText: 'step', optionsValue : 'id', value: StepID, select2: {selection: StepID, closeOnSelect: true}, uniqueId: StepID" size="10" class="form-control" style="width: 100%"></select>
+                    </div>
+                    <!-- /ko -->
+                    <button data-bind="click: addOther" class="btn btn-info">Add Extra</button><br />
+                    <button type="submit" class="btn btn-default">Save Recipe</button>
+                </form>
+        </div>
+            </div>
+        </div>
+</div>

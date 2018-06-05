@@ -14,7 +14,7 @@
             <form data-bind="submit: searchRecipes">
                 <label for="malts">Malts</label>
                 <div class="form-group">
-                    <select id="malts" data-bind="options: Malts.Malt, optionsText: 'malt', optionsValue : 'id', selectedOptions: SearchQuery.maltQuery, select2: {selection: SearchQuery.maltQuery}" size="10" multiple class="form-control" style="width: 100%"></select>
+                    <select id="malts" data-bind="options: Malts.Malt, optionsText: 'malt', optionsValue : 'id', selectedOptions: SearchQuery.maltQuery, select2: {selection: SearchQuery.maltQuery, closeOnSelect: false}" size="10" multiple class="form-control" style="width: 100%"></select>
                     <br />
                 </div>
 
@@ -28,12 +28,12 @@
 
                 <label for="hops">Hops</label>
                 <div class="form-group">
-                    <select id="hops" data-bind="options: Hops.Hop, optionsText: 'hops', optionsValue : 'id', selectedOptions: SearchQuery.hopQuery, select2: {selection: SearchQuery.hopQuery}" size="10" multiple class="form-control" style="width: 100%"></select>
+                    <select id="hops" data-bind="options: Hops.Hop, optionsText: 'hops', optionsValue : 'id', selectedOptions: SearchQuery.hopQuery, select2: {selection: SearchQuery.hopQuery, closeOnSelect: false}" size="10" multiple class="form-control" style="width: 100%"></select>
                 </div>
 
                 <label for="yeast">Yeast</label>
                 <div class="form-group">
-                    <select id="yeast" data-bind="options: Yeasts.Yeast, optionsText: 'yeastName', optionsValue : 'id', selectedOptions: SearchQuery.yeastQuery, select2: {selection: SearchQuery.yeastQuery}" size="10" multiple class="form-control" style="width: 100%"></select>
+                    <select id="yeast" data-bind="options: Yeasts.Yeast, optionsText: 'yeastName', optionsValue : 'id', selectedOptions: SearchQuery.yeastQuery, select2: {selection: SearchQuery.yeastQuery, closeOnSelect: false}" size="10" multiple class="form-control" style="width: 100%"></select>
                 </div>
                 <div class="form-group">
                     <p class="form-control-static"><strong>Show Yeasts</strong></p>
@@ -129,10 +129,10 @@
                     </div>
                 </div>
 
-                <p class="form-control-static"><strong>Has Adjuncts</strong></p>
+                <p class="form-control-static"><strong>Has Extras</strong></p>
                 <div class="form-group">
                     <label class="radio-inline">
-                        <input type="radio" name="hasAdjuncts" id="hasAdjuncts1" value="" data-bind="checked: SearchQuery.hasAdjuctsQuery"> Both
+                        <input type="radio" name="hasAdjuncts" id="hasAdjuncts1" value="" data-bind="checked: SearchQuery.hasAdjuctsQuery"> Either
                     </label>
                     <label class="radio-inline">
                         <input type="radio" name="hasAdjuncts" id="hasAdjuncts2" value="N" data-bind="checked: SearchQuery.hasAdjuctsQuery" checked> No
@@ -310,7 +310,7 @@
                               <p class="bs-recipe-line"><!-- ko text: source2 --><!--/ko--> <!--ko if: number !== "null"--> #<span data-bind="text: number"></span><!-- /ko --></p>
                                         <p class="bs-recipe-line" data-bind="text: beerStyles.subCategoryName"></p>
                                   
-                                        <p class="bs-recipe-line" data-bind="css: {'bg-danger': hasAdjucts() === 'Y'}">Has Ajuncts: <span data-bind="text: hasAdjucts"></span></p>
+                                        <p class="bs-recipe-line" data-bind="css: {'bg-danger': hasAdjucts() === 'Y'}">Has Extras: <span data-bind="text: hasAdjucts"></span></p>
                                   
                                         
                                     
@@ -378,7 +378,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="td-top bs-column-label"><span class="round-icon round-icon-hop">Hops</span></td>
+                            <td class="td-top bs-column-label"><span class="round-icon round-icon-hop">Hops / Extras</span></td>
                             <td class="nested">
                                 <table class="table table-nested">
                                     <tbody>

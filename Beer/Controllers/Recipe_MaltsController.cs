@@ -36,71 +36,71 @@ namespace Beer.Controllers
             return Ok(recipe_Malts);
         }
 
-        // PUT: api/Recipe_Malts/5
-        [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutRecipe_Malts(int id, Recipe_Malts recipe_Malts)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// PUT: api/Recipe_Malts/5
+        //[ResponseType(typeof(void))]
+        //public async Task<IHttpActionResult> PutRecipe_Malts(int id, Recipe_Malts recipe_Malts)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            if (id != recipe_Malts.ID)
-            {
-                return BadRequest();
-            }
+        //    if (id != recipe_Malts.ID)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            db.Entry(recipe_Malts).State = EntityState.Modified;
+        //    db.Entry(recipe_Malts).State = EntityState.Modified;
 
-            try
-            {
-                await db.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!Recipe_MaltsExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await db.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!Recipe_MaltsExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return StatusCode(HttpStatusCode.NoContent);
-        }
+        //    return StatusCode(HttpStatusCode.NoContent);
+        //}
 
-        // POST: api/Recipe_Malts
-        [ResponseType(typeof(Recipe_Malts))]
-        public async Task<IHttpActionResult> PostRecipe_Malts(Recipe_Malts recipe_Malts)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// POST: api/Recipe_Malts
+        //[ResponseType(typeof(Recipe_Malts))]
+        //public async Task<IHttpActionResult> PostRecipe_Malts(Recipe_Malts recipe_Malts)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            db.Recipe_Malts.Add(recipe_Malts);
-            await db.SaveChangesAsync();
+        //    db.Recipe_Malts.Add(recipe_Malts);
+        //    await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = recipe_Malts.ID }, recipe_Malts);
-        }
+        //    return CreatedAtRoute("DefaultApi", new { id = recipe_Malts.ID }, recipe_Malts);
+        //}
 
-        // DELETE: api/Recipe_Malts/5
-        [ResponseType(typeof(Recipe_Malts))]
-        public async Task<IHttpActionResult> DeleteRecipe_Malts(int id)
-        {
-            Recipe_Malts recipe_Malts = await db.Recipe_Malts.FindAsync(id);
-            if (recipe_Malts == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/Recipe_Malts/5
+        //[ResponseType(typeof(Recipe_Malts))]
+        //public async Task<IHttpActionResult> DeleteRecipe_Malts(int id)
+        //{
+        //    Recipe_Malts recipe_Malts = await db.Recipe_Malts.FindAsync(id);
+        //    if (recipe_Malts == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            db.Recipe_Malts.Remove(recipe_Malts);
-            await db.SaveChangesAsync();
+        //    db.Recipe_Malts.Remove(recipe_Malts);
+        //    await db.SaveChangesAsync();
 
-            return Ok(recipe_Malts);
-        }
+        //    return Ok(recipe_Malts);
+        //}
 
         protected override void Dispose(bool disposing)
         {

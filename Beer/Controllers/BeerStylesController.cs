@@ -13,7 +13,7 @@ using Beer.Models;
 
 namespace Beer.Controllers
 {
-    public class BeerStylesController : ApiController
+    public class YeastsController : ApiController
     {
         private BeerContext db = new BeerContext();
 
@@ -22,9 +22,9 @@ namespace Beer.Controllers
         /// Get all Yeasts
         /// </summary>
         /// <returns></returns>
-        public IQueryable<BeerStyles> GetBeerStyles()
+        public IQueryable<Yeast> GetYeasts()
         {
-            return db.BeerStyles;
+            return db.Yeasts;
         }
 
         // GET: api/Yeasts/5
@@ -33,16 +33,16 @@ namespace Beer.Controllers
         /// </summary>
         /// <param name="id">The YeastID</param>
         /// <returns></returns>
-        [ResponseType(typeof(BeerStyles))]
-        public async Task<IHttpActionResult> GetBeerStyles(int id)
+        [ResponseType(typeof(Yeast))]
+        public async Task<IHttpActionResult> GetYeast(int id)
         {
-            BeerStyles beerstyle = await db.BeerStyles.FindAsync(id);
-            if (beerstyle == null)
+            Yeast yeast = await db.Yeasts.FindAsync(id);
+            if (yeast == null)
             {
                 return NotFound();
             }
 
-            return Ok(beerstyle);
+            return Ok(yeast);
         }
 
         //// PUT: api/Yeasts/5
@@ -120,9 +120,9 @@ namespace Beer.Controllers
             base.Dispose(disposing);
         }
 
-        private bool BeerStyleExists(int id)
+        private bool YeastExists(int id)
         {
-            return db.BeerStyles.Count(e => e.ID == id) > 0;
+            return db.Yeasts.Count(e => e.ID == id) > 0;
         }
     }
 }

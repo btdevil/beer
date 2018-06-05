@@ -15,17 +15,17 @@
         <form data-bind="submit: updateStock">
             <label for="malts">Malts</label>
             <div class="form-group">
-                <select id="malts" data-bind="options: Malts.Malt, optionsText: 'malt', optionsValue : 'id', selectedOptions: myMalts.malts, select2: {selection: myMalts.malts}" size="10" multiple class="form-control" style="width: 100%"></select>
+                <select id="malts" data-bind="options: Malts.Malt, optionsText: 'malt', optionsValue : 'id', selectedOptions: myMalts.malts, select2: {selection: myMalts.malts, closeOnSelect: false}" size="10" multiple class="form-control" style="width: 100%"></select>
                 <br />
             </div>
             <label for="hops">Hops</label>
             <div class="form-group">
-                <select id="hops" data-bind="options: Hops.Hop, optionsText: 'hops', optionsValue : 'id', selectedOptions: myHops.hops, select2: {selection: myHops.hops}" size="10" multiple class="form-control" style="width: 100%"></select>
+                <select id="hops" data-bind="options: Hops.Hop, optionsText: 'hops', optionsValue : 'id', selectedOptions: myHops.hops, select2: {selection: myHops.hops, closeOnSelect: false}" size="10" multiple class="form-control" style="width: 100%"></select>
             </div>
 
             <label for="yeast">Yeast</label>
             <div class="form-group">
-                <select id="yeast" data-bind="options: Yeasts.Yeast, optionsText: 'yeastName', optionsValue : 'id', selectedOptions: myYeasts.yeasts, select2: {selection: myYeasts.yeasts}" size="10" multiple class="form-control" style="width: 100%"></select>
+                <select id="yeast" data-bind="options: Yeasts.Yeast, optionsText: 'yeastName', optionsValue : 'id', selectedOptions: myYeasts.yeasts, select2: {selection: myYeasts.yeasts, closeOnSelect: false}" size="10" multiple class="form-control" style="width: 100%"></select>
             </div>
             <button type="submit" class="btn btn-default">Update</button>
         </form>

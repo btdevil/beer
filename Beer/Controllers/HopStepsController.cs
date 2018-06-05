@@ -13,53 +13,44 @@ using Beer.Models;
 
 namespace Beer.Controllers
 {
-    public class BeerStylesController : ApiController
+    public class HopStepsController : ApiController
     {
         private BeerContext db = new BeerContext();
 
-        // GET: api/Yeasts
-        /// <summary>
-        /// Get all Yeasts
-        /// </summary>
-        /// <returns></returns>
-        public IQueryable<BeerStyles> GetBeerStyles()
+        // GET: api/HopSteps
+        public IQueryable<HopStep> GetHopSteps()
         {
-            return db.BeerStyles;
+            return db.HopSteps.OrderBy(hs => hs.StepOrder);
         }
 
-        // GET: api/Yeasts/5
-        /// <summary>
-        /// Get single yeast by YeastID
-        /// </summary>
-        /// <param name="id">The YeastID</param>
-        /// <returns></returns>
-        [ResponseType(typeof(BeerStyles))]
-        public async Task<IHttpActionResult> GetBeerStyles(int id)
+        // GET: api/HopSteps/5
+        [ResponseType(typeof(HopStep))]
+        public async Task<IHttpActionResult> GetHopStep(int id)
         {
-            BeerStyles beerstyle = await db.BeerStyles.FindAsync(id);
-            if (beerstyle == null)
+            HopStep hopStep = await db.HopSteps.FindAsync(id);
+            if (hopStep == null)
             {
                 return NotFound();
             }
 
-            return Ok(beerstyle);
+            return Ok(hopStep);
         }
 
-        //// PUT: api/Yeasts/5
+        //// PUT: api/HopSteps/5
         //[ResponseType(typeof(void))]
-        //public async Task<IHttpActionResult> PutYeast(int id, Yeast yeast)
+        //public async Task<IHttpActionResult> PutHopStep(int id, HopStep hopStep)
         //{
         //    if (!ModelState.IsValid)
         //    {
         //        return BadRequest(ModelState);
         //    }
 
-        //    if (id != yeast.ID)
+        //    if (id != hopStep.ID)
         //    {
         //        return BadRequest();
         //    }
 
-        //    db.Entry(yeast).State = EntityState.Modified;
+        //    db.Entry(hopStep).State = EntityState.Modified;
 
         //    try
         //    {
@@ -67,7 +58,7 @@ namespace Beer.Controllers
         //    }
         //    catch (DbUpdateConcurrencyException)
         //    {
-        //        if (!YeastExists(id))
+        //        if (!HopStepExists(id))
         //        {
         //            return NotFound();
         //        }
@@ -80,35 +71,35 @@ namespace Beer.Controllers
         //    return StatusCode(HttpStatusCode.NoContent);
         //}
 
-        //// POST: api/Yeasts
-        //[ResponseType(typeof(Yeast))]
-        //public async Task<IHttpActionResult> PostYeast(Yeast yeast)
+        //// POST: api/HopSteps
+        //[ResponseType(typeof(HopStep))]
+        //public async Task<IHttpActionResult> PostHopStep(HopStep hopStep)
         //{
         //    if (!ModelState.IsValid)
         //    {
         //        return BadRequest(ModelState);
         //    }
 
-        //    db.Yeasts.Add(yeast);
+        //    db.HopSteps.Add(hopStep);
         //    await db.SaveChangesAsync();
 
-        //    return CreatedAtRoute("DefaultApi", new { id = yeast.ID }, yeast);
+        //    return CreatedAtRoute("DefaultApi", new { id = hopStep.ID }, hopStep);
         //}
 
-        //// DELETE: api/Yeasts/5
-        //[ResponseType(typeof(Yeast))]
-        //public async Task<IHttpActionResult> DeleteYeast(int id)
+        //// DELETE: api/HopSteps/5
+        //[ResponseType(typeof(HopStep))]
+        //public async Task<IHttpActionResult> DeleteHopStep(int id)
         //{
-        //    Yeast yeast = await db.Yeasts.FindAsync(id);
-        //    if (yeast == null)
+        //    HopStep hopStep = await db.HopSteps.FindAsync(id);
+        //    if (hopStep == null)
         //    {
         //        return NotFound();
         //    }
 
-        //    db.Yeasts.Remove(yeast);
+        //    db.HopSteps.Remove(hopStep);
         //    await db.SaveChangesAsync();
 
-        //    return Ok(yeast);
+        //    return Ok(hopStep);
         //}
 
         protected override void Dispose(bool disposing)
@@ -120,9 +111,9 @@ namespace Beer.Controllers
             base.Dispose(disposing);
         }
 
-        private bool BeerStyleExists(int id)
+        private bool HopStepExists(int id)
         {
-            return db.BeerStyles.Count(e => e.ID == id) > 0;
+            return db.HopSteps.Count(e => e.ID == id) > 0;
         }
     }
 }

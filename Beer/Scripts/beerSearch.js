@@ -114,9 +114,27 @@
     };
 
     self.addMyIngredients = function () {
+        var myIngredientInt = null;
         self.myMalts.getMyMalts(self.Malts.queryLoaded);
         self.myHops.getMyHops(self.Hops.queryLoaded);
         self.myYeasts.getMyYeasts(self.Yeasts.queryLoaded);
+
+        myIngredientInt = setInterval(function () {
+            var i = 0;
+            var iLen = 0;
+            if (self.Malts.queryLoaded() === true && self.Hops.queryLoaded() === true && self.Yeasts.queryLoaded() === true) {
+                clearInterval(myIngredientInt);
+                for (i = 0, iLen = self.myMalts.malts().length; i < iLen; i++) {
+                    self.SearchQuery.maltQuery.push(self.myMalts.malts()[i]);
+                }
+                for (i = 0, iLen = self.myHops.hops().length; i < iLen; i++) {
+                    self.SearchQuery.hopQuery.push(self.myHops.hops()[i]);
+                }
+                for (i = 0, iLen = self.myYeasts.yeasts().length; i < iLen; i++) {
+                    self.SearchQuery.yeastQuery.push(self.myYeasts.yeasts()[i]);
+                }
+            }
+        },100);
     };
 
     function findMatches() {

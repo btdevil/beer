@@ -13,53 +13,44 @@ using Beer.Models;
 
 namespace Beer.Controllers
 {
-    public class BeerStylesController : ApiController
+    public class OthersController : ApiController
     {
         private BeerContext db = new BeerContext();
 
-        // GET: api/Yeasts
-        /// <summary>
-        /// Get all Yeasts
-        /// </summary>
-        /// <returns></returns>
-        public IQueryable<BeerStyles> GetBeerStyles()
+        // GET: api/Others
+        public IQueryable<Others> GetOthers()
         {
-            return db.BeerStyles;
+            return db.Others.OrderBy(x => x.Other);
         }
 
-        // GET: api/Yeasts/5
-        /// <summary>
-        /// Get single yeast by YeastID
-        /// </summary>
-        /// <param name="id">The YeastID</param>
-        /// <returns></returns>
-        [ResponseType(typeof(BeerStyles))]
-        public async Task<IHttpActionResult> GetBeerStyles(int id)
+        // GET: api/Others/5
+        [ResponseType(typeof(Others))]
+        public async Task<IHttpActionResult> GetOthers(int id)
         {
-            BeerStyles beerstyle = await db.BeerStyles.FindAsync(id);
-            if (beerstyle == null)
+            Others others = await db.Others.FindAsync(id);
+            if (others == null)
             {
                 return NotFound();
             }
 
-            return Ok(beerstyle);
+            return Ok(others);
         }
 
-        //// PUT: api/Yeasts/5
+        //// PUT: api/Others/5
         //[ResponseType(typeof(void))]
-        //public async Task<IHttpActionResult> PutYeast(int id, Yeast yeast)
+        //public async Task<IHttpActionResult> PutOthers(int id, Others others)
         //{
         //    if (!ModelState.IsValid)
         //    {
         //        return BadRequest(ModelState);
         //    }
 
-        //    if (id != yeast.ID)
+        //    if (id != others.ID)
         //    {
         //        return BadRequest();
         //    }
 
-        //    db.Entry(yeast).State = EntityState.Modified;
+        //    db.Entry(others).State = EntityState.Modified;
 
         //    try
         //    {
@@ -67,7 +58,7 @@ namespace Beer.Controllers
         //    }
         //    catch (DbUpdateConcurrencyException)
         //    {
-        //        if (!YeastExists(id))
+        //        if (!OthersExists(id))
         //        {
         //            return NotFound();
         //        }
@@ -80,35 +71,35 @@ namespace Beer.Controllers
         //    return StatusCode(HttpStatusCode.NoContent);
         //}
 
-        //// POST: api/Yeasts
-        //[ResponseType(typeof(Yeast))]
-        //public async Task<IHttpActionResult> PostYeast(Yeast yeast)
+        //// POST: api/Others
+        //[ResponseType(typeof(Others))]
+        //public async Task<IHttpActionResult> PostOthers(Others others)
         //{
         //    if (!ModelState.IsValid)
         //    {
         //        return BadRequest(ModelState);
         //    }
 
-        //    db.Yeasts.Add(yeast);
+        //    db.Others.Add(others);
         //    await db.SaveChangesAsync();
 
-        //    return CreatedAtRoute("DefaultApi", new { id = yeast.ID }, yeast);
+        //    return CreatedAtRoute("DefaultApi", new { id = others.ID }, others);
         //}
 
-        //// DELETE: api/Yeasts/5
-        //[ResponseType(typeof(Yeast))]
-        //public async Task<IHttpActionResult> DeleteYeast(int id)
+        //// DELETE: api/Others/5
+        //[ResponseType(typeof(Others))]
+        //public async Task<IHttpActionResult> DeleteOthers(int id)
         //{
-        //    Yeast yeast = await db.Yeasts.FindAsync(id);
-        //    if (yeast == null)
+        //    Others others = await db.Others.FindAsync(id);
+        //    if (others == null)
         //    {
         //        return NotFound();
         //    }
 
-        //    db.Yeasts.Remove(yeast);
+        //    db.Others.Remove(others);
         //    await db.SaveChangesAsync();
 
-        //    return Ok(yeast);
+        //    return Ok(others);
         //}
 
         protected override void Dispose(bool disposing)
@@ -120,9 +111,9 @@ namespace Beer.Controllers
             base.Dispose(disposing);
         }
 
-        private bool BeerStyleExists(int id)
+        private bool OthersExists(int id)
         {
-            return db.BeerStyles.Count(e => e.ID == id) > 0;
+            return db.Others.Count(e => e.ID == id) > 0;
         }
     }
 }

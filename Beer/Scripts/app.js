@@ -160,6 +160,24 @@ BEER.ViewModels = (function () {
             // Fetch the initial data.
             getAllHops();
         },
+        HopStep: function Hop() {
+            var self = this;
+            self.HopStep = ko.observableArray();
+            self.queryLoaded = ko.observable(false);
+            self.error = ko.observableArray();
+
+            var serviceUri = '/api/hopsteps/';
+
+            function getAllHopSteps() {
+                BEER.utils.ajaxHelper(serviceUri, 'GET', null, self).done(function (data) {
+                    ko.mapping.fromJS(data, BEER.Mappings.hopStepMaping, self.HopStep);
+                    self.queryLoaded(true);
+                });
+            }
+
+            // Fetch the initial data.
+            getAllHopSteps();
+        },
         SearchQuery: function SearchQuery() {
             var self = this;
 
@@ -199,7 +217,7 @@ BEER.ViewModels = (function () {
 
                 return rQuery;
             });
-            self.error =  ko.observableArray();
+            self.error = ko.observableArray();
 
             self.getAllSubs = function () {
                 if (self.includeDryOrWetSubs() === true || self.includeManufacturerSubs() === true || self.includeSameManufacturerSubs() === true) {
@@ -216,13 +234,13 @@ BEER.ViewModels = (function () {
                 self.maltQuery.push(1, 38, 44, 47, 70);
             };
             self.addExtraPales = function () {
-                self.maltQuery.push(37,34,69);
+                self.maltQuery.push(37, 34, 69);
             };
             self.addCrystal = function () {
-                self.maltQuery.push(27,28,29,46,73)
+                self.maltQuery.push(27, 28, 29, 46, 73)
             };
             self.addDarkCrystal = function () {
-                self.maltQuery.push(32,68,83)
+                self.maltQuery.push(32, 68, 83)
             };
 
             self.addMyIngredients = function () {
@@ -268,20 +286,20 @@ BEER.ViewModels = (function () {
                 if (self.includeDryOrWetSubs() || self.includeManufacturerSubs() || self.includeSameManufacturerSubs()) {
                     ko.utils.arrayForEach(self.YeastSubs(), function (yeastSub) {
                         if (self.includeDryOrWetSubs() && yeastSub.isWetDry() === 'Y') {
-                             self.fullYeastQuery.push(yeastSub.yeastSubID());
+                            self.fullYeastQuery.push(yeastSub.yeastSubID());
                         }
 
                         if (self.includeManufacturerSubs() && yeastSub.isManuSub() === 'Y') {
-                             self.fullYeastQuery.push(yeastSub.yeastSubID());
+                            self.fullYeastQuery.push(yeastSub.yeastSubID());
                         }
 
                         if (self.includeSameManufacturerSubs() && yeastSub.isSameManu() === 'Y') {
-                             self.fullYeastQuery.push(yeastSub.yeastSubID());
+                            self.fullYeastQuery.push(yeastSub.yeastSubID());
                         }
                     })
                 }
             };
-            
+
             function getSubYeasts(id) {
                 var serviceUri = '/api/YeastSubstitutes/';
                 BEER.utils.ajaxHelper(serviceUri + id, 'GET', null, self).done(function (data) {
@@ -294,7 +312,7 @@ BEER.ViewModels = (function () {
                     });
 
                     populateFullYeastQuery();
-                    
+
                 });
             }
         },
@@ -329,11 +347,11 @@ BEER.ViewModels = (function () {
                             if (data !== null) {
                                 ko.mapping.fromJS(data, {}, self.malts);
                             }
-                        } 
-                        
+                        }
+
                     }
-                },100);
-                
+                }, 100);
+
             }
         },
         MyHops: function MyHops() {
@@ -341,9 +359,9 @@ BEER.ViewModels = (function () {
             self.hops = ko.observableArray();
             self.error = ko.observableArray();
 
-            self.getMyHops = function(hasLoaded) {
+            self.getMyHops = function (hasLoaded) {
                 var loadedInt = null;
-                loadedInt = setInterval(function() {
+                loadedInt = setInterval(function () {
                     if (hasLoaded() === true) {
                         clearInterval(loadedInt);
                         if (localStorage) {
@@ -361,9 +379,9 @@ BEER.ViewModels = (function () {
             self.yeasts = ko.observableArray();
             self.error = ko.observableArray();
 
-            self.getMyYeasts = function(hasLoaded) {
+            self.getMyYeasts = function (hasLoaded) {
                 var loadedInt = null;
-                loadedInt = setInterval(function() {
+                loadedInt = setInterval(function () {
                     if (hasLoaded() === true) {
                         clearInterval(loadedInt);
                         if (localStorage) {
@@ -375,6 +393,42 @@ BEER.ViewModels = (function () {
                     }
                 }, 100);
             }
+        },
+        BeerStyle: function BeerStyles() {
+            var self = this;
+            self.BeerStyle = ko.observableArray();
+            self.queryLoaded = ko.observable(false);
+            self.error = ko.observableArray();
+
+            var serviceUri = '/api/beerstyles/';
+
+            function getAllBeerStyles() {
+                BEER.utils.ajaxHelper(serviceUri, 'GET', null, self).done(function (data) {
+                    ko.mapping.fromJS(data, BEER.Mappings.BeerStyleMapping, self.BeerStyle);
+                    self.queryLoaded(true);
+                });
+            }
+
+            // Fetch the initial data.
+            getAllBeerStyles();
+        },
+        Other: function Other() {
+            var self = this;
+            self.Other = ko.observableArray();
+            self.queryLoaded = ko.observable(false);
+            self.error = ko.observableArray();
+
+            var serviceUri = '/api/others/';
+
+            function getAllOthers() {
+                BEER.utils.ajaxHelper(serviceUri, 'GET', null, self).done(function (data) {
+                    ko.mapping.fromJS(data, BEER.Mappings.OtherMapping, self.Other);
+                    self.queryLoaded(true);
+                });
+            }
+
+            // Fetch the initial data.
+            getAllOthers();
         }
     };
     return process
@@ -382,6 +436,32 @@ BEER.ViewModels = (function () {
 
 BEER.Models = (function () {
     var process = {
+        BasicRecipe: function BasicRecipe(data) {
+            var self = this;
+            self.Source2 = ko.observable();
+            self.Number = ko.observable();
+            self.Name = ko.observable();
+            self.YeastID = ko.observable();
+            //self.Yeast = ko.observable();
+            self.BeerStylesID = ko.observable();
+            //self.BeerStyles = ko.observable();
+            self.ID = ko.observable();
+            self.ABV = ko.observable();
+            self.IBU = ko.observable();
+            self.OG = ko.observable();
+            self.FG = ko.observable();
+            self.EBC = ko.observable();
+            self.HasAdjucts = ko.observable();
+            self.MashTemp = ko.observable();
+            self.MashTime = ko.observable();
+            self.Fermentation = ko.observable();
+            self.Description = ko.observable();
+            self.Tips = ko.observable();
+            self.Recipe_Malts = ko.observableArray();
+            self.Recipe_Hops = ko.observableArray();
+            self.Recipe_Others = ko.observableArray();
+
+        },
         Recipe: function Recipe(data, parent) {
             var self = this;
             self.mq = parent.SearchQuery.maltQuery;
@@ -578,6 +658,22 @@ BEER.Models = (function () {
                 return isMatched;
             }, self);
         },
+        Recipe_Malt: function Recipe_Malt(data, parent) {
+            var self = this;
+            self.RecipeID = ko.observable();
+            self.Weight = ko.observable();
+            self.MaltGenericID = ko.observable();
+            self.MaltID = ko.computed(function () {
+                var allMalts = parent.Malts.Malt();
+                var defaultMalt = 0;
+                for (var i = 0, iLen = allMalts.length; i < iLen; i++) {
+                    if (allMalts[i].id() === self.MaltGenericID()) {
+                        defaultMalt = allMalts[i].defaultMalt();
+                    }
+                }
+                return defaultMalt;
+            }, self);
+        },
         Hop: function Hop(data, parent) {
             var self = this;
             ko.mapping.fromJS(data, {}, self);
@@ -593,9 +689,29 @@ BEER.Models = (function () {
                 return isMatched;
             }, self);
         },
+        Recipe_Hop: function Recipe_Hop(data) {
+            var self = this;
+            self.RecipeID = ko.observable();
+            self.Weight = ko.observable();
+            self.HopID = ko.observable();
+            self.StepID = ko.observable();
+            self.HopTypeID = ko.observable(1);
+
+        },
+        Hop_Step: function Hop_Step(data) {
+            var self = this;
+            ko.mapping.fromJS(data, {}, self);
+        },
         Other: function Other(data, parent) {
             var self = this;
             ko.mapping.fromJS(data, {}, self);
+        },
+        Recipe_Other: function Recipe_Other(data) {
+            var self = this;
+            self.RecipeID = ko.observable();
+            self.Weight = ko.observable();
+            self.OtherID = ko.observable();
+            self.StepID = ko.observable();
         },
         Yeast: function Yeast(data) {
             var self = this;
@@ -715,6 +831,11 @@ BEER.Mappings = (function () {
                 return new BEER.Models.Hop(options.data);
             }
         },
+        hopStepMaping: {
+             create: function (options) {
+                 return new BEER.Models.Hop_Step(options.data);
+            }
+        },
         YeastMaping: {
             create: function (options) {
                 return new BEER.Models.Yeast(options.data);
@@ -731,6 +852,16 @@ BEER.Mappings = (function () {
                 return new BEER.Models.EbcColour(options.data);
             }
 
+        },
+        BeerStyleMapping: {
+            create: function (options) {
+                return new BEER.Models.BeerStyle(options.data);
+            }
+        },
+        OtherMapping: {
+            create: function (options) {
+                return new BEER.Models.Other(options.data);
+            }
         }
     };
     return process;
@@ -780,17 +911,38 @@ ko.bindingHandlers.rangeSlider = {
 
 ko.bindingHandlers.select2 = {
     init: function (element, valueAccessor, allBindingsAccesor, viewModel, bindingContext) {
+        var params = valueAccessor();
         $(element).select2({
-            closeOnSelect: false
+            closeOnSelect: params.closeOnSelect
         });
     },
     update: function (element, valueAccessor, allBindingsAccesor, viewModel, bindingContext) {
         var params = valueAccessor();
-        var selection = params.selection();
+        selection = params.selection();
         var select2 = $(element).data("select2");
         $(element).val(selection).trigger('change');
     }
 }
+
+ko.bindingHandlers.uniqueId = {
+    init: function(element, valueAccessor) {
+        var value = valueAccessor();
+        value.id = value.id || ko.bindingHandlers.uniqueId.prefix + (++ko.bindingHandlers.uniqueId.counter);
+
+        element.id = value.id;
+    },
+    counter: 0,
+    prefix: "unique"
+};
+
+ko.bindingHandlers.uniqueFor = {
+    init: function(element, valueAccessor) {
+        var value = valueAccessor();
+        value.id = value.id || ko.bindingHandlers.uniqueId.prefix + (++ko.bindingHandlers.uniqueId.counter);
+        
+        element.setAttribute("for", value.id);
+    } 
+};
 
 
 

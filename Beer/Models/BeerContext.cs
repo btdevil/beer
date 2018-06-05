@@ -46,5 +46,6 @@ namespace Beer.Models
 
         public System.Data.Entity.DbSet<Beer.Models.EbcColour> EbcColour { get; set; }
 
+        public System.Data.Entity.DbSet<Beer.Models.HopStep> HopSteps { get; set; }
     }
 }

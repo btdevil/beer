@@ -195,14 +195,18 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AddRecipeController.cs" />
     <Compile Include="Controllers\EbcColoursController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HopsController.cs" />
+    <Compile Include="Controllers\HopStepsController.cs" />
     <Compile Include="Controllers\MaltGenericsController.cs" />
     <Compile Include="Controllers\MyStockController.cs" />
+    <Compile Include="Controllers\OthersController.cs" />
     <Compile Include="Controllers\RecipesCorsController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
     <Compile Include="Controllers\Recipe_MaltsController.cs" />
+    <Compile Include="Controllers\BeerStylesController.cs" />
     <Compile Include="Controllers\YeastsController.cs" />
     <Compile Include="Controllers\YeastSubstitutesController.cs" />
     <Compile Include="Extensions.cs" />
@@ -274,6 +278,7 @@
     <Content Include="img\yeast-icon-trans.png" />
     <Content Include="img\yeast-icon.png" />
     <Content Include="recipe-template.html" />
+    <Content Include="Scripts\addRecipe.js" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\beerSearch.js" />
     <Content Include="Scripts\beerStyles.js" />
@@ -340,6 +345,7 @@
     <Content Include="Views\Home\Index - Copy.cshtml" />
     <Content Include="Views\Home\Index - Copy %282%29.cshtml" />
     <Content Include="Views\MyStock\Index.cshtml" />
+    <Content Include="Views\AddRecipe\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

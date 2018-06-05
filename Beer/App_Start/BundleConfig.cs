@@ -44,6 +44,14 @@ namespace Beer
               "~/Scripts/app.js",
               "~/Scripts/myStock.js"
                 ));
+
+            bundles.Add(new ScriptBundle("~/bundles/addRecipe").Include(
+             "~/Scripts/knockout-{version}.js",
+             "~/Scripts/knockout.mapping-latest.js",
+             "~/Scripts/select2.min.js",
+             "~/Scripts/app.js",
+             "~/Scripts/addRecipe.js"
+               ));
         }
     }
 }
