@@ -14,5 +14,28 @@ namespace Beer.Controllers
 
             return View();
         }
+
+        public ActionResult AddEdit(int? id)
+        {
+            if (id == null)
+            {
+                ViewBag.Title = "Add Recipe";
+                ViewBag.SelectedRecipe = null;
+            }
+            else
+            {
+                ViewBag.Title = "Edit Recipe";
+                ViewBag.SelectedRecipe = id;
+            }
+
+            return View();
+        }
+
+        public ActionResult MyStock() {
+            ViewBag.Title = "My STock";
+            return View();
+        }
+
+       
     }
 }

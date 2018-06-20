@@ -63,6 +63,22 @@ body {
         padding-bottom: 12px;
     }
 
+.half-padding {
+    padding-bottom: 7px;
+}
+
+.no-border:last-child {
+    border-top:0px;
+}
+
+.no-border:first-child {
+    border-bottom: 0px;
+}
+
+.margin-bottom{
+    margin-bottom:15px;
+}
+
     .double-margin, h2.double-margin {
         margin-top: 15px;
     }
@@ -110,8 +126,16 @@ body {
     min-height: 31px;
 }
 
+h2 .round-icon{
+    padding: 3px 0 0 35px;
+}
+
 .round-icon-recipe{
     background-image: url(../img/recipe-icon.png);
+}
+
+.round-icon-recipe-yellow {
+    background-image: url(../img/recipe-icon-yellow.png);
 }
 
 .round-icon-yeast {
@@ -366,3 +390,51 @@ body {
 
     .bs-column-hstep {
     }
+
+.item-delete {
+    display:none;
+    font-size: 1.75em;
+    
+}
+
+.item-delete.enabled {
+    display:block;
+    color: #d9534f;
+    cursor: pointer;
+}
+
+.form-inline select {
+    width: 100%;
+}
+
+.form-inline.sort select {
+    width:auto;
+}
+
+.form-inline .select2-container--bootstrap {
+    width: 100% !important;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    .form-inline select {
+        width:50%;
+    }
+
+    .form-inline.sm-select select {
+        width: 28%;
+    }
+
+    .form-inline .select2-container--bootstrap {
+        width: 50% !important;
+        margin-bottom:0px;
+    }
+
+    .form-inline.sm-select .select2-container--bootstrap {
+        width: 28% !important;
+    }
+
+    .form-inline.sort select {
+        width: auto;
+    }
+}

@@ -1,0 +1,220 @@
+﻿<script type="text/javascript">
+
+    var selectedRecipe = '@ViewBag.selectedRecipe';
+</script>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/addRecipe")
+}
+
+
+<script></script>
+<div class="row">
+    <div class="col-lg-12">
+
+        <div class="page-header clearfix half-padding no-margin margin-bottom">
+            <h2><span class="round-icon round-icon-recipe-yellow">@ViewBag.Title</span></h2>
+        </div>
+
+        <form data-bind="submit: addRecipe" class="col-lg-8">
+
+            <div class="form-group">
+                <label for="Source2" class="control-label">Source</label>
+
+                <input type="text" class="form-control" id="Source2" data-bind="value:newRecipe().Source2" />
+            </div>
+            <div class="form-group">
+                <label for="Number" class="control-label">Number</label>
+
+                <input type="text" class="form-control" id="Number" data-bind="value:newRecipe().Number" />
+
+            </div>
+            <div class="form-group">
+                <label for="Name" class="control-label">Name</label>
+
+                <input type="text" class="form-control" id="Name" data-bind="value:newRecipe().Name" />
+
+            </div>
+            <div class="form-group">
+                <label for="YeastID" class="control-label">Yeast</label>
+
+                <select id="YeastID" data-bind="options: Yeasts.Yeast, optionsText: 'yeastName', optionsValue : 'id', value: newRecipe().YeastID, select2: {selection: newRecipe().YeastID, closeOnSelect: true}" size="10" class="form-control"></select>
+
+            </div>
+            <div class="form-group">
+                <label for="BeerStylesID" class="control-label">Beer Style</label>
+
+                <select id="BeerStylesID" data-bind="options: BeerStyle.BeerStyle, optionsText: 'subCategoryName', optionsValue : 'id', value: newRecipe().BeerStylesID, select2: {selection: newRecipe().BeerStylesID, closeOnSelect: true}" size="10" class="form-control"></select>
+
+            </div>
+            <div class="form-group">
+                <label for="ABV" class="control-label">ABV</label>
+
+                <input type="text" class="form-control" id="ABV" data-bind="value:newRecipe().ABV" />
+
+            </div>
+            <div class="form-group">
+                <label for="IBU" class="control-label">IBU</label>
+
+                <input type="text" class="form-control" id="IBU" data-bind="value:newRecipe().IBU" />
+            </div>
+            <div class="form-group">
+                <label for="OG" class="control-label">OG</label>
+
+                <input type="text" class="form-control" id="OG" data-bind="value:newRecipe().OG" />
+
+            </div>
+            <div class="form-group">
+                <label for="FG" class="control-label">FG</label>
+
+                <input type="text" class="form-control" id="FG" data-bind="value:newRecipe().FG" />
+
+            </div>
+            <div class="form-group">
+                <label for="EBC" class="control-label">EBC</label>
+
+                <input type="text" class="form-control" id="EBC" data-bind="value:newRecipe().EBC" />
+
+            </div>
+            <div class="form-group">
+                <label for="HasAdjucts" class="control-label">HasAdjuncts</label>
+
+                <input type="text" class="form-control" id="HasAdjucts" data-bind="value:newRecipe().HasAdjucts" />
+
+            </div>
+            <div class="form-group">
+                <label for="MashTemp" class="control-label">MashTemp</label>
+
+                <input type="text" class="form-control" id="MashTemp" data-bind="value:newRecipe().MashTemp" />
+
+            </div>
+            <div class="form-group">
+                <label for="MashTime" class="control-label">MashTime</label>
+
+                <input type="text" class="form-control" id="MashTime" data-bind="value:newRecipe().MashTime" />
+
+            </div>
+            <div class="form-group">
+                <label for="Fermentation" class="control-label">Fermentation</label>
+
+                <input type="text" class="form-control" id="Fermentation" data-bind="value:newRecipe().Fermentation" />
+
+            </div>
+            <div class="form-group">
+                <label for="Description" class="control-label">Decsription</label>
+
+                <input type="text" class="form-control" id="Description" data-bind="value:newRecipe().Description" />
+
+            </div>
+            <div class="form-group">
+                <label for="Tips" class="control-label">Tips</label>
+
+                <input type="text" class="form-control" id="Tips" data-bind="value:newRecipe().Tips" />
+
+            </div>
+
+            <h3><span class="round-icon round-icon-malt">Malts</span></h3>
+            <ul class="list-group">
+
+                <!-- ko foreach: newRecipe().Recipe_Malts -->
+                <li class="list-group-item form-inline">
+                    <div class="form-group no-margin">
+                        <label data-bind="uniqueFor: MaltGenericID" class="control-label sr-only">Malt</label>
+                    </div>
+                    <select data-bind="options: $root.Malts.Malt, optionsText: 'malt', optionsValue : 'id', value: MaltGenericID, optionsCaption: 'Select malt', select2: {selection: MaltGenericID, closeOnSelect: true}, uniqueId: MaltGenericID" class="form-control"></select>
+
+
+                    <div class="form-group">
+                        <label data-bind="uniqueFor: Weight" class="control-label sr-only">Weight</label>
+                        <div class="input-group ">
+                            <input type="text" class="form-control" data-bind="value:Weight, uniqueId: Weight" />
+                            <div class="input-group-addon">kg</div>
+                        </div>
+                    </div>
+                    <a href="#" class="pull-right item-delete" data-bind="click: $root.deleteMalt, css: { enabled: $root.newRecipe().Recipe_Malts().length > 1 }"><span class="glyphicon glyphicon-remove-sign"></span><span class="sr-only">Delete</span></a>
+
+
+                </li>
+                <!-- /ko -->
+                <li class="list-group-item no-border">
+                    <div class="form-group">
+                        <button data-bind="click: addMalt" class="btn btn-info">Add Malt</button>
+                    </div>
+                </li>
+            </ul>
+
+            <h3><span class="round-icon round-icon-hop">Hops</span></h3>
+            <ul class="list-group">
+                <!-- ko foreach: newRecipe().Recipe_Hops -->
+                <li class="list-group-item form-inline sm-select">
+                    <div class="form-group no-margin">
+                        <label data-bind="uniqueFor: HopID" class="control-label sr-only">Hop</label>
+                    </div>
+                    <select data-bind="options: $root.Hops.Hop, optionsText: 'hops', optionsValue : 'id', value: HopID, optionsCaption: 'Select hop', select2: {selection: HopID, closeOnSelect: true}, uniqueId: HopID" size="10" class="form-control"></select>
+
+
+                    <div class="form-group">
+                        <label data-bind="uniqueFor: Weight" class="control-label sr-only">Weight</label>
+                        <div class="input-group ">
+                            <input type="text" class="form-control" data-bind="value:Weight, uniqueId: Weight" />
+                            <div class="input-group-addon">g</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-bind="uniqueFor: StepID" class="control-label sr-only">Usage Time</label>
+                    </div>
+
+                    <select data-bind="options: $root.HopSteps.HopStep, optionsText: 'step', optionsValue : 'id', value: StepID, optionsCaption: 'Addition time',select2: {selection: StepID, closeOnSelect: true}, uniqueId: StepID" size="10" class="form-control sm-select"></select>
+
+                    <a href="#" class="pull-right item-delete" data-bind="click: $root.deleteHop, css: { enabled: $root.newRecipe().Recipe_Hops().length > 1 }"><span class="glyphicon glyphicon-remove-sign"></span><span class="sr-only">Delete</span></a>
+                </li>
+                <!-- /ko -->
+                <li class="list-group-item no-border">
+                    <div class="form-group">
+                        <button data-bind="click: addHop" class="btn btn-info">Add Hop</button>
+                    </div>
+                </li>
+            </ul>
+            <h3><span class="round-icon round-icon-hop">Extras</span></h3>
+            <ul class="list-group">
+                <!-- ko foreach: newRecipe().Recipe_Others -->
+                <li class="list-group-item form-inline sm-select">
+                    <div class="form-group">
+                        <label data-bind="uniqueFor: OtherID" class="control-label sr-only">Extra</label>
+                    </div>
+                    <select data-bind="options: $root.Others.Other, optionsText: 'other', optionsValue : 'id', value: OtherID, optionsCaption: 'Select extra', select2: {selection: OtherID, closeOnSelect: true}, uniqueId: OtherID" size="10" class="form-control"></select>
+
+
+                    <div class="form-group">
+                        <label data-bind="uniqueFor: Weight" class="control-label sr-only">Weight</label>
+
+                        <div class="input-group ">
+                            <input type="text" class="form-control" data-bind="value:Weight, uniqueId: Weight" />
+                            <div class="input-group-addon">g</div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label data-bind="uniqueFor: StepID" class="control-label sr-only">Usage Time</label>
+                    </div>
+                    <select data-bind="options: $root.HopSteps.HopStep, optionsText: 'step', optionsValue : 'id', value: StepID, optionsCaption: 'Addition time', select2: {selection: StepID, closeOnSelect: true}, uniqueId: StepID" size="10" class="form-control"></select>
+                    <a href="#" class="pull-right item-delete" data-bind="click: $root.deleteOther, css: { enabled: $root.newRecipe().Recipe_Others().length > 1 }"><span class="glyphicon glyphicon-remove-sign"></span><span class="sr-only">Delete</span></a>
+
+                </li>
+                <!-- /ko -->
+                <li class="list-group-item no-border">
+                    <div class="form-group">
+                        <button data-bind="click: addOther" class="btn btn-info">Add Extra</button>
+                    </div>
+                </li>
+            </ul>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Save Recipe</button>
+                <button type="button" data-bind="click:test" class="btn btn-default">Test</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -436,31 +436,83 @@ BEER.ViewModels = (function () {
 
 BEER.Models = (function () {
     var process = {
-        BasicRecipe: function BasicRecipe(data) {
+        BasicRecipe: function BasicRecipe(data, parent) {
             var self = this;
-            self.Source2 = ko.observable();
-            self.Number = ko.observable();
-            self.Name = ko.observable();
-            self.YeastID = ko.observable();
-            //self.Yeast = ko.observable();
-            self.BeerStylesID = ko.observable();
-            //self.BeerStyles = ko.observable();
-            self.ID = ko.observable();
-            self.ABV = ko.observable();
-            self.IBU = ko.observable();
-            self.OG = ko.observable();
-            self.FG = ko.observable();
-            self.EBC = ko.observable();
-            self.HasAdjucts = ko.observable();
-            self.MashTemp = ko.observable();
-            self.MashTime = ko.observable();
-            self.Fermentation = ko.observable();
-            self.Description = ko.observable();
-            self.Tips = ko.observable();
+
+            var Source2 = null;
+            var Number = null;
+            var Name = null;
+            var YeastID = null;
+            var BeerStylesID = null;
+            var ID = null;
+            var ABV = null;
+            var IBU = null;
+            var OG = null;
+            var FG = null;
+            var EBC = null;
+            var HasAdjucts = null;
+            var MashTemp = null;
+            var MashTime = null;
+            var Fermentation = null;
+            var Description = null;
+            var Tips = null;
+
+            if (data !== null) {
+                Source2 = data[0].source2;
+                Number = data[0].number;
+                Name = data[0].name;
+                YeastID = data[0].yeastID;
+                BeerStylesID = data[0].beerStylesID;
+                ID = data[0].id;
+                ABV = data[0].abv;
+                IBU = data[0].ibu;
+                OG = data[0].og;
+                FG = data[0].fg;
+                EBC = data[0].ebc;
+                HasAdjucts = data[0].hasAdjucts;
+                MashTemp = data[0].mashTemp;
+                MashTime = data[0].mashTime;
+                Fermentation = data[0].fermentation;
+                Description = data[0].description;
+                Tips = data[0].tips;
+            }
+
+
+            self.Source2 = ko.observable(Source2);
+            self.Number = ko.observable(Number);
+            self.Name = ko.observable(Name);
+            self.YeastID = ko.observable(YeastID);
+            self.BeerStylesID = ko.observable(BeerStylesID);
+            self.ID = ko.observable(ID);
+            self.ABV = ko.observable(ABV);
+            self.IBU = ko.observable(IBU);
+            self.OG = ko.observable(OG);
+            self.FG = ko.observable(FG);
+            self.EBC = ko.observable(EBC);
+            self.HasAdjucts = ko.observable(HasAdjucts);
+            self.MashTemp = ko.observable(MashTemp);
+            self.MashTime = ko.observable(MashTime);
+            self.Fermentation = ko.observable(Fermentation);
+            self.Description = ko.observable(Description);
+            self.Tips = ko.observable(Tips);
             self.Recipe_Malts = ko.observableArray();
             self.Recipe_Hops = ko.observableArray();
             self.Recipe_Others = ko.observableArray();
 
+            if (data !== null) {
+                for (var i = 0, iLen = data[0].recipe_Hops.length; i < iLen; i++) {
+                    self.Recipe_Hops.push(new BEER.Models.Recipe_Hop(data[0].recipe_Hops[i]));
+                }
+
+                for (var i = 0, iLen = data[0].recipe_Malts.length; i < iLen; i++) {
+                    self.Recipe_Malts.push(new BEER.Models.Recipe_Malt(data[0].recipe_Malts[i], parent));
+                }
+
+                for (var i = 0, iLen = data[0].recipe_Others.length; i < iLen; i++) {
+                    self.Recipe_Others.push(new BEER.Models.Recipe_Other(data[0].recipe_Others[i]));
+                }
+            }
+            console.log(BeerStylesID);
         },
         Recipe: function Recipe(data, parent) {
             var self = this;
@@ -660,9 +712,19 @@ BEER.Models = (function () {
         },
         Recipe_Malt: function Recipe_Malt(data, parent) {
             var self = this;
-            self.RecipeID = ko.observable();
-            self.Weight = ko.observable();
-            self.MaltGenericID = ko.observable();
+            var RecipeID = null;
+            var Weight = null;
+            var MaltGenericID = null;
+
+            if (data !== null) {
+                RecipeID = data.recipeID;
+                Weight = data.weight;
+                MaltGenericID = data.maltGenericID;
+            }
+
+            self.RecipeID = ko.observable(RecipeID);
+            self.Weight = ko.observable(Weight);
+            self.MaltGenericID = ko.observable(MaltGenericID);
             self.MaltID = ko.computed(function () {
                 var allMalts = parent.Malts.Malt();
                 var defaultMalt = 0;
@@ -691,10 +753,23 @@ BEER.Models = (function () {
         },
         Recipe_Hop: function Recipe_Hop(data) {
             var self = this;
-            self.RecipeID = ko.observable();
-            self.Weight = ko.observable();
-            self.HopID = ko.observable();
-            self.StepID = ko.observable();
+            var RecipeID = null;
+            var Weight = null;
+            var HopID = null;
+            var StepID = null;
+            var HopTypeID = null;
+
+            if (data !== null) {
+                RecipeID = data.recipeID;
+                Weight = data.weight;
+                HopID = data.hopID;
+                StepID = data.stepID;
+            }
+
+            self.RecipeID = ko.observable(RecipeID);
+            self.Weight = ko.observable(Weight);
+            self.HopID = ko.observable(HopID);
+            self.StepID = ko.observable(StepID);
             self.HopTypeID = ko.observable(1);
 
         },
@@ -708,10 +783,21 @@ BEER.Models = (function () {
         },
         Recipe_Other: function Recipe_Other(data) {
             var self = this;
-            self.RecipeID = ko.observable();
-            self.Weight = ko.observable();
-            self.OtherID = ko.observable();
-            self.StepID = ko.observable();
+            var RecipeID = null;
+            var Weight = null;
+            var OtherID = null;
+            var StepID = null;
+
+            if (data !== null) {
+                RecipeID = data.recipeID;
+                Weight = data.weight;
+                OtherID = data.oopID;
+                StepID = data.stepID;
+            }
+            self.RecipeID = ko.observable(RecipeID);
+            self.Weight = ko.observable(Weight);
+            self.OtherID = ko.observable(OtherID);
+            self.StepID = ko.observable(StepID);
         },
         Yeast: function Yeast(data) {
             var self = this;
@@ -861,6 +947,11 @@ BEER.Mappings = (function () {
         OtherMapping: {
             create: function (options) {
                 return new BEER.Models.Other(options.data);
+            }
+        },
+        EditRecipe: {
+            create: function (options) {
+                return new BEER.Models.BasicRecipeFilled(options.data);
             }
         }
     };

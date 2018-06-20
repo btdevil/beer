@@ -22,7 +22,7 @@ namespace Beer.Models
 
         public int BeerStylesID { get; set; }
 
-        //[ForeignKey("BeerStyleID")]
+        [ForeignKey("BeerStylesID")]
         public BeerStyles BeerStyles { get; set; }
 
         public int ID { get; set; }

@@ -12,10 +12,11 @@
         </div>
         <div id="searchPanelCollapse" class="collapse in" role="tabpanel" aria-labelledby="searchPanelHeading">
             <form data-bind="submit: searchRecipes">
-                <label for="malts">Malts</label>
+                
                 <div class="form-group">
+                    <label for="malts">Malts</label>
                     <select id="malts" data-bind="options: Malts.Malt, optionsText: 'malt', optionsValue : 'id', selectedOptions: SearchQuery.maltQuery, select2: {selection: SearchQuery.maltQuery, closeOnSelect: false}" size="10" multiple class="form-control" style="width: 100%"></select>
-                    <br />
+        
                 </div>
 
                 <div class="form-group">
@@ -26,13 +27,15 @@
                     <button type="button" class="btn btn-info" id="myIngredients" data-bind="click: addMyIngredients">Add My Ingredients</button>
                 </div>
 
-                <label for="hops">Hops</label>
+                
                 <div class="form-group">
+                    <label for="hops">Hops</label>
                     <select id="hops" data-bind="options: Hops.Hop, optionsText: 'hops', optionsValue : 'id', selectedOptions: SearchQuery.hopQuery, select2: {selection: SearchQuery.hopQuery, closeOnSelect: false}" size="10" multiple class="form-control" style="width: 100%"></select>
                 </div>
 
-                <label for="yeast">Yeast</label>
+                
                 <div class="form-group">
+                    <label for="yeast">Yeast</label>
                     <select id="yeast" data-bind="options: Yeasts.Yeast, optionsText: 'yeastName', optionsValue : 'id', selectedOptions: SearchQuery.yeastQuery, select2: {selection: SearchQuery.yeastQuery, closeOnSelect: false}" size="10" multiple class="form-control" style="width: 100%"></select>
                 </div>
                 <div class="form-group">
@@ -61,9 +64,10 @@
                     </label>
                 </div>
 
-                <label for="abvmin">ABV <span class="sr-only">Minimum</span></label>
-                <label for="abvmax" class="sr-only">ABV Maximum</label>
+                
                 <div class="form-group">
+                    <label for="abvmin">ABV <span class="sr-only">Minimum</span></label>
+                    <label for="abvmax" class="sr-only">ABV Maximum</label>
                     <div class="row">
                         <div class="col-sm-2 col-xs-4">
                             <input id="abvmin" type="text" class="form-control" data-bind="textInput: SearchQuery.abvSlider.min" />
@@ -78,9 +82,10 @@
                     </div>
                 </div>
 
-                <label for="ibumin">IBU <span class="sr-only">Minimum</span></label>
-                <label for="ibumax" class="sr-only">IBU Maximum</label>
+                
                 <div class="form-group">
+                    <label for="ibumin">IBU <span class="sr-only">Minimum</span></label>
+                    <label for="ibumax" class="sr-only">IBU Maximum</label>
                     <div class="row">
                         <div class="col-sm-2 col-xs-4">
                             <input id="ibumin" type="text" class="form-control" data-bind="textInput: SearchQuery.ibuSlider.min" />
@@ -95,9 +100,10 @@
                     </div>
                 </div>
 
-                <label for="ebcmin">EBC <span class="sr-only">Minimum</span></label>
-                <label for="ebcmax" class="sr-only">EBC Maximum</label>
+               
                 <div class="form-group">
+                    <label for="ebcmin">EBC <span class="sr-only">Minimum</span></label>
+                    <label for="ebcmax" class="sr-only">EBC Maximum</label>
                     <div class="row">
                         <div class="col-sm-2 col-xs-4">
                             <input id="ebcmin" type="text" class="form-control" data-bind="textInput: SearchQuery.ebcSlider.min" />
@@ -112,9 +118,10 @@
                     </div>
                 </div>
 
-                <label for="fermentmin">Fermenation Temprature <span class="sr-only">Minimum</span></label>
-                <label for="fermentmax" class="sr-only">Fermenation Temprature Maximum</label>
+             
                 <div class="form-group">
+                    <label for="fermentmin">Fermenation Temprature <span class="sr-only">Minimum</span></label>
+                    <label for="fermentmax" class="sr-only">Fermenation Temprature Maximum</label>
                     <div class="row">
                         <div class="col-sm-2 col-xs-4">
                             <input id="fermentmin" type="text" class="form-control" data-bind="textInput: SearchQuery.fermentSlider.min" />
@@ -129,8 +136,9 @@
                     </div>
                 </div>
 
-                <p class="form-control-static"><strong>Has Extras</strong></p>
+                
                 <div class="form-group">
+                    <p class="form-control-static"><strong>Has Extras</strong></p>
                     <label class="radio-inline">
                         <input type="radio" name="hasAdjuncts" id="hasAdjuncts1" value="" data-bind="checked: SearchQuery.hasAdjuctsQuery"> Either
                     </label>
@@ -142,9 +150,9 @@
                     </label>
                 </div>
 
-                <p class="form-control-static"><strong>Advanced options</strong></p>
+               
                 <div class="form-group">
-
+                    <p class="form-control-static"><strong>Advanced options</strong></p>
                     <p class="form-control-static"><strong>Show close matches?</strong><br />Selecting 'Yes' will group the results by exaxt matches, followed by recipes that would need 1-5 extra ingredients besides the ones selected above</p>
                     <label class="radio-inline">
                         <input type="radio" name="groupResults" id="groupResults1" value="true" data-bind="checked: SearchQuery.groupResults" checked> Yes
@@ -416,7 +424,7 @@
                                   
                             </td>
                         </tr>
-                        <tr><td colspan="2"><a href="#" class="btn btn-default" data-bind="click: $parent.beerXml">Export to Beer XML</a></td></tr>
+                        <tr><td colspan="2"><a href="#" class="btn btn-default" data-bind="click: $parent.beerXml">Export to Beer XML</a><a href="#" class="btn btn-primary" data-bind="attr: { 'href': '@Url.Action("AddEdit", "Home")/' + id() }">Edit</a></td></tr>
 
                     </table>
 

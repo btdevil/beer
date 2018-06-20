@@ -513,12 +513,14 @@ namespace Beer.Controllers
 
         // POST: api/Recipes
         [ResponseType(typeof(Recipe))]
-        public async Task<IHttpActionResult> PostRecipe(Recipe recipe)
+        public async Task<IHttpActionResult> AddRecipe(Recipe recipe)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
+            var recipeSet = new Recipe();
 
             db.Recipes.Add(recipe);
             await db.SaveChangesAsync();
