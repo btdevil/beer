@@ -491,112 +491,78 @@ namespace Beer.Controllers
                 return BadRequest();
             }
 
-            //db.Entry(recipe).State = EntityState.Modified;
             try
             {
-                // Load original parent including the child item collection
-                var originalParent = db.Recipes
+
+                var originalRecipe = db.Recipes
                     .Where(p => p.ID == recipe.ID)
                     .Include(p => p.Recipe_Hops)
+                    .Include(p => p.Recipe_Malts)
                     .SingleOrDefault();
-                // We assume that the parent is still in the DB and don't check for null
 
-                // Update scalar properties of parent,
-                // can be omitted if we don't expect changes of the scalar properties
-                var parentEntry = db.Entry(originalParent);
+                var parentEntry = db.Entry(originalRecipe);
                 parentEntry.CurrentValues.SetValues(recipe);
 
-                foreach (var childItem in recipe.Recipe_Hops)
+                //HOPS
+
+                foreach (var hop in recipe.Recipe_Hops)
                 {
-                    var originalChildItem = originalParent.Recipe_Hops
-                        .Where(c => c.ID == childItem.ID && c.ID != 0)
+                    var originalhop = originalRecipe.Recipe_Hops
+                        .Where(c => c.ID == hop.ID && c.ID != 0)
                         .SingleOrDefault();
-                    // Is original child item with same ID in DB?
-                    if (originalChildItem != null)
+
+                    if (originalhop != null)
                     {
-                        // Yes -> Update scalar properties of child item
-                        var childEntry = db.Entry(originalChildItem);
-                        childEntry.CurrentValues.SetValues(childItem);
+
+                        var childEntry = db.Entry(originalhop);
+                        childEntry.CurrentValues.SetValues(hop);
                     }
                     else
                     {
-                        // No -> It's a new child item -> Insert
-                        childItem.ID = 0;
-                        originalParent.Recipe_Hops.Add(childItem);
+                        hop.ID = 0;
+                        originalRecipe.Recipe_Hops.Add(hop);
                     }
                 }
 
-                // Don't consider the child items we have just added above.
-                // (We need to make a copy of the list by using .ToList() because
-                // _dbContext.ChildItems.Remove in this loop does not only delete
-                // from the context but also from the child collection. Without making
-                // the copy we would modify the collection we are just interating
-                // through - which is forbidden and would lead to an exception.)
-                foreach (var originalChildItem in
-                             originalParent.Recipe_Hops.Where(c => c.ID != 0).ToList())
+                foreach (var originalhop in originalRecipe.Recipe_Hops.Where(c => c.ID != 0).ToList())
                 {
-                    // Are there child items in the DB which are NOT in the
-                    // new child item collection anymore?
-                    if (!recipe.Recipe_Hops.Any(c => c.ID == originalChildItem.ID))
-                        // Yes -> It's a deleted child item -> Delete
-                        db.Recipe_Hops.Remove(originalChildItem);
+
+                    if (!recipe.Recipe_Hops.Any(c => c.ID == originalhop.ID))
+                        db.Recipe_Hops.Remove(originalhop);
+                }
+
+                //Malts
+
+                foreach (var malt in recipe.Recipe_Malts)
+                {
+                    var originalmalt = originalRecipe.Recipe_Malts
+                        .Where(c => c.ID == malt.ID && c.ID != 0)
+                        .SingleOrDefault();
+
+                    if (originalmalt != null)
+                    {
+
+                        var childEntry = db.Entry(originalmalt);
+                        childEntry.CurrentValues.SetValues(malt);
+                    }
+                    else
+                    {
+                        malt.ID = 0;
+                        originalRecipe.Recipe_Malts.Add(malt);
+                    }
+                }
+
+                foreach (var originalmalt in originalRecipe.Recipe_Malts.Where(c => c.ID != 0).ToList())
+                {
+
+                    if (!recipe.Recipe_Malts.Any(c => c.ID == originalmalt.ID))
+                        db.Recipe_Malts.Remove(originalmalt);
                 }
 
                 await db.SaveChangesAsync();
 
             }
-            //try
-            //{
-            //    //var entity = db.Recipes.Include(h => h.Recipe_Hops).Where(r => r.ID == id).AsQueryable().FirstOrDefault();
-            //    var entity = db.Recipes.Include(h => h.Recipe_Hops).Single(r => r.ID == id);
-            //    if (entity == null)
-            //    {
-            //        return BadRequest("Recipe not found");
-            //    }
-            //    else
-            //    {
-            //        db.Entry(entity).CurrentValues.SetValues(recipe);
 
-            //        //// Remove hops
-            //        //foreach (var hops in entity.Recipe_Hops.ToList())
-            //        //{
-            //        //    if (!recipe.Recipe_Hops.Any(t => t.ID == hops.ID))
-            //        //    {
-            //        //        entity.Recipe_Hops.Remove(hops);
-            //        //    }
-            //        //}
-
-            //        ////// Add new hops
-            //        //foreach (var hops in recipe.Recipe_Hops)
-            //        //{
-            //        //    if (!entity.Recipe_Hops.Any(t => t.ID == hops.ID))
-            //        //    {
-            //        //        //db.Recipe_Hops.Attach(hops);
-            //        //        entity.Recipe_Hops.Add(hops);
-            //        //        db.Entry(entity).State = EntityState.Modified;
-            //        //        //
-            //        //    }
-            //        //}
-
-
-
-            //        // Remove types
-            //        foreach (var hopInDb in entity.Recipe_Hops.ToList())
-            //            if (!recipe.Recipe_Hops.Any(t => t.ID == hopInDb.ID))
-            //                entity.Recipe_Hops.Remove(hopInDb);
-
-            //        // Add new types
-            //        foreach (var hop in recipe.Recipe_Hops)
-            //            if (!entity.Recipe_Hops.Any(t => t.ID == hop.ID))
-            //            {
-            //                db.Recipe_Hops.Attach(hop);
-            //                entity.Recipe_Hops.Add(hop);
-            //            }
-
-
-            //        await db.SaveChangesAsync();
-            //    }
-            //}
             catch (DbUpdateConcurrencyException)
             {
                 if (!RecipeExists(id))

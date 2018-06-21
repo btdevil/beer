@@ -712,16 +712,19 @@ BEER.Models = (function () {
         },
         Recipe_Malt: function Recipe_Malt(data, parent) {
             var self = this;
+            var ID = null;
             var RecipeID = null;
             var Weight = null;
             var MaltGenericID = null;
 
             if (data !== null) {
+                ID = data.id;
                 RecipeID = data.recipeID;
                 Weight = data.weight;
                 MaltGenericID = data.maltGenericID;
             }
 
+            self.ID = ko.observable(ID);
             self.RecipeID = ko.observable(RecipeID);
             self.Weight = ko.observable(Weight);
             self.MaltGenericID = ko.observable(MaltGenericID);

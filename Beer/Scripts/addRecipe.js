@@ -54,7 +54,7 @@
     }
 
     self.addMalt = function () {
-        self.newRecipe().Recipe_Malts.push(new BEER.Models.Recipe_Malt({recipeID: parseInt(self.selectedRecipe, 10), weight:null, maltGenericID :null}, self));
+        self.newRecipe().Recipe_Malts.push(new BEER.Models.Recipe_Malt({recipeID: parseInt(self.selectedRecipe, 10), weight:null, maltGenericID :null, ID:0}, self));
     }
 
     self.deleteMalt = function (malt) {
