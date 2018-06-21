@@ -475,45 +475,61 @@ namespace Beer.Controllers
         //    return Ok(recipe);
         //}
 
-        // PUT: api/Recipes/5
+        //PUT: api/Recipes/5
 
-        //[ResponseType(typeof(void))]
-        //public async Task<IHttpActionResult> PutRecipe(int id, Recipe recipe)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        [ResponseType(typeof(void))]
+        public async Task<IHttpActionResult> PutRecipe(int id, Recipe recipe)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    if (id != recipe.ID)
-        //    {
-        //        return BadRequest();
-        //    }
+            if (id != recipe.ID)
+            {
+                return BadRequest();
+            }
 
-        //    db.Entry(recipe).State = EntityState.Modified;
+            //db.Entry(recipe).State = EntityState.Modified;
 
-        //    try
-        //    {
-        //        await db.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!RecipeExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+            try
+            {
+                var entity = db.Recipes.Where(c => c.ID == id).AsQueryable().FirstOrDefault();
+                if (entity == null)
+                {
+                    return BadRequest("Recipe not found");
+                }
+                else
+                {
+                    db.Entry(entity).CurrentValues.SetValues(recipe);
 
-        //    return StatusCode(HttpStatusCode.NoContent);
-        //}
+
+
+                    await db.SaveChangesAsync();
+                }
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!RecipeExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            
+
+            
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
 
         // POST: api/Recipes
         [ResponseType(typeof(Recipe))]
-        public async Task<IHttpActionResult> AddRecipe(Recipe recipe)
+        public async Task<IHttpActionResult> PostRecipe(Recipe recipe)
         {
             if (!ModelState.IsValid)
             {

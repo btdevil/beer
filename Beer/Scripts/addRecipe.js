@@ -13,28 +13,32 @@
     self.isEdit = ko.observable(false);
     self.queryLoaded = false;
     self.Test = ko.observable();
+    self.selectedRecipe = selectedRecipe;
 
     self.newRecipe().Recipe_Hops.push(new BEER.Models.Recipe_Hop(null));
     self.newRecipe().Recipe_Malts.push(new BEER.Models.Recipe_Malt(null, self));
     self.newRecipe().Recipe_Others.push(new BEER.Models.Recipe_Other(null));
 
-    self.addRecipe = function (formElement) {
+    self.addEditRecipe = function (formElement) {
 
         console.log(formElement);
-
-        //var newRec = {
-        //    Name: self.newRecipe.Name()
-        //}
 
         var newRec = ko.toJS(ko.utils.unwrapObservable(self.newRecipe));
 
         var serviceUri = '/api/recipes/';
 
-        //uri, method, data, self, type
+        if (self.isEdit) {
 
-        BEER.utils.ajaxHelper(serviceUri, 'POST', newRec, self).done(function (data) {
-                    console.log('yay')
-                });
+            BEER.utils.ajaxHelper(serviceUri + self.selectedRecipe, 'PUT', newRec, self).done(function (data) {
+                console.log('yay')
+            });
+
+        } else {
+
+            BEER.utils.ajaxHelper(serviceUri, 'POST', newRec, self).done(function (data) {
+                console.log('yay')
+            });
+        }
 
         console.log(newRec);
 
@@ -42,27 +46,27 @@
     }
 
     self.addHop = function () {
-        self.newRecipe.Recipe_Hops.push(new BEER.Models.Recipe_Hop());
+        self.newRecipe().Recipe_Hops.push(new BEER.Models.Recipe_Hop({recipeID: parseInt(self.selectedRecipe, 10), weight:null, hopID :null, stepID:null, ID:0}, self));
     }
 
     self.deleteHop = function (hop) {
-        self.newRecipe.Recipe_Hops.remove(hop);
+        self.newRecipe().Recipe_Hops.remove(hop);
     }
 
     self.addMalt = function () {
-        self.newRecipe.Recipe_Malts.push(new BEER.Models.Recipe_Malt(null, self));
+        self.newRecipe().Recipe_Malts.push(new BEER.Models.Recipe_Malt({recipeID: parseInt(self.selectedRecipe, 10), weight:null, maltGenericID :null}, self));
     }
 
     self.deleteMalt = function (malt) {
-        self.newRecipe.Recipe_Malts.remove(malt);
+        self.newRecipe().Recipe_Malts.remove(malt);
     }
 
     self.addOther = function () {
-        self.newRecipe.Recipe_Others.push(new BEER.Models.Recipe_Other());
+        self.newRecipe().Recipe_Others.push(new BEER.Models.Recipe_Other({recipeID: parseInt(self.selectedRecipe, 10), weight:null, stepID :null, otherID: null}, self));
     }
 
     self.deleteOther = function (other) {
-        self.newRecipe.Recipe_Others.remove(other);
+        self.newRecipe().Recipe_Others.remove(other);
     }
 
     self.test = function () {
@@ -81,9 +85,9 @@
 
     function recipeEditor() {
         var listsLoadedInt = null;
-        if (selectedRecipe !== null) {
+        if (self.selectedRecipe !== null) {
             self.isEdit(true);
-            var serviceUri = '/api/recipes/'+ selectedRecipe;
+            var serviceUri = '/api/recipes/'+ self.selectedRecipe;
 
             listsLoadedInt = setInterval(function () { 
 

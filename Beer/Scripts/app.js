@@ -753,19 +753,22 @@ BEER.Models = (function () {
         },
         Recipe_Hop: function Recipe_Hop(data) {
             var self = this;
+            var ID = null;
             var RecipeID = null;
             var Weight = null;
             var HopID = null;
             var StepID = null;
             var HopTypeID = null;
-
+ 
             if (data !== null) {
+                ID = data.ID;
                 RecipeID = data.recipeID;
                 Weight = data.weight;
                 HopID = data.hopID;
                 StepID = data.stepID;
             }
 
+            self.ID = ko.observable(ID);
             self.RecipeID = ko.observable(RecipeID);
             self.Weight = ko.observable(Weight);
             self.HopID = ko.observable(HopID);
@@ -794,6 +797,7 @@ BEER.Models = (function () {
                 OtherID = data.oopID;
                 StepID = data.stepID;
             }
+
             self.RecipeID = ko.observable(RecipeID);
             self.Weight = ko.observable(Weight);
             self.OtherID = ko.observable(OtherID);
