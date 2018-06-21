@@ -498,6 +498,7 @@ namespace Beer.Controllers
                     .Where(p => p.ID == recipe.ID)
                     .Include(p => p.Recipe_Hops)
                     .Include(p => p.Recipe_Malts)
+                    .Include(p => p.Recipe_Others)
                     .SingleOrDefault();
 
                 var parentEntry = db.Entry(originalRecipe);
@@ -557,6 +558,34 @@ namespace Beer.Controllers
 
                     if (!recipe.Recipe_Malts.Any(c => c.ID == originalmalt.ID))
                         db.Recipe_Malts.Remove(originalmalt);
+                }
+
+                //other
+
+                foreach (var other in recipe.Recipe_Others)
+                {
+                    var originalother = originalRecipe.Recipe_Others
+                        .Where(c => c.ID == other.ID && c.ID != 0)
+                        .SingleOrDefault();
+
+                    if (originalother != null)
+                    {
+
+                        var childEntry = db.Entry(originalother);
+                        childEntry.CurrentValues.SetValues(other);
+                    }
+                    else
+                    {
+                        other.ID = 0;
+                        originalRecipe.Recipe_Others.Add(other);
+                    }
+                }
+
+                foreach (var originalother in originalRecipe.Recipe_Others.Where(c => c.ID != 0).ToList())
+                {
+
+                    if (!recipe.Recipe_Others.Any(c => c.ID == originalother.ID))
+                        db.Recipe_Others.Remove(originalother);
                 }
 
                 await db.SaveChangesAsync();

@@ -789,18 +789,21 @@ BEER.Models = (function () {
         },
         Recipe_Other: function Recipe_Other(data) {
             var self = this;
+            var ID = null;
             var RecipeID = null;
             var Weight = null;
             var OtherID = null;
             var StepID = null;
 
             if (data !== null) {
+                ID = data.id;
                 RecipeID = data.recipeID;
                 Weight = data.weight;
-                OtherID = data.oopID;
+                OtherID = data.otherID;
                 StepID = data.stepID;
             }
 
+            self.ID = ko.observable(ID);
             self.RecipeID = ko.observable(RecipeID);
             self.Weight = ko.observable(Weight);
             self.OtherID = ko.observable(OtherID);

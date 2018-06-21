@@ -62,7 +62,7 @@
     }
 
     self.addOther = function () {
-        self.newRecipe().Recipe_Others.push(new BEER.Models.Recipe_Other({recipeID: parseInt(self.selectedRecipe, 10), weight:null, stepID :null, otherID: null}, self));
+        self.newRecipe().Recipe_Others.push(new BEER.Models.Recipe_Other({recipeID: parseInt(self.selectedRecipe, 10), weight:null, stepID :null, otherID: null, ID:0}, self));
     }
 
     self.deleteOther = function (other) {
