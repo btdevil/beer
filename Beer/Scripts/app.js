@@ -761,7 +761,7 @@ BEER.Models = (function () {
             var HopTypeID = null;
  
             if (data !== null) {
-                ID = data.ID;
+                ID = data.id;
                 RecipeID = data.recipeID;
                 Weight = data.weight;
                 HopID = data.hopID;

@@ -32,7 +32,7 @@ namespace Beer.Controllers
             IQueryable<RecipeDTO> recipes;
 
 
-            if(recipeQuery.HopId.IsNullOrEmpty() && recipeQuery.MaltId.IsNullOrEmpty() && (recipeQuery.getFullRecipe.HasValue == false || recipeQuery.getFullRecipe == false))
+            if (recipeQuery.HopId.IsNullOrEmpty() && recipeQuery.MaltId.IsNullOrEmpty() && (recipeQuery.getFullRecipe.HasValue == false || recipeQuery.getFullRecipe == false))
             {
                 recipes = from r in db.Recipes
                           select new RecipeDTO()
@@ -133,7 +133,7 @@ namespace Beer.Controllers
 
             }
 
-            if(recipeQuery.ABVMax != null)
+            if (recipeQuery.ABVMax != null)
             {
                 recipes = recipes.Where(r => r.ABV <= recipeQuery.ABVMax);
             }
@@ -178,7 +178,7 @@ namespace Beer.Controllers
                 recipes = recipes.Where(r => r.HasAdjucts == recipeQuery.hasAdjuncts);
             }
 
-            if(recipeQuery.YeastId.IsNullOrEmpty() == false)
+            if (recipeQuery.YeastId.IsNullOrEmpty() == false)
             {
                 recipes = recipes.Where(r => recipeQuery.YeastId.Contains(r.YeastID));
             }
@@ -205,85 +205,86 @@ namespace Beer.Controllers
         [ResponseType(typeof(RecipeDTO))]
         public async Task<IHttpActionResult> GetRecipe(int id)
         {
-            var recipe = await (from r in db.Recipes where r.ID == id
-                                      select new RecipeDTO()
-                                      {
-                                          Source2 = r.Source2,
-                                          Number = r.Number,
-                                          Name = r.Name,
-                                          YeastID = r.YeastID,
-                                          YeastName = r.Yeast.YeastName,
-                                          ID = r.ID,
-                                          ABV = r.ABV,
-                                          IBU = r.IBU,
-                                          OG = r.OG,
-                                          FG = r.FG,
-                                          OGDecimal = r.OG,
-                                          FGDecimal = r.FG,
-                                          EBC = r.EBC,
-                                          HasAdjucts = r.HasAdjucts,
-                                          MashTemp = r.MashTemp,
-                                          MashTime = r.MashTime,
-                                          Fermentation = r.Fermentation,
-                                          Recipe_Hops = r.Recipe_Hops.Select(rh => new Recipe_HopsDTO
-                                          {
-                                              ID = rh.ID,
-                                              RecipeID = rh.RecipeID,
-                                              Weight = rh.Weight,
-                                              HopID = rh.HopID,
-                                              StepID = rh.StepID,
-                                              HopName = rh.Hop.Hops,
-                                              StepName = rh.HopStep.Step,
-                                              StepOrder = rh.HopStep.StepOrder,
-                                              AA = rh.Hop.AA,
-                                              HopType = rh.HopType.HopTypeName,
-                                              HopStage = rh.HopStep.HopStage.HopStageName,
-                                              HopTime = rh.HopStep.HopTime
+            var recipe = await (from r in db.Recipes
+                                where r.ID == id
+                                select new RecipeDTO()
+                                {
+                                    Source2 = r.Source2,
+                                    Number = r.Number,
+                                    Name = r.Name,
+                                    YeastID = r.YeastID,
+                                    YeastName = r.Yeast.YeastName,
+                                    ID = r.ID,
+                                    ABV = r.ABV,
+                                    IBU = r.IBU,
+                                    OG = r.OG,
+                                    FG = r.FG,
+                                    OGDecimal = r.OG,
+                                    FGDecimal = r.FG,
+                                    EBC = r.EBC,
+                                    HasAdjucts = r.HasAdjucts,
+                                    MashTemp = r.MashTemp,
+                                    MashTime = r.MashTime,
+                                    Fermentation = r.Fermentation,
+                                    Recipe_Hops = r.Recipe_Hops.Select(rh => new Recipe_HopsDTO
+                                    {
+                                        ID = rh.ID,
+                                        RecipeID = rh.RecipeID,
+                                        Weight = rh.Weight,
+                                        HopID = rh.HopID,
+                                        StepID = rh.StepID,
+                                        HopName = rh.Hop.Hops,
+                                        StepName = rh.HopStep.Step,
+                                        StepOrder = rh.HopStep.StepOrder,
+                                        AA = rh.Hop.AA,
+                                        HopType = rh.HopType.HopTypeName,
+                                        HopStage = rh.HopStep.HopStage.HopStageName,
+                                        HopTime = rh.HopStep.HopTime
 
-                                          }).OrderBy(rh => rh.StepOrder).ThenBy(hn => hn.HopName).ToList(),
-                                          Recipe_Others = r.Recipe_Others.Select(ro => new Recipe_OthersDTO
-                                          {
-                                              ID = ro.ID,
-                                              RecipeID = ro.RecipeID,
-                                              Weight = ro.Weight,
-                                              OtherID = ro.OtherID,
-                                              StepID = ro.StepID,
-                                              OtherName = ro.Other.Other,
-                                              StepName = ro.HopStep.Step,
-                                              StepOrder = ro.HopStep.StepOrder
-                                          }).OrderBy(ro => ro.StepOrder).ThenBy(otn => otn.OtherName).ToList(),
-                                          Recipe_Malts = r.Recipe_Malts.Select(rm => new Recipe_MaltsDTO
-                                          {
-                                              ID = rm.ID,
-                                              RecipeID = rm.RecipeID,
-                                              Weight = rm.Weight,
-                                              MaltGenericID = rm.MaltGenericID,
-                                              MaltID = rm.MaltID,
-                                              PPG = rm.MaltGeneric.PPG,
-                                              MaltGenericName = rm.MaltGeneric.Malt
-                                          }).OrderByDescending(rm => rm.Weight).ThenBy(mn => mn.MaltGenericName).ToList(),
-                                          BeerStylesID = r.BeerStylesID,
-                                          BeerStyles = new BeerStylesDTO
-                                          {
-                                              ID = r.BeerStyles.ID,
-                                              CategoryId = r.BeerStyles.CategoryId,
-                                              SubCategoryId = r.BeerStyles.SubCategoryId,
-                                              SubCategoryName = r.BeerStyles.SubCategoryName,
-                                              SubCategoryLetter = r.BeerStyles.SubCategoryLetter,
-                                              OGLow = r.BeerStyles.OGLow,
-                                              OGHigh = r.BeerStyles.OGHigh,
-                                              FGLow = r.BeerStyles.FGLow,
-                                              FGHigh = r.BeerStyles.FGHigh,
-                                              IBULow = r.BeerStyles.IBULow,
-                                              IBUHigh = r.BeerStyles.IBUHigh,
-                                              SRMLow = r.BeerStyles.SRMLow,
-                                              SRMHigh = r.BeerStyles.SRMHigh,
-                                              ABVLow = r.BeerStyles.ABVLow,
-                                              ABVHigh = r.BeerStyles.ABVHigh,
-                                              StyleGuide = "BJCP"
-                                
-                                          }
-                                      }).ToListAsync();
+                                    }).OrderBy(rh => rh.StepOrder).ThenBy(hn => hn.HopName).ToList(),
+                                    Recipe_Others = r.Recipe_Others.Select(ro => new Recipe_OthersDTO
+                                    {
+                                        ID = ro.ID,
+                                        RecipeID = ro.RecipeID,
+                                        Weight = ro.Weight,
+                                        OtherID = ro.OtherID,
+                                        StepID = ro.StepID,
+                                        OtherName = ro.Other.Other,
+                                        StepName = ro.HopStep.Step,
+                                        StepOrder = ro.HopStep.StepOrder
+                                    }).OrderBy(ro => ro.StepOrder).ThenBy(otn => otn.OtherName).ToList(),
+                                    Recipe_Malts = r.Recipe_Malts.Select(rm => new Recipe_MaltsDTO
+                                    {
+                                        ID = rm.ID,
+                                        RecipeID = rm.RecipeID,
+                                        Weight = rm.Weight,
+                                        MaltGenericID = rm.MaltGenericID,
+                                        MaltID = rm.MaltID,
+                                        PPG = rm.MaltGeneric.PPG,
+                                        MaltGenericName = rm.MaltGeneric.Malt
+                                    }).OrderByDescending(rm => rm.Weight).ThenBy(mn => mn.MaltGenericName).ToList(),
+                                    BeerStylesID = r.BeerStylesID,
+                                    BeerStyles = new BeerStylesDTO
+                                    {
+                                        ID = r.BeerStyles.ID,
+                                        CategoryId = r.BeerStyles.CategoryId,
+                                        SubCategoryId = r.BeerStyles.SubCategoryId,
+                                        SubCategoryName = r.BeerStyles.SubCategoryName,
+                                        SubCategoryLetter = r.BeerStyles.SubCategoryLetter,
+                                        OGLow = r.BeerStyles.OGLow,
+                                        OGHigh = r.BeerStyles.OGHigh,
+                                        FGLow = r.BeerStyles.FGLow,
+                                        FGHigh = r.BeerStyles.FGHigh,
+                                        IBULow = r.BeerStyles.IBULow,
+                                        IBUHigh = r.BeerStyles.IBUHigh,
+                                        SRMLow = r.BeerStyles.SRMLow,
+                                        SRMHigh = r.BeerStyles.SRMHigh,
+                                        ABVLow = r.BeerStyles.ABVLow,
+                                        ABVHigh = r.BeerStyles.ABVHigh,
+                                        StyleGuide = "BJCP"
+
+                                    }
+                                }).ToListAsync();
             if (recipe == null)
             {
                 return NotFound();
@@ -414,7 +415,7 @@ namespace Beer.Controllers
 
                                     }
                                 }).ToListAsync();
-        
+
             if (recipe == null)
             {
                 return NotFound();
@@ -422,7 +423,7 @@ namespace Beer.Controllers
 
             HttpResponseMessage responseMsg = Request.CreateResponse(HttpStatusCode.OK, new Recipes { Recipe = recipe.First() }, Configuration.Formatters.XmlFormatter);
             responseMsg.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
-            responseMsg.Content.Headers.ContentDisposition.FileName = recipe.First().Name+".xml";
+            responseMsg.Content.Headers.ContentDisposition.FileName = recipe.First().Name + ".xml";
             return ResponseMessage(responseMsg);
 
             //return Ok(new Recipes { Recipe = recipe.First() });
@@ -491,23 +492,111 @@ namespace Beer.Controllers
             }
 
             //db.Entry(recipe).State = EntityState.Modified;
-
             try
             {
-                var entity = db.Recipes.Where(c => c.ID == id).AsQueryable().FirstOrDefault();
-                if (entity == null)
+                // Load original parent including the child item collection
+                var originalParent = db.Recipes
+                    .Where(p => p.ID == recipe.ID)
+                    .Include(p => p.Recipe_Hops)
+                    .SingleOrDefault();
+                // We assume that the parent is still in the DB and don't check for null
+
+                // Update scalar properties of parent,
+                // can be omitted if we don't expect changes of the scalar properties
+                var parentEntry = db.Entry(originalParent);
+                parentEntry.CurrentValues.SetValues(recipe);
+
+                foreach (var childItem in recipe.Recipe_Hops)
                 {
-                    return BadRequest("Recipe not found");
+                    var originalChildItem = originalParent.Recipe_Hops
+                        .Where(c => c.ID == childItem.ID && c.ID != 0)
+                        .SingleOrDefault();
+                    // Is original child item with same ID in DB?
+                    if (originalChildItem != null)
+                    {
+                        // Yes -> Update scalar properties of child item
+                        var childEntry = db.Entry(originalChildItem);
+                        childEntry.CurrentValues.SetValues(childItem);
+                    }
+                    else
+                    {
+                        // No -> It's a new child item -> Insert
+                        childItem.ID = 0;
+                        originalParent.Recipe_Hops.Add(childItem);
+                    }
                 }
-                else
+
+                // Don't consider the child items we have just added above.
+                // (We need to make a copy of the list by using .ToList() because
+                // _dbContext.ChildItems.Remove in this loop does not only delete
+                // from the context but also from the child collection. Without making
+                // the copy we would modify the collection we are just interating
+                // through - which is forbidden and would lead to an exception.)
+                foreach (var originalChildItem in
+                             originalParent.Recipe_Hops.Where(c => c.ID != 0).ToList())
                 {
-                    db.Entry(entity).CurrentValues.SetValues(recipe);
-
-
-
-                    await db.SaveChangesAsync();
+                    // Are there child items in the DB which are NOT in the
+                    // new child item collection anymore?
+                    if (!recipe.Recipe_Hops.Any(c => c.ID == originalChildItem.ID))
+                        // Yes -> It's a deleted child item -> Delete
+                        db.Recipe_Hops.Remove(originalChildItem);
                 }
+
+                await db.SaveChangesAsync();
+
             }
+            //try
+            //{
+            //    //var entity = db.Recipes.Include(h => h.Recipe_Hops).Where(r => r.ID == id).AsQueryable().FirstOrDefault();
+            //    var entity = db.Recipes.Include(h => h.Recipe_Hops).Single(r => r.ID == id);
+            //    if (entity == null)
+            //    {
+            //        return BadRequest("Recipe not found");
+            //    }
+            //    else
+            //    {
+            //        db.Entry(entity).CurrentValues.SetValues(recipe);
+
+            //        //// Remove hops
+            //        //foreach (var hops in entity.Recipe_Hops.ToList())
+            //        //{
+            //        //    if (!recipe.Recipe_Hops.Any(t => t.ID == hops.ID))
+            //        //    {
+            //        //        entity.Recipe_Hops.Remove(hops);
+            //        //    }
+            //        //}
+
+            //        ////// Add new hops
+            //        //foreach (var hops in recipe.Recipe_Hops)
+            //        //{
+            //        //    if (!entity.Recipe_Hops.Any(t => t.ID == hops.ID))
+            //        //    {
+            //        //        //db.Recipe_Hops.Attach(hops);
+            //        //        entity.Recipe_Hops.Add(hops);
+            //        //        db.Entry(entity).State = EntityState.Modified;
+            //        //        //
+            //        //    }
+            //        //}
+
+
+
+            //        // Remove types
+            //        foreach (var hopInDb in entity.Recipe_Hops.ToList())
+            //            if (!recipe.Recipe_Hops.Any(t => t.ID == hopInDb.ID))
+            //                entity.Recipe_Hops.Remove(hopInDb);
+
+            //        // Add new types
+            //        foreach (var hop in recipe.Recipe_Hops)
+            //            if (!entity.Recipe_Hops.Any(t => t.ID == hop.ID))
+            //            {
+            //                db.Recipe_Hops.Attach(hop);
+            //                entity.Recipe_Hops.Add(hop);
+            //            }
+
+
+            //        await db.SaveChangesAsync();
+            //    }
+            //}
             catch (DbUpdateConcurrencyException)
             {
                 if (!RecipeExists(id))
@@ -520,9 +609,9 @@ namespace Beer.Controllers
                 }
             }
 
-            
 
-            
+
+
 
             return StatusCode(HttpStatusCode.NoContent);
         }
