@@ -242,7 +242,7 @@ BEER.ViewModels = (function () {
                     rQuery = rQuery + BU.multiSelectQueryBuilder(self.fullYeastQuery, 'yeastid');
                 }
 
-                //rQuery = rQuery + BU.multiSelectQueryBuilder(self.styleQuery, 'beerstyleid');
+                rQuery = rQuery + BU.multiSelectQueryBuilder(self.styleQuery, 'beerstyleid');
 
                 rQuery = rQuery + BU.sliderQueryBuilder(self.abvSlider, 'abvmin', 'abvmax');
                 rQuery = rQuery + BU.sliderQueryBuilder(self.ibuSlider, 'ibumin', 'ibumax');
