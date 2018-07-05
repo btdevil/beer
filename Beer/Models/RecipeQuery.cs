@@ -55,9 +55,17 @@ namespace Beer.Models
         /// </summary>
         public int[] YeastId { get; set; }
         /// <summary>
+        /// BeerStyleIds to include (Optional)
+        /// </summary>
+        public int[] BeerStyleId { get; set; }
+        /// <summary>
         /// Has Adjuncts (Y or N) (Optional)
         /// </summary>
         public string hasAdjuncts { get; set; }
+        /// <summary>
+        /// Recipe Name (Optional)
+        /// </summary>
+        public string recipeName { get; set; }
 
         /// <summary>
         /// Return a full recipe with malts and hops (Optional)

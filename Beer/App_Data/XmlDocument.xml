@@ -540,6 +540,21 @@
             <param name="id">The recipeID</param>
             <returns>A downloadable BeerXMl</returns>
         </member>
+        <member name="M:Beer.Controllers.RecipesController.PutRecipe(System.Int32,Beer.Models.Recipe)">
+            <summary>
+            Edits a single recipe
+            <param name="id">The RecipeID</param>
+            <param name="recipe">The recipe object for updating</param>
+            </summary>
+            <returns>Status code</returns>
+        </member>
+        <member name="M:Beer.Controllers.RecipesController.PostRecipe(Beer.Models.Recipe)">
+            <summary>
+            Adds a single recipe
+            <param name="recipe">The recipe object for adding</param>
+            </summary>
+            <returns>Status code</returns>
+        </member>
         <member name="M:Beer.Controllers.YeastsController.GetYeasts">
             <summary>
             Get all Yeasts
@@ -631,9 +646,19 @@
             YeastIds to include (Optional)
             </summary>
         </member>
+        <member name="P:Beer.Models.RecipeQuery.BeerStyleId">
+            <summary>
+            BeerStyleIds to include (Optional)
+            </summary>
+        </member>
         <member name="P:Beer.Models.RecipeQuery.hasAdjuncts">
             <summary>
             Has Adjuncts (Y or N) (Optional)
+            </summary>
+        </member>
+        <member name="P:Beer.Models.RecipeQuery.recipeName">
+            <summary>
+            Recipe Name (Optional)
             </summary>
         </member>
         <member name="P:Beer.Models.RecipeQuery.getFullRecipe">

@@ -5,6 +5,7 @@
     self.Yeasts = new BEER.ViewModels.Yeast();
     self.Malts = new BEER.ViewModels.Malt();
     self.Hops = new BEER.ViewModels.Hop();
+    self.BeerStyle = new BEER.ViewModels.BeerStyle();
     self.ebcColours = new BEER.ViewModels.EbcColour();
     self.Recipes = ko.observableArray();
     self.SelectedRecipe = ko.observable();
@@ -135,6 +136,10 @@
                 }
             }
         },100);
+    };
+
+    self.scale = function () {
+        BEER.utils.scale(self.SelectedRecipe()[0], parseInt($('#scale').val(),10));
     };
 
     function findMatches() {

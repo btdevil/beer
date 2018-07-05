@@ -23,20 +23,28 @@
 
         console.log(formElement);
 
+        validateAndFixModel();
+
         var newRec = ko.toJS(ko.utils.unwrapObservable(self.newRecipe));
 
         var serviceUri = '/api/recipes/';
 
-        if (self.isEdit) {
+        if (self.isEdit()) {
 
             BEER.utils.ajaxHelper(serviceUri + self.selectedRecipe, 'PUT', newRec, self).done(function (data) {
-                console.log('yay')
+                console.log('yay');
+                var toastElem = $('<div class="alert alert-success toast" role="alert">Recipe saved</div>');
+        $('body').append(toastElem);
+        BEER.utils.toast(toastElem);
             });
 
         } else {
 
             BEER.utils.ajaxHelper(serviceUri, 'POST', newRec, self).done(function (data) {
-                console.log('yay')
+                console.log('yay');
+                var toastElem = $('<div class="alert alert-success toast" role="alert">Recipe saved</div>');
+        $('body').append(toastElem);
+        BEER.utils.toast(toastElem);
             });
         }
 
@@ -70,7 +78,15 @@
     }
 
     self.test = function () {
-        console.log(self.newRecipe());
+        var toastElem = $('<div class="alert alert-success toast" role="alert">Recipe saved</div>');
+        $('body').append(toastElem);
+        BEER.utils.toast(toastElem);
+    }
+
+    self.scale = function () {
+
+        BEER.utils.scale(self.newRecipe(), parseInt($('#scale').val(),10));
+
     }
 
     function areListsLoaded() {
@@ -85,7 +101,7 @@
 
     function recipeEditor() {
         var listsLoadedInt = null;
-        if (self.selectedRecipe !== null) {
+        if (self.selectedRecipe !== null && self.selectedRecipe !== '') {
             self.isEdit(true);
             var serviceUri = '/api/recipes/'+ self.selectedRecipe;
 
@@ -103,6 +119,62 @@
                 },
              30);
         }
+    }
+
+    function validateAndFixModel() {
+ 
+
+        if (self.newRecipe().ID() === null || typeof self.newRecipe().ID() === 'undefined') {
+            self.newRecipe().ID(0);
+        }
+
+        for (var i = 0, iLen = self.newRecipe().Recipe_Hops().length; i < iLen; i++) {
+
+            if (self.newRecipe().Recipe_Hops()[i].RecipeID() === null|| typeof self.newRecipe().Recipe_Hops()[i].RecipeID() === 'undefined' || isNaN(self.newRecipe().Recipe_Hops()[i].RecipeID())) {
+                self.newRecipe().Recipe_Hops()[i].RecipeID(0);
+            }
+
+            if (self.newRecipe().Recipe_Hops()[i].ID() === null|| typeof self.newRecipe().Recipe_Hops()[i].ID() === 'undefined' || isNaN(self.newRecipe().Recipe_Hops()[i].ID())) {
+                self.newRecipe().Recipe_Hops()[i].ID(0);
+            }
+
+            if (self.newRecipe().Recipe_Hops()[i].HopID() === null || typeof self.newRecipe().Recipe_Hops()[i].HopID() === 'undefined') {
+
+                self.newRecipe().Recipe_Hops.remove(self.newRecipe().Recipe_Hops()[i]);
+            }
+        }
+
+        for (var i = 0, iLen = self.newRecipe().Recipe_Malts().length; i < iLen; i++) {
+            if (self.newRecipe().Recipe_Malts()[i].RecipeID() === null || typeof self.newRecipe().Recipe_Malts()[i].RecipeID() === 'undefined' || isNaN(self.newRecipe().Recipe_Malts()[i].RecipeID())) {
+                self.newRecipe().Recipe_Malts()[i].RecipeID(0);
+            }
+
+            if (self.newRecipe().Recipe_Malts()[i].ID() === null|| typeof self.newRecipe().Recipe_Malts()[i].ID() === 'undefined' || isNaN(self.newRecipe().Recipe_Malts()[i].ID())) {
+                self.newRecipe().Recipe_Malts()[i].ID(0);
+            }
+
+            if (self.newRecipe().Recipe_Malts()[i].MaltGenericID() === null || typeof self.newRecipe().Recipe_Malts()[i].MaltGenericID() === 'undefined') {
+
+                self.newRecipe().Recipe_Malts.remove(self.newRecipe().Recipe_Malts()[i]);
+            }
+
+        }
+
+        for (var i = 0, iLen = self.newRecipe().Recipe_Others().length; i < iLen; i++) {
+            if (self.newRecipe().Recipe_Others()[i].RecipeID() === null|| typeof self.newRecipe().Recipe_Others()[i].RecipeID() === 'undefined' || isNaN(self.newRecipe().Recipe_Others()[i].RecipeID())) {
+                self.newRecipe().Recipe_Others()[i].RecipeID(0);
+            }
+
+            if (self.newRecipe().Recipe_Others()[i].ID() === null|| typeof self.newRecipe().Recipe_Others()[i].ID() === 'undefined' || isNaN(self.newRecipe().Recipe_Others()[i].ID())) {
+                self.newRecipe().Recipe_Others()[i].ID(0);
+            }
+            if (self.newRecipe().Recipe_Others()[i].OtherID() === null || typeof self.newRecipe().Recipe_Others()[i].OtherID() === 'undefined') {
+
+                self.newRecipe().Recipe_Others.remove(self.newRecipe().Recipe_Others()[i]);
+            }
+        }
+
+      
     }
 
     recipeEditor();

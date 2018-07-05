@@ -19,11 +19,11 @@ namespace Beer.Models
 
         public string TYPE { get; set; }
 
-        public int BATCH_SIZE { get; set; }
+        public int? BATCH_SIZE { get; set; }
 
-        public int BOIL_SIZE { get; set; }
+        public int? BOIL_SIZE { get; set; }
 
-        public int BOIL_TIME { get; set; }
+        public int? BOIL_TIME { get; set; }
 
         public int EFFICIENCY { get; set; }
 

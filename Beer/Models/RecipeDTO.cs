@@ -77,6 +77,10 @@ namespace Beer.Models
 
         public int? Fermentation { get; set; }
 
+        public int? BoilTime { get; set; }
+
+        public int? BatchSize { get; set; }
+
         public string Description { get; set; }
 
         public string Tips { get; set; }

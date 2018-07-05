@@ -11,11 +11,13 @@ using System.Threading.Tasks;
 using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Http.Cors;
 
 using Beer.Models;
 
 namespace Beer.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class RecipesController : ApiController
     {
         private BeerContext db = new BeerContext();
@@ -27,7 +29,6 @@ namespace Beer.Controllers
         /// <returns></returns>
         public IQueryable<RecipeDTO> GetRecipes([FromUri] RecipeQuery recipeQuery)
         {
-            //var recipes = db.Recipes.Include(r => r.Recipe_Malts.Select(gm => gm.MaltGeneric)).Include(r => r.Yeast).Include(r => r.Recipe_Hops.Select(h => h.Hop)).Include(r => r.Recipe_Hops.Select(hs => hs.HopStep));
 
             IQueryable<RecipeDTO> recipes;
 
@@ -54,6 +55,8 @@ namespace Beer.Controllers
                               MashTemp = r.MashTemp,
                               MashTime = r.MashTime,
                               Fermentation = r.Fermentation,
+                              BoilTime = r.BoilTime,
+                              BatchSize = r.BatchSize,
                               BeerStylesID = r.BeerStylesID
                           };
             }
@@ -78,6 +81,8 @@ namespace Beer.Controllers
                               HasAdjucts = r.HasAdjucts,
                               MashTemp = r.MashTemp,
                               MashTime = r.MashTime,
+                              BoilTime = r.BoilTime,
+                              BatchSize = r.BatchSize,
                               Fermentation = r.Fermentation,
                               Recipe_Hops = r.Recipe_Hops.Select(rh => new Recipe_HopsDTO
                               {
@@ -131,6 +136,12 @@ namespace Beer.Controllers
                               }
                           };
 
+            }
+
+
+            if (recipeQuery.recipeName != null && recipeQuery.recipeName != "")
+            {
+                recipes = recipes.Where(r => r.Name.Contains(recipeQuery.recipeName));
             }
 
             if (recipeQuery.ABVMax != null)
@@ -188,10 +199,16 @@ namespace Beer.Controllers
                 recipes = recipes.Where(r => r.Recipe_Malts.Any(rm => recipeQuery.MaltId.Contains(rm.MaltGenericID)));
             }
 
+            if (recipeQuery.BeerStyleId.IsNullOrEmpty() == false)
+            {
+                recipes = recipes.Where(r => recipeQuery.BeerStyleId.Contains(r.BeerStylesID));
+            }
+
             if (recipeQuery.HopId.IsNullOrEmpty() == false)
             {
                 recipes = recipes.Where(r => r.Recipe_Hops.Any(rh => recipeQuery.HopId.Contains(rh.HopID)));
             }
+
 
             return recipes;
         }
@@ -225,6 +242,8 @@ namespace Beer.Controllers
                                     HasAdjucts = r.HasAdjucts,
                                     MashTemp = r.MashTemp,
                                     MashTime = r.MashTime,
+                                    BoilTime = r.BoilTime,
+                                    BatchSize = r.BatchSize,
                                     Fermentation = r.Fermentation,
                                     Recipe_Hops = r.Recipe_Hops.Select(rh => new Recipe_HopsDTO
                                     {
@@ -325,9 +344,9 @@ namespace Beer.Controllers
                                     FG = r.FG,
                                     EBC = r.EBC,
                                     TYPE = "All Grain",
-                                    BATCH_SIZE = 20,
+                                    BATCH_SIZE = r.BatchSize,
                                     BOIL_SIZE = 28,
-                                    BOIL_TIME = 60,
+                                    BOIL_TIME = r.BoilTime,
                                     EFFICIENCY = 75,
                                     IBU_METHOD = "Tinseth",
                                     MASH_STEPS = new List<MashStepDTO> {
@@ -477,7 +496,12 @@ namespace Beer.Controllers
         //}
 
         //PUT: api/Recipes/5
-
+        /// <summary>
+        /// Edits a single recipe
+        /// <param name="id">The RecipeID</param>
+        /// <param name="recipe">The recipe object for updating</param>
+        /// </summary>
+        /// <returns>Status code</returns>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutRecipe(int id, Recipe recipe)
         {
@@ -611,7 +635,13 @@ namespace Beer.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+
         // POST: api/Recipes
+        /// <summary>
+        /// Adds a single recipe
+        /// <param name="recipe">The recipe object for adding</param>
+        /// </summary>
+        /// <returns>Status code</returns>
         [ResponseType(typeof(Recipe))]
         public async Task<IHttpActionResult> PostRecipe(Recipe recipe)
         {

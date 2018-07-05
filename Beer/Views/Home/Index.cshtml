@@ -12,11 +12,16 @@
         </div>
         <div id="searchPanelCollapse" class="collapse in" role="tabpanel" aria-labelledby="searchPanelHeading">
             <form data-bind="submit: searchRecipes">
-                
+
+                <div class="form-group">
+                    <label for="recipeName">Name</label>
+                    <input id="recipeName" type="text" class="form-control" data-bind="textInput: SearchQuery.recipeName" />
+                </div>
+
                 <div class="form-group">
                     <label for="malts">Malts</label>
                     <select id="malts" data-bind="options: Malts.Malt, optionsText: 'malt', optionsValue : 'id', selectedOptions: SearchQuery.maltQuery, select2: {selection: SearchQuery.maltQuery, closeOnSelect: false}" size="10" multiple class="form-control" style="width: 100%"></select>
-        
+
                 </div>
 
                 <div class="form-group">
@@ -27,17 +32,24 @@
                     <button type="button" class="btn btn-info" id="myIngredients" data-bind="click: addMyIngredients">Add My Ingredients</button>
                 </div>
 
-                
+
                 <div class="form-group">
                     <label for="hops">Hops</label>
                     <select id="hops" data-bind="options: Hops.Hop, optionsText: 'hops', optionsValue : 'id', selectedOptions: SearchQuery.hopQuery, select2: {selection: SearchQuery.hopQuery, closeOnSelect: false}" size="10" multiple class="form-control" style="width: 100%"></select>
                 </div>
 
-                
+
                 <div class="form-group">
                     <label for="yeast">Yeast</label>
                     <select id="yeast" data-bind="options: Yeasts.Yeast, optionsText: 'yeastName', optionsValue : 'id', selectedOptions: SearchQuery.yeastQuery, select2: {selection: SearchQuery.yeastQuery, closeOnSelect: false}" size="10" multiple class="form-control" style="width: 100%"></select>
                 </div>
+
+                <div class="form-group">
+                    <label for="BeerStylesID" class="control-label">Beer Style</label>
+
+                    <select id="yeast" data-bind="options: BeerStyle.BeerStyle, optionsText: 'subCategoryName', optionsValue : 'id', selectedOptions: SearchQuery.styleQuery, select2: {selection: SearchQuery.styleQuery, closeOnSelect: false}" size="10" multiple class="form-control" style="width: 100%"></select>
+                </div>
+
                 <div class="form-group">
                     <p class="form-control-static"><strong>Show Yeasts</strong></p>
                     <!-- ko with: Yeasts -->
@@ -64,7 +76,7 @@
                     </label>
                 </div>
 
-                
+
                 <div class="form-group">
                     <label for="abvmin">ABV <span class="sr-only">Minimum</span></label>
                     <label for="abvmax" class="sr-only">ABV Maximum</label>
@@ -82,7 +94,7 @@
                     </div>
                 </div>
 
-                
+
                 <div class="form-group">
                     <label for="ibumin">IBU <span class="sr-only">Minimum</span></label>
                     <label for="ibumax" class="sr-only">IBU Maximum</label>
@@ -100,7 +112,7 @@
                     </div>
                 </div>
 
-               
+
                 <div class="form-group">
                     <label for="ebcmin">EBC <span class="sr-only">Minimum</span></label>
                     <label for="ebcmax" class="sr-only">EBC Maximum</label>
@@ -118,7 +130,7 @@
                     </div>
                 </div>
 
-             
+
                 <div class="form-group">
                     <label for="fermentmin">Fermenation Temprature <span class="sr-only">Minimum</span></label>
                     <label for="fermentmax" class="sr-only">Fermenation Temprature Maximum</label>
@@ -136,7 +148,7 @@
                     </div>
                 </div>
 
-                
+
                 <div class="form-group">
                     <p class="form-control-static"><strong>Has Extras</strong></p>
                     <label class="radio-inline">
@@ -150,7 +162,7 @@
                     </label>
                 </div>
 
-               
+
                 <div class="form-group">
                     <p class="form-control-static"><strong>Advanced options</strong></p>
                     <p class="form-control-static"><strong>Show close matches?</strong><br />Selecting 'Yes' will group the results by exaxt matches, followed by recipes that would need 1-5 extra ingredients besides the ones selected above</p>
@@ -315,14 +327,14 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xxs-12 col-xs-3 col-sm-12 col-md-3 no-padding">
-                              <p class="bs-recipe-line"><!-- ko text: source2 --><!--/ko--> <!--ko if: number !== "null"--> #<span data-bind="text: number"></span><!-- /ko --></p>
-                                        <p class="bs-recipe-line" data-bind="text: beerStyles.subCategoryName"></p>
-                                  
-                                        <p class="bs-recipe-line" data-bind="css: {'bg-danger': hasAdjucts() === 'Y'}">Has Extras: <span data-bind="text: hasAdjucts"></span></p>
-                                  
-                                        
-                                    
-                               
+                                <p class="bs-recipe-line"><!-- ko text: source2 --><!--/ko--> <!--ko if: number !== "null"--> #<span data-bind="text: number"></span><!-- /ko --></p>
+                                <p class="bs-recipe-line" data-bind="text: beerStyles.subCategoryName"></p>
+
+                                <p class="bs-recipe-line" data-bind="css: {'bg-danger': hasAdjucts() === 'Y'}">Has Extras: <span data-bind="text: hasAdjucts"></span></p>
+
+
+
+
                             </div>
                             <div class="col-xxs-12 col-xs-9 col-sm-12 col-md-9 xs-no-padding">
                                 <div class="beer-style clearfix">
@@ -364,13 +376,16 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                     <table class="table">
-                        <tr data-bind="css: yeastCss"><td class="bs-column-label"><span class="round-icon round-icon-yeast">Yeast</span></td><td data-bind="text: yeastName"></td></tr>
+                        <tr><td class="bs-column-label"><span class="round-icon round-icon-notes">Notes</span></td><td><span data-bind="text: tips"></span></td></tr>
+                        <tr><td class="bs-column-label"><span class="round-icon round-icon-batch">Batch Size</span></td><td><span data-bind="text: batchSize"></span>l</td></tr>
                         <tr><td class="bs-column-label"><span class="round-icon round-icon-mash">Mash Temp</span></td><td><span data-bind="text: mashTemp"></span>C</td></tr>
-                        <tr><td  class="bs-column-label"><span class="round-icon round-icon-mash">Mash Time</span></td><td><span data-bind="text: mashTime"></span> minutes</td></tr>
-                        <tr data-bind="css: {info: fermentation() < 18}"><td  class="bs-column-label"><span class="round-icon round-icon-fermentation">Fermentation</span></td><td><span data-bind="text: fermentation"></span>C</td></tr>
+                        <tr><td class="bs-column-label"><span class="round-icon round-icon-mash">Mash Time</span></td><td><span data-bind="text: mashTime"></span> minutes</td></tr>
+                        <tr><td class="bs-column-label"><span class="round-icon round-icon-boil">Boil Time</span></td><td><span data-bind="text: boilTime"></span> minutes</td></tr>
+                        <tr data-bind="css: {info: fermentation() < 18}"><td class="bs-column-label"><span class="round-icon round-icon-fermentation">Fermentation</span></td><td><span data-bind="text: fermentation"></span>C</td></tr>
+                        <tr data-bind="css: yeastCss"><td class="bs-column-label"><span class="round-icon round-icon-yeast">Yeast</span></td><td data-bind="text: yeastName"></td></tr>
                         <tr>
                             <td class="td-top bs-column-label"><span class="round-icon round-icon-malt">Malts</span></td>
                             <td class="nested">
@@ -378,7 +393,8 @@
                                     <tbody>
                                         <!-- ko foreach: recipe_Malts -->
                                         <tr data-bind="css: {danger: isMatched() === false}">
-                                            <td class="bs-column-malt"><span data-bind="text: maltGenericName"></span>:</td><td class="bs-column-mweight"> <span data-bind="text: weight"></span>kg</td>
+                                            <td class="bs-column-malt"><span data-bind="text: maltGenericName"></span>:</td>
+                                            <td class="bs-column-mweight"> <span data-bind="text: weight"></span>kg</td>
                                         </tr>
                                         <!-- /ko -->
                                     </tbody>
@@ -393,7 +409,9 @@
 
                                         <!-- ko foreach: combinedHopsOther() -->
                                         <tr data-bind="css: {danger: isMatched() === false}">
-                                            <td class="bs-column-hop"><span data-bind="text: hopName"></span>: </td><td class="bs-column-hweight"><span data-bind="text: weight"></span>g </td><td data-bind="text: stepName" class="bs-column-hstep"></td>
+                                            <td class="bs-column-hop"><span data-bind="text: hopName"></span>: </td>
+                                            <td class="bs-column-hweight"><span data-bind="text: weight"></span>g </td>
+                                            <td data-bind="text: stepName" class="bs-column-hstep"></td>
                                         </tr>
                                         <!-- /ko -->
 
@@ -407,7 +425,7 @@
                         <tr>
                             <td class="td-top bs-column-label"><span class="round-icon round-icon-hop">Each hop</span></td>
                             <td class="nested">
-                                
+
                                 @*<p><span data-bind="text: hopName" class="bs-total-hop"></span>: <span data-bind="text: weight"></span>g</p>*@
                                 <table class="table table-nested">
                                     <tbody>
@@ -421,15 +439,31 @@
 
                                     </tbody>
                                 </table>
-                                  
+
                             </td>
                         </tr>
-                        <tr><td colspan="2"><a href="#" class="btn btn-default" data-bind="click: $parent.beerXml">Export to Beer XML</a><a href="#" class="btn btn-primary" data-bind="attr: { 'href': '@Url.Action("AddEdit", "Home")/' + id() }">Edit</a></td></tr>
+                        <tr>
+                            <td colspan="2">
+                              
+                                <div class="form-group form-inline">
+                                    <a href="#" class="btn btn-default" data-bind="click: $parent.beerXml">Export to Beer XML</a>
+                                    <a href="#" class="btn btn-primary sm-margin-left" data-bind="attr: { 'href': '@Url.Action("AddEdit", "Home")/' + id() }">Edit</a>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control scale" id="scale" name="scale">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button" data-bind="click: $parent.scale">Scale</button>
+                                        </span>
+                                    </div>
+                                </div>
 
-                    </table>
+
+                            </td>
+                        </tr>
+
+                </table>
 
 
-                </div>
+            </div>
                 <!-- /ko -->
             </div>
         </div>

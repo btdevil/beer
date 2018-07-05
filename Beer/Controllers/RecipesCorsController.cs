@@ -48,6 +48,8 @@ namespace Beer.Controllers
                               HasAdjucts = r.HasAdjucts,
                               MashTemp = r.MashTemp,
                               MashTime = r.MashTime,
+                              BoilTime = r.BoilTime,
+                              BatchSize = r.BatchSize,
                               Fermentation = r.Fermentation
                           };
             }
@@ -70,6 +72,8 @@ namespace Beer.Controllers
                               HasAdjucts = r.HasAdjucts,
                               MashTemp = r.MashTemp,
                               MashTime = r.MashTime,
+                              BoilTime = r.BoilTime,
+                              BatchSize = r.BatchSize,
                               Fermentation = r.Fermentation,
                               Recipe_Hops = r.Recipe_Hops.Select(rh => new Recipe_HopsDTO
                               {

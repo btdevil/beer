@@ -39,6 +39,10 @@ body {
     margin: 0;
 }
 
+.sm-margin-left{
+    margin-left:5px;
+}
+
 .btn{
     margin-bottom:2px;
 }
@@ -158,6 +162,18 @@ h2 .round-icon{
     background-image: url(../img/hop-icon-trans.png);
 }
 
+.round-icon-boil {
+    background-image: url(../img/boil-icon.png);
+}
+
+.round-icon-batch {
+    background-image: url(../img/batch-icon.png);
+}
+
+.round-icon-notes {
+    background-image: url(../img/note-icon.png);
+}
+
     @media (max-width: 767px) {
         .slider-cont {
             padding-left: 30px;
@@ -222,13 +238,13 @@ h2 .round-icon{
         margin-right: 5px;
     }
 
-    .ebcBlob {
-        width: 18px;
-        height: 18px;
-        border-radius: 9px;
-        float: left;
-        margin-right: 5px;
-    }
+.ebcBlob {
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    float: left;
+    margin-right: 5px;
+}
 
     @media screen and (max-width: 767px) {
         .slidein .slidein-child {
@@ -324,9 +340,32 @@ h2 .round-icon{
         text-align: center;
     }
 
+.form-inline .select2-container--bootstrap {
+    width: 100% !important;
+    margin-bottom: 15px;
+}
+
+.select2-container--bootstrap {
+    width: 100% !important;
+}
+
     @media (max-width:768px) {
         .beer-style {
             width: 340px;
+        }
+
+        .list-group-item.form-inline.clearfix .form-group{
+            width:90%;
+        }
+
+        .form-inline .select2-container--bootstrap{
+            width:90%!important;
+        }
+
+        .item-delete.enabled {
+            position: absolute;
+            top: 8px;
+            right: 7px;
         }
     }
 
@@ -411,10 +450,6 @@ h2 .round-icon{
     width:auto;
 }
 
-.form-inline .select2-container--bootstrap {
-    width: 100% !important;
-    margin-bottom: 15px;
-}
 
 @media (min-width: 768px) {
     .form-inline select {
@@ -436,5 +471,72 @@ h2 .round-icon{
 
     .form-inline.sort select {
         width: auto;
+    }
+
+    .form-inline .input-group > .form-control.scale {
+        width: 50px;
+    }
+}
+
+.toast {
+    position: fixed;
+    top: 62px;
+    width: 50%;
+    margin: 0 0 0 25%;
+    visibility:hidden;
+    z-index:9999;
+}
+
+.toast.show-toast{
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 62px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 62px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        top: 62px;
+        opacity: 1;
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        top: 62px;
+        opacity: 1;
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
     }
 }
